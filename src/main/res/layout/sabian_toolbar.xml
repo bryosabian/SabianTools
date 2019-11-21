@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:sabian="http://schemas.android.com/apk/res-auto"
+    android:background="@color/sabian_theme_background"
+    android:minHeight="?attr/actionBarSize"
+    android:id="@+id/tlb_SabianToolBar"
+    android:titleTextAppearance="@color/sabian_actionbar_text_color"
+    sabian:contentInsetLeft="0dp"
+    sabian:contentInsetStart="0dp"
+    sabian:titleMarginStart="0dp"
+    >
+
+        <com.sabiantools.controls.SabianMenuBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/smb_SabianHomeMenu"
+            />
+
+
+
+    </androidx.appcompat.widget.Toolbar>
