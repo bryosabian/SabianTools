@@ -5,7 +5,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.View;
 
 /**
- * Created by Dannick on 9/26/2016.
+ * Created By Brian Sabana on 9/26/2016.
  */
 public class SabianRecyclerHorizontalMargin extends RecyclerView.ItemDecoration {
 

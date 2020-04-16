@@ -7,7 +7,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import androidx.annotation.ColorRes;
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
+
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
@@ -25,7 +25,7 @@ public class SabianModal extends Dialog {
     private View view;
     private ViewGroup vgBody;
     private ButtonFlat btnOk, btnCancel;
-    private View.OnClickListener onOkayCickListener, onCancelClickListener;
+    private View.OnClickListener onOkayClickListener, onCancelClickListener;
     private String okayButtonText, cancelButtonText;
     private @ColorRes
     int okayButtonColor = NO_RES_ID;
@@ -74,8 +74,8 @@ public class SabianModal extends Dialog {
             btnCancel.setVisibility(View.GONE);
         }
 
-        if (onOkayCickListener != null) {
-            btnOk.setOnClickListener(onOkayCickListener);
+        if (onOkayClickListener != null) {
+            btnOk.setOnClickListener(onOkayClickListener);
         }else{
             btnOk.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -140,8 +140,8 @@ public class SabianModal extends Dialog {
         }
     }
 
-    public SabianModal setOnOkayCickListener(View.OnClickListener onOkayCickListener) {
-        this.onOkayCickListener = onOkayCickListener;
+    public SabianModal setOnOkayClickListener(View.OnClickListener onOkayClickListener) {
+        this.onOkayClickListener = onOkayClickListener;
         return this;
     }
 

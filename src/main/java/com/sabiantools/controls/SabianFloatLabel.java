@@ -11,7 +11,7 @@ import com.iangclifton.android.floatlabel.FloatLabel;
 import com.sabiantools.R;
 
 /**
- * Created by Dannick on 7/6/2016.
+ * Created By Brian Sabana on 7/6/2016.
  */
 public class SabianFloatLabel extends FloatLabel {
 
@@ -66,6 +66,10 @@ public class SabianFloatLabel extends FloatLabel {
 
     public void setText(String text) {
         this.getEditText().setText(text);
+    }
+
+    public void setHint(String hint){
+        getEditText().setHint(hint);
     }
 
     public void setTextColor(int color) {

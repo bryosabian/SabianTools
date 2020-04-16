@@ -19,7 +19,7 @@ import java.io.IOException;
 import java.io.InputStream;
 
 /**
- * Created by Dannick on 3/25/2016.
+ * Created By Brian Sabana on 3/25/2016.
  */
 public class SabianFitImage extends ImageView {
 

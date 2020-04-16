@@ -12,7 +12,7 @@ import com.beardedhen.androidbootstrap.FontAwesomeText;
 import com.sabiantools.R;
 
 /**
- * Created by Dannick on 3/25/2016.
+ * Created By Brian Sabana on 3/25/2016.
  */
 public class SabianMenuBar extends FrameLayout {
 

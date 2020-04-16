@@ -36,6 +36,7 @@ import com.sabiantools.modals.SabianModal;
 
 import org.joda.time.DateTime;
 import org.joda.time.LocalDateTime;
+import org.joda.time.format.DateTimeFormat;
 import org.jsoup.Jsoup;
 
 import java.io.ByteArrayOutputStream;
@@ -43,11 +44,15 @@ import java.io.File;
 import java.io.FileDescriptor;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.OutputStream;
+import java.io.PrintWriter;
 import java.lang.reflect.Modifier;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.text.DecimalFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.regex.Matcher;
@@ -82,6 +87,14 @@ public class SabianUtilities {
         toast.display(Toast.LENGTH_SHORT);
     }
 
+    public static void DisplayMessage(Context context, String message, SabianUtilities.TYPE_MESSAGE type_message) {
+        SabianToast toast = new SabianToast(context);
+        toast.setText(message);
+        toast.setIcon(type_message.getIcon());
+        toast.setCustomType(type_message.getDrawableResource());
+        toast.display(Toast.LENGTH_SHORT);
+    }
+
 
     public static void DisplayModal(Context context, String title, String message) {
         DisplayModal(context, title, message, "Okay", null, null, null);
@@ -91,7 +104,7 @@ public class SabianUtilities {
         final SabianModal modal = new SabianModal(context);
         modal.setTitle(title).setMessage(message);
         modal.setOkayButtonText("Okay");
-        modal.setOnOkayCickListener(new View.OnClickListener() {
+        modal.setOnOkayClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 modal.dismiss();
@@ -117,7 +130,7 @@ public class SabianUtilities {
         final SabianModal modal = new SabianModal(context);
         modal.setTitle(title).setMessage(message);
         modal.setOkayButtonText(okText);
-        modal.setOnOkayCickListener(new View.OnClickListener() {
+        modal.setOnOkayClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 modal.dismiss();
@@ -567,12 +580,13 @@ public class SabianUtilities {
     }
 
     public static void updateLoadingDialog(@Nullable String title, String message) {
-        if (pd == null)
+        if (pd == null) {
+            showLoadingDialog(title, message);
             return;
-
+        }
         //pd.setMessage(message);
         if (title != null)
-            pd.setTitle(message);
+            pd.setTitle(title + "." + message);
     }
 
     public static class EmailValidator {
@@ -623,10 +637,50 @@ public class SabianUtilities {
 //        val number = 0.0449999
 //        val rounded = number.toBigDecimal().setScale(1, RoundingMode.UP).toDouble()
 //        println(rounded) // 0.1
-//        BigDecimal bd = new BigDecimal(number).setScale(roundToDecimalPlaces, (up) ? RoundingMode.UP : RoundingMode.DOWN);
-//        return bd.doubleValue();
-        Double value = Double.parseDouble(String.format("%." + roundToDecimalPlaces + "f", number));
-        return value;
 
+
+//        DecimalFormat df = new DecimalFormat("0.00");
+//        String f = df.format(number);
+//        Double value = Double.parseDouble(f);
+//        //Double value = Double.parseDouble(String.format("%." + roundToDecimalPlaces + "f", number));
+//        return value;
+        BigDecimal bd = new BigDecimal(number).setScale(roundToDecimalPlaces, (up) ? RoundingMode.UP : RoundingMode.DOWN);
+        return bd.doubleValue();
+
+    }
+
+    public static void copyFile(File src, File dst) throws IOException {
+        InputStream in = new FileInputStream(src);
+        try {
+            OutputStream out = new FileOutputStream(dst);
+            try {
+                // Transfer bytes from in to out
+                byte[] buf = new byte[1024];
+                int len;
+                while ((len = in.read(buf)) > 0) {
+                    out.write(buf, 0, len);
+                }
+            } finally {
+                out.close();
+            }
+        } finally {
+            in.close();
+        }
+    }
+
+    public static void clearFile(File file) throws FileNotFoundException {
+        if (file.exists()) {
+            PrintWriter writer = new PrintWriter(file);
+            writer.print("");
+            writer.close();
+        }
+    }
+
+    public static String getCurrentIsoDateString() {
+        return LocalDateTime.now().toString(DateTimeFormat.forPattern("yyyy-MM-dd'T'HH:mm:ss"));
+    }
+
+    public static String getCurrentDateString() {
+        return DateTime.now().toString(DateTimeFormat.forPattern("yyyy-MM-dd HH:mm:ss"));
     }
 }

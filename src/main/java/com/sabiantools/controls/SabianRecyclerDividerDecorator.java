@@ -8,8 +8,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.View;
 
 /**
- * Created by Dannick on 9/20/2016.
+ * Created By Brian Sabana on 9/20/2016.
+ * Deprecated. Use {@link androidx.recyclerview.widget.DividerItemDecoration}
  */
+@Deprecated
 public class SabianRecyclerDividerDecorator extends RecyclerView.ItemDecoration {
 
     private Drawable drawable;

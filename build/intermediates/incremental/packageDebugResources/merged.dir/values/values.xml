@@ -89,6 +89,7 @@
     <dimen name="cardview_default_elevation">2dp</dimen>
     <dimen name="cardview_default_radius">2dp</dimen>
     <dimen name="cart_menu_size">9sp</dimen>
+    <dimen name="control_button_search_no_margin">5dp</dimen>
     <dimen name="control_sabian_round_button_corner_radius">5dp</dimen>
     <dimen name="control_sabian_round_button_radius_bottom">31dp</dimen>
     <dimen name="control_sabian_round_button_radius_top">31dp</dimen>
@@ -118,6 +119,7 @@
     <dimen name="sabian_home_adapter_margin">13dp</dimen>
     <dimen name="sabian_home_slider_layout">170dp</dimen>
     <dimen name="sabian_material_modal_header_height">150dp</dimen>
+    <dimen name="sabian_modal_image_size">300dp</dimen>
     <dimen name="sabian_modal_list_image_padding">10dp</dimen>
     <dimen name="sabian_modal_list_padding">15dp</dimen>
     <dimen name="sabian_modal_round_padding">10dp</dimen>
@@ -248,9 +250,45 @@
             <item name="android:windowActionBarOverlay">true</item>
             <item name="windowActionBarOverlay">true</item>
             <item name="android:windowContentOverlay">@null</item>
-            <!--<item name="android:windowTranslucentStatus">false</item>
-           -->
+            
         </style>
+    <declare-styleable name="SabianButtonText">
+        <attr format="string" name="sbt_text"/>
+        <attr format="string" name="sbt_hint"/>
+        <attr format="string" name="sbt_icon"/>
+        <attr format="color" name="sbt_textColor"/>
+        <attr format="color" name="sbt_hintColor"/>
+        <attr format="boolean" name="sbt_password"/>
+        <attr format="integer" name="sbt_vector_icon"/>
+        <attr format="color" name="sbt_vector_icon_color"/>
+        <attr format="dimension" name="sbt_textsize"/>
+        <attr format="reference" name="sbt_background_drawable"/>
+        <attr format="string" name="sbt_roboto_type"/>
+        <attr format="enum" name="sbt_icon_alignment">
+            <enum name="right" value="0"/>
+            <enum name="left" value="1"/>
+        </attr>
+        <attr format="string" name="sbt_style"/>
+        <attr format="dimension" name="sbt_padding"/>
+        <attr format="dimension" name="sbt_icon_size"/>
+        <attr name="android:inputType"/>
+        <attr name="android:gravity">
+            <flag name="bottom" value="80"/>
+            <flag name="center" value="17"/>
+            <flag name="center_horizontal" value="1"/>
+            <flag name="center_vertical" value="16"/>
+            <flag name="clip_horizontal" value="8"/>
+            <flag name="clip_vertical" value="128"/>
+            <flag name="end" value="8388613"/>
+            <flag name="fill" value="119"/>
+            <flag name="fill_horizontal" value="7"/>
+            <flag name="fill_vertical" value="112"/>
+            <flag name="left" value="3"/>
+            <flag name="right" value="5"/>
+            <flag name="start" value="8388611"/>
+            <flag name="top" value="48"/>
+        </attr>
+    </declare-styleable>
     <declare-styleable name="SabianCategoryBoxSlider">
         <attr format="dimension" name="sabianHorizontalColumnWidth"/>
         <attr format="dimension" name="sabianLeftMarginOffset"/>

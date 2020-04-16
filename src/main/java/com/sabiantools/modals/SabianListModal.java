@@ -327,7 +327,7 @@ public class SabianListModal extends Dialog {
         }
     }
 
-    public SabianListModal setOnOkayCickListener(View.OnClickListener onOkayCickListener) {
+    public SabianListModal setOnOkayClickListener(View.OnClickListener onOkayCickListener) {
         this.onOkayCickListener = onOkayCickListener;
         return this;
     }
@@ -415,6 +415,11 @@ public class SabianListModal extends Dialog {
 
         public ListItem(String title) {
             this.title = title;
+        }
+
+        public ListItem(long ID, String title){
+            this(title);
+            this.ID = ID;
         }
 
         public ListItem(String title, String subTitle) {
@@ -559,7 +564,6 @@ public class SabianListModal extends Dialog {
     public interface OnListItemSelectedListener {
         void onSelect(ListItem item, SabianListModal modal);
     }
-
     public class Loader{
         private ViewGroup vgContainer;
         private TextView txtTitle;
@@ -584,7 +588,6 @@ public class SabianListModal extends Dialog {
             txtTitle.setText(text);
         }
     }
-
     public class Error{
         private ViewGroup mainBody;
         private ViewGroup errorBody;

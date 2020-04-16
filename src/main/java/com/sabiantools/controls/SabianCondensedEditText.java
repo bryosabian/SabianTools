@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import androidx.appcompat.widget.AppCompatEditText;
 
 /**
- * Created by Dannick on 6/21/2016.
+ * Created By Brian Sabana on 6/21/2016.
  */
 public class SabianCondensedEditText extends AppCompatEditText {
 
@@ -107,7 +107,7 @@ public class SabianCondensedEditText extends AppCompatEditText {
     {
         if (mListeners == null)
         {
-            mListeners = new ArrayList<TextWatcher>();
+            mListeners = new ArrayList<>();
         }
         mListeners.add(watcher);
 

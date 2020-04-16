@@ -7,7 +7,7 @@ import android.view.View;
 import java.util.ArrayList;
 
 /**
- * Created by Dannick on 9/20/2016.
+ * Created By Brian Sabana on 9/20/2016.
  */
 public class SabianRecyclerMarginTopDecorator extends RecyclerView.ItemDecoration {
 

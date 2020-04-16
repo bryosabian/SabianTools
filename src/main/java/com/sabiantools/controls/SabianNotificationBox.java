@@ -13,7 +13,7 @@ import com.gc.materialdesign.views.ButtonFlat;
 import com.gc.materialdesign.views.Card;
 
 /**
- * Created by Dannick on 7/18/2016.
+ * Created By Brian Sabana on 7/18/2016.
  */
 public class SabianNotificationBox extends FrameLayout {
 

@@ -14,7 +14,7 @@ import com.gc.materialdesign.views.Card;
 import com.sabiantools.R;
 
 /**
- * Created by Dannick on 7/22/2016.
+ * Created By Brian Sabana on 7/22/2016.
  */
 public class SabianStatsBox extends FrameLayout{
 

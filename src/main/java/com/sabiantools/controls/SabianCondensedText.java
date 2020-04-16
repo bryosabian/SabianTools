@@ -8,7 +8,7 @@ import android.util.AttributeSet;
 import com.sabiantools.R;
 
 /**
- * Created by Dannick on 6/21/2016.
+ * Created By Brian Sabana on 6/21/2016.
  */
 public class SabianCondensedText extends androidx.appcompat.widget.AppCompatTextView /*TextView*/{
 

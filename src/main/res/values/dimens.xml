@@ -81,4 +81,7 @@
     <dimen name="filter_button_corner_radius">3dp</dimen>
     <dimen name="filter_button_radius_top">3dp</dimen>
     <dimen name="filter_button_radius_bottom">3dp</dimen>
+    <dimen name="sabian_modal_image_size">300dp</dimen>
+
+    <dimen name="control_button_search_no_margin">5dp</dimen>
 </resources>
