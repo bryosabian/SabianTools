@@ -1,0 +1,27 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.sabiantools"
+4    android:versionCode="1050"
+5    android:versionName="1.0.5" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="15"
+8-->/Users/katekiguru/Desktop/Sabian Desktop/Sabian Projects/Android/Uwanjani/app/libs/sabiantools/src/main/AndroidManifest.xml
+9        android:targetSdkVersion="28" />
+9-->/Users/katekiguru/Desktop/Sabian Desktop/Sabian Projects/Android/Uwanjani/app/libs/sabiantools/src/main/AndroidManifest.xml
+10
+11    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+11-->/Users/katekiguru/Desktop/Sabian Desktop/Sabian Projects/Android/Uwanjani/app/libs/sabiantools/src/main/AndroidManifest.xml:5:5-79
+11-->/Users/katekiguru/Desktop/Sabian Desktop/Sabian Projects/Android/Uwanjani/app/libs/sabiantools/src/main/AndroidManifest.xml:5:22-76
+12
+13    <application
+13-->/Users/katekiguru/Desktop/Sabian Desktop/Sabian Projects/Android/Uwanjani/app/libs/sabiantools/src/main/AndroidManifest.xml:6:5-11:19
+14        android:allowBackup="true"
+14-->/Users/katekiguru/Desktop/Sabian Desktop/Sabian Projects/Android/Uwanjani/app/libs/sabiantools/src/main/AndroidManifest.xml:7:9-35
+15        android:label="@string/app_name"
+15-->/Users/katekiguru/Desktop/Sabian Desktop/Sabian Projects/Android/Uwanjani/app/libs/sabiantools/src/main/AndroidManifest.xml:8:9-41
+16        android:supportsRtl="true" >
+16-->/Users/katekiguru/Desktop/Sabian Desktop/Sabian Projects/Android/Uwanjani/app/libs/sabiantools/src/main/AndroidManifest.xml:9:9-35
+17    </application>
+18
+19</manifest>
