@@ -268,21 +268,6 @@ public class SabianListModal extends Dialog {
     }
 
     private void searchItems(String search) {
-        /**
-         *  surveysList.clear()
-         *         allSurveys.forEach { item ->
-         *             val ptn = Pattern.compile(".*$search.*", Pattern.CASE_INSENSITIVE)
-         *             if (ptn.matcher(item.name).matches()) {
-         *                 surveysList.add(item)
-         *             }
-         *         }
-         *         if (surveysList.isEmpty()) {
-         *             showErrorMessage("0 Reports Found","No report matches your criteria",false)
-         *         } else {
-         *             hideErrorMessage()
-         *         }
-         *         adapter?.notifyDataSetChanged()
-         */
         listItems.clear();
         if (SabianUtilities.IsStringEmpty(search)) {
             listItems.addAll(allItems);
