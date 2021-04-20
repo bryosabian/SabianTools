@@ -392,6 +392,10 @@ public class SabianUtilities {
         return context;
     }
 
+    public static String noWhiteSpace(String text) {
+        return text.trim().replaceAll("\\s+", "");
+    }
+
     public enum TYPE_MESSAGE {
         ERROR("fa-exclamation-circle", R.drawable.sabian_toast_layout_danger),
         SUCCESS("fa-check-circle", R.drawable.sabian_toast_layout_success),

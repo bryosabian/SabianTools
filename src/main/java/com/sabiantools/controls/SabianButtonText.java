@@ -360,13 +360,14 @@ public class SabianButtonText extends FrameLayout {
     @Override
     public void setOnClickListener(final OnClickListener listener) {
         super.setOnClickListener(listener);
+        boolean isClickable = listener != null;
 
-        editText.setFocusable(false);
-        editText.setFocusableInTouchMode(false);
+        editText.setFocusable(!isClickable);
+        editText.setFocusableInTouchMode(!isClickable);
 
-        editText.setClickable(true);
-        vgRightContainer.setClickable(true);
-        vgLeftContainer.setClickable(true);
+        editText.setClickable(isClickable);
+        vgRightContainer.setClickable(isClickable);
+        vgLeftContainer.setClickable(isClickable);
 
 
         vgMainContainer.setOnClickListener(listener);
