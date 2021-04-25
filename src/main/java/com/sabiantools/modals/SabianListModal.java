@@ -39,10 +39,9 @@ import java.util.List;
 import java.util.regex.Pattern;
 
 public class SabianListModal extends Dialog {
-    private View view;
     private ViewGroup vgBody;
     private ButtonFlat btnOk, btnCancel;
-    private View.OnClickListener onOkayCickListener, onCancelClickListener;
+    private View.OnClickListener onOkayClickListener, onCancelClickListener;
     private String okayButtonText, cancelButtonText;
     private ListView lstModalList;
     private @ColorRes
@@ -220,8 +219,8 @@ public class SabianListModal extends Dialog {
             btnCancel.setVisibility(View.GONE);
         }
 
-        if (onOkayCickListener != null) {
-            btnOk.setOnClickListener(onOkayCickListener);
+        if (onOkayClickListener != null) {
+            btnOk.setOnClickListener(onOkayClickListener);
         } else {
             btnOk.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -335,7 +334,7 @@ public class SabianListModal extends Dialog {
     }
 
     public SabianListModal setOnOkayClickListener(View.OnClickListener onOkayCickListener) {
-        this.onOkayCickListener = onOkayCickListener;
+        this.onOkayClickListener = onOkayCickListener;
         return this;
     }
 
@@ -600,7 +599,6 @@ public class SabianListModal extends Dialog {
             txtTitle.setText(text);
         }
     }
-
     public class Error {
         private ViewGroup mainBody;
         private ViewGroup errorBody;

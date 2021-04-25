@@ -22,6 +22,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 
 import com.beardedhen.androidbootstrap.FontAwesomeText;
+import com.sabiantools.controls.texts.TypeFaceFactory;
 import com.sabiantools.utilities.SabianUtilities;
 import com.sabiantools.R;
 
@@ -121,8 +122,6 @@ public class SabianButtonText extends FrameLayout {
 
         vgLeftContainer = root.findViewById(R.id.rll_ControlButtonContainerLeft);
         vgRightContainer = root.findViewById(R.id.rll_ControlButtonContainerRight);
-
-        //editText.setTypeface(Typeface.createFromAsset(_context.getAssets(), "fonts/RobotoCondensed-Regular.ttf"));
     }
 
     private void activateTextListener() {
@@ -149,7 +148,7 @@ public class SabianButtonText extends FrameLayout {
     public void setRobotoType(String type) {
         if (SabianUtilities.IsStringEmpty(type))
             return;
-        editText.setTypeface(Typeface.createFromAsset(_context.getAssets(), "fonts/" + type + ".ttf"));
+        editText.setTypeface(TypeFaceFactory.getTypeFace(_context, "fonts/" + type + ".ttf"));
     }
 
     public void setText(String text) {

@@ -16,6 +16,7 @@ import android.widget.FrameLayout;
 
 import com.beardedhen.androidbootstrap.FontAwesomeText;
 import com.sabiantools.R;
+import com.sabiantools.controls.texts.TypeFaceFactory;
 
 /**
  * Created By Brian Sabana on 6/21/2016.
@@ -33,107 +34,107 @@ public class SabianTransparentButtonText extends FrameLayout {
     private Context _context;
     private int inputType;
 
-    public SabianTransparentButtonText(Context context)
-    {
+    public SabianTransparentButtonText(Context context) {
         super(context);
 
-        this._context=context;
+        this._context = context;
 
         init_elements();
     }
-    public SabianTransparentButtonText(Context context, AttributeSet set)
-    {
-        super(context,set);
 
-        this._context=context;
+    public SabianTransparentButtonText(Context context, AttributeSet set) {
+        super(context, set);
 
-        init_elements();
-
-        init_attributes(set);
-    }
-    public SabianTransparentButtonText(Context context, AttributeSet set, int defStyle)
-    {
-        super(context,set,defStyle);
-
-        this._context=context;
+        this._context = context;
 
         init_elements();
 
         init_attributes(set);
     }
 
-    private void init_elements()
-    {
-        this.inflater=LayoutInflater.from(_context);
+    public SabianTransparentButtonText(Context context, AttributeSet set, int defStyle) {
+        super(context, set, defStyle);
 
-        View view=inflater.inflate(R.layout.sabian_transparent_button_text,this,true);
+        this._context = context;
 
-        icon=(FontAwesomeText)view.findViewById(R.id.img_SabianEditIcon);
+        init_elements();
 
-        editText=(EditText)view.findViewById(R.id.txt_SabianEditText);
-
-        editText.setTypeface(Typeface.createFromAsset(_context.getAssets(), "fonts/RobotoCondensed-Regular.ttf"));
+        init_attributes(set);
     }
-    public void setText(String text)
-    {
+
+    private void init_elements() {
+        this.inflater = LayoutInflater.from(_context);
+
+        View view = inflater.inflate(R.layout.sabian_transparent_button_text, this, true);
+
+        icon = (FontAwesomeText) view.findViewById(R.id.img_SabianEditIcon);
+
+        editText = (EditText) view.findViewById(R.id.txt_SabianEditText);
+
+        editText.setTypeface(TypeFaceFactory.getTypeFace(_context, "fonts/RobotoCondensed-Regular.ttf"));
+    }
+
+    public void setText(String text) {
         this.editText.setText(text);
     }
-    public void setHint(String hint)
-    {
+
+    public void setHint(String hint) {
         this.editText.setHint(hint);
     }
-    public void setIcon(String favicon)
-    {
+
+    public void setIcon(String favicon) {
         this.icon.setIcon(favicon);
     }
-    public void setTextColor(int colorRes)
-    {
+
+    public void setTextColor(int colorRes) {
         this.editText.setTextColor(colorRes);
 
         this.icon.setTextColor(colorRes);
     }
-    public void setTextColor(String color)
-    {
-        int _col=Color.parseColor(color);
+
+    public void setTextColor(String color) {
+        int _col = Color.parseColor(color);
 
         this.setTextColor(_col);
     }
-    public void setPassword(boolean yes)
-    {
-        if(yes) {
+
+    public void setPassword(boolean yes) {
+        if (yes) {
             this.editText.setTransformationMethod(PasswordTransformationMethod.getInstance());
             return;
         }
 
     }
-    public String getText(){
 
-        String txt=editText.getText().toString();
+    public String getText() {
+
+        String txt = editText.getText().toString();
 
         return txt;
     }
+
     public void setTextSize(float size) {
         if (size != NO_RES) {
-            editText.setTextSize(TypedValue.COMPLEX_UNIT_PX,size);
-            icon.setTextSize(TypedValue.COMPLEX_UNIT_PX,size);
+            editText.setTextSize(TypedValue.COMPLEX_UNIT_PX, size);
+            icon.setTextSize(TypedValue.COMPLEX_UNIT_PX, size);
         }
     }
+
     public void setInputType(int inputType) {
-        this.inputType=inputType;
+        this.inputType = inputType;
         if (inputType != NO_RES) {
             editText.setInputType(inputType);
         }
     }
-    private void init_attributes(AttributeSet set)
-    {
-        Resources res=_context.getResources();
 
-        TypedArray a=_context.obtainStyledAttributes(set,R.styleable.SabianTransparentButtonText);
+    private void init_attributes(AttributeSet set) {
+        Resources res = _context.getResources();
 
-        int aCount=a.getIndexCount();
+        TypedArray a = _context.obtainStyledAttributes(set, R.styleable.SabianTransparentButtonText);
 
-        for(int i=0;i<aCount;++i)
-        {
+        int aCount = a.getIndexCount();
+
+        for (int i = 0; i < aCount; ++i) {
             int attr = a.getIndex(i);
             if (attr == R.styleable.SabianTransparentButtonText_sabian_edit_icon) {
                 setIcon(a.getString(attr));
@@ -145,12 +146,11 @@ public class SabianTransparentButtonText extends FrameLayout {
                 this.setHint(a.getString(attr));
             } else if (attr == R.styleable.SabianTransparentButtonText_sabian_edit_password) {
                 this.setPassword(a.getBoolean(attr, false));
-            }
-            else if (attr == R.styleable.SabianTransparentButtonText_android_inputType) {
+            } else if (attr == R.styleable.SabianTransparentButtonText_android_inputType) {
                 setInputType(a.getInt(attr, InputType.TYPE_CLASS_TEXT));
             }
         }
-       // set.getAttributeName()
+        // set.getAttributeName()
     }
 
 

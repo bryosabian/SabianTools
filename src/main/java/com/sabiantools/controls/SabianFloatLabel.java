@@ -9,6 +9,7 @@ import android.widget.EditText;
 
 import com.iangclifton.android.floatlabel.FloatLabel;
 import com.sabiantools.R;
+import com.sabiantools.controls.texts.TypeFaceFactory;
 
 /**
  * Created By Brian Sabana on 7/6/2016.
@@ -38,19 +39,18 @@ public class SabianFloatLabel extends FloatLabel {
     }
 
     private void init_type_face() {
-        typeface = Typeface.createFromAsset(_context.getAssets(), "fonts/RobotoCondensed-Regular.ttf");
-        //this.setTypeface(typeface);
+        typeface = TypeFaceFactory.getTypeFace(_context, "fonts/RobotoCondensed-Regular.ttf");
         this.getEditText().setTypeface(typeface);
 
     }
 
     public void setCondensed(String type) {
-        typeface = Typeface.createFromAsset(_context.getAssets(), "fonts/RobotoCondensed-" + type + ".ttf");
+        typeface = TypeFaceFactory.getTypeFace(_context, "fonts/RobotoCondensed-" + type + ".ttf");
         this.getEditText().setTypeface(typeface);
     }
 
     public void setRoboto(String type) {
-        typeface = Typeface.createFromAsset(_context.getAssets(), "fonts/Roboto-" + type + ".ttf");
+        typeface = TypeFaceFactory.getTypeFace(_context, "fonts/Roboto-" + type + ".ttf");
         this.getEditText().setTypeface(typeface);
     }
 
@@ -68,7 +68,7 @@ public class SabianFloatLabel extends FloatLabel {
         this.getEditText().setText(text);
     }
 
-    public void setHint(String hint){
+    public void setHint(String hint) {
         getEditText().setHint(hint);
     }
 

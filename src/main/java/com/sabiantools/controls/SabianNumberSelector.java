@@ -13,6 +13,7 @@ import android.widget.EditText;
 import android.widget.FrameLayout;
 
 import com.sabiantools.R;
+import com.sabiantools.controls.texts.TypeFaceFactory;
 import com.sabiantools.utilities.SabianUtilities;
 
 /**
@@ -68,7 +69,7 @@ public class SabianNumberSelector extends FrameLayout {
 
         txt_Number=(EditText)findViewById(R.id.txt_SabianNumberSelectorText);
 
-        txt_Number.setTypeface(Typeface.createFromAsset(_context.getAssets(), "fonts/RobotoCondensed-Regular.ttf"));
+        txt_Number.setTypeface(TypeFaceFactory.getTypeFace(_context,"fonts/RobotoCondensed-Regular.ttf"));
 
         btn_Add.setOnClickListener(new OnClickListener() {
             @Override
