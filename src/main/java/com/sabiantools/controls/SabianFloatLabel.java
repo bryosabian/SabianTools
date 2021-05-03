@@ -4,8 +4,6 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Typeface;
 import android.util.AttributeSet;
-import android.view.Gravity;
-import android.widget.EditText;
 
 import com.iangclifton.android.floatlabel.FloatLabel;
 import com.sabiantools.R;

@@ -2,14 +2,14 @@ package com.sabiantools.utilities;
 
 import android.content.Context;
 import android.os.Bundle;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.sabiantools.R;
 
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import tr.xip.errorview.ErrorView;

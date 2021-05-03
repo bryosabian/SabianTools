@@ -14,11 +14,12 @@ import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.ShapeDrawable;
 import android.graphics.drawable.shapes.RoundRectShape;
-import androidx.annotation.IntDef;
-import androidx.annotation.NonNull;
 import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.style.ImageSpan;
+
+import androidx.annotation.IntDef;
+import androidx.annotation.NonNull;
 
 
 /**

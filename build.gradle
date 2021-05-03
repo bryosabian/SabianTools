@@ -17,24 +17,15 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    //testCompile 'junit:junit:4.12'
-    /compile 'com.android.support:appcompat-v7:23.4.0'
-    compile 'com.android.support:design:23.4.0'
-    compile 'com.iangclifton.android:floatlabel:1.0.4'
-    compile project(':libs:Bootstrap')
-    compile project(':libs:Gson')
-    compile project(':libs:Guava')
-    compile project(':libs:JodaTime')
-    compile project(':libs:MaterialDesign')
-    compile project(':libs:Picasso')
-    compile project(':libs:SabianBlankView')
-    compile project(':libs:SabianViewSlider')
-    compile project(':libs:Jsoup')
-    compile 'com.android.support:recyclerview-v7:23.4.0'/
 
     implementation supportDependencies.appCompat
     implementation supportDependencies.recyclerView
@@ -44,7 +35,6 @@ dependencies {
     implementation SabianDependancies.JodaTime
     implementation SabianDependancies.MaterialDesign
     implementation SabianDependancies.Picasso
-    //compile SabianDependancies.PicassoHttp
     implementation SabianDependancies.SabianBlankView
     implementation SabianDependancies.SabianViewSlider
     implementation SabianDependancies.Jsoup

@@ -1,7 +1,6 @@
 package com.sabiantools.utilities;
 
 import android.content.Context;
-import androidx.annotation.DrawableRes;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,9 +8,11 @@ import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
+import com.beardedhen.androidbootstrap.FontAwesomeText;
 import com.sabiantools.R;
 import com.sabiantools.controls.SabianCondensedText;
-import com.beardedhen.androidbootstrap.FontAwesomeText;
+
+import androidx.annotation.DrawableRes;
 
 /**
  * Created by Brian Sabana on 10/02/2017.

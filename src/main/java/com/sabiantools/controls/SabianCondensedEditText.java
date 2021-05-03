@@ -5,7 +5,6 @@ import android.content.res.TypedArray;
 import android.graphics.Typeface;
 import android.text.TextWatcher;
 import android.util.AttributeSet;
-import android.widget.EditText;
 
 import com.sabiantools.R;
 import com.sabiantools.controls.texts.TypeFaceFactory;
@@ -96,12 +95,16 @@ public class SabianCondensedEditText extends AppCompatEditText {
         super.removeTextChangedListener(watcher);
     }
 
+    public void setTextChangeListener(TextWatcher watcher) {
+        clearTextChangedListeners();
+        addTextChangedListener(watcher);
+    }
+
     public void clearTextChangedListeners() {
         if (mListeners != null) {
             for (TextWatcher watcher : mListeners) {
                 super.removeTextChangedListener(watcher);
             }
-
             mListeners.clear();
             mListeners = null;
         }

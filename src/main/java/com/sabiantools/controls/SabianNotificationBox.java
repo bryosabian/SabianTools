@@ -1,16 +1,16 @@
 package com.sabiantools.controls;
 
 import android.content.Context;
-
-import androidx.annotation.ColorRes;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.FrameLayout;
 
-import com.sabiantools.R;
 import com.gc.materialdesign.views.ButtonFlat;
 import com.gc.materialdesign.views.Card;
+import com.sabiantools.R;
+
+import androidx.annotation.ColorRes;
 
 /**
  * Created By Brian Sabana on 7/18/2016.

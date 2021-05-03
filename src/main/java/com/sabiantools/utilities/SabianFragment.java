@@ -1,17 +1,16 @@
 package com.sabiantools.utilities;
 
 import android.app.Activity;
-import androidx.annotation.IdRes;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 
+import com.gc.materialdesign.widgets.SnackBar;
 import com.sabiantools.R;
 
-import com.gc.materialdesign.widgets.SnackBar;
+import androidx.annotation.IdRes;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
 
 /**
  * Created By Brian Sabana on 6/20/2016.

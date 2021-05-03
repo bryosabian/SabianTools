@@ -5,14 +5,6 @@ import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-
-import androidx.annotation.ColorRes;
-import androidx.annotation.DrawableRes;
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.core.content.ContextCompat;
-import androidx.vectordrawable.graphics.drawable.VectorDrawableCompat;
-
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
@@ -37,6 +29,13 @@ import com.sabiantools.utilities.SabianUtilities;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Pattern;
+
+import androidx.annotation.ColorRes;
+import androidx.annotation.DrawableRes;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.core.content.ContextCompat;
+import androidx.vectordrawable.graphics.drawable.VectorDrawableCompat;
 
 public class SabianListModal extends Dialog {
     private ViewGroup vgBody;

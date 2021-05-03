@@ -8,7 +8,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.FrameLayout;
 
-
 import com.beardedhen.androidbootstrap.FontAwesomeText;
 import com.gc.materialdesign.views.Card;
 import com.sabiantools.R;

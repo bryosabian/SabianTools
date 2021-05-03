@@ -1,8 +1,9 @@
 package com.sabiantools.controls.recyclerview;
 
 import android.graphics.Rect;
-import androidx.recyclerview.widget.RecyclerView;
 import android.view.View;
+
+import androidx.recyclerview.widget.RecyclerView;
 
 /**
  * Created by Brian Sabana on 11/03/2018.

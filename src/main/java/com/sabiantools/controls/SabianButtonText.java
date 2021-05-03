@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.graphics.Color;
-import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.text.Editable;
 import android.text.InputType;
@@ -14,7 +13,6 @@ import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
@@ -22,9 +20,9 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 
 import com.beardedhen.androidbootstrap.FontAwesomeText;
+import com.sabiantools.R;
 import com.sabiantools.controls.texts.TypeFaceFactory;
 import com.sabiantools.utilities.SabianUtilities;
-import com.sabiantools.R;
 
 import androidx.annotation.ColorRes;
 import androidx.annotation.DimenRes;

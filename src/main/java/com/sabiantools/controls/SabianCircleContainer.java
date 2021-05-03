@@ -6,14 +6,11 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.RectF;
-import android.graphics.Typeface;
 import android.text.TextPaint;
 import android.util.AttributeSet;
-import android.view.View;
 import android.widget.RelativeLayout;
 
 import com.sabiantools.R;
-import com.sabiantools.utilities.SabianUtilities;
 
 /**
  * Created by Brian Sabana on 13/02/2017.

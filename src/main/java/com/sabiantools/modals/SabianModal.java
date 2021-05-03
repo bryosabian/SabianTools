@@ -5,10 +5,6 @@ import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-
-import androidx.annotation.ColorRes;
-import androidx.annotation.NonNull;
-
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
@@ -20,6 +16,9 @@ import android.widget.TextView;
 import com.gc.materialdesign.views.ButtonFlat;
 import com.sabiantools.R;
 import com.sabiantools.utilities.SabianUtilities;
+
+import androidx.annotation.ColorRes;
+import androidx.annotation.NonNull;
 
 public class SabianModal extends Dialog {
 

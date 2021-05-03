@@ -12,10 +12,6 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.ParcelFileDescriptor;
-
-import androidx.annotation.DrawableRes;
-import androidx.annotation.Nullable;
-
 import android.util.Base64;
 import android.util.Log;
 import android.view.View;
@@ -52,11 +48,13 @@ import java.io.PrintWriter;
 import java.lang.reflect.Modifier;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
-import java.text.DecimalFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import androidx.annotation.DrawableRes;
+import androidx.annotation.Nullable;
 
 /**
  * Created by Brian Sabana on 12/01/2017.

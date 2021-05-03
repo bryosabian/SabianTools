@@ -5,10 +5,6 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import androidx.annotation.DrawableRes;
-import androidx.annotation.IdRes;
-import androidx.annotation.Nullable;
-import androidx.vectordrawable.graphics.drawable.VectorDrawableCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,9 +13,11 @@ import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-
 import com.gc.materialdesign.views.ButtonFlat;
 import com.sabiantools.R;
+
+import androidx.annotation.DrawableRes;
+import androidx.vectordrawable.graphics.drawable.VectorDrawableCompat;
 
 public class SabianMaterialAlert extends android.app.Dialog {
 

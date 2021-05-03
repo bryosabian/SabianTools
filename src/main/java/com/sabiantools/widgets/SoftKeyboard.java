@@ -3,10 +3,7 @@ package com.sabiantools.widgets;
  * Author: Felipe Herranz (felhr85@gmail.com)
  * Contributors:Francesco Verheye (verheye.francesco@gmail.com)
  * 		Israel Dominguez (dominguez.israel@gmail.com)
- */	
-import java.util.ArrayList;
-import java.util.List;
-import java.util.concurrent.atomic.AtomicBoolean;
+ */
 
 import android.os.Handler;
 import android.os.Message;
@@ -14,6 +11,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.atomic.AtomicBoolean;
  
 public class SoftKeyboard implements View.OnFocusChangeListener
 {
