@@ -260,7 +260,7 @@ public class SabianUtilities {
     }
 
     /**
-     * Gets distance between two geo codinates in KM
+     * Gets distance between two geo coodinates in KM
      *
      * @param latitude1
      * @param longitude1
@@ -284,6 +284,20 @@ public class SabianUtilities {
         double distance = R * c;
         distance = Math.pow(distance, 2);
         return Math.sqrt(distance);
+    }
+
+    /**
+     * Gets distance between two geo coodinates in Meters
+     *
+     * @param latitude1
+     * @param longitude1
+     * @param latitude2
+     * @param longitude2
+     * @return distance in Meters
+     */
+    public static double getDistanceBetweenInMeters(double latitude1, double longitude1, double latitude2, double longitude2) {
+        double distance = getDistanceBetween(latitude1, longitude1, latitude2, longitude2);
+        return distance * 1000;
     }
 
     public static Gson GetStandardGson() {
