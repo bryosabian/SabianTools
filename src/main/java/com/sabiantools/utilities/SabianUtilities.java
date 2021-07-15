@@ -53,7 +53,6 @@ import java.util.Date;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import androidx.annotation.DrawableRes;
 import androidx.annotation.Nullable;
 
 /**
@@ -77,23 +76,23 @@ public class SabianUtilities {
     }
 
     public static void DisplayMessage(String message) {
-        DisplayMessage(message, TYPE_MESSAGE.ERROR);
+        DisplayMessage(message, SabianToast.MessageType.ERROR);
     }
 
 
-    public static void DisplayMessage(String message, TYPE_MESSAGE type_message) {
+    public static void DisplayMessage(String message, SabianToast.MessageType messageType) {
         SabianToast toast = new SabianToast(context);
         toast.setText(message);
-        toast.setIcon(type_message.getIcon());
-        toast.setCustomType(type_message.getDrawableResource());
+        toast.setIcon(messageType.getIcon());
+        toast.setCustomType(messageType.getDrawableResource());
         toast.display(Toast.LENGTH_SHORT);
     }
 
-    public static void DisplayMessage(Context context, String message, TYPE_MESSAGE type_message) {
+    public static void DisplayMessage(Context context, String message, SabianToast.MessageType messageType) {
         SabianToast toast = new SabianToast(context);
         toast.setText(message);
-        toast.setIcon(type_message.getIcon());
-        toast.setCustomType(type_message.getDrawableResource());
+        toast.setIcon(messageType.getIcon());
+        toast.setCustomType(messageType.getDrawableResource());
         toast.display(Toast.LENGTH_SHORT);
     }
 
@@ -153,6 +152,10 @@ public class SabianUtilities {
                 }
             });
         modal.show();
+    }
+
+    public static void WriteLog(String ID, String message) {
+        WriteLog(String.format("%s : %s", ID, message));
     }
 
     public static void WriteLog(String message) {
@@ -301,19 +304,18 @@ public class SabianUtilities {
     }
 
     public static Gson GetStandardGson() {
-        return GetGson(Modifier.PRIVATE, Modifier.TRANSIENT);
+        return GetGson(Modifier.PRIVATE, Modifier.TRANSIENT, Modifier.STATIC);
     }
 
     public static Gson GetGson(int... excludeModifiers) {
         GsonBuilder builder = new GsonBuilder();
-        //builder.setLenient();
         builder.excludeFieldsWithModifiers(excludeModifiers);
         return builder.create();
     }
 
     public static GsonBuilder getStandardGsonBuilder() {
         GsonBuilder builder = new GsonBuilder();
-        builder.excludeFieldsWithModifiers(Modifier.PRIVATE, Modifier.TRANSIENT);
+        builder.excludeFieldsWithModifiers(Modifier.PRIVATE, Modifier.TRANSIENT, Modifier.STATIC);
         return builder;
     }
 
@@ -406,30 +408,6 @@ public class SabianUtilities {
 
     public static String noWhiteSpace(String text) {
         return text.trim().replaceAll("\\s+", "");
-    }
-
-    public enum TYPE_MESSAGE {
-        ERROR("fa-exclamation-circle", R.drawable.sabian_toast_layout_danger),
-        SUCCESS("fa-check-circle", R.drawable.sabian_toast_layout_success),
-        INFORMATION("fa-info-circle", R.drawable.sabian_toast_layout_primary);
-
-        private String icon;
-
-        private @DrawableRes
-        int drawableResource;
-
-        TYPE_MESSAGE(String icon, @DrawableRes int drawableResource) {
-            this.icon = icon;
-            this.drawableResource = drawableResource;
-        }
-
-        public String getIcon() {
-            return icon;
-        }
-
-        public int getDrawableResource() {
-            return drawableResource;
-        }
     }
 
     public static byte[] getBytesFromUri(Uri uri) {
@@ -548,6 +526,62 @@ public class SabianUtilities {
         }
         is.close();
         return bytes;
+    }
+
+
+    public static Bitmap getImageFromBase64(String base64) {
+        byte[] b = Base64.decode(base64, Base64.DEFAULT);
+        //ByteArrayInputStream stream = new ByteArrayInputStream(b);
+        Bitmap bmp = BitmapFactory.decodeByteArray(b, 0, b.length);
+        return bmp;
+    }
+
+    /**
+     * Stores bitmap to phone storage
+     *
+     * @param bitmap
+     * @param directory   The full path directory to store the image. Exclusive of trailing path
+     * @param newFileName The new file name. Optional
+     * @return File if succeeded
+     * @throws Exception
+     */
+    public static File storeBitmap(Bitmap bitmap, String directory, @Nullable String newFileName) throws Exception {
+
+
+        Throwable error = null;
+        FileOutputStream out = null;
+        File file = null;
+
+        try {
+            File myDir = new File(directory);
+            myDir.mkdirs();
+
+            String fileName = newFileName;
+            if (SabianUtilities.IsStringEmpty(fileName)) {
+                fileName = DateTime.now().toString("yyyy-MM-ddhms") + ".png";
+            }
+
+            file = new File(myDir, fileName);
+
+            if (file.exists())
+                file.delete();
+
+            out = new FileOutputStream(file);
+            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, out);
+
+        } catch (Exception e) {
+            error = e;
+        } finally {
+            if (out != null) {
+                out.flush();
+                out.close();
+            }
+        }
+
+        if (error != null)
+            throw new Exception(error);
+
+        return file;
     }
 
     public static void showLoadingDialog(String title) {
@@ -689,5 +723,43 @@ public class SabianUtilities {
 
     public static String getCurrentDateString() {
         return DateTime.now().toString(DateTimeFormat.forPattern("yyyy-MM-dd HH:mm:ss"));
+    }
+
+    public static boolean validatePhoneNumber(String phoneNo) {
+        //validate phone numbers of format "1234567890"
+        if (phoneNo.matches("\\d{10,11}")) return true;
+            //validating phone number with -, . or spaces
+        else if (phoneNo.matches("\\d{3}[-\\.\\s]\\d{3}[-\\.\\s]\\d{4}")) return true;
+            //validating phone number with extension length from 3 to 5
+        else if (phoneNo.matches("\\d{3}-\\d{3}-\\d{4}\\s(x|(ext))\\d{3,5}")) return true;
+            //validating phone number where area code is in braces ()
+        else if (phoneNo.matches("\\(\\d{3}\\)-\\d{3}-\\d{4}")) return true;
+            //validating phone number where number is +254700070482
+        else if (phoneNo.matches("^\\+\\d{1,3}(\\d{9,11})$")) return true;
+        //return false if nothing matches the input
+        /**
+         * ^\+\d{1,3}(\d{9})$
+         */
+        else return false;
+
+    }
+
+    /**
+     * Load together with the \\d formats
+     *
+     * @param phoneNo
+     * @param formats
+     * @return
+     */
+    public static boolean validatePhoneNumber(String phoneNo, String[] formats) {
+        if (formats == null)
+            return validatePhoneNumber(phoneNo);
+        for (String format : formats) {
+            if (phoneNo.matches(format)) {
+                return true;
+            }
+        }
+        return false;
+
     }
 }

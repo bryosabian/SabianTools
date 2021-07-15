@@ -108,4 +108,27 @@ public class SabianToast {
         toast.show();
     }
 
+    public enum MessageType {
+        ERROR("fa-exclamation-circle", R.drawable.sabian_toast_layout_danger),
+        SUCCESS("fa-check-circle", R.drawable.sabian_toast_layout_success),
+        INFORMATION("fa-info-circle", R.drawable.sabian_toast_layout_primary);
+
+        private String icon;
+
+        private @DrawableRes
+        int drawableResource;
+
+        MessageType(String icon, @DrawableRes int drawableResource) {
+            this.icon = icon;
+            this.drawableResource = drawableResource;
+        }
+
+        public String getIcon() {
+            return icon;
+        }
+
+        public int getDrawableResource() {
+            return drawableResource;
+        }
+    }
 }

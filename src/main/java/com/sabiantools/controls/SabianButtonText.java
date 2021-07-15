@@ -354,6 +354,14 @@ public class SabianButtonText extends FrameLayout {
         vgRightContainer.setEnabled(is);
     }
 
+    public void setDisplayIcon(boolean display) {
+        int visibility = (display) ? VISIBLE : GONE;
+        icon.setVisibility(visibility);
+        imgIcon.setVisibility(visibility);
+        iconRight.setVisibility(visibility);
+        imgRightIcon.setVisibility(visibility);
+    }
+
     @Override
     public void setOnClickListener(final OnClickListener listener) {
         super.setOnClickListener(listener);
@@ -411,6 +419,10 @@ public class SabianButtonText extends FrameLayout {
                 setPadding(a.getDimensionPixelSize(attr, -1));
             } else if (attr == R.styleable.SabianButtonText_sbt_icon_size) {
                 setIconSize(a.getDimensionPixelSize(attr, -1));
+            } else if (attr == R.styleable.SabianButtonText_sbt_display_icon) {
+                setDisplayIcon(a.getBoolean(attr, true));
+            } else if (attr == R.styleable.SabianButtonText_sbt_enabled) {
+                setEnabled(a.getBoolean(attr, true));
             } else if (attr == R.styleable.SabianButtonText_android_gravity) {
                 setGravity(a.getInt(attr, Gravity.CENTER));
             }

@@ -19,6 +19,9 @@
         <attr name="sbt_style" format="string"></attr>
         <attr name="sbt_padding" format="dimension"></attr>
         <attr name="sbt_icon_size" format="dimension"></attr>
+        <attr name="sbt_display_icon" format="boolean"></attr>
+        <attr name="sbt_enabled" format="boolean"></attr>
+
         <attr name="android:inputType" />
         <attr name="android:gravity">
             <flag name="bottom" value="80" />
