@@ -3,21 +3,9 @@ manifest
 ADDED from /Users/katekiguru/Desktop/Sabian Desktop/Sabian Projects/Android/Uwanjani/app/libs/sabiantools/src/main/AndroidManifest.xml:1:1-13:12
 INJECTED from /Users/katekiguru/Desktop/Sabian Desktop/Sabian Projects/Android/Uwanjani/app/libs/sabiantools/src/main/AndroidManifest.xml:1:1-13:12
 INJECTED from /Users/katekiguru/Desktop/Sabian Desktop/Sabian Projects/Android/Uwanjani/app/libs/sabiantools/src/main/AndroidManifest.xml:1:1-13:12
-INJECTED from /Users/katekiguru/Desktop/Sabian Desktop/Sabian Projects/Android/Uwanjani/app/libs/sabiantools/src/main/AndroidManifest.xml:1:1-13:12
-INJECTED from /Users/katekiguru/Desktop/Sabian Desktop/Sabian Projects/Android/Uwanjani/app/libs/sabiantools/src/main/AndroidManifest.xml:1:1-13:12
-INJECTED from /Users/katekiguru/Desktop/Sabian Desktop/Sabian Projects/Android/Uwanjani/app/libs/sabiantools/src/main/AndroidManifest.xml:1:1-13:12
-INJECTED from /Users/katekiguru/Desktop/Sabian Desktop/Sabian Projects/Android/Uwanjani/app/libs/sabiantools/src/main/AndroidManifest.xml:1:1-13:12
 	package
 		ADDED from /Users/katekiguru/Desktop/Sabian Desktop/Sabian Projects/Android/Uwanjani/app/libs/sabiantools/src/main/AndroidManifest.xml:2:5-30
 		INJECTED from /Users/katekiguru/Desktop/Sabian Desktop/Sabian Projects/Android/Uwanjani/app/libs/sabiantools/src/main/AndroidManifest.xml
-		INJECTED from /Users/katekiguru/Desktop/Sabian Desktop/Sabian Projects/Android/Uwanjani/app/libs/sabiantools/src/main/AndroidManifest.xml
-	android:versionName
-		INJECTED from /Users/katekiguru/Desktop/Sabian Desktop/Sabian Projects/Android/Uwanjani/app/libs/sabiantools/src/main/AndroidManifest.xml
-		ADDED from /Users/katekiguru/Desktop/Sabian Desktop/Sabian Projects/Android/Uwanjani/app/libs/sabiantools/src/main/AndroidManifest.xml:1:1-13:12
-		INJECTED from /Users/katekiguru/Desktop/Sabian Desktop/Sabian Projects/Android/Uwanjani/app/libs/sabiantools/src/main/AndroidManifest.xml
-	android:versionCode
-		INJECTED from /Users/katekiguru/Desktop/Sabian Desktop/Sabian Projects/Android/Uwanjani/app/libs/sabiantools/src/main/AndroidManifest.xml
-		ADDED from /Users/katekiguru/Desktop/Sabian Desktop/Sabian Projects/Android/Uwanjani/app/libs/sabiantools/src/main/AndroidManifest.xml:1:1-13:12
 		INJECTED from /Users/katekiguru/Desktop/Sabian Desktop/Sabian Projects/Android/Uwanjani/app/libs/sabiantools/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /Users/katekiguru/Desktop/Sabian Desktop/Sabian Projects/Android/Uwanjani/app/libs/sabiantools/src/main/AndroidManifest.xml:1:11-69

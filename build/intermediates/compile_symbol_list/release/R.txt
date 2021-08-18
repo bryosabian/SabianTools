@@ -338,6 +338,8 @@ int attr sabian_max_value 0x0
 int attr sabian_min_value 0x0
 int attr sabian_value 0x0
 int attr sbt_background_drawable 0x0
+int attr sbt_display_icon 0x0
+int attr sbt_enabled 0x0
 int attr sbt_hint 0x0
 int attr sbt_hintColor 0x0
 int attr sbt_icon 0x0
@@ -651,6 +653,7 @@ int color sabian_toast_success 0x0
 int color sabian_transparent_white 0x0
 int color sabian_wall_background_light 0x0
 int color sabian_warning_color 0x0
+int color sabian_white 0x0
 int color secondary_text_default_material_dark 0x0
 int color secondary_text_default_material_light 0x0
 int color secondary_text_disabled_material_dark 0x0
@@ -789,6 +792,8 @@ int dimen sabian_material_modal_header_height 0x0
 int dimen sabian_modal_image_size 0x0
 int dimen sabian_modal_list_image_padding 0x0
 int dimen sabian_modal_list_padding 0x0
+int dimen sabian_modal_space 0x0
+int dimen sabian_modal_vertical_space 0x0
 int dimen sabian_toast_padding 0x0
 int dimen subtitle_corner_radius 0x0
 int dimen subtitle_outline_width 0x0
@@ -924,8 +929,6 @@ int drawable control_button_text_alt 0x0
 int drawable control_button_text_bg 0x0
 int drawable control_button_text_search_bg 0x0
 int drawable control_button_text_white 0x0
-int drawable control_sabian_notification_box 0x0
-int drawable control_sabian_ribbon 0x0
 int drawable control_sabian_round_button 0x0
 int drawable control_sabian_stat_box 0x0
 int drawable dialog_background 0x0
@@ -972,7 +975,6 @@ int drawable sabian_button_transparent_rounded 0x0
 int drawable sabian_error_view 0x0
 int drawable sabian_header_banner 0x0
 int drawable sabian_material_modal_bg 0x0
-int drawable sabian_material_modal_layout 0x0
 int drawable sabian_modal_image 0x0
 int drawable sabian_modal_list_item 0x0
 int drawable sabian_modal_list_smooth 0x0
@@ -1184,6 +1186,7 @@ int id rll_SabianModalSearchContainer 0x0
 int id rll_SabianRibbonContainer 0x0
 int id rootSelector 0x0
 int id screen 0x0
+int id scrl_SabianMaterialModalScroller 0x0
 int id scrollIndicatorDown 0x0
 int id scrollIndicatorUp 0x0
 int id scrollView 0x0
@@ -2253,24 +2256,26 @@ int styleable RecyclerView_layoutManager 7
 int styleable RecyclerView_reverseLayout 8
 int styleable RecyclerView_spanCount 9
 int styleable RecyclerView_stackFromEnd 10
-int[] styleable SabianButtonText { 0x10100af, 0x1010220, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0 }
+int[] styleable SabianButtonText { 0x10100af, 0x1010220, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0 }
 int styleable SabianButtonText_android_gravity 0
 int styleable SabianButtonText_android_inputType 1
 int styleable SabianButtonText_sbt_background_drawable 2
-int styleable SabianButtonText_sbt_hint 3
-int styleable SabianButtonText_sbt_hintColor 4
-int styleable SabianButtonText_sbt_icon 5
-int styleable SabianButtonText_sbt_icon_alignment 6
-int styleable SabianButtonText_sbt_icon_size 7
-int styleable SabianButtonText_sbt_padding 8
-int styleable SabianButtonText_sbt_password 9
-int styleable SabianButtonText_sbt_roboto_type 10
-int styleable SabianButtonText_sbt_style 11
-int styleable SabianButtonText_sbt_text 12
-int styleable SabianButtonText_sbt_textColor 13
-int styleable SabianButtonText_sbt_textsize 14
-int styleable SabianButtonText_sbt_vector_icon 15
-int styleable SabianButtonText_sbt_vector_icon_color 16
+int styleable SabianButtonText_sbt_display_icon 3
+int styleable SabianButtonText_sbt_enabled 4
+int styleable SabianButtonText_sbt_hint 5
+int styleable SabianButtonText_sbt_hintColor 6
+int styleable SabianButtonText_sbt_icon 7
+int styleable SabianButtonText_sbt_icon_alignment 8
+int styleable SabianButtonText_sbt_icon_size 9
+int styleable SabianButtonText_sbt_padding 10
+int styleable SabianButtonText_sbt_password 11
+int styleable SabianButtonText_sbt_roboto_type 12
+int styleable SabianButtonText_sbt_style 13
+int styleable SabianButtonText_sbt_text 14
+int styleable SabianButtonText_sbt_textColor 15
+int styleable SabianButtonText_sbt_textsize 16
+int styleable SabianButtonText_sbt_vector_icon 17
+int styleable SabianButtonText_sbt_vector_icon_color 18
 int[] styleable SabianCategoryBoxSlider { 0x0, 0x0, 0x0, 0x0, 0x0 }
 int styleable SabianCategoryBoxSlider_sabianFirstItemMargin 0
 int styleable SabianCategoryBoxSlider_sabianHorizontalColumnWidth 1

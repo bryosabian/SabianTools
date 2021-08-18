@@ -96,6 +96,10 @@ public class SabianUtilities {
         toast.display(Toast.LENGTH_SHORT);
     }
 
+    public static void DisplayMessage(Context context, String title, String message, SabianToast.MessageType type) {
+        DisplayMessage(context, title + " : " + message, type);
+    }
+
 
     public static void DisplayModal(Context context, String title, String message) {
         DisplayModal(context, title, message, "Okay", null, null, null);
@@ -501,6 +505,8 @@ public class SabianUtilities {
     }
 
     public static String getImageToBase64(Bitmap bm, int quality) {
+        if (bm == null)
+            return "";
         ByteArrayOutputStream stream = new ByteArrayOutputStream();
         bm.compress(Bitmap.CompressFormat.JPEG, quality, stream);
         byte[] b = stream.toByteArray();

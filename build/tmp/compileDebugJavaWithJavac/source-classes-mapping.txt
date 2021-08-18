@@ -46,6 +46,8 @@ com/sabiantools/controls/SabianCircleView.java
  com.sabiantools.controls.SabianCircleView
 com/sabiantools/controls/edittext/SabianMinMaxInputFilter.java
  com.sabiantools.controls.edittext.SabianMinMaxInputFilter
+com/sabiantools/utilities/money/MoneyCalculation.java
+ com.sabiantools.utilities.money.MoneyCalculation
 com/sabiantools/modals/SabianImageModal.java
  com.sabiantools.modals.SabianImageModal
  com.sabiantools.modals.SabianImageModal$1
@@ -72,7 +74,6 @@ com/sabiantools/utilities/SabianUtilities.java
  com.sabiantools.utilities.SabianUtilities$3
  com.sabiantools.utilities.SabianUtilities$4
  com.sabiantools.utilities.SabianUtilities$EmailValidator
- com.sabiantools.utilities.SabianUtilities$TYPE_MESSAGE
 com/sabiantools/controls/SabianRibbon.java
  com.sabiantools.controls.SabianRibbon
  com.sabiantools.controls.SabianRibbon$Type
@@ -94,6 +95,8 @@ com/sabiantools/controls/recyclerview/GridMarginDecorator.java
  com.sabiantools.controls.recyclerview.GridMarginDecorator
 com/sabiantools/controls/recyclerview/HorizontalContentItemInsetDecoration.java
  com.sabiantools.controls.recyclerview.HorizontalContentItemInsetDecoration
+com/sabiantools/controls/SabianButtonFloat.java
+ com.sabiantools.controls.SabianButtonFloat
 com/sabiantools/controls/recyclerview/EndlessScrollListener.java
  com.sabiantools.controls.recyclerview.EndlessScrollListener
 com/sabiantools/controls/recyclerview/SabianFixedWidthLayoutManager.java
@@ -113,7 +116,6 @@ com/sabiantools/modals/SabianListModal.java
  com.sabiantools.modals.SabianListModal$2
  com.sabiantools.modals.SabianListModal$3
  com.sabiantools.modals.SabianListModal$4
- com.sabiantools.modals.SabianListModal$5
  com.sabiantools.modals.SabianListModal$Error
  com.sabiantools.modals.SabianListModal$ListItem
  com.sabiantools.modals.SabianListModal$ListItemAdapter
@@ -141,7 +143,11 @@ com/sabiantools/modals/SabianModal.java
  com.sabiantools.modals.SabianModal$2
 com/sabiantools/utilities/SabianToast.java
  com.sabiantools.utilities.SabianToast
+ com.sabiantools.utilities.SabianToast$MessageType
 com/sabiantools/controls/recyclerview/SpannedOffsetItemDecoration.java
  com.sabiantools.controls.recyclerview.SpannedOffsetItemDecoration
+com/sabiantools/utilities/money/Money.java
+ com.sabiantools.utilities.money.Money
+ com.sabiantools.utilities.money.Money$MismatchedCurrencyException
 com/sabiantools/controls/SabianRoundButton.java
  com.sabiantools.controls.SabianRoundButton

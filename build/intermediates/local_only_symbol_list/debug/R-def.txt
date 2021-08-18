@@ -63,6 +63,8 @@ attr? sabian_max_value
 attr? sabian_min_value
 attr? sabian_value
 attr? sbt_background_drawable
+attr? sbt_display_icon
+attr? sbt_enabled
 attr? sbt_hint
 attr? sbt_hintColor
 attr? sbt_icon
@@ -137,6 +139,7 @@ color sabian_toast_success
 color sabian_transparent_white
 color sabian_wall_background_light
 color sabian_warning_color
+color sabian_white
 dimen automatic_list_offset
 dimen cardview_default_elevation
 dimen control_button_search_no_margin
@@ -146,6 +149,8 @@ dimen sabian_material_modal_header_height
 dimen sabian_modal_image_size
 dimen sabian_modal_list_image_padding
 dimen sabian_modal_list_padding
+dimen sabian_modal_space
+dimen sabian_modal_vertical_space
 dimen sabian_toast_padding
 drawable background
 drawable bg_ribbon_danger
@@ -157,8 +162,6 @@ drawable control_button_text_alt
 drawable control_button_text_bg
 drawable control_button_text_search_bg
 drawable control_button_text_white
-drawable control_sabian_notification_box
-drawable control_sabian_ribbon
 drawable control_sabian_round_button
 drawable control_sabian_stat_box
 drawable dimens
@@ -175,7 +178,6 @@ drawable sabian_actionbar
 drawable sabian_error_view
 drawable sabian_header_banner
 drawable sabian_material_modal_bg
-drawable sabian_material_modal_layout
 drawable sabian_modal_image
 drawable sabian_modal_list_item
 drawable sabian_modal_list_smooth
@@ -238,6 +240,7 @@ id rll_SabianMaterialModalHeader
 id rll_SabianModalContainer
 id rll_SabianModalSearchContainer
 id rll_SabianRibbonContainer
+id scrl_SabianMaterialModalScroller
 id sct_ModalFailedText
 id sct_ModalLoaderText
 id sct_SabianMaterialModalTitle
@@ -284,7 +287,7 @@ layout sabian_toast_layout
 layout sabian_transparent_button_text
 string app_name
 style SabianMaterialDialog
-styleable SabianButtonText sbt_text sbt_hint sbt_icon sbt_textColor sbt_hintColor sbt_password sbt_vector_icon sbt_vector_icon_color sbt_textsize sbt_background_drawable sbt_roboto_type sbt_icon_alignment sbt_style sbt_padding sbt_icon_size android:inputType android:gravity
+styleable SabianButtonText sbt_text sbt_hint sbt_icon sbt_textColor sbt_hintColor sbt_password sbt_vector_icon sbt_vector_icon_color sbt_textsize sbt_background_drawable sbt_roboto_type sbt_icon_alignment sbt_style sbt_padding sbt_icon_size sbt_display_icon sbt_enabled android:inputType android:gravity
 styleable SabianCategoryBoxSlider sabianHorizontalColumnWidth sabianLeftMarginOffset sabianRighMarginOffset sabianFirstItemMargin sabianLastItemMargin
 styleable SabianCircleContainer scc_titleText scc_subtitleText scc_titleSize scc_subtitleSize scc_strokeWidthSize scc_fillRadius scc_titleColor scc_subtitleColor scc_fillColor scc_strokeColorValue scc_backgroundColorValue
 styleable SabianCircleView sc_titleText sc_subtitleText sc_titleSize sc_subtitleSize sc_strokeWidthSize sc_fillRadius sc_titleColor sc_subtitleColor sc_fillColor sc_strokeColorValue sc_backgroundColorValue

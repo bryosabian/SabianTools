@@ -339,6 +339,8 @@ attr sabian_max_value
 attr sabian_min_value
 attr sabian_value
 attr sbt_background_drawable
+attr sbt_display_icon
+attr sbt_enabled
 attr sbt_hint
 attr sbt_hintColor
 attr sbt_icon
@@ -652,6 +654,7 @@ color sabian_toast_success
 color sabian_transparent_white
 color sabian_wall_background_light
 color sabian_warning_color
+color sabian_white
 color secondary_text_default_material_dark
 color secondary_text_default_material_light
 color secondary_text_disabled_material_dark
@@ -790,6 +793,8 @@ dimen sabian_material_modal_header_height
 dimen sabian_modal_image_size
 dimen sabian_modal_list_image_padding
 dimen sabian_modal_list_padding
+dimen sabian_modal_space
+dimen sabian_modal_vertical_space
 dimen sabian_toast_padding
 dimen subtitle_corner_radius
 dimen subtitle_outline_width
@@ -925,8 +930,6 @@ drawable control_button_text_alt
 drawable control_button_text_bg
 drawable control_button_text_search_bg
 drawable control_button_text_white
-drawable control_sabian_notification_box
-drawable control_sabian_ribbon
 drawable control_sabian_round_button
 drawable control_sabian_stat_box
 drawable dialog_background
@@ -973,7 +976,6 @@ drawable sabian_button_transparent_rounded
 drawable sabian_error_view
 drawable sabian_header_banner
 drawable sabian_material_modal_bg
-drawable sabian_material_modal_layout
 drawable sabian_modal_image
 drawable sabian_modal_list_item
 drawable sabian_modal_list_smooth
@@ -1185,6 +1187,7 @@ id rll_SabianModalSearchContainer
 id rll_SabianRibbonContainer
 id rootSelector
 id screen
+id scrl_SabianMaterialModalScroller
 id scrollIndicatorDown
 id scrollIndicatorUp
 id scrollView
@@ -1829,7 +1832,7 @@ styleable PopupWindow android_popupAnimationStyle android_popupBackground overla
 styleable PopupWindowBackgroundState state_above_anchor
 styleable RecycleListView paddingBottomNoButtons paddingTopNoTitle
 styleable RecyclerView android_descendantFocusability android_orientation fastScrollEnabled fastScrollHorizontalThumbDrawable fastScrollHorizontalTrackDrawable fastScrollVerticalThumbDrawable fastScrollVerticalTrackDrawable layoutManager reverseLayout spanCount stackFromEnd
-styleable SabianButtonText android_gravity android_inputType sbt_background_drawable sbt_hint sbt_hintColor sbt_icon sbt_icon_alignment sbt_icon_size sbt_padding sbt_password sbt_roboto_type sbt_style sbt_text sbt_textColor sbt_textsize sbt_vector_icon sbt_vector_icon_color
+styleable SabianButtonText android_gravity android_inputType sbt_background_drawable sbt_display_icon sbt_enabled sbt_hint sbt_hintColor sbt_icon sbt_icon_alignment sbt_icon_size sbt_padding sbt_password sbt_roboto_type sbt_style sbt_text sbt_textColor sbt_textsize sbt_vector_icon sbt_vector_icon_color
 styleable SabianCategoryBoxSlider sabianFirstItemMargin sabianHorizontalColumnWidth sabianLastItemMargin sabianLeftMarginOffset sabianRighMarginOffset
 styleable SabianCircleContainer scc_backgroundColorValue scc_fillColor scc_fillRadius scc_strokeColorValue scc_strokeWidthSize scc_subtitleColor scc_subtitleSize scc_subtitleText scc_titleColor scc_titleSize scc_titleText
 styleable SabianCircleView sc_backgroundColorValue sc_fillColor sc_fillRadius sc_strokeColorValue sc_strokeWidthSize sc_subtitleColor sc_subtitleSize sc_subtitleText sc_titleColor sc_titleSize sc_titleText

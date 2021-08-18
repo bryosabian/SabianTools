@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.sabiantools"
-    android:versionCode="1050"
-    android:versionName="1.0.5" >
+    package="com.sabiantools" >
 
     <uses-sdk
         android:minSdkVersion="15"

@@ -30,15 +30,18 @@
     <color name="sabian_transparent_white">#66ffffff</color>
     <color name="sabian_wall_background_light">#F4F8F9</color>
     <color name="sabian_warning_color">#F8BA00</color>
+    <color name="sabian_white">@color/google_white</color>
     <dimen name="automatic_list_offset">5dp</dimen>
     <dimen name="cardview_default_elevation">2dp</dimen>
     <dimen name="control_button_search_no_margin">5dp</dimen>
     <dimen name="control_sabian_round_button_radius_bottom">31dp</dimen>
     <dimen name="control_sabian_round_button_radius_top">31dp</dimen>
-    <dimen name="sabian_material_modal_header_height">150dp</dimen>
+    <dimen name="sabian_material_modal_header_height">80dp</dimen>
     <dimen name="sabian_modal_image_size">300dp</dimen>
     <dimen name="sabian_modal_list_image_padding">10dp</dimen>
     <dimen name="sabian_modal_list_padding">15dp</dimen>
+    <dimen name="sabian_modal_space">20dp</dimen>
+    <dimen name="sabian_modal_vertical_space">20dp</dimen>
     <dimen name="sabian_toast_padding">20dp</dimen>
     <string name="app_name">Sabian Tools</string>
     <style name="SabianMaterialDialog" parent="@android:style/Theme.Translucent">
@@ -64,6 +67,9 @@
         <attr format="string" name="sbt_style"/>
         <attr format="dimension" name="sbt_padding"/>
         <attr format="dimension" name="sbt_icon_size"/>
+        <attr format="boolean" name="sbt_display_icon"/>
+        <attr format="boolean" name="sbt_enabled"/>
+
         <attr name="android:inputType"/>
         <attr name="android:gravity">
             <flag name="bottom" value="80"/>

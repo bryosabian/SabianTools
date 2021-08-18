@@ -27,7 +27,7 @@
     <dimen name="control_sabian_round_button_radius_top">31dp</dimen>
     <dimen name="control_sabian_round_button_radius_bottom">31dp</dimen>
 
-    <dimen name="sabian_material_modal_header_height">150dp</dimen>
+    <dimen name="sabian_material_modal_header_height">80dp</dimen>
 
     <dimen name="sabian_modal_list_padding">15dp</dimen>
     <dimen name="sabian_modal_list_image_padding">10dp</dimen>
@@ -36,4 +36,6 @@
     <dimen name="sabian_modal_image_size">300dp</dimen>
 
     <dimen name="control_button_search_no_margin">5dp</dimen>
+    <dimen name="sabian_modal_space">20dp</dimen>
+    <dimen name="sabian_modal_vertical_space">20dp</dimen>
 </resources>
