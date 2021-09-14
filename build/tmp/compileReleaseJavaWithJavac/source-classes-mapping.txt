@@ -42,8 +42,6 @@ com/sabiantools/controls/SabianBadger.java
  com.sabiantools.controls.SabianBadger$Config
 com/sabiantools/controls/SabianRecyclerDividerDecorator.java
  com.sabiantools.controls.SabianRecyclerDividerDecorator
-com/sabiantools/controls/SabianCircleView.java
- com.sabiantools.controls.SabianCircleView
 com/sabiantools/controls/edittext/SabianMinMaxInputFilter.java
  com.sabiantools.controls.edittext.SabianMinMaxInputFilter
 com/sabiantools/utilities/money/MoneyCalculation.java
@@ -89,8 +87,6 @@ com/sabiantools/controls/SabianNumberSelector.java
  com.sabiantools.controls.SabianNumberSelector$2
  com.sabiantools.controls.SabianNumberSelector$3
  com.sabiantools.controls.SabianNumberSelector$OnValueChangedListener
-com/sabiantools/controls/SabianCircleContainer.java
- com.sabiantools.controls.SabianCircleContainer
 com/sabiantools/controls/recyclerview/GridMarginDecorator.java
  com.sabiantools.controls.recyclerview.GridMarginDecorator
 com/sabiantools/controls/recyclerview/HorizontalContentItemInsetDecoration.java
@@ -128,6 +124,8 @@ com/sabiantools/controls/SabianFloatLabel.java
  com.sabiantools.controls.SabianFloatLabel
 com/sabiantools/controls/recyclerview/SabianFlexibleScrollLayoutManager.java
  com.sabiantools.controls.recyclerview.SabianFlexibleScrollLayoutManager
+com/sabiantools/controls/circles/SabianCircleView.java
+ com.sabiantools.controls.circles.SabianCircleView
 com/sabiantools/controls/SabianButtonText.java
  com.sabiantools.controls.SabianButtonText
  com.sabiantools.controls.SabianButtonText$1
@@ -135,6 +133,8 @@ com/sabiantools/controls/SabianButtonText.java
  com.sabiantools.controls.SabianButtonText$OnTextChangeListener
 com/sabiantools/controls/SabianCondensedText.java
  com.sabiantools.controls.SabianCondensedText
+com/sabiantools/controls/circles/SabianCircleContainer.java
+ com.sabiantools.controls.circles.SabianCircleContainer
 com/sabiantools/controls/SabianCondensedEditText.java
  com.sabiantools.controls.SabianCondensedEditText
 com/sabiantools/modals/SabianModal.java
@@ -146,6 +146,8 @@ com/sabiantools/utilities/SabianToast.java
  com.sabiantools.utilities.SabianToast$MessageType
 com/sabiantools/controls/recyclerview/SpannedOffsetItemDecoration.java
  com.sabiantools.controls.recyclerview.SpannedOffsetItemDecoration
+com/sabiantools/controls/circles/SabianCircleEdgeView.java
+ com.sabiantools.controls.circles.SabianCircleEdgeView
 com/sabiantools/utilities/money/Money.java
  com.sabiantools.utilities.money.Money
  com.sabiantools.utilities.money.Money$MismatchedCurrencyException

@@ -1,4 +1,4 @@
-package com.sabiantools.controls;
+package com.sabiantools.controls.circles;
 
 import android.content.Context;
 import android.content.res.TypedArray;

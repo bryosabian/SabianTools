@@ -31,6 +31,7 @@ import com.sabiantools.R;
 import com.sabiantools.modals.SabianModal;
 
 import org.joda.time.DateTime;
+import org.joda.time.LocalDate;
 import org.joda.time.LocalDateTime;
 import org.joda.time.format.DateTimeFormat;
 import org.jsoup.Jsoup;
@@ -729,6 +730,14 @@ public class SabianUtilities {
 
     public static String getCurrentDateString() {
         return DateTime.now().toString(DateTimeFormat.forPattern("yyyy-MM-dd HH:mm:ss"));
+    }
+
+    public static LocalDate getCurrentDate() {
+        return LocalDate.now();
+    }
+
+    public static LocalDateTime getCurrentDateTime() {
+        return LocalDateTime.now();
     }
 
     public static boolean validatePhoneNumber(String phoneNo) {
