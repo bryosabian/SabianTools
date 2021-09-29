@@ -4,15 +4,11 @@ import android.os.Handler;
 import android.os.Looper;
 
 import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.concurrent.AbstractExecutorService;
 import java.util.concurrent.Callable;
-import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import java.util.concurrent.LinkedBlockingQueue;
-import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
+
 
 /**
  * Utility thread tool for multithreading. Alternative to {@link android.os.AsyncTask}
@@ -20,56 +16,67 @@ import java.util.concurrent.TimeUnit;
 public class SabianAsyncTask {
 
     /**
-     * The mutliple thread executor
-     */
-    public static final String SERVICE_TYPE_MULTI = "multi";
-
-    /**
      * The single thread executor
      */
     public static final String SERVICE_TYPE_SINGLE = "single";
-
-    /**
-     * The default mutli thread pool executor. Usable for multiple threading like network services e.t.c
-     */
-    private static final Executor MULTIPLE_THREAD_POOL_EXECUTOR =
-            new ThreadPoolExecutor(5, 128, 1,
-                    TimeUnit.SECONDS, new LinkedBlockingQueue<>());
-
-    /**
-     * The default single thread pool executor
-     */
-    private static final Executor SINGLE_THREAD_POOL_EXECUTOR = Executors.newSingleThreadExecutor();
 
 
     /**
      * Our executor
      */
-    private Executor executor;
+    private ExecutorService executor;
 
     /**
      * Our handler
      */
-    private final Handler handler = new Handler(Looper.getMainLooper());
+    private Handler handler;
 
     /**
      * The service collections
      */
-    private HashMap<String, Executor> services;
+    private HashMap<String, ExecutorService> services;
 
 
     /**
      * The current service to be used
-     * See {@link SabianAsyncTask#SERVICE_TYPE_MULTI} or {@link SabianAsyncTask#SERVICE_TYPE_SINGLE}
+     * See {@link SabianAsyncTask#SERVICE_TYPE_SINGLE}
      */
     private String service = SERVICE_TYPE_SINGLE;
+
+    /**
+     * Whether to cancel all tasks once they're finished
+     */
+    private boolean awaitAllTasksToFinishBeforeCancel = false;
+
+    /**
+     * The time it will take for all tasks to complete before force shutting down in millisconds
+     */
+    private int taskCancelDelay = 500;
 
     /**
      * Init all services
      */
     public SabianAsyncTask() {
         initServices();
-        executor = services.get(service);
+        initExecutor();
+    }
+
+    /**
+     * Inits the executor
+     */
+    private void initExecutor() {
+        if (executor == null) {
+            executor = services.get(service);
+        }
+    }
+
+    /**
+     * Inits the handler
+     */
+    private void initHandler() {
+        if (handler == null) {
+            handler = new Handler(Looper.getMainLooper());
+        }
     }
 
     /**
@@ -79,25 +86,25 @@ public class SabianAsyncTask {
         if (services != null)
             return;
         services = new HashMap<>();
-        services.put(SERVICE_TYPE_MULTI, MULTIPLE_THREAD_POOL_EXECUTOR);
-        services.put(SERVICE_TYPE_SINGLE, SINGLE_THREAD_POOL_EXECUTOR);
+        services.put(SERVICE_TYPE_SINGLE, Executors.newSingleThreadExecutor());
     }
 
     /**
      * Registers a new service to the thread pool collection
+     *
      * @param name
      * @param service
      * @return
      */
-    public SabianAsyncTask registerService(String name,Executor service){
-        this.services.put(name,service);
+    public SabianAsyncTask registerService(String name, ExecutorService service) {
+        this.services.put(name, service);
         return this;
     }
 
     /**
      * Sets the default thread service to be used
-     * See {@link SabianAsyncTask#SERVICE_TYPE_MULTI} or {@link SabianAsyncTask#SERVICE_TYPE_SINGLE}
-     * You can register a custom one using {@link SabianAsyncTask#registerService(String, Executor)}
+     * See {@link SabianAsyncTask#SERVICE_TYPE_SINGLE}
+     * You can register a custom one using {@link SabianAsyncTask#registerService(String, ExecutorService)}
      *
      * @param service
      * @return
@@ -109,13 +116,15 @@ public class SabianAsyncTask {
     }
 
     /**
-     * Executes a background thread
+     * Executes a background task
      *
      * @param callable
      * @param callback
      * @param <R>
      */
     public <R> void executeAsync(Callable<R> callable, Callback<R> callback) {
+
+        initExecutor();
 
         callback.onBefore();
 
@@ -134,6 +143,8 @@ public class SabianAsyncTask {
             R finalResult = result;
             Throwable error = throwable;
 
+            initHandler();
+
             handler.post(() -> {
                 if (isSuccess)
                     callback.onComplete(finalResult);
@@ -142,5 +153,46 @@ public class SabianAsyncTask {
                 }
             });
         });
+    }
+
+    /**
+     * Cancels running background tasks if any
+     */
+    public void cancel() {
+        try {
+            if (executor != null) {
+
+                // Stop accepting new tasks
+                executor.shutdown();
+
+                // Attempt to shut down left tasks if any
+                try {
+                    //Shut down all tasks immediately
+                    if (!awaitAllTasksToFinishBeforeCancel) {
+                        executor.shutdown();
+                    } else {
+                        // Wait a while for existing tasks to terminate
+                        if (!executor.awaitTermination(taskCancelDelay, TimeUnit.MILLISECONDS)) {
+
+                            //Terminate all pending running tasks
+                            executor.shutdownNow();
+                        }
+                    }
+                } catch (Exception e) {
+                    executor.shutdownNow();
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (handler != null) {
+                handler.removeCallbacksAndMessages(null);
+                handler = null;
+            }
+            if (executor != null) {
+                executor = null;
+            }
+        }
+
     }
 }

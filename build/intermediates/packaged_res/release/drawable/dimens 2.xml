@@ -1,0 +1,39 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+
+    <!--ForFoodImageListLayout-->
+
+    <!--ForFoodItemAdapters-->
+
+    <!--ForFoodItemsAdapter-->
+
+
+    <!--SingleFoodItem-->
+
+    <!--FoodItems-->
+
+    <!--HomeContentDimens-->
+
+    <dimen name="cardview_default_elevation">2dp</dimen>
+
+    <!--Toast-->
+    <dimen name="sabian_toast_padding">20dp</dimen>
+
+    <!--OrderWizard-->
+
+
+    <dimen name="automatic_list_offset">5dp</dimen>
+
+    <dimen name="control_sabian_round_button_radius_top">31dp</dimen>
+    <dimen name="control_sabian_round_button_radius_bottom">31dp</dimen>
+
+    <dimen name="sabian_material_modal_header_height">150dp</dimen>
+
+    <dimen name="sabian_modal_list_padding">15dp</dimen>
+    <dimen name="sabian_modal_list_image_padding">10dp</dimen>
+
+
+    <dimen name="sabian_modal_image_size">300dp</dimen>
+
+    <dimen name="control_button_search_no_margin">5dp</dimen>
+</resources>

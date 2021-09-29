@@ -16,13 +16,13 @@ com/sabiantools/controls/texts/TypeFaceFactory.java
  com.sabiantools.controls.texts.TypeFaceFactory
 com/sabiantools/controls/edittext/DecimalDigitsInputFilter.java
  com.sabiantools.controls.edittext.DecimalDigitsInputFilter
+com/sabiantools/controls/SabianViewPager.java
+ com.sabiantools.controls.SabianViewPager
 com/sabiantools/controls/SabianFitImage.java
  com.sabiantools.controls.SabianFitImage
  com.sabiantools.controls.SabianFitImage$1
  com.sabiantools.controls.SabianFitImage$SabianLoadAsyncUrl
  com.sabiantools.controls.SabianFitImage$SabianLoadAsyncUrl$1
-com/sabiantools/controls/SabianViewPager.java
- com.sabiantools.controls.SabianViewPager
 com/sabiantools/modals/SabianMaterialAlert.java
  com.sabiantools.modals.SabianMaterialAlert
  com.sabiantools.modals.SabianMaterialAlert$1
@@ -30,10 +30,10 @@ com/sabiantools/modals/SabianMaterialAlert.java
  com.sabiantools.modals.SabianMaterialAlert$3
 com/sabiantools/controls/SabianMenuBar.java
  com.sabiantools.controls.SabianMenuBar
-com/sabiantools/controls/recyclerview/SpannedLayoutManager.java
- com.sabiantools.controls.recyclerview.SpannedLayoutManager
 com/sabiantools/controls/SabianHeaderBanner.java
  com.sabiantools.controls.SabianHeaderBanner
+com/sabiantools/controls/recyclerview/SpannedLayoutManager.java
+ com.sabiantools.controls.recyclerview.SpannedLayoutManager
 com/sabiantools/controls/SabianBadger.java
  com.sabiantools.controls.SabianBadger
  com.sabiantools.controls.SabianBadger$1
@@ -46,25 +46,25 @@ com/sabiantools/controls/edittext/SabianMinMaxInputFilter.java
  com.sabiantools.controls.edittext.SabianMinMaxInputFilter
 com/sabiantools/utilities/money/MoneyCalculation.java
  com.sabiantools.utilities.money.MoneyCalculation
-com/sabiantools/modals/SabianImageModal.java
- com.sabiantools.modals.SabianImageModal
- com.sabiantools.modals.SabianImageModal$1
 com/sabiantools/utilities/SabianErrorView.java
  com.sabiantools.utilities.SabianErrorView
  com.sabiantools.utilities.SabianErrorView$OnErrorButtonListener
  com.sabiantools.utilities.SabianErrorView$SabianError
  com.sabiantools.utilities.SabianErrorView$SabianError$1
  com.sabiantools.utilities.SabianErrorView$SabianError$2
+com/sabiantools/modals/SabianImageModal.java
+ com.sabiantools.modals.SabianImageModal
+ com.sabiantools.modals.SabianImageModal$1
 com/sabiantools/controls/SabianNotificationBox.java
  com.sabiantools.controls.SabianNotificationBox
-com/sabiantools/controls/picasso/RoundedImageTransform.java
- com.sabiantools.controls.picasso.RoundedImageTransform
- com.sabiantools.controls.picasso.RoundedImageTransform$1
- com.sabiantools.controls.picasso.RoundedImageTransform$CornerType
 com/sabiantools/utilities/SabianFragment.java
  com.sabiantools.utilities.SabianFragment
  com.sabiantools.utilities.SabianFragment$1
  com.sabiantools.utilities.SabianFragment$OnSabianFragmentAnimationLoadListener
+com/sabiantools/controls/picasso/RoundedImageTransform.java
+ com.sabiantools.controls.picasso.RoundedImageTransform
+ com.sabiantools.controls.picasso.RoundedImageTransform$1
+ com.sabiantools.controls.picasso.RoundedImageTransform$CornerType
 com/sabiantools/utilities/SabianUtilities.java
  com.sabiantools.utilities.SabianUtilities
  com.sabiantools.utilities.SabianUtilities$1
@@ -91,10 +91,10 @@ com/sabiantools/controls/recyclerview/GridMarginDecorator.java
  com.sabiantools.controls.recyclerview.GridMarginDecorator
 com/sabiantools/controls/recyclerview/HorizontalContentItemInsetDecoration.java
  com.sabiantools.controls.recyclerview.HorizontalContentItemInsetDecoration
-com/sabiantools/controls/SabianButtonFloat.java
- com.sabiantools.controls.SabianButtonFloat
 com/sabiantools/controls/recyclerview/EndlessScrollListener.java
  com.sabiantools.controls.recyclerview.EndlessScrollListener
+com/sabiantools/controls/SabianButtonFloat.java
+ com.sabiantools.controls.SabianButtonFloat
 com/sabiantools/controls/recyclerview/SabianFixedWidthLayoutManager.java
  com.sabiantools.controls.recyclerview.SabianFixedWidthLayoutManager
 com/sabiantools/controls/SabianStatsBox.java
@@ -126,13 +126,13 @@ com/sabiantools/controls/recyclerview/SabianFlexibleScrollLayoutManager.java
  com.sabiantools.controls.recyclerview.SabianFlexibleScrollLayoutManager
 com/sabiantools/controls/circles/SabianCircleView.java
  com.sabiantools.controls.circles.SabianCircleView
+com/sabiantools/controls/SabianCondensedText.java
+ com.sabiantools.controls.SabianCondensedText
 com/sabiantools/controls/SabianButtonText.java
  com.sabiantools.controls.SabianButtonText
  com.sabiantools.controls.SabianButtonText$1
  com.sabiantools.controls.SabianButtonText$Alignment
  com.sabiantools.controls.SabianButtonText$OnTextChangeListener
-com/sabiantools/controls/SabianCondensedText.java
- com.sabiantools.controls.SabianCondensedText
 com/sabiantools/controls/circles/SabianCircleContainer.java
  com.sabiantools.controls.circles.SabianCircleContainer
 com/sabiantools/controls/SabianCondensedEditText.java
@@ -146,10 +146,10 @@ com/sabiantools/utilities/SabianToast.java
  com.sabiantools.utilities.SabianToast$MessageType
 com/sabiantools/controls/recyclerview/SpannedOffsetItemDecoration.java
  com.sabiantools.controls.recyclerview.SpannedOffsetItemDecoration
-com/sabiantools/controls/circles/SabianCircleEdgeView.java
- com.sabiantools.controls.circles.SabianCircleEdgeView
 com/sabiantools/utilities/money/Money.java
  com.sabiantools.utilities.money.Money
  com.sabiantools.utilities.money.Money$MismatchedCurrencyException
+com/sabiantools/controls/circles/SabianCircleEdgeView.java
+ com.sabiantools.controls.circles.SabianCircleEdgeView
 com/sabiantools/controls/SabianRoundButton.java
  com.sabiantools.controls.SabianRoundButton
