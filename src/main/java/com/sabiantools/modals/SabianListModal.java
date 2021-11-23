@@ -280,7 +280,7 @@ public class SabianListModal extends Dialog {
         adapter.notifyDataSetChanged();
     }
 
-    public SabianListModal setListItems(ArrayList<ListItem> items) {
+    public SabianListModal setListItems(List<ListItem> items) {
         this.listItems = new ArrayList<>();
         listItems.addAll(items);
         this.allItems = new ArrayList<>();
@@ -288,7 +288,8 @@ public class SabianListModal extends Dialog {
         return this;
     }
 
-    public SabianListModal setListItems(ArrayList<ListItem> items, boolean refreshAdapter) {
+
+    public SabianListModal setListItems(List<ListItem> items, boolean refreshAdapter) {
         setListItems(items);
         if (refreshAdapter) {
             adapter = new ListItemAdapter(getContext(), -1, listItems);
@@ -595,6 +596,7 @@ public class SabianListModal extends Dialog {
             txtTitle.setText(text);
         }
     }
+
     public class Error {
         private ViewGroup mainBody;
         private ViewGroup errorBody;

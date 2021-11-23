@@ -62,8 +62,6 @@ import androidx.annotation.Nullable;
 
 
 public class SabianUtilities {
-    private static Context context;
-    private static Activity mActivity;
     public final static String DEFAULT_DATE_FORMAT = "%1$tY-%1$tm-%1$tdT%1$tH:%1$tM:%1$tS";
     private static ProgressDialog pd;
     private static boolean isLogActive = false;
@@ -72,21 +70,9 @@ public class SabianUtilities {
         SabianUtilities.isLogActive = isLogActive;
     }
 
-    public static void SetContext(Context context) {
-        SabianUtilities.context = context;
-    }
 
-    public static void DisplayMessage(String message) {
-        DisplayMessage(message, SabianToast.MessageType.ERROR);
-    }
-
-
-    public static void DisplayMessage(String message, SabianToast.MessageType messageType) {
-        SabianToast toast = new SabianToast(context);
-        toast.setText(message);
-        toast.setIcon(messageType.getIcon());
-        toast.setCustomType(messageType.getDrawableResource());
-        toast.display(Toast.LENGTH_SHORT);
+    public static void DisplayMessage(Context context, String message) {
+        DisplayMessage(context, message, SabianToast.MessageType.ERROR);
     }
 
     public static void DisplayMessage(Context context, String message, SabianToast.MessageType messageType) {
@@ -110,23 +96,17 @@ public class SabianUtilities {
         final SabianModal modal = new SabianModal(context);
         modal.setTitle(title).setMessage(message);
         modal.setOkayButtonText("Okay");
-        modal.setOnOkayClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                modal.dismiss();
-                if (onOkayClick != null)
-                    onOkayClick.onClick(view);
-            }
+        modal.setOnOkayClickListener(view -> {
+            modal.dismiss();
+            if (onOkayClick != null)
+                onOkayClick.onClick(view);
         });
 
         if (onCancelClick != null) {
             modal.setCancelButtonText("Cancel");
-            modal.setOnCancelClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    modal.dismiss();
-                    onCancelClick.onClick(view);
-                }
+            modal.setOnCancelClickListener(view -> {
+                modal.dismiss();
+                onCancelClick.onClick(view);
             });
         }
         modal.show();
@@ -136,13 +116,10 @@ public class SabianUtilities {
         final SabianModal modal = new SabianModal(context);
         modal.setTitle(title).setMessage(message);
         modal.setOkayButtonText(okText);
-        modal.setOnOkayClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                modal.dismiss();
-                if (onOkayClick != null)
-                    onOkayClick.onClick(view);
-            }
+        modal.setOnOkayClickListener(view -> {
+            modal.dismiss();
+            if (onOkayClick != null)
+                onOkayClick.onClick(view);
         });
 
         if (!(SabianUtilities.IsStringEmpty(cancelText) && onCancelClick == null)) {
@@ -334,7 +311,7 @@ public class SabianUtilities {
         return dt.toDate();
     }
 
-    public static boolean setAutomaticHeightList(AbsListView listView) {
+    public static boolean setAutomaticHeightList(Context context, AbsListView listView) {
 
         ListAdapter listAdapter = listView.getAdapter();
 
@@ -407,15 +384,11 @@ public class SabianUtilities {
         return new EmailValidator();
     }
 
-    public static Context getContext() {
-        return context;
-    }
-
     public static String noWhiteSpace(String text) {
         return text.trim().replaceAll("\\s+", "");
     }
 
-    public static byte[] getBytesFromUri(Uri uri) {
+    public static byte[] getBytesFromUri(Context context, Uri uri) {
         try {
             InputStream iStream = context.getContentResolver().openInputStream(uri);
             byte[] inputData = getBytesFromStream(iStream);
@@ -452,9 +425,9 @@ public class SabianUtilities {
         return b;
     }
 
-    public static Bitmap getRoundBitmapImage(Uri uri) {
+    public static Bitmap getRoundBitmapImage(Context context, Uri uri) {
         try {
-            byte[] myByteArray = getBytesFromUri(uri);
+            byte[] myByteArray = getBytesFromUri(context, uri);
             BitmapFactory.Options options = new BitmapFactory.Options();
             options.inSampleSize = 8;
             Bitmap source = BitmapFactory.decodeByteArray(
@@ -491,7 +464,7 @@ public class SabianUtilities {
         }
     }
 
-    public static Bitmap getUriToBitmap(Uri selectedFileUri) {
+    public static Bitmap getUriToBitmap(Context context, Uri selectedFileUri) {
         try {
             ParcelFileDescriptor parcelFileDescriptor =
                     context.getContentResolver().openFileDescriptor(selectedFileUri, "r");
@@ -591,26 +564,23 @@ public class SabianUtilities {
         return file;
     }
 
-    public static void showLoadingDialog(String title) {
-        hideLoadingDialog();
-        if (mActivity != null) {
-            pd = new ProgressDialog(mActivity, title);
-        } else {
+    public static void showLoadingDialog(Context context, String title) {
+
+        try {
+            hideLoadingDialog();
             pd = new ProgressDialog(context, title);
+            pd.setCanceledOnTouchOutside(false);
+            pd.setCancelable(false);
+            pd.show();
+        } catch (Exception e) {
+
         }
-        pd.setCanceledOnTouchOutside(false);
-        pd.setCancelable(false);
-        pd.show();
     }
 
-    public static void showLoadingDialog(String title, String message) {
-        hideLoadingDialog();
+    public static void showLoadingDialog(Context context, String title, String message) {
         try {
-            if (mActivity != null) {
-                pd = new ProgressDialog(mActivity, title + ". " + message);
-            } else {
-                pd = new ProgressDialog(context, title + ". " + message);
-            }
+            hideLoadingDialog();
+            pd = new ProgressDialog(context, title + ". " + message);
             pd.setCanceledOnTouchOutside(false);
             pd.setCancelable(false);
             pd.show();
@@ -641,9 +611,9 @@ public class SabianUtilities {
         return getLocalDateTimeNow(context).toString(format);
     }
 
-    public static void updateLoadingDialog(@Nullable String title, String message) {
+    public static void updateLoadingDialog(Context context, @Nullable String title, String message) {
         if (pd == null) {
-            showLoadingDialog(title, message);
+            showLoadingDialog(context, title, message);
             return;
         }
         //pd.setMessage(message);
@@ -653,9 +623,7 @@ public class SabianUtilities {
 
     public static class EmailValidator {
 
-        private Pattern pattern;
-
-        private Matcher matcher;
+        private final Pattern pattern;
 
         private static final String EMAIL_PATTERN =
                 "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
@@ -672,17 +640,9 @@ public class SabianUtilities {
          * @return true valid hex, false invalid hex
          */
         public boolean validate(final String hex) {
-
-            matcher = pattern.matcher(hex);
-
+            Matcher matcher = pattern.matcher(hex);
             return matcher.matches();
-
         }
-    }
-
-    public static void setActivity(Activity mActivity) {
-        SabianUtilities.mActivity = mActivity;
-        context = mActivity;
     }
 
     public static double roundOf(double number, int roundToDecimalPlaces, boolean up) {
@@ -698,21 +658,15 @@ public class SabianUtilities {
     }
 
     public static void copyFile(File src, File dst) throws IOException {
-        InputStream in = new FileInputStream(src);
-        try {
-            OutputStream out = new FileOutputStream(dst);
-            try {
+        try (InputStream in = new FileInputStream(src)) {
+            try (OutputStream out = new FileOutputStream(dst)) {
                 // Transfer bytes from in to out
                 byte[] buf = new byte[1024];
                 int len;
                 while ((len = in.read(buf)) > 0) {
                     out.write(buf, 0, len);
                 }
-            } finally {
-                out.close();
             }
-        } finally {
-            in.close();
         }
     }
 
