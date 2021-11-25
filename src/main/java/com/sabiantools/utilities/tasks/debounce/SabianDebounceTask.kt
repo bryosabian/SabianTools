@@ -22,22 +22,32 @@ open class SabianDebounceTask<T>(
 
     private var onTaskListener: OnDebounceTaskListener<T>? = listenerReference.get()
 
+    private var isComplete = false
+    private var error: Throwable? = null
+    private var result: T? = null
+
+    private fun reset() {
+        isComplete = false
+        error = null
+        result = null
+    }
+
     /**
      * Executes a cancellable task.
      * @param task The task to execute. It's allowed to throw
      */
     fun execute(task: () -> T) {
-        onTaskListener?.onLoading()
-        taskJob?.cancel()
 
-        var isComplete = false
-        var error: Throwable? = null
-        var result: T? = null
+        reset()
+
+        onTaskListener?.onLoading()
+
+        taskJob?.cancel()
 
         taskJob = launch(defaultDispatcher) {
             delay(debounceRate)
             try {
-                result = task()
+                result = task.invoke()
             } catch (e: Exception) {
                 error = e
             } finally {
@@ -45,7 +55,7 @@ open class SabianDebounceTask<T>(
             }
         }
 
-        launch(defaultDispatcher) {
+        launch(mainDispatcher) {
 
             taskJob?.join()
 
@@ -53,12 +63,12 @@ open class SabianDebounceTask<T>(
 
             if (isCancelled) {
                 onTaskListener?.onCancel()
-            }
-
-            error?.let {
-                onTaskListener?.onError(it)
-            } ?: run {
-                onTaskListener?.onComplete(result!!)
+            } else {
+                error?.let {
+                    onTaskListener?.onError(it)
+                } ?: run {
+                    onTaskListener?.onComplete(result!!)
+                }
             }
         }
     }
@@ -77,6 +87,7 @@ open class SabianDebounceTask<T>(
                 taskJob = null
             }
             onTaskListener = null
+            reset()
         } catch (e: Exception) {
             SabianUtilities.WriteLog("Could not cancel task job ${e.message}")
             e.printStackTrace()
