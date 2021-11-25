@@ -593,9 +593,9 @@ public class SabianUtilities {
         try {
             if (pd != null && pd.isShowing()) {
                 pd.dismiss();
-                pd = null;
-                SabianUtilities.WriteLog("Progress bar hidden bro");
+                SabianUtilities.WriteLog("Progress bar hidden");
             }
+            pd = null;
         } catch (Exception e) {
             SabianUtilities.WriteLog("Progress dialog error " + e.getMessage());
         }
@@ -612,13 +612,13 @@ public class SabianUtilities {
     }
 
     public static void updateLoadingDialog(Context context, @Nullable String title, String message) {
-        if (pd == null) {
+        if (pd == null || !pd.isShowing()) {
             showLoadingDialog(context, title, message);
             return;
         }
-        //pd.setMessage(message);
-        if (title != null)
-            pd.setTitle(title + "." + message);
+        String text = (!IsStringEmpty(title)) ? title + " " : "";
+        text += message;
+        pd.setTitle(text);
     }
 
     public static class EmailValidator {

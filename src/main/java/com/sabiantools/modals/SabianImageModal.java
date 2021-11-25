@@ -22,7 +22,6 @@ import com.squareup.picasso.Picasso;
 import androidx.annotation.NonNull;
 
 public class SabianImageModal extends Dialog {
-    private Context context;
     private ImageView imgImage;
     private Bitmap image;
     private String imageUrl;
@@ -32,7 +31,6 @@ public class SabianImageModal extends Dialog {
 
     public SabianImageModal(@NonNull Context context) {
         super(context, R.style.SabianMaterialDialog);
-        this.context = context;
     }
 
     @Override
@@ -95,7 +93,7 @@ public class SabianImageModal extends Dialog {
         getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 
         if (animate) {
-            Animation anim = AnimationUtils.loadAnimation(context, R.anim.modal_popup_show);
+            Animation anim = AnimationUtils.loadAnimation(getContext(), R.anim.modal_popup_show);
             vgBodyContainer.startAnimation(anim);
         }
     }

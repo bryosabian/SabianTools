@@ -31,8 +31,6 @@ public class SabianMaterialAlert extends android.app.Dialog {
 
     private TextView sct_Title;
 
-    private Context context;
-
     private LayoutInflater inflater;
 
     private int headerIcon;
@@ -78,12 +76,10 @@ public class SabianMaterialAlert extends android.app.Dialog {
 
     public SabianMaterialAlert(Context context) {
         super(context, R.style.SabianMaterialDialog);
-        this.context = context;
     }
 
     public SabianMaterialAlert(Context context, int themeResId) {
         super(context, R.style.SabianMaterialDialog);
-        this.context = context;
     }
 
     @Override
@@ -95,7 +91,6 @@ public class SabianMaterialAlert extends android.app.Dialog {
     }
 
     public SabianMaterialAlert init(Context context) {
-        this.context = context;
         inflater = LayoutInflater.from(context);
         init_elements();
         return this;
@@ -190,7 +185,7 @@ public class SabianMaterialAlert extends android.app.Dialog {
 
         if (isIconVectorDrawable()) {
 
-            VectorDrawableCompat compat = VectorDrawableCompat.create(context.getResources(), headerIcon, null);
+            VectorDrawableCompat compat = VectorDrawableCompat.create(getContext().getResources(), headerIcon, null);
 
             sfi_HeaderIcon.setImageDrawable(compat);
 

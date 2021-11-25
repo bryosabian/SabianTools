@@ -5,7 +5,7 @@
 5    <uses-sdk
 6        android:minSdkVersion="15"
 6-->/Users/katekiguru/Library/Mobile Documents/com~apple~CloudDocs/Desktop/Sabian Desktop/Sabian Projects/Android/Uwanjani/app/libs/sabiantools/src/main/AndroidManifest.xml
-7        android:targetSdkVersion="28" />
+7        android:targetSdkVersion="29" />
 7-->/Users/katekiguru/Library/Mobile Documents/com~apple~CloudDocs/Desktop/Sabian Desktop/Sabian Projects/Android/Uwanjani/app/libs/sabiantools/src/main/AndroidManifest.xml
 8
 9    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />

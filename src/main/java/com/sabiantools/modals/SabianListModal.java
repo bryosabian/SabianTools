@@ -48,7 +48,6 @@ public class SabianListModal extends Dialog {
     private @ColorRes
     int cancelButtonColor = NO_RES_ID;
     public static final int NO_RES_ID = -1;
-    private Context context;
     private TextView txtTitle, txtMessage;
     private String title, message;
     private @ColorRes
@@ -75,7 +74,6 @@ public class SabianListModal extends Dialog {
     private boolean showLoaderFirst;
     private String loaderText = "Loading..";
     private Loader loader;
-
     private Error error;
 
     private int minHeight = NO_DIMENSION_PIX;
@@ -116,7 +114,6 @@ public class SabianListModal extends Dialog {
 
     public SabianListModal(@NonNull Context context) {
         super(context, R.style.SabianMaterialDialog);
-        this.context = context;
         listItems = new ArrayList<>();
     }
 
@@ -236,19 +233,19 @@ public class SabianListModal extends Dialog {
         });
 
         if (okayButtonColor != NO_RES_ID)
-            btnOk.setBackgroundColor(context.getResources().getColor(okayButtonColor));
+            btnOk.setBackgroundColor(getContext().getResources().getColor(okayButtonColor));
 
         if (cancelButtonColor != NO_RES_ID)
-            btnCancel.setBackgroundColor(context.getResources().getColor(cancelButtonColor));
+            btnCancel.setBackgroundColor(getContext().getResources().getColor(cancelButtonColor));
 
         if (!SabianUtilities.IsStringEmpty(title))
             txtTitle.setText(title);
 
         if (titleColor != NO_RES_ID)
-            txtTitle.setTextColor(context.getResources().getColor(titleColor));
+            txtTitle.setTextColor(getContext().getResources().getColor(titleColor));
 
         if (messageColor != NO_RES_ID)
-            txtMessage.setTextColor(context.getResources().getColor(messageColor));
+            txtMessage.setTextColor(getContext().getResources().getColor(messageColor));
 
 
         if (minHeight != NO_DIMENSION_PIX) {
@@ -325,7 +322,7 @@ public class SabianListModal extends Dialog {
         getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 
         if (animate) {
-            Animation anim = AnimationUtils.loadAnimation(context, R.anim.modal_popup_show);
+            Animation anim = AnimationUtils.loadAnimation(getContext(), R.anim.modal_popup_show);
             vgBodyContainer.startAnimation(anim);
         }
     }
@@ -515,11 +512,8 @@ public class SabianListModal extends Dialog {
     }
 
     public static class ListItemAdapter extends ArrayAdapter<ListItem> {
-        private int transformRadius = 10;
-        private int transformMargin = 5;
-        private int imageEnabledPadding;
 
-        private Context context;
+        private int imageEnabledPadding;
         private LayoutInflater inflater;
         private List<ListItem> items;
 
@@ -527,8 +521,7 @@ public class SabianListModal extends Dialog {
             super(context, resource, objects);
             this.items = objects;
             this.inflater = LayoutInflater.from(context);
-            this.context = context;
-            imageEnabledPadding = context.getResources().getDimensionPixelSize(R.dimen.sabian_modal_list_image_padding);
+            imageEnabledPadding = getContext().getResources().getDimensionPixelSize(R.dimen.sabian_modal_list_image_padding);
         }
 
         @NonNull
@@ -556,7 +549,7 @@ public class SabianListModal extends Dialog {
             return view;
         }
 
-        private class Holder {
+        private static class Holder {
             private ViewGroup vgMainContainer;
             public ImageView imgIcon;
             public TextView txtTitle;

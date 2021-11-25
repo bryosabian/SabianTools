@@ -32,7 +32,6 @@ public class SabianModal extends Dialog {
     private @ColorRes
     int cancelButtonColor = NO_RES_ID;
     public static final int NO_RES_ID = -1;
-    private Context context;
     private TextView txtTitle, txtMessage;
     private String title, message;
     private @ColorRes
@@ -45,7 +44,6 @@ public class SabianModal extends Dialog {
 
     public SabianModal(@NonNull Context context) {
         super(context, R.style.SabianMaterialDialog);
-        this.context = context;
     }
 
     @Override
@@ -95,19 +93,19 @@ public class SabianModal extends Dialog {
         });
 
         if (okayButtonColor != NO_RES_ID)
-            btnOk.setBackgroundColor(context.getResources().getColor(okayButtonColor));
+            btnOk.setBackgroundColor(getContext().getResources().getColor(okayButtonColor));
 
         if (cancelButtonColor != NO_RES_ID)
-            btnCancel.setBackgroundColor(context.getResources().getColor(cancelButtonColor));
+            btnCancel.setBackgroundColor(getContext().getResources().getColor(cancelButtonColor));
 
         if (!SabianUtilities.IsStringEmpty(title))
             txtTitle.setText(title);
 
         if (titleColor != NO_RES_ID)
-            txtTitle.setTextColor(context.getResources().getColor(titleColor));
+            txtTitle.setTextColor(getContext().getResources().getColor(titleColor));
 
         if (messageColor != NO_RES_ID)
-            txtMessage.setTextColor(context.getResources().getColor(messageColor));
+            txtMessage.setTextColor(getContext().getResources().getColor(messageColor));
 
         if (view != null) {
             vgBody.setVisibility(View.VISIBLE);
@@ -137,7 +135,7 @@ public class SabianModal extends Dialog {
         getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 
         if (animate) {
-            Animation anim = AnimationUtils.loadAnimation(context, R.anim.modal_popup_show);
+            Animation anim = AnimationUtils.loadAnimation(getContext(), R.anim.modal_popup_show);
             vgBodyContainer.startAnimation(anim);
         }
     }
