@@ -1,7 +1,6 @@
 package com.sabiantools.utilities.tasks.search
 
 import com.sabiantools.utilities.SabianUtilities
-import com.sabiantools.utilities.tasks.search.OnLinearDataSearchListener
 import kotlinx.coroutines.*
 import java.lang.ref.WeakReference
 import java.util.regex.Pattern
@@ -30,6 +29,8 @@ abstract class SabianLinearDataSearcher<T>(
 
     private var onSearchListener: OnLinearDataSearchListener?
 
+    private var isComplete = false
+
     init {
         onSearchListener = listenerReference.get()
     }
@@ -44,14 +45,36 @@ abstract class SabianLinearDataSearcher<T>(
      * Searches through the list using the query provided non-blockingly
      */
     fun search(contents: List<Any>, query: String) {
+
         this.contents = contents
         this.query = query
-        onSearchListener?.onSearching()
+
+        beforeSearch()
+
         searchJob?.cancel()
         searchJob = launch(defaultDispatcher) {
             delay(debounceRate)
             searchItems(query)
+            isComplete = true
         }
+
+        launch(mainDispatcher) {
+            searchJob?.join()
+            afterSearch()
+        }
+    }
+
+    private fun beforeSearch() {
+        isComplete = false
+        onSearchListener?.onSearching()
+    }
+
+    private fun afterSearch() {
+        if (isComplete)
+            onSearchListener?.onSearched(newContent)
+        else
+            onSearchListener?.onCancel()
+        isComplete = false
     }
 
     /**
@@ -81,19 +104,18 @@ abstract class SabianLinearDataSearcher<T>(
                 newContent.add(content)
             }
         }
-
-        afterSearch()
     }
 
-    /**
-     * Called after search operation is completed
-     */
-    private fun afterSearch() {
-        launch(mainDispatcher) {
-            searchJob?.join()
-            onSearchListener?.onSearched(newContent)
-        }
-    }
+//    /**
+//     * Called after search operation is completed
+//     */
+//    @Deprecated("This has been joined by the main function thread")
+//    private fun afterSearch() {
+//        launch(mainDispatcher) {
+//            searchJob?.join()
+//            onSearchListener?.onSearched(newContent)
+//        }
+//    }
 
     /**
      * Cancels the search operation
