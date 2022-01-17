@@ -70,6 +70,8 @@ open class SabianDebounceTask<T>(
                     onTaskListener?.onComplete(result!!)
                 }
             }
+
+            reset()
         }
     }
 
