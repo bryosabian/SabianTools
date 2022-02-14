@@ -62,4 +62,7 @@
 
     <color name="sabian_white">@color/google_white</color>
 
+    <color name="sabian_list_title_color">#5a5a5a</color>
+    <color name="sabian_list_sub_title_color">#808182</color>
+
 </resources>

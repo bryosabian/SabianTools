@@ -54,6 +54,7 @@ abstract class SabianLinearDataSearcher<T>(
         searchJob?.cancel()
         searchJob = launch(defaultDispatcher) {
             delay(debounceRate)
+            filterSearch()
             searchItems(query)
             isComplete = true
         }
@@ -67,6 +68,10 @@ abstract class SabianLinearDataSearcher<T>(
     private fun beforeSearch() {
         isComplete = false
         onSearchListener?.onSearching()
+    }
+
+    private fun filterSearch() {
+        this.contents = onSearchListener?.filterBeforeSearch(this.contents) ?: this.contents
     }
 
     private fun afterSearch() {
@@ -105,17 +110,6 @@ abstract class SabianLinearDataSearcher<T>(
             }
         }
     }
-
-//    /**
-//     * Called after search operation is completed
-//     */
-//    @Deprecated("This has been joined by the main function thread")
-//    private fun afterSearch() {
-//        launch(mainDispatcher) {
-//            searchJob?.join()
-//            onSearchListener?.onSearched(newContent)
-//        }
-//    }
 
     /**
      * Cancels the search operation

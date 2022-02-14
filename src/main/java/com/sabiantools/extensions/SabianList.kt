@@ -12,10 +12,12 @@ fun <T> MutableList<T>.removeAllBy(predicate: (T) -> Boolean) {
     this.removeAll(newList)
 }
 
-fun <T> List<T>.toArrayList(): ArrayList<T> {
+fun <T> Collection<T>.toArrayList(): ArrayList<T> {
     return ArrayList(this)
 }
 
-fun <T> Set<T>.toArrayList(): ArrayList<T> {
-    return ArrayList(this)
+fun <T> Collection<T>.toIndexes(): List<Int> {
+    return mapIndexed { index, _ ->
+        index
+    }
 }
