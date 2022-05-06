@@ -18,6 +18,7 @@ import com.sabiantools.R;
 import com.sabiantools.utilities.SabianUtilities;
 
 import androidx.annotation.ColorRes;
+import androidx.annotation.LayoutRes;
 import androidx.annotation.NonNull;
 
 public class SabianModal extends Dialog {
@@ -39,8 +40,9 @@ public class SabianModal extends Dialog {
     private @ColorRes
     int messageColor = NO_RES_ID;
     private boolean animate = true;
-
     private ViewGroup vgBodyContainer;
+    private boolean isFooterFixed = false;
+
 
     public SabianModal(@NonNull Context context) {
         super(context, R.style.SabianMaterialDialog);
@@ -50,8 +52,16 @@ public class SabianModal extends Dialog {
     protected void onCreate(Bundle savedInstanceState) {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.sabian_modal_smooth);
+        setContentView(getLayout());
         init_elements();
+    }
+
+    @LayoutRes
+    private int getLayout() {
+        if (isFooterFixed) {
+            return R.layout.sabian_modal_smooth_fixed_bottom;
+        }
+        return R.layout.sabian_modal_smooth;
     }
 
     protected void init_elements() {
@@ -196,6 +206,11 @@ public class SabianModal extends Dialog {
 
     public SabianModal setAnimate(boolean animate) {
         this.animate = animate;
+        return this;
+    }
+
+    public SabianModal setFooterFixed(boolean footerFixed) {
+        isFooterFixed = footerFixed;
         return this;
     }
 }

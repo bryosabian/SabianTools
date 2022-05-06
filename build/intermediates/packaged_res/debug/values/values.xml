@@ -16,6 +16,8 @@
     <color name="sabian_font_color_standard">#333333</color>
     <color name="sabian_light_divider">#E0EDED</color>
     <color name="sabian_list_divider">#15000000</color>
+    <color name="sabian_list_sub_title_color">#808182</color>
+    <color name="sabian_list_title_color">#5a5a5a</color>
     <color name="sabian_modal_header_color">#CFF1EE</color>
     <color name="sabian_notification_danger">#FD7043</color>
     <color name="sabian_notification_inverse">#435A62</color>

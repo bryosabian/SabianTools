@@ -639,6 +639,8 @@ int color sabian_font_color_light_dark 0x0
 int color sabian_font_color_standard 0x0
 int color sabian_light_divider 0x0
 int color sabian_list_divider 0x0
+int color sabian_list_sub_title_color 0x0
+int color sabian_list_title_color 0x0
 int color sabian_modal_header_color 0x0
 int color sabian_notification_danger 0x0
 int color sabian_notification_inverse 0x0
@@ -929,6 +931,7 @@ int drawable control_button_text_alt 0x0
 int drawable control_button_text_bg 0x0
 int drawable control_button_text_search_bg 0x0
 int drawable control_button_text_white 0x0
+int drawable control_sabian_list_divider 0x0
 int drawable control_sabian_round_button 0x0
 int drawable control_sabian_stat_box 0x0
 int drawable dialog_background 0x0
@@ -1152,6 +1155,7 @@ int id ll_SabianNotificationContainer 0x0
 int id ll_ToastContainer 0x0
 int id ll_ViewHoldermodalContainer 0x0
 int id loading_bar 0x0
+int id lst_GridModalList 0x0
 int id lst_SabianModalList 0x0
 int id media_actions 0x0
 int id message 0x0
@@ -1192,6 +1196,7 @@ int id scrollIndicatorUp 0x0
 int id scrollView 0x0
 int id sct_ModalFailedText 0x0
 int id sct_ModalLoaderText 0x0
+int id sct_SabianGridModalItemText 0x0
 int id sct_SabianMaterialModalTitle 0x0
 int id sct_SabianModalMessage 0x0
 int id sct_SabianModalTitle 0x0
@@ -1326,12 +1331,15 @@ int layout render_type_default 0x0
 int layout render_type_text 0x0
 int layout sabian_actionbar 0x0
 int layout sabian_error_view 0x0
+int layout sabian_grid_modal_item_layout 0x0
+int layout sabian_grid_modal_layout 0x0
 int layout sabian_header_banner 0x0
 int layout sabian_material_modal_layout 0x0
 int layout sabian_modal_image 0x0
 int layout sabian_modal_list_item 0x0
 int layout sabian_modal_list_smooth 0x0
 int layout sabian_modal_smooth 0x0
+int layout sabian_modal_smooth_fixed_bottom 0x0
 int layout sabian_number_selector 0x0
 int layout sabian_toast_layout 0x0
 int layout sabian_transparent_button_text 0x0

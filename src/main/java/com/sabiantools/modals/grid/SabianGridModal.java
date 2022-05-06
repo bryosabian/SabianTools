@@ -17,6 +17,7 @@ import com.sabiantools.controls.recyclerview.SabianDividerDecorator;
 import com.sabiantools.utilities.SabianUtilities;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -64,8 +65,8 @@ public class SabianGridModal extends Dialog {
         rclHistoryList.setAdapter(adapter);
     }
 
-    public SabianGridModal setItems(ArrayList<SabianGridModalItem> items) {
-        this.items = items;
+    public SabianGridModal setItems(List<SabianGridModalItem> items) {
+        this.items = new ArrayList<>(items);
         return this;
     }
 

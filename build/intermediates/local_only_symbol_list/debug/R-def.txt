@@ -125,6 +125,8 @@ color sabian_font_color_light_dark
 color sabian_font_color_standard
 color sabian_light_divider
 color sabian_list_divider
+color sabian_list_sub_title_color
+color sabian_list_title_color
 color sabian_modal_header_color
 color sabian_notification_danger
 color sabian_notification_inverse
@@ -162,6 +164,7 @@ drawable control_button_text_alt
 drawable control_button_text_bg
 drawable control_button_text_search_bg
 drawable control_button_text_white
+drawable control_sabian_list_divider
 drawable control_sabian_round_button
 drawable control_sabian_stat_box
 drawable dimens
@@ -230,6 +233,7 @@ id ll_SabianModalBodyContainer
 id ll_SabianNotificationContainer
 id ll_ToastContainer
 id ll_ViewHoldermodalContainer
+id lst_GridModalList
 id lst_SabianModalList
 id pb_SabianModalImageLoader
 id right
@@ -243,6 +247,7 @@ id rll_SabianRibbonContainer
 id scrl_SabianMaterialModalScroller
 id sct_ModalFailedText
 id sct_ModalLoaderText
+id sct_SabianGridModalItemText
 id sct_SabianMaterialModalTitle
 id sct_SabianModalMessage
 id sct_SabianModalTitle
@@ -276,12 +281,15 @@ layout control_sabian_round_button
 layout control_sabian_stat_box
 layout sabian_actionbar
 layout sabian_error_view
+layout sabian_grid_modal_item_layout
+layout sabian_grid_modal_layout
 layout sabian_header_banner
 layout sabian_material_modal_layout
 layout sabian_modal_image
 layout sabian_modal_list_item
 layout sabian_modal_list_smooth
 layout sabian_modal_smooth
+layout sabian_modal_smooth_fixed_bottom
 layout sabian_number_selector
 layout sabian_toast_layout
 layout sabian_transparent_button_text

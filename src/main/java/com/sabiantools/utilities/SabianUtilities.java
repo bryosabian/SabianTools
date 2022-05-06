@@ -29,6 +29,7 @@ import com.google.gson.JsonParser;
 import com.google.gson.JsonSyntaxException;
 import com.sabiantools.R;
 import com.sabiantools.modals.SabianModal;
+import com.sabiantools.utilities.gson.TypeAdapters;
 
 import org.joda.time.DateTime;
 import org.joda.time.LocalDate;
@@ -47,10 +48,13 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.PrintWriter;
 import java.lang.reflect.Modifier;
+import java.lang.reflect.Type;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Map;
+import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -286,19 +290,23 @@ public class SabianUtilities {
     }
 
     public static Gson GetStandardGson() {
-        return GetGson(Modifier.PRIVATE, Modifier.TRANSIENT, Modifier.STATIC);
+        return GetStandardGson(null);
     }
 
-    public static Gson GetGson(int... excludeModifiers) {
+    public static Gson GetStandardGson(Map<Type, Object> adapters) {
+        return GetGson(adapters, Modifier.PRIVATE, Modifier.TRANSIENT, Modifier.STATIC);
+    }
+
+    public static Gson GetGson(Map<Type, Object> adapters, int... excludeModifiers) {
         GsonBuilder builder = new GsonBuilder();
         builder.excludeFieldsWithModifiers(excludeModifiers);
+        if (adapters != null) {
+            Set<Map.Entry<Type, Object>> set = adapters.entrySet();
+            for (Map.Entry<Type, Object> entry : set) {
+                builder.registerTypeAdapter(entry.getKey(), entry.getValue());
+            }
+        }
         return builder.create();
-    }
-
-    public static GsonBuilder getStandardGsonBuilder() {
-        GsonBuilder builder = new GsonBuilder();
-        builder.excludeFieldsWithModifiers(Modifier.PRIVATE, Modifier.TRANSIENT, Modifier.STATIC);
-        return builder;
     }
 
     public static String GetFormattedDateString(Date date) {
