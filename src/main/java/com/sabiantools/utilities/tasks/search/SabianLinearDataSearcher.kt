@@ -49,18 +49,27 @@ abstract class SabianLinearDataSearcher<T>(
         this.contents = contents
         this.query = query
 
+        var error: Throwable? = null
+
         beforeSearch()
 
         searchJob?.cancel()
         searchJob = launch(defaultDispatcher) {
-            delay(debounceRate)
-            filterSearch()
-            searchItems(query)
-            isComplete = true
+            try {
+                delay(debounceRate)
+                filterSearch()
+                searchItems(query)
+                isComplete = true
+            } catch (e: Exception) {
+                error = e
+            }
         }
 
         launch(mainDispatcher) {
             searchJob?.join()
+            if (error != null) {
+                SabianUtilities.WriteLog("Something went wrong with the search ${error!!.message}")
+            }
             afterSearch()
         }
     }
