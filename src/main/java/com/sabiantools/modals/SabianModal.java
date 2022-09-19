@@ -11,6 +11,8 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.gc.materialdesign.views.ButtonFlat;
@@ -43,6 +45,15 @@ public class SabianModal extends Dialog {
     private ViewGroup vgBodyContainer;
     private boolean isFooterFixed = false;
 
+    private ViewGroup actionsContainer;
+    private ScrollView scrollView;
+
+    public static final int ACTIONS_ALIGN_VERTICAL = LinearLayout.VERTICAL;
+    public static final int ACTIONS_ALIGN_HORIZONTAL = LinearLayout.HORIZONTAL;
+
+    private int actionsAlignment = ACTIONS_ALIGN_HORIZONTAL;
+
+
 
     public SabianModal(@NonNull Context context) {
         super(context, R.style.SabianMaterialDialog);
@@ -71,6 +82,13 @@ public class SabianModal extends Dialog {
         txtTitle = (TextView) findViewById(R.id.sct_SabianModalTitle);
         txtMessage = (TextView) findViewById(R.id.sct_SabianModalMessage);
         vgBodyContainer = (ViewGroup) findViewById(R.id.rll_SabianModalContainer);
+        scrollView = (ScrollView) findViewById(R.id.scrl_SabianModalScroller);
+        actionsContainer = (ViewGroup) findViewById(R.id.ll_SabianModalActionsContainer);
+
+        if (actionsContainer instanceof LinearLayout) {
+            LinearLayout actionLinear = (LinearLayout) actionsContainer;
+            actionLinear.setOrientation(actionsAlignment);
+        }
 
         if (!SabianUtilities.IsStringEmpty(okayButtonText)) {
             btnOk.setText(okayButtonText);
@@ -128,6 +146,11 @@ public class SabianModal extends Dialog {
                 txtMessage.setText(message);
             }
         }
+    }
+
+    public SabianModal setActionsAlignment(int actionsAlignment) {
+        this.actionsAlignment = actionsAlignment;
+        return this;
     }
 
     @Override
@@ -212,5 +235,9 @@ public class SabianModal extends Dialog {
     public SabianModal setFooterFixed(boolean footerFixed) {
         isFooterFixed = footerFixed;
         return this;
+    }
+
+    public ScrollView getScrollView() {
+        return scrollView;
     }
 }

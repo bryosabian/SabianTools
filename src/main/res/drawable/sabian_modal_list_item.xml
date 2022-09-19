@@ -39,7 +39,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-            <com.sabiantools.controls.SabianCondensedText
+            <com.sabiantools.controls.texts.SabianCondensedText
                 android:id="@+id/sct_ViewHoldermodalTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -50,7 +50,7 @@
                 android:textSize="15sp"
                 sabian:SabianRobotoType="Regular" />
 
-                <com.sabiantools.controls.SabianCondensedText
+                <com.sabiantools.controls.texts.SabianCondensedText
                     android:id="@+id/sct_ViewHoldermodalSubTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

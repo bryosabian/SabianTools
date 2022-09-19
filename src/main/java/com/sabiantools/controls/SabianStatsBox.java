@@ -11,6 +11,7 @@ import android.widget.FrameLayout;
 import com.beardedhen.androidbootstrap.FontAwesomeText;
 import com.gc.materialdesign.views.Card;
 import com.sabiantools.R;
+import com.sabiantools.controls.texts.SabianCondensedText;
 
 /**
  * Created By Brian Sabana on 7/22/2016.

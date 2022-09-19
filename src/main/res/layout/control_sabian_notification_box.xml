@@ -22,7 +22,7 @@
         android:id="@+id/ll_SabianNotificationContainer"
 
         >
-    <com.sabiantools.controls.SabianCondensedText
+    <com.sabiantools.controls.texts.SabianCondensedText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/sabian_actionbar_text_color"
@@ -34,7 +34,7 @@
         android:textSize="15sp"
         />
 
-        <com.sabiantools.controls.SabianCondensedText
+        <com.sabiantools.controls.texts.SabianCondensedText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="#f9f9f9"

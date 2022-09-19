@@ -10,7 +10,7 @@ import android.widget.Toast;
 
 import com.beardedhen.androidbootstrap.FontAwesomeText;
 import com.sabiantools.R;
-import com.sabiantools.controls.SabianCondensedText;
+import com.sabiantools.controls.texts.SabianCondensedText;
 
 import androidx.annotation.DrawableRes;
 

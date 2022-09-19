@@ -35,7 +35,7 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/bottom_border_bg">
 
-                    <com.sabiantools.controls.SabianCondensedText
+                    <com.sabiantools.controls.texts.SabianCondensedText
                         android:id="@+id/sct_SabianModalTitle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -146,7 +146,7 @@
                     android:indeterminate="true"
                     sabian:SpinKit_Color="@color/sabian_standard_background" />
 
-                <com.sabiantools.controls.SabianCondensedText
+                <com.sabiantools.controls.texts.SabianCondensedText
                     android:id="@+id/sct_ModalLoaderText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -175,7 +175,7 @@
                 android:layout_height="50dp"
                 android:layout_gravity="center" />
 
-            <com.sabiantools.controls.SabianCondensedText
+            <com.sabiantools.controls.texts.SabianCondensedText
                 android:id="@+id/sct_ModalFailedText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

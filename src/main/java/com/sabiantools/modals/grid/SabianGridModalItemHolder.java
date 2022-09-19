@@ -4,7 +4,7 @@ import android.util.TypedValue;
 import android.view.View;
 
 import com.sabiantools.R;
-import com.sabiantools.controls.SabianCondensedText;
+import com.sabiantools.controls.texts.SabianCondensedText;
 
 import androidx.recyclerview.widget.RecyclerView;
 

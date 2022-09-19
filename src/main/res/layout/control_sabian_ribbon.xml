@@ -9,7 +9,7 @@
     android:id="@+id/rll_SabianRibbonContainer"
     >
 
-    <com.sabiantools.controls.SabianCondensedText
+    <com.sabiantools.controls.texts.SabianCondensedText
         android:id="@+id/sct_SabianRibbonText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

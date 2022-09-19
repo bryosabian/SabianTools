@@ -17,8 +17,8 @@ abstract class SabianLinearDataSearcher<T>(
 
     private var searchJob: Job? = null
     private val debounceRate: Long = 500
-    private var contents: List<Any> = listOf()
-    private var newContent: ArrayList<Any> = arrayListOf()
+    protected var contents: List<Any> = listOf()
+    protected var newContent: ArrayList<Any> = arrayListOf()
     private var query: String = ""
 
     protected open var defaultDispatcher: CoroutineDispatcher = Dispatchers.Default
@@ -83,7 +83,7 @@ abstract class SabianLinearDataSearcher<T>(
         this.contents = onSearchListener?.filterBeforeSearch(this.contents) ?: this.contents
     }
 
-    private fun afterSearch() {
+    protected fun afterSearch() {
         if (isComplete)
             onSearchListener?.onSearched(newContent)
         else

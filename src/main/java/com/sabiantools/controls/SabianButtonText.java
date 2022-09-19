@@ -21,6 +21,7 @@ import android.widget.ImageView;
 
 import com.beardedhen.androidbootstrap.FontAwesomeText;
 import com.sabiantools.R;
+import com.sabiantools.controls.texts.SabianCondensedEditText;
 import com.sabiantools.controls.texts.TypeFaceFactory;
 import com.sabiantools.utilities.SabianUtilities;
 

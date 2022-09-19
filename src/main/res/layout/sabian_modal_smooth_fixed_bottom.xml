@@ -29,7 +29,7 @@
             android:paddingBottom="@dimen/sabian_modal_fixed_footer_height_off">
 
             <!--Header-->
-            <com.sabiantools.controls.SabianCondensedText
+            <com.sabiantools.controls.texts.SabianCondensedText
                 android:id="@+id/sct_SabianModalTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -44,7 +44,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <com.sabiantools.controls.SabianCondensedText
+                <com.sabiantools.controls.texts.SabianCondensedText
                     android:id="@+id/sct_SabianModalMessage"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -70,10 +70,10 @@
             android:layout_alignParentBottom="true">
 
             <LinearLayout
+                android:id="@+id/ll_SabianModalActionsContainer"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
+                android:layout_alignParentBottom="true"
                 android:layout_gravity="right"
                 android:orientation="horizontal">
 

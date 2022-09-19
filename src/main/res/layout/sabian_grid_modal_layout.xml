@@ -17,7 +17,7 @@
         android:paddingBottom="10dp"
         android:paddingTop="20dp">
 
-        <com.sabiantools.controls.SabianCondensedText
+        <com.sabiantools.controls.texts.SabianCondensedText
             android:id="@+id/sct_SabianModalTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

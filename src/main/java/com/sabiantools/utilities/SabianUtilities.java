@@ -32,6 +32,7 @@ import com.sabiantools.modals.SabianModal;
 import com.sabiantools.utilities.gson.TypeAdapters;
 
 import org.joda.time.DateTime;
+import org.joda.time.DateTimeZone;
 import org.joda.time.LocalDate;
 import org.joda.time.LocalDateTime;
 import org.joda.time.format.DateTimeFormat;
@@ -55,6 +56,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Map;
 import java.util.Set;
+import java.util.TimeZone;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -77,6 +79,10 @@ public class SabianUtilities {
 
     public static void DisplayMessage(Context context, String message) {
         DisplayMessage(context, message, SabianToast.MessageType.ERROR);
+    }
+
+    public static void DisplayMessage(Context context, String title, String message) {
+        DisplayMessage(context, String.format("%s %s", title, message));
     }
 
     public static void DisplayMessage(Context context, String message, SabianToast.MessageType messageType) {
@@ -138,6 +144,55 @@ public class SabianUtilities {
                 }
             });
         modal.show();
+    }
+
+    public static void DisplayModal(Context context, String title, String message, String okText, String cancelText, final View.OnClickListener onOkayClick, final View.OnClickListener onCancelClick, int actionsAlignment) {
+        final SabianModal modal = new SabianModal(context);
+        modal.setTitle(title).setMessage(message);
+        modal.setOkayButtonText(okText);
+        modal.setActionsAlignment(actionsAlignment);
+        modal.setOnOkayClickListener(view -> {
+            modal.dismiss();
+            if (onOkayClick != null)
+                onOkayClick.onClick(view);
+        });
+
+        if (!(SabianUtilities.IsStringEmpty(cancelText) && onCancelClick == null)) {
+            modal.setCancelButtonText(cancelText);
+        }
+        if (onCancelClick != null)
+            modal.setOnCancelClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    modal.dismiss();
+                    onCancelClick.onClick(view);
+                }
+            });
+        modal.show();
+    }
+
+    public static void showAlert(Context context, String title, String message,
+                                 String positiveButtonText,
+                                 final View.OnClickListener onPositiveClickListener,
+                                 String negativeButtonText,
+                                 final View.OnClickListener onNegativeClickListener
+    ) {
+        DisplayModal(context, title, message, positiveButtonText, negativeButtonText, onPositiveClickListener, onNegativeClickListener);
+
+    }
+
+    public static void showAlert(Context context, String title, String message,
+                                 String positiveButtonText,
+                                 final View.OnClickListener onPositiveClickListener,
+                                 String negativeButtonText,
+                                 final View.OnClickListener onNegativeClickListener, int actionAlignment
+    ) {
+        DisplayModal(context, title, message, positiveButtonText, negativeButtonText, onPositiveClickListener, onNegativeClickListener, actionAlignment);
+
+    }
+
+    public static void showAlert(Context context, String title, String message) {
+        showAlert(context, title, message, null, null, null, null);
     }
 
     public static void WriteLog(String ID, String message) {
@@ -662,7 +717,15 @@ public class SabianUtilities {
     public static BigDecimal roundOf(BigDecimal number, int roundToDecimalPlaces, boolean up) {
         BigDecimal bd = number.setScale(roundToDecimalPlaces, (up) ? RoundingMode.UP : RoundingMode.DOWN);
         return bd;
+    }
 
+    public static double roundTo(float number, double roundTo) {
+        return (Math.round(number) * roundTo) / roundTo;
+    }
+
+    public static String escapeSpecialRegexChars(String str) {
+        Pattern pattern = Pattern.compile("[{}()\\[\\].+*?^$\\\\|]");
+        return pattern.matcher(str).replaceAll("\\\\$0");
     }
 
     public static void copyFile(File src, File dst) throws IOException {
@@ -739,4 +802,105 @@ public class SabianUtilities {
         return false;
 
     }
+
+    public static TimeZone getCurrentTimeZone() {
+        Calendar cal = Calendar.getInstance();
+        TimeZone tz = cal.getTimeZone();
+        return tz;
+    }
+
+    public static TimeZone getCurrentTimeZone(Calendar calendar) {
+        Calendar cal = calendar;
+        TimeZone tz = cal.getTimeZone();
+        return tz;
+    }
+
+    public static DateTime getCurrentTimeZoneDateTime() {
+        DateTimeZone zoneHere = DateTimeZone.forID(SabianUtilities.getCurrentTimeZone().getID());
+        DateTime dateTimeNow = DateTime.now().withZone(zoneHere);
+        return dateTimeNow;
+    }
+
+    /**
+     * Gets the current date and time with just hours
+     *
+     * @return
+     */
+    public static DateTime getCurrentTimeZoneDateTimeWithHours() {
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(Calendar.MINUTE, 0);
+        calendar.set(Calendar.SECOND, 0);
+        calendar.set(Calendar.MILLISECOND, 0);
+        TimeZone tz = calendar.getTimeZone();
+        DateTimeZone zoneHere = DateTimeZone.forID(tz.getID());
+        DateTime dateTimeNow = new DateTime(calendar.getTime()).withZone(zoneHere);
+        return dateTimeNow;
+    }
+
+
+    /**
+     * Gets the current date and time with just hours and minutes
+     *
+     * @return
+     */
+    public static DateTime getCurrentTimeZoneDateTimeWithHoursAndMinutes() {
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(Calendar.SECOND, 0);
+        calendar.set(Calendar.MILLISECOND, 0);
+        TimeZone tz = calendar.getTimeZone();
+        DateTimeZone zoneHere = DateTimeZone.forID(tz.getID());
+        DateTime dateTimeNow = new DateTime(calendar.getTime()).withZone(zoneHere);
+        return dateTimeNow;
+    }
+
+    @Nullable
+    public static Bitmap getRoundImage(String code) {
+
+        Bitmap b;
+
+        try {
+            byte[] myByteArray = Base64
+                    .decode(code,
+                            Base64.DEFAULT);
+
+
+            BitmapFactory.Options options = new BitmapFactory.Options();
+            options.inSampleSize = 8;
+
+            b = BitmapFactory.decodeByteArray(
+                    myByteArray, 0,
+                    myByteArray.length);
+
+            Bitmap source = b;
+
+            int size = Math.min(source.getWidth(), source.getHeight()); //Gets the radius
+            int x = (source.getWidth() - size) / 2;
+            int y = (source.getHeight() - size) / 2;
+
+            Bitmap squareBitmap = Bitmap.createBitmap(source, x, y, size, size);
+
+            if (squareBitmap != source) {
+                source.recycle();
+            }
+
+            Bitmap bitmap = Bitmap.createBitmap(size, size, source.getConfig());
+
+            Canvas canvas = new Canvas(bitmap);
+            Paint paint = new Paint();
+            BitmapShader shader = new BitmapShader(squareBitmap, BitmapShader.TileMode.CLAMP, BitmapShader.TileMode.CLAMP);
+            paint.setShader(shader);
+            paint.setAntiAlias(true);
+            float radius = size / 2f;
+            canvas.drawCircle(radius, radius, radius, paint);
+            squareBitmap.recycle();
+            return bitmap;
+
+        } catch (Exception e) {
+            Log.e("Dev2018_NoImage", "No image found");
+            return null;
+
+        }
+
+    }
+
 }

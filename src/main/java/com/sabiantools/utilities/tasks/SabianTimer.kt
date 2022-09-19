@@ -6,21 +6,10 @@ import kotlin.concurrent.fixedRateTimer
 
 class SabianTimer(private var seconds: Long = 1, private val task: () -> Unit) {
 
-    private val mSeconds: Long
+    private val milliseconds: Long
         get() = seconds * 1000
 
     private var timer: Timer? = null
-
-//    private val mainHandler: Handler by lazy {
-//        Handler(Looper.getMainLooper())
-//    }
-//
-//    private val updateTask = object : Runnable {
-//        override fun run() {
-//            task.invoke()
-//            mainHandler.postDelayed(this, mSeconds)
-//        }
-//    }
 
     fun start() {
         timer?.let {
@@ -28,7 +17,7 @@ class SabianTimer(private var seconds: Long = 1, private val task: () -> Unit) {
             timer = null
         }
         timer =
-            fixedRateTimer("SabianTimer : ${this.javaClass.name}", false, 0L, mSeconds) {
+            fixedRateTimer("SabianTimer : ${this.javaClass.name}", false, 0L, milliseconds) {
                 task.invoke()
             }
     }

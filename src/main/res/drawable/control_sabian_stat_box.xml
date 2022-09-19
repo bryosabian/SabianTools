@@ -29,7 +29,7 @@
                 android:layout_gravity="center_horizontal|center_vertical"
                 />
 
-            <com.sabiantools.controls.SabianCondensedText
+            <com.sabiantools.controls.texts.SabianCondensedText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="14sp"

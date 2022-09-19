@@ -9,6 +9,7 @@ import android.widget.FrameLayout;
 import com.gc.materialdesign.views.ButtonFlat;
 import com.gc.materialdesign.views.Card;
 import com.sabiantools.R;
+import com.sabiantools.controls.texts.SabianCondensedText;
 
 import androidx.annotation.ColorRes;
 
