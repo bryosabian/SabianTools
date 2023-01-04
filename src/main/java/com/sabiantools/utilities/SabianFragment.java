@@ -3,6 +3,7 @@ package com.sabiantools.utilities;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Build;
+import android.os.Bundle;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -12,6 +13,7 @@ import com.sabiantools.R;
 
 import androidx.annotation.IdRes;
 import androidx.annotation.Nullable;
+import androidx.core.app.ComponentActivity;
 import androidx.fragment.app.Fragment;
 
 /**
@@ -46,6 +48,7 @@ public class SabianFragment extends Fragment {
     protected void setRootView(View view) {
         this.root = view;
     }
+
 
     @Override
     public void onStart() {

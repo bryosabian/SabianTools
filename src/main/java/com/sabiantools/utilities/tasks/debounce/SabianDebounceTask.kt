@@ -9,13 +9,13 @@ import kotlin.coroutines.CoroutineContext
  * A debounce task executable
  */
 open class SabianDebounceTask<T>(
-    private var debounceRate: Long, listener: OnDebounceTaskListener<T>?
+    var debounceRate: Long, listener: OnDebounceTaskListener<T>?,
+    protected open var defaultDispatcher: CoroutineDispatcher = Dispatchers.Default,
+    protected open var mainDispatcher: CoroutineDispatcher = Dispatchers.Main
 ) : CoroutineScope {
 
     private var taskJob: Job? = null
 
-    protected open var defaultDispatcher: CoroutineDispatcher = Dispatchers.Default
-    protected open var mainDispatcher: CoroutineDispatcher = Dispatchers.Main
 
     private var listenerReference: WeakReference<OnDebounceTaskListener<T>> =
         WeakReference(listener)
@@ -97,6 +97,6 @@ open class SabianDebounceTask<T>(
     }
 
     override val coroutineContext: CoroutineContext
-        get() = Dispatchers.Main
+        get() = SupervisorJob() + defaultDispatcher
 
 }

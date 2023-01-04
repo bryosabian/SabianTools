@@ -48,3 +48,12 @@ fun Double.toPriceFormattedString(): String {
 fun Double.toPriceFormattedString(currency: String): String {
     return "${this.toPriceFormattedString()} $currency"
 }
+
+/**
+ * Returns a rounded string
+ */
+fun Double.toRoundString(scale: Int = 2, mode: RoundingMode = RoundingMode.HALF_EVEN): String {
+    val bc = BigDecimal(this)
+    val rbc = bc.setScale(scale, mode)
+    return rbc.toPlainString()
+}

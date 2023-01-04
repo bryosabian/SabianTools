@@ -16,14 +16,13 @@
         android:layout_centerInParent="true"
         android:background="@color/google_white"
         android:orientation="vertical">
+
         <!--header-->
         <RelativeLayout
             android:id="@+id/rll_SabianMaterialModalHeader"
             android:layout_width="match_parent"
             android:layout_height="80dp"
-            android:background="@color/sabian_theme_background"
-
-            >
+            android:background="@color/sabian_theme_background">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -54,9 +53,10 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerInParent="true"
-                        android:text="Product Item"
+                        android:text="Title"
                         android:textColor="@color/google_white"
-                        android:textSize="15sp" />
+                        android:textSize="15sp"
+                        sabian:SabianRobotoType="Regular" />
                 </RelativeLayout>
             </LinearLayout>
 
@@ -83,6 +83,7 @@
 
         </RelativeLayout>
 
+        <!--Body-->
         <androidx.core.widget.NestedScrollView
             android:id="@+id/scrl_SabianMaterialModalScroller"
             android:layout_width="match_parent"

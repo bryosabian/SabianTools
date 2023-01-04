@@ -72,10 +72,25 @@ public class SabianUtilities {
     private static ProgressDialog pd;
     private static boolean isLogActive = false;
 
+    /**
+     * Only use it for testing purposes
+     */
+    private static boolean isOfflineMode = false;
+
     public static void setIsLogActive(boolean isLogActive) {
         SabianUtilities.isLogActive = isLogActive;
     }
 
+    /**
+     * Changes default network behaviour to offline. Only use it for debug and testing purposes
+     * <p>
+     * Only affects {@link SabianUtilities#IsNetworkOn(Context)}
+     *
+     * @param isOfflineMode
+     */
+    public static void setIsOfflineMode(boolean isOfflineMode) {
+        SabianUtilities.isOfflineMode = isOfflineMode;
+    }
 
     public static void DisplayMessage(Context context, String message) {
         DisplayMessage(context, message, SabianToast.MessageType.ERROR);
@@ -122,12 +137,17 @@ public class SabianUtilities {
         modal.show();
     }
 
-    public static void DisplayModal(Context context, String title, String message, String okText, String cancelText, final View.OnClickListener onOkayClick, final View.OnClickListener onCancelClick) {
+    public static SabianModal DisplayModal(Context context, String title, String message, String okText, String cancelText, final View.OnClickListener onOkayClick, final View.OnClickListener onCancelClick) {
+        return DisplayModal(context, title, message, okText, cancelText, onOkayClick, onCancelClick, true, true);
+    }
+
+    public static SabianModal DisplayModal(Context context, String title, String message, String okText, String cancelText, final View.OnClickListener onOkayClick, final View.OnClickListener onCancelClick, boolean dismissOnOkay, boolean dismissOnCancel) {
         final SabianModal modal = new SabianModal(context);
         modal.setTitle(title).setMessage(message);
         modal.setOkayButtonText(okText);
         modal.setOnOkayClickListener(view -> {
-            modal.dismiss();
+            if (dismissOnOkay)
+                modal.dismiss();
             if (onOkayClick != null)
                 onOkayClick.onClick(view);
         });
@@ -139,20 +159,27 @@ public class SabianUtilities {
             modal.setOnCancelClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    modal.dismiss();
+                    if (dismissOnCancel)
+                        modal.dismiss();
                     onCancelClick.onClick(view);
                 }
             });
         modal.show();
+        return modal;
     }
 
-    public static void DisplayModal(Context context, String title, String message, String okText, String cancelText, final View.OnClickListener onOkayClick, final View.OnClickListener onCancelClick, int actionsAlignment) {
+    public static SabianModal DisplayModal(Context context, String title, String message, String okText, String cancelText, final View.OnClickListener onOkayClick, final View.OnClickListener onCancelClick, int actionsAlignment) {
+        return DisplayModal(context, title, message, okText, cancelText, onOkayClick, onCancelClick, actionsAlignment, true, true);
+    }
+
+    public static SabianModal DisplayModal(Context context, String title, String message, String okText, String cancelText, final View.OnClickListener onOkayClick, final View.OnClickListener onCancelClick, int actionsAlignment, boolean dismissonOkay, boolean dismissOnCancel) {
         final SabianModal modal = new SabianModal(context);
         modal.setTitle(title).setMessage(message);
         modal.setOkayButtonText(okText);
         modal.setActionsAlignment(actionsAlignment);
         modal.setOnOkayClickListener(view -> {
-            modal.dismiss();
+            if (dismissonOkay)
+                modal.dismiss();
             if (onOkayClick != null)
                 onOkayClick.onClick(view);
         });
@@ -164,35 +191,36 @@ public class SabianUtilities {
             modal.setOnCancelClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    modal.dismiss();
+                    if (dismissOnCancel)
+                        modal.dismiss();
                     onCancelClick.onClick(view);
                 }
             });
         modal.show();
+        return modal;
     }
 
-    public static void showAlert(Context context, String title, String message,
-                                 String positiveButtonText,
-                                 final View.OnClickListener onPositiveClickListener,
-                                 String negativeButtonText,
-                                 final View.OnClickListener onNegativeClickListener
+    public static SabianModal showAlert(Context context, String title, String message,
+                                        String positiveButtonText,
+                                        final View.OnClickListener onPositiveClickListener,
+                                        String negativeButtonText,
+                                        final View.OnClickListener onNegativeClickListener
     ) {
-        DisplayModal(context, title, message, positiveButtonText, negativeButtonText, onPositiveClickListener, onNegativeClickListener);
+        return DisplayModal(context, title, message, positiveButtonText, negativeButtonText, onPositiveClickListener, onNegativeClickListener);
 
     }
 
-    public static void showAlert(Context context, String title, String message,
-                                 String positiveButtonText,
-                                 final View.OnClickListener onPositiveClickListener,
-                                 String negativeButtonText,
-                                 final View.OnClickListener onNegativeClickListener, int actionAlignment
+    public static SabianModal showAlert(Context context, String title, String message,
+                                        String positiveButtonText,
+                                        final View.OnClickListener onPositiveClickListener,
+                                        String negativeButtonText,
+                                        final View.OnClickListener onNegativeClickListener, int actionAlignment
     ) {
-        DisplayModal(context, title, message, positiveButtonText, negativeButtonText, onPositiveClickListener, onNegativeClickListener, actionAlignment);
-
+        return DisplayModal(context, title, message, positiveButtonText, negativeButtonText, onPositiveClickListener, onNegativeClickListener, actionAlignment);
     }
 
-    public static void showAlert(Context context, String title, String message) {
-        showAlert(context, title, message, null, null, null, null);
+    public static SabianModal showAlert(Context context, String title, String message) {
+        return showAlert(context, title, message, null, null, null, null);
     }
 
     public static void WriteLog(String ID, String message) {
@@ -234,6 +262,8 @@ public class SabianUtilities {
      * @return
      */
     public static boolean IsNetworkOn(Context context) {
+        if (isOfflineMode)
+            return false;
         NetworkInfo generalNetworkInfo;
         ConnectivityManager manager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
         generalNetworkInfo = manager.getActiveNetworkInfo();
@@ -271,6 +301,10 @@ public class SabianUtilities {
             return text;
 
         return text.substring(0, length) + "...";
+    }
+
+    public static String RemoveExtraSpaces(String text) {
+        return text.replaceAll("\\s+", " ");
     }
 
     public static boolean IsStringEmpty(String string) {

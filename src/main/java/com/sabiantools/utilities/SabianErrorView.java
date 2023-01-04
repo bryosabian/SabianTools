@@ -23,9 +23,9 @@ public class SabianErrorView {
 
     private Context context;
 
-    private boolean isOpen=false;
+    private boolean isOpen = false;
 
-    private ViewGroup parentContainer=null;
+    private ViewGroup parentContainer = null;
 
     private FragmentManager errorManager;
 
@@ -33,20 +33,21 @@ public class SabianErrorView {
 
     private AppCompatActivity activity;
 
-    public final static int NO_ERROR_ICON=-1;
+    public final static int NO_ERROR_ICON = -1;
 
-    public SabianErrorView(AppCompatActivity activity){
+    public SabianErrorView(AppCompatActivity activity) {
 
-        this.activity=activity;
+        this.activity = activity;
 
-        this.errorManager =this.activity.getSupportFragmentManager();
+        this.errorManager = this.activity.getSupportFragmentManager();
 
-        this.error=new SabianError();
+        this.error = new SabianError();
 
         error.setErrorParent(this);
     }
-    public boolean showError(){
-        if(this.parentContainer==null)
+
+    public boolean showError() {
+        if (this.parentContainer == null)
             return false;
         this.errorTransaction = errorManager.beginTransaction();
         errorTransaction.replace(parentContainer.getId(), error);
@@ -56,12 +57,17 @@ public class SabianErrorView {
         setIsOpen(true);
         return true;
     }
+
     public boolean hideError() {
 
-        if(parentContainer==null)
+        if (parentContainer == null)
             return false;
 
-        errorTransaction= errorManager.beginTransaction();
+        if (!isOpen())
+            return true;
+
+
+        errorTransaction = errorManager.beginTransaction();
 
         errorTransaction.remove(this.error).commit();
 
@@ -72,6 +78,7 @@ public class SabianErrorView {
 
         return true;
     }
+
     public void setIsOpen(boolean isOpen) {
         this.isOpen = isOpen;
     }
@@ -152,7 +159,8 @@ public class SabianErrorView {
     public void setTitleColor(int titleColor) {
         this.error.setTitleColor(titleColor);
     }
-    public void setImage(int image){
+
+    public void setImage(int image) {
         this.error.setImage(image);
     }
 
@@ -168,27 +176,27 @@ public class SabianErrorView {
         this.error.setSubTitleColor(subTtitleColor);
     }
 
-    public SabianErrorView getThisView(){
+    public SabianErrorView getThisView() {
         return this;
     }
 
-    public static class SabianError extends SabianFragment{
+    public static class SabianError extends SabianFragment {
 
         private ErrorView errorView;
 
-        private String errorTitle="Error";
+        private String errorTitle = "Error";
 
-        private String errorSubTitle="Error has occurred";
+        private String errorSubTitle = "Error has occurred";
 
-        private String errorButtonText="Retry";
+        private String errorButtonText = "Retry";
 
-        private boolean showRetryButton,showErrorSubTitle=true;
+        private boolean showRetryButton, showErrorSubTitle = true;
 
         private OnErrorButtonListener onErrorButtonListener;
 
-        private int titleColor, subTitleColor,retryButtonColor=-1;
+        private int titleColor, subTitleColor, retryButtonColor = -1;
 
-        private int image=-1;
+        private int image = -1;
 
         private SabianErrorView errorParent;
 
@@ -209,18 +217,20 @@ public class SabianErrorView {
 
             return root;
         }
-        private SabianError getThis(){
+
+        private SabianError getThis() {
             return this;
         }
-        private SabianErrorView getErrorParent(){
+
+        private SabianErrorView getErrorParent() {
             return errorParent;
         }
 
         private void init_elements() {
 
-            errorView=(ErrorView)root.findViewById(R.id.err_SabianErrorView);
+            errorView = (ErrorView) root.findViewById(R.id.err_SabianErrorView);
 
-            ErrorView.Config.Builder config= ErrorView.Config.create();
+            ErrorView.Config.Builder config = ErrorView.Config.create();
 
             config.title(getErrorTitle()).subtitle(getErrorSubTitle()).retryText(getErrorButtonText());
 
@@ -234,22 +244,22 @@ public class SabianErrorView {
 
             config.retryVisible(isShowRetryButton());
 
-            if(getImage()!=-1)
+            if (getImage() != -1)
                 config.image(getImage());
 
-            if(getTitleColor()!=-1)
+            if (getTitleColor() != -1)
                 config.titleColor(getTitleColor());
 
-            if(getRetryButtonColor()!=-1)
+            if (getRetryButtonColor() != -1)
                 config.retryTextColor(getRetryButtonColor());
 
-            if(getSubTitleColor()!=-1)
+            if (getSubTitleColor() != -1)
                 config.subtitleColor(getSubTitleColor());
 
             errorView.setOnRetryListener(new ErrorView.RetryListener() {
                 @Override
                 public void onRetry() {
-                    if(onErrorButtonListener!=null)
+                    if (onErrorButtonListener != null)
                         onErrorButtonListener.OnClick(getErrorParent());
                 }
             });
@@ -257,7 +267,8 @@ public class SabianErrorView {
             errorView.setConfig(config.build());
 
         }
-        public ErrorView getErrorView(){
+
+        public ErrorView getErrorView() {
 
             return errorView;
         }
@@ -347,7 +358,7 @@ public class SabianErrorView {
         }
     }
 
-    public interface OnErrorButtonListener{
+    public interface OnErrorButtonListener {
 
         void OnClick(SabianErrorView error);
     }

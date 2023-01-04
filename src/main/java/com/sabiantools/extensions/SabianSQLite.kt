@@ -7,7 +7,8 @@ fun SQLiteDatabase.queryAll(
     table: String, selection: String? = null,
     selectionArgs: Array<String>? = null,
     columns: Array<String>? = null,
-    limit: String? = null
+    limit: String? = null,
+    orderBy: String? = null
 ): Cursor {
-    return query(table, columns, selection, selectionArgs, null, null, null, limit);
+    return query(table, columns, selection, selectionArgs, null, null, orderBy, limit);
 }

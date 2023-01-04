@@ -11,7 +11,6 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageView;
-import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.gc.materialdesign.views.ButtonFlat;
@@ -40,11 +39,11 @@ public class SabianMaterialAlert extends android.app.Dialog {
     private int buttonAcceptColor = -1;
     private int buttonCancelColor = -1;
 
-    private int headerColor;
+    private int headerColor = -1;
 
     private int headerSize = -1;
 
-    private String title;
+    private String headerTitle;
 
     private View content;
 
@@ -154,17 +153,13 @@ public class SabianMaterialAlert extends android.app.Dialog {
         if (!isDisplayCloseIcon())
             sfi_HeaderIconClose.setVisibility(View.GONE);
 
-        if (!isDisplayHeaderText())
-            sct_Title.setVisibility(View.GONE);
-
-        if (!displayHeaderIcon && sfi_HeaderIcon != null)
-            sfi_HeaderIcon.setVisibility(View.GONE);
-
         if (noContentPadding) {
             vg_Content.setPadding(0, 0, 0, 0);
         }
 
-        setTitle(title);
+        setHeaderTitle(headerTitle);
+        setDisplayHeaderIcon(displayHeaderIcon);
+        setDisplayHeaderText(displayHeaderText);
         setHeaderColor(headerColor);
         setHeaderHeight(headerHeight);
         setHeaderTextColor(headerTextColor);
@@ -243,20 +238,22 @@ public class SabianMaterialAlert extends android.app.Dialog {
 
     public SabianMaterialAlert setHeaderColor(int headerColor) {
         this.headerColor = headerColor;
+        if (headerColor == -1)
+            return this;
         if (vg_Header != null)
             this.vg_Header.setBackgroundColor(headerColor);
         return this;
     }
 
 
-    public String getTitle() {
-        return title;
+    public String getHeaderTitle() {
+        return headerTitle;
     }
 
-    public SabianMaterialAlert setTitle(String title) {
-        this.title = title;
+    public SabianMaterialAlert setHeaderTitle(String headerTitle) {
+        this.headerTitle = headerTitle;
         if (sct_Title != null)
-            sct_Title.post(() -> sct_Title.setText(title));
+            sct_Title.setText(headerTitle);
         return this;
     }
 
@@ -310,6 +307,8 @@ public class SabianMaterialAlert extends android.app.Dialog {
 
     public SabianMaterialAlert setHeaderTextColor(int headerTextColor) {
         this.headerTextColor = headerTextColor;
+        if (headerTextColor == -1)
+            return this;
         if (sct_Title != null)
             sct_Title.setTextColor(headerTextColor);
         return this;
@@ -321,6 +320,13 @@ public class SabianMaterialAlert extends android.app.Dialog {
 
     public SabianMaterialAlert setDisplayHeaderIcon(boolean displayHeaderIcon) {
         this.displayHeaderIcon = displayHeaderIcon;
+        if (sfi_HeaderIcon != null) {
+            int visibility = View.VISIBLE;
+            if (!displayHeaderIcon) {
+                visibility = View.GONE;
+            }
+            sfi_HeaderIcon.setVisibility(visibility);
+        }
         return this;
     }
 
@@ -330,6 +336,13 @@ public class SabianMaterialAlert extends android.app.Dialog {
 
     public SabianMaterialAlert setDisplayHeaderText(boolean displayHeaderText) {
         this.displayHeaderText = displayHeaderText;
+        if (sct_Title != null) {
+            int visibility = View.VISIBLE;
+            if (!displayHeaderText) {
+                visibility = View.GONE;
+            }
+            sct_Title.setVisibility(visibility);
+        }
         return this;
     }
 

@@ -22,6 +22,9 @@ import com.sabiantools.utilities.SabianUtilities;
 import androidx.annotation.ColorRes;
 import androidx.annotation.LayoutRes;
 import androidx.annotation.NonNull;
+import androidx.lifecycle.Lifecycle;
+import androidx.lifecycle.LifecycleOwner;
+import androidx.lifecycle.LifecycleRegistry;
 
 public class SabianModal extends Dialog {
 
@@ -52,7 +55,6 @@ public class SabianModal extends Dialog {
     public static final int ACTIONS_ALIGN_HORIZONTAL = LinearLayout.HORIZONTAL;
 
     private int actionsAlignment = ACTIONS_ALIGN_HORIZONTAL;
-
 
 
     public SabianModal(@NonNull Context context) {

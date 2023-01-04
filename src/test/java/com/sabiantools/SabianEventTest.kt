@@ -89,7 +89,7 @@ class SabianEventTest {
         center.subscribeTo<TestEvent>("on.test.event", TestEventObserver())
         center.subscribeTo<TestEvent>("on.test.event", TestEventObserver2())
         val payload = TestEventPayload("Hello Test Event")
-        center.trigger("on.test.event", payload)
+        center.trigger<TestEvent>("on.test.event", payload)
         assert(center.getEvent("on.test.event")?.totalObservers == 2)
     }
 
@@ -99,7 +99,7 @@ class SabianEventTest {
         center.subscribeTo<TestChangeEvent>("on.test.change.event", TestEventChangerDuplicate())
         center.subscribeTo<TestChangeEvent>("on.test.change.event", TestEventChanger2())
         assert(center.getEvent("on.test.change.event")?.totalObservers == 2)
-        val payload = center.triggerWithAction("on.test.change.event", TestEventPayloadAction("Hello Test Event")) as TestEventPayloadAction
+        val payload = center.triggerWithAction<TestChangeEvent>("on.test.change.event", TestEventPayloadAction("Hello Test Event")) as TestEventPayloadAction
         assert(payload.message == "Hello Test Event Changed")
         assert(!payload.canProceed)
         println(payload.message)
