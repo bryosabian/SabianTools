@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="sabian_standard_background">#5BACCD</color>
+    <color name="sabian_theme_background">#3A505B</color><!--#3A505B-->
+    <color name="sabian_actionbar_text_color">#ffffff</color>
+    <color name="sabian_font_color_standard">#333333</color>
+    <color name="sabian_wall_background_light">#F4F8F9</color>
+    <color name="sabian_font_color_black">#000000</color>
+    <color name="sabian_font_color_light_dark">#6A707F</color>
+    <color name="sabian_light_divider">#E0EDED</color>
+    <color name="sabian_transparent_white">#66ffffff</color>
+
+    <color name="sabian_divider_color_light">#E0EDED</color>
+
+    <!--TabColors-->
+    <!--#384C56-->
+    <!--#40C4FF-->
+
+    <!--lookAndFeel-->
+
+
+    <!--orderIndicator-->
+
+    <!--7FCAC3-->
+
+    <color name="sabian_notification_inverse">#435A62</color>
+    <color name="sabian_notification_danger">#FD7043</color>
+    <color name="sabian_notification_success">#669F36</color>
+    <color name="sabian_notification_primary">#3F51B5</color>
+
+
+    <color name="sabian_success_color">@color/sabian_notification_success</color>
+    <color name="sabian_danger_color">#DC143C</color>
+    <color name="sabian_warning_color">#F8BA00</color>
+
+
+    <color name="sabian_modal_header_color">#CFF1EE</color>
+
+    <color name="sabian_list_divider">#15000000</color>
+
+
+    <!--singlefooditem-->
+
+
+    <!--Sabian Toast-->
+    <color name="sabian_toast_success">@color/sabian_notification_success</color>
+    <color name="sabian_toast_danger">@color/sabian_notification_danger</color>
+    <color name="sabian_toast_primary">@color/sabian_notification_primary</color>
+
+
+    <color name="control_sabian_round_button">#4F9C1F</color>
+    <color name="control_sabian_round_button_pressed">#2d5a1a</color>
+    <color name="control_sabian_round_button_disabled">#16230a</color>
+
+    <color name="google_white">#fff</color>
+
+    <color name="modal_list_title_color">#5a5a5a</color>
+    <color name="modal_list_sub_title_color">#808182</color>
+
+    <color name="sabian_white">@color/google_white</color>
+
+    <color name="sabian_list_title_color">#5a5a5a</color>
+    <color name="sabian_list_sub_title_color">#808182</color>
+
+</resources>
