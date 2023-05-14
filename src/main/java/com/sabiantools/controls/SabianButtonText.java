@@ -6,6 +6,7 @@ import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.text.Editable;
+import android.text.InputFilter;
 import android.text.InputType;
 import android.text.TextWatcher;
 import android.text.method.PasswordTransformationMethod;
@@ -24,6 +25,8 @@ import com.sabiantools.R;
 import com.sabiantools.controls.texts.SabianCondensedEditText;
 import com.sabiantools.controls.texts.TypeFaceFactory;
 import com.sabiantools.utilities.SabianUtilities;
+
+import org.jetbrains.annotations.NotNull;
 
 import androidx.annotation.ColorRes;
 import androidx.annotation.DimenRes;
@@ -76,10 +79,6 @@ public class SabianButtonText extends FrameLayout {
         public String toString() {
             return this.value;
         }
-    }
-
-    public interface OnTextChangeListener {
-        void onTextChange(String value);
     }
 
 
@@ -156,6 +155,10 @@ public class SabianButtonText extends FrameLayout {
 
     public void setHint(String hint) {
         this.editText.setHint(hint);
+    }
+
+    public void setFilters(@NotNull InputFilter[] filters) {
+        this.editText.setFilters(filters);
     }
 
     public void setIcon(String favicon) {

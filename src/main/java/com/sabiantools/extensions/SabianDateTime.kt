@@ -2,6 +2,7 @@ package com.sabiantools.extensions
 
 import org.joda.time.*
 import java.util.*
+import java.util.concurrent.TimeUnit
 
 
 fun Calendar.strippedFromSeconds(hour: Int? = null, minute: Int? = null): Calendar {
@@ -12,13 +13,27 @@ fun Calendar.strippedFromSeconds(hour: Int? = null, minute: Int? = null): Calend
     return this
 }
 
+fun DateTime.toCalendar(): Calendar {
+    val calendar = Calendar.getInstance()
+    calendar.time = this.toDate()
+    return calendar
+}
+
 fun DateTime.strippedFromSeconds(): DateTime {
-    val calendar = Calendar.getInstance().strippedFromSeconds(this.hourOfDay, this.minuteOfHour)
+    var calendar = this.toCalendar()
+    calendar = calendar.strippedFromSeconds(this.hourOfDay, this.minuteOfHour)
     return DateTime(calendar.time)
 }
 
+
+fun LocalDateTime.toCalendar(): Calendar {
+    val calendar = Calendar.getInstance()
+    calendar.time = this.toDate()
+    return calendar
+}
+
 fun LocalDateTime.strippedFromSeconds(): DateTime {
-    val calendar = Calendar.getInstance().strippedFromSeconds(this.hourOfDay, this.minuteOfHour)
+    val calendar = toCalendar().strippedFromSeconds(this.hourOfDay, this.minuteOfHour)
     return DateTime(calendar.time)
 }
 
@@ -54,4 +69,9 @@ fun DateTime.isMidnightHour(): Boolean {
     return this.hourOfDay == 0
 }
 
+fun Long.toHoursMinutesSeconds(): String {
+    var period = Period(this * 1000)
+    period = period.normalizedStandard()
+    return "%02d:%02d:%02d".format(period.hours, period.minutes, period.seconds)
+}
 

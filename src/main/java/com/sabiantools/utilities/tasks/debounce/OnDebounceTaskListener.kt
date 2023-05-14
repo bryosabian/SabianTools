@@ -1,17 +1,17 @@
 package com.sabiantools.utilities.tasks.debounce
 
 interface OnDebounceTaskListener<T> {
-    fun onComplete(item: T)
+    fun onTaskComplete(item: T)
 
-    fun onLoading() {
-
-    }
-
-    fun onError(e: Throwable) {
+    fun onTaskLoading() {
 
     }
 
-    fun onCancel() {
+    fun onTaskError(e: Throwable) {
+
+    }
+
+    fun onTaskCancel() {
 
     }
 }

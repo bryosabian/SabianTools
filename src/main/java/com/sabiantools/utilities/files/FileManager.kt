@@ -1,7 +1,7 @@
 package com.sabiantools.utilities.files
 
 import android.content.Context
-import com.sabiantools.utilities.SabianUtilities
+import android.net.Uri
 import java.io.*
 
 class FileManager(private val context: Context) {
@@ -62,5 +62,10 @@ class FileManager(private val context: Context) {
                 }
             }
         }
+    }
+
+    @Throws(Exception::class)
+    fun getFileFromUri(uri: Uri): File? {
+        return uri.path?.let { File(it) }
     }
 }

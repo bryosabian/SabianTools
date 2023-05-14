@@ -37,6 +37,7 @@ public class SabianMaterialAlert extends android.app.Dialog {
     private String buttonAcceptText, buttonCancelText;
 
     private int buttonAcceptColor = -1;
+
     private int buttonCancelColor = -1;
 
     private int headerColor = -1;
@@ -254,6 +255,12 @@ public class SabianMaterialAlert extends android.app.Dialog {
         this.headerTitle = headerTitle;
         if (sct_Title != null)
             sct_Title.setText(headerTitle);
+        return this;
+    }
+
+
+    public SabianMaterialAlert setTitle(String title) {
+        setHeaderTitle(title);
         return this;
     }
 

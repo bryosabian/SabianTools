@@ -144,7 +144,6 @@ class GeoCoder(
                 "No geo coordinates gotten cause of IOException ${e.message}"
             )
         } catch (e: Exception) {
-            e.printStackTrace()
             SabianUtilities.WriteLog(
                 "Decoder",
                 "No geo coordinates gotten cause of Exception ${e.message}"

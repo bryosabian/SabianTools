@@ -12,6 +12,7 @@
     <color name="sabian_font_color_light_dark">#6A707F</color>
     <color name="sabian_light_divider">#E0EDED</color>
     <color name="sabian_transparent_white">#66ffffff</color>
+    <color name="sabian_hint_color">#a0a0a0</color>
 
     <color name="sabian_divider_color_light">#E0EDED</color>
 
@@ -65,4 +66,7 @@
     <color name="sabian_list_title_color">#5a5a5a</color>
     <color name="sabian_list_sub_title_color">#808182</color>
 
+    <color name="sabian_text_black_light">#5a5a5a</color>
+    <color name="sabian_text_black_lighter">#808182</color>
+    <color name="sabian_normal_text_color">#4a4a4a</color>
 </resources>

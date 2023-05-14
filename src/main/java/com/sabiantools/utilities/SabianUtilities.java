@@ -311,6 +311,18 @@ public class SabianUtilities {
         return string == null || string.isEmpty();
     }
 
+    public static boolean IsStringBlankOrEmpty(String string) {
+        if (IsStringEmpty(string))
+            return true;
+        return IsStringEmpty(string.trim());
+    }
+
+    public static String StringOrBlank(String string) {
+        if (string == null)
+            return "";
+        return string;
+    }
+
     public static long GetCurrentTimestamp() {
         Calendar c = Calendar.getInstance();
 
@@ -495,6 +507,10 @@ public class SabianUtilities {
             ex.printStackTrace();
             return null;
         } catch (IOException e) {
+            WriteLog("Could not read input uri. " + e.getMessage());
+            e.printStackTrace();
+            return null;
+        } catch (Throwable e) {
             WriteLog("Could not read input uri. " + e.getMessage());
             e.printStackTrace();
             return null;

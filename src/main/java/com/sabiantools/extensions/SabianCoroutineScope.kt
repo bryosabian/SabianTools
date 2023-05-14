@@ -70,3 +70,27 @@ fun CoroutineScope.launchAfterSlightDelay(
 ) {
     launchAfterDelay(backgroundContext, mainContext, 300L, start, block)
 }
+
+fun <T> CoroutineScope.runAsync(
+    block: () -> T?,
+    onComplete: (T?) -> Unit,
+    onError: ((Throwable) -> Unit)? = null,
+    backgroundContext: CoroutineContext = Dispatchers.IO,
+    mainContext: CoroutineContext = Dispatchers.Default
+) {
+    var error: Throwable? = null
+    val promise = async(backgroundContext) {
+        try {
+            block()
+        } catch (e: Throwable) {
+            error = e
+            null
+        }
+    }
+    launch(mainContext) {
+        val value = promise.await()
+        error?.let { onError?.invoke(it) } ?: run {
+            onComplete(value)
+        }
+    }
+}

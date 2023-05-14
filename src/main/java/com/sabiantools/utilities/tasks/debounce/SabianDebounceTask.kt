@@ -40,7 +40,7 @@ open class SabianDebounceTask<T>(
 
         reset()
 
-        onTaskListener?.onLoading()
+        onTaskListener?.onTaskLoading()
 
         taskJob?.cancel()
 
@@ -62,12 +62,12 @@ open class SabianDebounceTask<T>(
             val isCancelled = !isComplete
 
             if (isCancelled) {
-                onTaskListener?.onCancel()
+                onTaskListener?.onTaskCancel()
             } else {
                 error?.let {
-                    onTaskListener?.onError(it)
+                    onTaskListener?.onTaskError(it)
                 } ?: run {
-                    onTaskListener?.onComplete(result!!)
+                    onTaskListener?.onTaskComplete(result!!)
                 }
             }
 
@@ -83,7 +83,7 @@ open class SabianDebounceTask<T>(
             taskJob?.let {
                 if (it.isActive) {
                     it.cancel()
-                    onTaskListener?.onCancel()
+                    onTaskListener?.onTaskCancel()
                     SabianUtilities.WriteLog("Task job has been cancelled")
                 }
                 taskJob = null

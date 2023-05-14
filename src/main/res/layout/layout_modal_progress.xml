@@ -30,7 +30,7 @@
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/modal_header_bg"
+                    android:background="@drawable/sabian_modal_header_bg"
                     android:orientation="horizontal"
                     android:paddingLeft="10dp"
                     android:paddingTop="10dp"
@@ -72,7 +72,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="4dp"
                             android:text="Downloading"
-                            android:textColor="@color/outlet_list_title_color"
+                            android:textColor="@color/sabian_text_black_light"
                             android:textSize="14sp"
                             sabian:SabianRobotoType="Regular" />
 

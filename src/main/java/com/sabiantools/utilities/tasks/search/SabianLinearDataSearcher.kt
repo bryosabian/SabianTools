@@ -16,7 +16,7 @@ abstract class SabianLinearDataSearcher<T>(
 ) : CoroutineScope {
 
     private var searchJob: Job? = null
-    private val debounceRate: Long = 500
+    var debounceRate: Long = 500
     protected var contents: List<Any> = listOf()
     protected var newContent: ArrayList<Any> = arrayListOf()
     private var query: String = ""
@@ -98,27 +98,26 @@ abstract class SabianLinearDataSearcher<T>(
 
         newContent = arrayListOf()
 
-        val pattern = Pattern.compile(".*$query.*", Pattern.CASE_INSENSITIVE)
+        val pattern = getRegex(query)
 
         LoopContentQ@ for (content in contents) {
 
             if (!clazz.isInstance(content))
                 continue@LoopContentQ
 
-            var matches = false
+            //var matches = false
             val searchCriteria = getSearchCriteria(content as T)
 
             val searchList = searchCriteria.filterNotNull()
-            searchList.forEach { search ->
-                if (pattern.matcher(search).matches() && !matches) {
-                    matches = true
-                }
+            val matches = searchList.any { search ->
+                pattern.matcher(search).matches()
             }
             if (matches) {
                 newContent.add(content)
             }
         }
     }
+
 
     /**
      * Cancels the search operation
@@ -144,6 +143,13 @@ abstract class SabianLinearDataSearcher<T>(
      */
     fun getQuery(): String {
         return query
+    }
+
+    /**
+     * The search regex
+     */
+    protected open fun getRegex(query: String): Pattern {
+        return Pattern.compile(".*$query.*", Pattern.CASE_INSENSITIVE)
     }
 
     override val coroutineContext: CoroutineContext

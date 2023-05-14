@@ -3,11 +3,18 @@ package com.sabiantools.controls;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Typeface;
+import android.text.Editable;
+import android.text.InputFilter;
+import android.text.TextWatcher;
 import android.util.AttributeSet;
 
 import com.iangclifton.android.floatlabel.FloatLabel;
 import com.sabiantools.R;
 import com.sabiantools.controls.texts.TypeFaceFactory;
+
+import org.jetbrains.annotations.NotNull;
+
+import static com.sabiantools.controls.SabianButtonText.NO_RES;
 
 /**
  * Created By Brian Sabana on 7/6/2016.
@@ -16,6 +23,10 @@ public class SabianFloatLabel extends FloatLabel {
 
     private Context _context;
     private Typeface typeface;
+
+
+    private TextWatcher onTextListener;
+    private OnTextChangeListener onTextChangeListener;
 
     public SabianFloatLabel(Context context) {
         super(context);
@@ -78,6 +89,49 @@ public class SabianFloatLabel extends FloatLabel {
         getEditText().setHintTextColor(color);
     }
 
+    public void setFilters(@NotNull InputFilter[] filters) {
+        this.getEditText().setFilters(filters);
+    }
+
+    public void setInputType(int inputType) {
+        if (inputType != NO_RES) {
+            getEditText().setInputType(inputType);
+        }
+    }
+
+    public void setOnTextChangeListener(OnTextChangeListener onTextChangeListener) {
+        this.onTextChangeListener = onTextChangeListener;
+        clearTextListener();
+        activateTextListener();
+    }
+
+
+    private void activateTextListener() {
+        clearTextListener();
+        if (onTextChangeListener != null) {
+            onTextListener = new TextWatcher() {
+                @Override
+                public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                }
+
+                @Override
+                public void onTextChanged(CharSequence s, int start, int before, int count) {
+                    onTextChangeListener.onTextChange(s.toString());
+                }
+
+                @Override
+                public void afterTextChanged(Editable s) {
+                }
+            };
+            getEditText().addTextChangedListener(onTextListener);
+        }
+    }
+
+    private void clearTextListener() {
+        if (onTextListener != null)
+            getEditText().removeTextChangedListener(onTextListener);
+    }
+
     private void init_attributes(AttributeSet attrs) {
         TypedArray a = _context.obtainStyledAttributes(attrs, R.styleable.SabianFloatLabel);
         int aCount = a.getIndexCount();
@@ -96,4 +150,6 @@ public class SabianFloatLabel extends FloatLabel {
             }
         }
     }
+
+
 }
