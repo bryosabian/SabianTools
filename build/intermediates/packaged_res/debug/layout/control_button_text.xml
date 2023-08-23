@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:sabian="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/ll_ControlButtonTextContainer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/control_button_text_bg"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:orientation="horizontal"
+    android:paddingLeft="10dp"
+    android:paddingTop="8dp"
+    android:paddingRight="10dp"
+    android:paddingBottom="8dp">
+
+    <RelativeLayout
+        android:id="@+id/rll_ControlButtonContainerLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true">
+
+        <com.beardedhen.androidbootstrap.FontAwesomeText
+            android:id="@+id/fat_ControlButtonText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#545454"
+            android:textSize="16sp"
+            android:visibility="gone"
+            sabian:fa_icon="fa-user" />
+
+        <ImageView
+            android:id="@+id/img_ControlButtonText"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center"
+            android:scaleType="fitXY"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+    <!--android:maxLines="10"-->
+    <com.sabiantools.controls.texts.SabianCondensedEditText
+        android:id="@+id/txt_ControlButtonText"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:background="@null"
+        android:focusableInTouchMode="true"
+        android:gravity="top"
+        android:maxLines="10"
+        android:paddingLeft="30dp"
+        android:paddingTop="5dp"
+        android:paddingRight="30dp"
+        android:paddingBottom="5dp"
+        android:singleLine="true"
+        android:textColor="#545454"
+        android:textColorHint="@color/sabian_actionbar_text_color"
+        android:textSize="14sp"
+        sabian:SabianEditRobotoType="Regular" />
+
+
+    <RelativeLayout
+        android:id="@+id/rll_ControlButtonContainerRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:visibility="gone">
+
+        <com.beardedhen.androidbootstrap.FontAwesomeText
+            android:id="@+id/fat_ControlButtonTextRight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#545454"
+            android:textSize="16sp"
+            android:visibility="gone"
+            sabian:fa_icon="fa-user" />
+
+        <ImageView
+            android:id="@+id/img_ControlButtonTextRight"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center"
+            android:scaleType="fitXY"
+            android:visibility="gone" />
+    </RelativeLayout>
+</RelativeLayout>

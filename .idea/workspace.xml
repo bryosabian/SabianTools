@@ -4,45 +4,10 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5ca21dab-7311-4fff-ac80-1ec2a7d4cdce" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/.transforms/e407f561b66d8fbc897a44f5a3f14b02/results.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/.transforms/e407f561b66d8fbc897a44f5a3f14b02/transformed/classes/classes.dex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/generated/source/buildConfig/debug/com/sabiantools/BuildConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sabiantools/controls/SabianButtonText.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sabiantools/controls/SabianButtonText.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sabiantools/controls/SabianFloatLabel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sabiantools/controls/SabianFloatLabel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sabiantools/controls/SabianNotificationBox.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sabiantools/controls/SabianNotificationBox.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sabiantools/controls/SabianNumberSelector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sabiantools/controls/SabianNumberSelector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sabiantools/controls/SabianRecyclerMarginTopDecorator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sabiantools/controls/SabianRecyclerMarginTopDecorator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sabiantools/controls/SabianRoundButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sabiantools/controls/SabianRoundButton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sabiantools/controls/SabianViewPager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sabiantools/controls/SabianViewPager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sabiantools/controls/recyclerview/GridMarginDecorator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sabiantools/controls/recyclerview/GridMarginDecorator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sabiantools/controls/recyclerview/SabianDividerDecorator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sabiantools/controls/recyclerview/SabianDividerDecorator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sabiantools/extensions/SabianArray.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sabiantools/extensions/SabianArray.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sabiantools/extensions/SabianCoroutineScope.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sabiantools/extensions/SabianCoroutineScope.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sabiantools/extensions/SabianDateTime.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sabiantools/extensions/SabianDateTime.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sabiantools/extensions/SabianList.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sabiantools/extensions/SabianList.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sabiantools/extensions/SabianSQLite.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sabiantools/extensions/SabianSQLite.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sabiantools/extensions/SabianString.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sabiantools/extensions/SabianString.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sabiantools/modals/SabianLifecycleModal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sabiantools/modals/SabianLifecycleModal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sabiantools/utilities/SabianFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sabiantools/utilities/SabianFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sabiantools/utilities/SabianUtilities.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sabiantools/utilities/SabianUtilities.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sabiantools/utilities/events/SabianEvent.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sabiantools/utilities/events/SabianEvent.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sabiantools/utilities/events/SabianEventObserver.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sabiantools/utilities/events/SabianEventObserver.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sabiantools/utilities/tasks/debounce/OnDebounceTaskListener.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sabiantools/utilities/tasks/debounce/OnDebounceTaskListener.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sabiantools/utilities/tasks/debounce/SabianDebounceTask.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sabiantools/utilities/tasks/debounce/SabianDebounceTask.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/drawable/control_sabian_stat_box.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/drawable/control_sabian_stat_box.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/layout/control_button_text.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/control_button_text.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/layout/control_sabian_notification_box.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/control_sabian_notification_box.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/layout/control_sabian_ribbon.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/control_sabian_ribbon.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/layout/sabian_actionbar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/sabian_actionbar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/layout/sabian_material_modal_layout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/sabian_material_modal_layout.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/layout/sabian_modal_list_item.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/sabian_modal_list_item.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/values/colors.xml" afterDir="false" />
+    <list default="true" id="5ca21dab-7311-4fff-ac80-1ec2a7d4cdce" name="Changes" comment="Added new controls of recycler view and modals">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/.transforms/e407f561b66d8fbc897a44f5a3f14b02/results.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/.transforms/e407f561b66d8fbc897a44f5a3f14b02/transformed/classes/classes.dex" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,6 +15,11 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -81,6 +51,14 @@
       <option name="presentableId" value="Default" />
       <updated>1692782663484</updated>
     </task>
+    <task id="LOCAL-00001" summary="Added new controls of recycler view and modals">
+      <created>1692789212181</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1692789212181</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -93,5 +71,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Added new controls of recycler view and modals" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added new controls of recycler view and modals" />
   </component>
 </project>
