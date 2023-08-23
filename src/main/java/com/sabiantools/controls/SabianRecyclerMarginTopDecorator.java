@@ -12,11 +12,13 @@ import androidx.recyclerview.widget.RecyclerView;
  */
 public class SabianRecyclerMarginTopDecorator extends RecyclerView.ItemDecoration {
 
-    private int marginTopSize;
+    private final int marginTopSize;
 
     private boolean applyTopAndBottom = false;
 
     private ArrayList<Integer> excludePositions = new ArrayList<>();
+
+    private boolean onlyApplyToFirstElement = false;
 
     public SabianRecyclerMarginTopDecorator(int marginTopSize) {
         this.marginTopSize = marginTopSize;
@@ -35,6 +37,13 @@ public class SabianRecyclerMarginTopDecorator extends RecyclerView.ItemDecoratio
 
         // Add top margin only for all items (Except the first)
         if (pos == 0) {
+            if (!onlyApplyToFirstElement) {
+                super.getItemOffsets(outRect, view, parent, state);
+                return;
+            }
+        }
+
+        if (onlyApplyToFirstElement && pos != 0) {
             super.getItemOffsets(outRect, view, parent, state);
             return;
         }
@@ -63,6 +72,12 @@ public class SabianRecyclerMarginTopDecorator extends RecyclerView.ItemDecoratio
     public SabianRecyclerMarginTopDecorator addExcludedPositionsFromMargin(int[] pos) {
         for (int i = 0; i < pos.length; i++)
             addExcludedPositionFromMargin(pos[i]);
+        return this;
+    }
+
+
+    public SabianRecyclerMarginTopDecorator setOnlyApplyToFirstElement(boolean onlyApplyToFirstElement) {
+        this.onlyApplyToFirstElement = onlyApplyToFirstElement;
         return this;
     }
 }

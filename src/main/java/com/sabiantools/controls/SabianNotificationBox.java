@@ -93,7 +93,7 @@ public class SabianNotificationBox extends FrameLayout {
     public void setButtonText(String text)
     {
         if(text!=null)
-        btn_Action.setText(text);
+            btn_Action.setText(text);
     }
     public void setOnButtonClickListener(OnClickListener listener)
     {

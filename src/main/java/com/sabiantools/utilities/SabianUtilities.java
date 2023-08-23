@@ -1,6 +1,5 @@
 package com.sabiantools.utilities;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
@@ -29,7 +28,6 @@ import com.google.gson.JsonParser;
 import com.google.gson.JsonSyntaxException;
 import com.sabiantools.R;
 import com.sabiantools.modals.SabianModal;
-import com.sabiantools.utilities.gson.TypeAdapters;
 
 import org.joda.time.DateTime;
 import org.joda.time.DateTimeZone;
@@ -54,12 +52,14 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
 import java.util.TimeZone;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 /**
@@ -315,6 +315,19 @@ public class SabianUtilities {
         if (IsStringEmpty(string))
             return true;
         return IsStringEmpty(string.trim());
+    }
+
+    public static String toLowerCase(@NonNull String value) {
+        return toLowerCase(value, Locale.ROOT);
+    }
+
+    @NonNull
+    public static String toLowerCase(@NonNull String value, Locale locale) {
+        try {
+            return value.toLowerCase(locale);
+        } catch (Throwable e) {
+            return value;
+        }
     }
 
     public static String StringOrBlank(String string) {
@@ -678,40 +691,37 @@ public class SabianUtilities {
     }
 
     public static void showLoadingDialog(Context context, String title) {
-
         try {
-            hideLoadingDialog();
+            hideLoadingDialog(false);
             pd = new ProgressDialog(context, title);
             pd.setCanceledOnTouchOutside(false);
             pd.setCancelable(false);
             pd.show();
-        } catch (Exception e) {
-
+        } catch (Throwable e) {
+            e.printStackTrace();
         }
     }
 
     public static void showLoadingDialog(Context context, String title, String message) {
+        showLoadingDialog(context, title + " " + message);
+    }
+
+    public static void hideLoadingDialog(boolean withAnimation) {
         try {
-            hideLoadingDialog();
-            pd = new ProgressDialog(context, title + ". " + message);
-            pd.setCanceledOnTouchOutside(false);
-            pd.setCancelable(false);
-            pd.show();
-        } catch (Exception e) {
-            SabianUtilities.WriteLog("Progress dialog error " + e.getMessage());
+            if (pd != null && pd.isShowing()) {
+                pd.setHideWithAnimation(withAnimation);
+                pd.dismiss();
+                SabianUtilities.WriteLog("Progress bar hidden");
+            }
+        } catch (Throwable e) {
+            e.printStackTrace();
+        } finally {
+            pd = null;
         }
     }
 
     public static void hideLoadingDialog() {
-        try {
-            if (pd != null && pd.isShowing()) {
-                pd.dismiss();
-                SabianUtilities.WriteLog("Progress bar hidden");
-            }
-            pd = null;
-        } catch (Exception e) {
-            SabianUtilities.WriteLog("Progress dialog error " + e.getMessage());
-        }
+        hideLoadingDialog(false);
     }
 
     public static DateTime getLocalDateTimeNow(Context context) {
@@ -732,30 +742,6 @@ public class SabianUtilities {
         String text = (!IsStringEmpty(title)) ? title + " " : "";
         text += message;
         pd.setTitle(text);
-    }
-
-    public static class EmailValidator {
-
-        private final Pattern pattern;
-
-        private static final String EMAIL_PATTERN =
-                "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
-                        + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
-
-        public EmailValidator() {
-            pattern = Pattern.compile(EMAIL_PATTERN);
-        }
-
-        /**
-         * Validate hex with regular expression
-         *
-         * @param hex hex for validation
-         * @return true valid hex, false invalid hex
-         */
-        public boolean validate(final String hex) {
-            Matcher matcher = pattern.matcher(hex);
-            return matcher.matches();
-        }
     }
 
     public static double roundOf(double number, int roundToDecimalPlaces, boolean up) {
@@ -854,21 +840,16 @@ public class SabianUtilities {
     }
 
     public static TimeZone getCurrentTimeZone() {
-        Calendar cal = Calendar.getInstance();
-        TimeZone tz = cal.getTimeZone();
-        return tz;
+        return getCurrentTimeZone(Calendar.getInstance());
     }
 
     public static TimeZone getCurrentTimeZone(Calendar calendar) {
-        Calendar cal = calendar;
-        TimeZone tz = cal.getTimeZone();
-        return tz;
+        return calendar.getTimeZone();
     }
 
     public static DateTime getCurrentTimeZoneDateTime() {
         DateTimeZone zoneHere = DateTimeZone.forID(SabianUtilities.getCurrentTimeZone().getID());
-        DateTime dateTimeNow = DateTime.now().withZone(zoneHere);
-        return dateTimeNow;
+        return DateTime.now().withZone(zoneHere);
     }
 
     /**
@@ -883,8 +864,7 @@ public class SabianUtilities {
         calendar.set(Calendar.MILLISECOND, 0);
         TimeZone tz = calendar.getTimeZone();
         DateTimeZone zoneHere = DateTimeZone.forID(tz.getID());
-        DateTime dateTimeNow = new DateTime(calendar.getTime()).withZone(zoneHere);
-        return dateTimeNow;
+        return new DateTime(calendar.getTime()).withZone(zoneHere);
     }
 
 
@@ -899,8 +879,7 @@ public class SabianUtilities {
         calendar.set(Calendar.MILLISECOND, 0);
         TimeZone tz = calendar.getTimeZone();
         DateTimeZone zoneHere = DateTimeZone.forID(tz.getID());
-        DateTime dateTimeNow = new DateTime(calendar.getTime()).withZone(zoneHere);
-        return dateTimeNow;
+        return new DateTime(calendar.getTime()).withZone(zoneHere);
     }
 
     @Nullable

@@ -1,6 +1,5 @@
 package com.sabiantools.modals;
 
-import android.app.Dialog;
 import android.content.Context;
 import android.os.Bundle;
 
@@ -8,10 +7,18 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.Lifecycle;
 import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.LifecycleRegistry;
+import androidx.lifecycle.ViewModelStore;
+import androidx.lifecycle.ViewModelStoreOwner;
 
-public class SabianLifecycleModal extends Dialog implements LifecycleOwner {
+/**
+ * @deprecated Use a dialog fragment instead
+ */
+@Deprecated
+public class SabianLifecycleModal extends SabianCustomModal implements LifecycleOwner, ViewModelStoreOwner {
 
     private LifecycleRegistry mLifecycleRegistry;
+
+    private ViewModelStore mViewModelStore;
 
     public SabianLifecycleModal(@NonNull Context context) {
         super(context);
@@ -47,5 +54,13 @@ public class SabianLifecycleModal extends Dialog implements LifecycleOwner {
     @Override
     public Lifecycle getLifecycle() {
         return mLifecycleRegistry;
+    }
+
+    @NonNull
+    @Override
+    public ViewModelStore getViewModelStore() {
+        if (mViewModelStore == null)
+            mViewModelStore = new ViewModelStore();
+        return mViewModelStore;
     }
 }

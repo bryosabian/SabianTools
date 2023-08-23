@@ -11,48 +11,34 @@ import androidx.viewpager.widget.ViewPager;
  */
 public class SabianViewPager extends ViewPager {
 
-    private boolean allowSwipe =true;
+    private boolean allowSwipe = true;
 
-    private boolean allowInterceptTouch=allowSwipe;
-
-    public SabianViewPager(Context context)
-    {
+    public SabianViewPager(Context context) {
         super(context);
     }
 
-    public SabianViewPager(Context context, AttributeSet attrs)
-    {
-        super(context,attrs);
+    public SabianViewPager(Context context, AttributeSet attrs) {
+        super(context, attrs);
     }
 
-    public void setAllowSwipe(boolean activateSwipe)
-    {
-        this.allowSwipe=activateSwipe;
-    }
-
-    public void setAllowInterceptTouch(boolean allowInterceptTouch) {
-        this.allowInterceptTouch = allowInterceptTouch;
+    public void setAllowSwipe(boolean activateSwipe) {
+        this.allowSwipe = activateSwipe;
     }
 
     @Override
-    public boolean onInterceptTouchEvent(MotionEvent event)
-    {
-        if(!allowSwipe)
-        {
+    public boolean onInterceptTouchEvent(MotionEvent event) {
+        if (!allowSwipe) {
             return false;
-        }
-        else {
-            return super.onTouchEvent(event);
+        } else {
+            return super.onInterceptTouchEvent(event);
         }
     }
+
     @Override
-    public boolean onTouchEvent(MotionEvent event)
-    {
-        if(!allowSwipe)
-        {
+    public boolean onTouchEvent(MotionEvent event) {
+        if (!allowSwipe) {
             return false;
-        }
-        else {
+        } else {
             return super.onTouchEvent(event);
         }
 

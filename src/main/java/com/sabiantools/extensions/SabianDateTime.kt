@@ -2,7 +2,6 @@ package com.sabiantools.extensions
 
 import org.joda.time.*
 import java.util.*
-import java.util.concurrent.TimeUnit
 
 
 fun Calendar.strippedFromSeconds(hour: Int? = null, minute: Int? = null): Calendar {
@@ -75,3 +74,42 @@ fun Long.toHoursMinutesSeconds(): String {
     return "%02d:%02d:%02d".format(period.hours, period.minutes, period.seconds)
 }
 
+
+/**
+ * Converts a value like this 00:00:00.00000 to LocalDateTime or null if failed
+ */
+fun String.hourMinuteSecondsToDateTime(useDate: LocalDate = LocalDate.now()): LocalDateTime? {
+    try {
+        //Remove hour offset
+        val strictHourMinutes = this.split(".").firstOrNull() ?: return null
+        val nowDateTimeString = "%sT%s".format(useDate, strictHourMinutes)
+        return LocalDateTime.parse(nowDateTimeString)
+    } catch (e: Throwable) {
+        e.printStackTrace()
+        return null
+    }
+}
+
+
+fun String.toLocalDateTime(): LocalDateTime {
+    val formatted = this.replace("\\s+".toRegex(RegexOption.IGNORE_CASE), "T")
+    return LocalDateTime.parse(formatted)
+}
+
+fun String.toDateTime(): DateTime {
+    val formatted = this.replace("\\s+".toRegex(RegexOption.IGNORE_CASE), "T")
+    return DateTime.parse(formatted)
+}
+
+fun String.toLocalDate(): LocalDate {
+    val formatted = this.replace("\\s+".toRegex(RegexOption.IGNORE_CASE), "T")
+    return LocalDate.parse(formatted)
+}
+
+fun LocalDateTime.isSameDate(with: LocalDateTime): Boolean {
+    return this.toLocalDate().equals(with.toLocalDate());
+}
+
+fun DateTime.isSameDate(with: DateTime): Boolean {
+    return this.toLocalDate().equals(with.toLocalDate());
+}

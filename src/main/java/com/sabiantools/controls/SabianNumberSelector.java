@@ -117,7 +117,7 @@ public class SabianNumberSelector extends FrameLayout {
                 SabianUtilities.WriteLog("Text changed bro " + getValue());
 
                 if(onValueChangedListener==null)
-                return;
+                    return;
 
                 //Handled by onTextChangedEvent
                 onValueChangedListener.ValueChanged(oldValue, value);

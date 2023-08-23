@@ -27,7 +27,7 @@ public class SabianFragment extends Fragment {
     protected OnSabianFragmentAnimationLoadListener onAnimationLoaded;
 
     @Nullable
-    protected View findViewById(@IdRes int id) {
+    public View findViewById(@IdRes int id) {
         return root.findViewById(id);
     }
 

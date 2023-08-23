@@ -1,5 +1,7 @@
 package com.sabiantools.controls;
 
+import static com.sabiantools.controls.SabianButtonText.NO_RES;
+
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Typeface;
@@ -13,8 +15,6 @@ import com.sabiantools.R;
 import com.sabiantools.controls.texts.TypeFaceFactory;
 
 import org.jetbrains.annotations.NotNull;
-
-import static com.sabiantools.controls.SabianButtonText.NO_RES;
 
 /**
  * Created By Brian Sabana on 7/6/2016.
@@ -150,6 +150,4 @@ public class SabianFloatLabel extends FloatLabel {
             }
         }
     }
-
-
 }

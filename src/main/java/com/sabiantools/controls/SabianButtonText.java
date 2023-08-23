@@ -60,6 +60,7 @@ public class SabianButtonText extends FrameLayout {
     private TextWatcher onTextListener;
     private OnTextChangeListener onTextChangeListener;
 
+
     public enum Alignment {
         RIGHT(0, "right"), LEFT(1, "left");
 
@@ -79,6 +80,10 @@ public class SabianButtonText extends FrameLayout {
         public String toString() {
             return this.value;
         }
+    }
+
+    public interface OnTextChangeListener {
+        void onTextChange(String value);
     }
 
 

@@ -69,4 +69,5 @@
     <color name="sabian_text_black_light">#5a5a5a</color>
     <color name="sabian_text_black_lighter">#808182</color>
     <color name="sabian_normal_text_color">#4a4a4a</color>
+    <color name="light">#8e8e8e</color>
 </resources>

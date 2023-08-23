@@ -80,6 +80,6 @@ abstract class SabianEventObserver : Observer, Comparable<SabianEventObserver> {
      * Comparer
      */
     override fun compareTo(other: SabianEventObserver): Int {
-        return other.getPriority().compareTo(getPriority())
+        return getPriority().compareTo(other.getPriority());
     }
 }

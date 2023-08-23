@@ -6,10 +6,11 @@ import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class GridMarginDecorator extends RecyclerView.ItemDecoration {
-    private int rightMargin;
-    private int leftMargin;
-    private int topMargin;
-    private int bottomMargin;
+    private final int rightMargin;
+    private final int leftMargin;
+    private final int topMargin;
+    private final int bottomMargin;
+
     public static final int NO_MARGIN=-1;
 
     public GridMarginDecorator(int leftMargin, int topMargin, int rightMargin, int bottomMargin) {
@@ -24,19 +25,19 @@ public class GridMarginDecorator extends RecyclerView.ItemDecoration {
         if(itemPosition==RecyclerView.NO_POSITION){
             return;
         }
-        if(leftMargin !=NO_MARGIN){
+        if(leftMargin != NO_MARGIN){
             outRect.left= leftMargin;
         }
         /*Apply right margin to all items apart from the last*/
-        if(rightMargin !=NO_MARGIN){
+        if(rightMargin != NO_MARGIN){
             outRect.right= rightMargin;
         }
 
-        if(topMargin!=NO_MARGIN){
+        if(topMargin != NO_MARGIN){
             outRect.top=topMargin;
         }
 
-        if(bottomMargin!=NO_MARGIN){
+        if(bottomMargin != NO_MARGIN){
             outRect.bottom=bottomMargin;
         }
     }

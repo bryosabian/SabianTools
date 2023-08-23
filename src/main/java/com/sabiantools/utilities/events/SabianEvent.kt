@@ -1,8 +1,9 @@
 package com.sabiantools.utilities.events
 
-import java.util.*
+import java.util.Observable
 
 abstract class SabianEvent : Observable() {
+
     /**
      * Adds a new observer
      */
@@ -24,4 +25,17 @@ abstract class SabianEvent : Observable() {
      */
     val totalObservers: Int
         get() = countObservers()
+
+//    private var hasSorted: Boolean = false
+//    override fun onBeforeNotify() {
+//
+//        super.onBeforeNotify()
+//
+//        if (hasSorted)
+//            return
+//
+//        hasSorted = true
+////Higher priority gets called first
+//        obs.sortByDescending { (it as SabianEventObserver).getPriority() }
+//    }
 }

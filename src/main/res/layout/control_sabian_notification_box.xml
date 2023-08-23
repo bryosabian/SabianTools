@@ -53,6 +53,7 @@
         android:id="@+id/v_SabianNotificationDivider"
         android:background="#22ffffff"
         />
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
