@@ -37,7 +37,6 @@ import androidx.vectordrawable.graphics.drawable.VectorDrawableCompat;
 
 public class SabianButtonText extends FrameLayout {
 
-
     protected LayoutInflater inflater;
     protected FontAwesomeText icon, iconRight;
     protected SabianCondensedEditText editText;
