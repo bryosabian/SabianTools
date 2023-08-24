@@ -39,7 +39,7 @@
             android:visibility="gone" />
     </RelativeLayout>
 
-    <!--android:maxLines="10"-->
+    <!--Always wrap content-->
     <com.sabiantools.controls.texts.SabianCondensedEditText
         android:id="@+id/txt_ControlButtonText"
         android:layout_width="match_parent"
