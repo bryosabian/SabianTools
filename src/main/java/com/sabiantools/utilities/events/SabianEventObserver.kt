@@ -3,6 +3,9 @@ package com.sabiantools.utilities.events
 import android.content.Context
 import java.util.*
 
+/**
+ * @author bryosabian
+ */
 abstract class SabianEventObserver : Observer, Comparable<SabianEventObserver> {
 
     /**

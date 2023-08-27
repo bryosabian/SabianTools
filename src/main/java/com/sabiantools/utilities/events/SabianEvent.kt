@@ -2,6 +2,9 @@ package com.sabiantools.utilities.events
 
 import java.util.Observable
 
+/**
+ * @author bryosabian
+ */
 abstract class SabianEvent : Observable() {
 
     /**

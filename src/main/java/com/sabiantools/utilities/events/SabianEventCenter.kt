@@ -4,6 +4,8 @@ import kotlin.jvm.Throws
 
 /**
  * The event center
+ *
+ * @author bryosabian
  */
 open class SabianEventCenter protected constructor() {
 
@@ -32,6 +34,8 @@ open class SabianEventCenter protected constructor() {
      * Gets an event or creates a new one under the channel subscription
      * Note for it to be automatically created, the event class must have an empty constructor or it'll crash
      * @param channel The event
+     *
+     * @throws IllegalAccessException – If the class or its nullary constructor is not accessible
      */
     @Throws(Exception::class)
     inline fun <reified T : SabianEvent> getEventOrCreate(channel: String): SabianEvent {
@@ -50,11 +54,12 @@ open class SabianEventCenter protected constructor() {
      * See [subscribeTo] to avoid crash when channel is not found to automatically create
      * @param channel The event channel subscription
      * @param observer The observer
+     * @throws IllegalArgumentException When event subscription is not found. See [subscribeTo] to avoid crash when channel is not found to automatically create
      */
     @Throws(IllegalArgumentException::class)
     fun subscribe(channel: String, observer: SabianEventObserver) {
         val event = getEvent(channel)
-            ?: throw IllegalArgumentException("No event found with the subscription")
+                ?: throw IllegalArgumentException("No event found with the subscription")
         event.addObserver(observer)
         register(channel, event)
     }
@@ -79,10 +84,12 @@ open class SabianEventCenter protected constructor() {
      * See [subscribe] to avoid automatic registration
      * @param channel The subscription channel
      * @param observer The observer
+     *
+     * @throws IllegalAccessException – If the class or its nullary constructor is not accessible
      */
     inline fun <reified T : SabianEvent> subscribeTo(
-        channel: String,
-        observer: SabianEventObserver
+            channel: String,
+            observer: SabianEventObserver
     ) {
         val event = getEventOrCreate<T>(channel)
         event.addObserver(observer)
@@ -97,8 +104,8 @@ open class SabianEventCenter protected constructor() {
      * @param observers The observers
      */
     inline fun <reified T : SabianEvent> subscribeTo(
-        channel: String,
-        observers: Array<SabianEventObserver>
+            channel: String,
+            observers: Array<SabianEventObserver>
     ) {
         val sortedObservers = observers.sorted()
         sortedObservers.forEach {
@@ -121,8 +128,8 @@ open class SabianEventCenter protected constructor() {
      */
     @Throws(IllegalArgumentException::class)
     inline fun <reified T : SabianEvent> triggerAndReturn(
-        channel: String,
-        payload: SabianEventPayload
+            channel: String,
+            payload: SabianEventPayload
     ): SabianEventPayload {
         trigger<T>(channel, payload)
         return payload
@@ -133,8 +140,8 @@ open class SabianEventCenter protected constructor() {
      */
     @Throws(IllegalArgumentException::class)
     inline fun <reified T : SabianEvent> triggerWithAction(
-        channel: String,
-        payload: SabianEventPayloadAction
+            channel: String,
+            payload: SabianEventPayloadAction
     ): SabianEventPayloadAction {
         trigger<T>(channel, payload)
         return payload
