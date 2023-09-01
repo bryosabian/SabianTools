@@ -105,21 +105,13 @@ public class SabianModal extends Dialog {
         if (onOkayClickListener != null) {
             btnOk.setOnClickListener(onOkayClickListener);
         } else {
-            btnOk.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    dismiss();
-                }
-            });
+            btnOk.setOnClickListener(view -> dismiss());
         }
 
-        btnCancel.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (onCancelClickListener != null)
-                    onCancelClickListener.onClick(view);
-                dismiss();
-            }
+        btnCancel.setOnClickListener(view -> {
+            if (onCancelClickListener != null)
+                onCancelClickListener.onClick(view);
+            dismiss();
         });
 
         if (okayButtonColor != NO_RES_ID)

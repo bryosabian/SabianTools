@@ -17,8 +17,10 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:background="@drawable/sabian_material_modal_bg"
+        android:paddingStart="20dp"
         android:paddingLeft="20dp"
         android:paddingTop="20dp"
+        android:paddingEnd="10dp"
         android:paddingRight="10dp">
 
         <!--Header and Body-->
@@ -34,7 +36,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
-                android:text="Modal Title"
+                android:text=""
                 android:textColor="#4a4a4a"
                 android:textSize="16sp"
                 sabian:SabianRobotoType="Bold" />
@@ -73,8 +75,10 @@
                 android:id="@+id/ll_SabianModalActionsContainer"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
                 android:layout_alignParentBottom="true"
-                android:layout_gravity="right"
+                android:layout_gravity="end"
                 android:orientation="horizontal">
 
                 <com.gc.materialdesign.views.ButtonFlat
@@ -82,11 +86,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
+                    android:layout_marginEnd="5dp"
                     android:layout_marginRight="5dp"
                     android:background="@color/sabian_btn_theme_background"
-                    android:text="Submit"
-
-                    />
+                    android:text="Submit" />
 
                 <com.gc.materialdesign.views.ButtonFlat
                     android:id="@+id/btn_SabianModalCancel"

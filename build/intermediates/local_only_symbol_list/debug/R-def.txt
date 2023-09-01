@@ -130,6 +130,8 @@ color sabian_list_divider
 color sabian_list_sub_title_color
 color sabian_list_title_color
 color sabian_modal_header_color
+color sabian_modal_text_color
+color sabian_modal_title_color
 color sabian_normal_text_color
 color sabian_notification_danger
 color sabian_notification_inverse

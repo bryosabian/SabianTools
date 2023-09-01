@@ -293,24 +293,31 @@ public class SabianStickyNotificationView {
             if (isShowing)
                 return;
             SabianViewKt.fadeVisibility(mLayoutView, View.VISIBLE, duration);
-            mLayoutView.postDelayed(() -> {
-                mLayoutView.setVisibility(View.VISIBLE);
-                isShowing = true;
-                if (listener != null)
-                    listener.onShown();
-            }, duration);
+            mLayoutView.postDelayed(this::onShowing, duration);
         }
+
 
         public void hide() {
             if (!isShowing)
                 return;
             SabianViewKt.fadeVisibility(mLayoutView, View.GONE, duration);
-            mLayoutView.postDelayed(() -> {
-                mLayoutView.setVisibility(View.GONE); //Remove the extra space
-                isShowing = false;
-                if (listener != null)
-                    listener.onHidden();
-            }, duration);
+            mLayoutView.postDelayed(this::onHidden, duration);
+        }
+
+        private void onShowing() {
+            mLayoutView.setVisibility(View.VISIBLE);
+            isShowing = true;
+            if (listener != null)
+                listener.onShown();
+        }
+
+        private void onHidden() {
+            mLayoutView.setVisibility(View.GONE); //Remove the extra space
+            isShowing = false;
+            if (listener != null)
+                listener.onHidden();
         }
     }
+
+
 }

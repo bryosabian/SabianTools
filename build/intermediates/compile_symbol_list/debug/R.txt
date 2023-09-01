@@ -588,8 +588,6 @@ int color colorPrimary 0x0
 int color control_sabian_round_button 0x0
 int color control_sabian_round_button_disabled 0x0
 int color control_sabian_round_button_pressed 0x0
-int color custom_camera_dark 0x0
-int color custom_camera_light 0x0
 int color dim_foreground_disabled_material_dark 0x0
 int color dim_foreground_disabled_material_light 0x0
 int color dim_foreground_material_dark 0x0
@@ -647,6 +645,8 @@ int color sabian_list_divider 0x0
 int color sabian_list_sub_title_color 0x0
 int color sabian_list_title_color 0x0
 int color sabian_modal_header_color 0x0
+int color sabian_modal_text_color 0x0
+int color sabian_modal_title_color 0x0
 int color sabian_normal_text_color 0x0
 int color sabian_notification_danger 0x0
 int color sabian_notification_inverse 0x0
@@ -952,10 +952,8 @@ int drawable edittext_background_danger 0x0
 int drawable edittext_background_rounded 0x0
 int drawable edittext_background_rounded_danger 0x0
 int drawable edittext_background_rounded_success 0x0
-int drawable edittext_background_rounded_themed 0x0
 int drawable edittext_background_rounded_warning 0x0
 int drawable edittext_background_success 0x0
-int drawable edittext_background_themed 0x0
 int drawable edittext_background_warning 0x0
 int drawable error_view_cloud 0x0
 int drawable error_view_retry_button_background 0x0
@@ -985,7 +983,7 @@ int drawable sabian_actionbar 0x0
 int drawable sabian_button_theme 0x0
 int drawable sabian_button_theme_alt 0x0
 int drawable sabian_button_theme_danger 0x0
-int drawable sabian_button_theme_rounded 0x0
+int drawable sabian_button_theme_success 0x0
 int drawable sabian_button_transparent 0x0
 int drawable sabian_button_transparent_rounded 0x0
 int drawable sabian_error_view 0x0
@@ -1147,6 +1145,7 @@ int id home 0x0
 int id icon 0x0
 int id icon_group 0x0
 int id image 0x0
+int id imageRes 0x0
 int id img_ControlButtonText 0x0
 int id img_ControlButtonTextRight 0x0
 int id img_ModalFailed 0x0
@@ -1429,6 +1428,7 @@ int string abc_searchview_description_voice 0x0
 int string abc_shareactionprovider_share_with 0x0
 int string abc_shareactionprovider_share_with_application 0x0
 int string abc_toolbar_collapse_description 0x0
+int string action_settings 0x0
 int string app_name 0x0
 int string error_view_oops 0x0
 int string error_view_retry 0x0

@@ -70,4 +70,6 @@
     <color name="sabian_text_black_lighter">#808182</color>
     <color name="sabian_normal_text_color">#4a4a4a</color>
     <color name="light">#8e8e8e</color>
+    <color name="sabian_modal_title_color">#4a4a4a</color>
+    <color name="sabian_modal_text_color">#999999</color>
 </resources>
