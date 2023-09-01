@@ -588,6 +588,8 @@ int color colorPrimary 0x0
 int color control_sabian_round_button 0x0
 int color control_sabian_round_button_disabled 0x0
 int color control_sabian_round_button_pressed 0x0
+int color custom_camera_dark 0x0
+int color custom_camera_light 0x0
 int color dim_foreground_disabled_material_dark 0x0
 int color dim_foreground_disabled_material_light 0x0
 int color dim_foreground_material_dark 0x0
@@ -950,8 +952,10 @@ int drawable edittext_background_danger 0x0
 int drawable edittext_background_rounded 0x0
 int drawable edittext_background_rounded_danger 0x0
 int drawable edittext_background_rounded_success 0x0
+int drawable edittext_background_rounded_themed 0x0
 int drawable edittext_background_rounded_warning 0x0
 int drawable edittext_background_success 0x0
+int drawable edittext_background_themed 0x0
 int drawable edittext_background_warning 0x0
 int drawable error_view_cloud 0x0
 int drawable error_view_retry_button_background 0x0
@@ -981,7 +985,7 @@ int drawable sabian_actionbar 0x0
 int drawable sabian_button_theme 0x0
 int drawable sabian_button_theme_alt 0x0
 int drawable sabian_button_theme_danger 0x0
-int drawable sabian_button_theme_success 0x0
+int drawable sabian_button_theme_rounded 0x0
 int drawable sabian_button_transparent 0x0
 int drawable sabian_button_transparent_rounded 0x0
 int drawable sabian_error_view 0x0
@@ -1010,6 +1014,10 @@ int drawable tooltip_frame_dark 0x0
 int drawable tooltip_frame_light 0x0
 int drawable top_border_bg 0x0
 int drawable vc_cloud_off_black_24dp 0x0
+int drawable vc_sabian_check_circle_24 0x0
+int drawable vc_sabian_error 0x0
+int drawable vc_sabian_info_24 0x0
+int drawable vc_sabian_warning_24 0x0
 int drawable vc_sort_white_24dp 0x0
 int id Accordion 0x0
 int id Background2Foreground 0x0
@@ -1079,6 +1087,7 @@ int id btn_SabianModalOk 0x0
 int id btn_SabianNotificationButton 0x0
 int id btn_SabianNumberSelectorMinus 0x0
 int id btn_SabianNumberSelectorPlus 0x0
+int id btn_StickyViewMessageAction 0x0
 int id buttonPanel 0x0
 int id button_accept 0x0
 int id button_cancel 0x0
@@ -1138,11 +1147,11 @@ int id home 0x0
 int id icon 0x0
 int id icon_group 0x0
 int id image 0x0
-int id imageRes 0x0
 int id img_ControlButtonText 0x0
 int id img_ControlButtonTextRight 0x0
 int id img_ModalFailed 0x0
 int id img_SabianEditIcon 0x0
+int id img_StickyViewMessageIcon 0x0
 int id img_ViewHoldermodalImage 0x0
 int id info 0x0
 int id invisible 0x0
@@ -1168,6 +1177,10 @@ int id ll_SabianModalActionsContainer 0x0
 int id ll_SabianModalBody 0x0
 int id ll_SabianModalBodyContainer 0x0
 int id ll_SabianNotificationContainer 0x0
+int id ll_StickyViewBody 0x0
+int id ll_StickyViewContainer 0x0
+int id ll_StickyViewMessageActionContainer 0x0
+int id ll_StickyViewMessageContainer 0x0
 int id ll_ToastContainer 0x0
 int id ll_ViewHoldermodalContainer 0x0
 int id loading_bar 0x0
@@ -1224,6 +1237,7 @@ int id sct_SabianMaterialModalTitle 0x0
 int id sct_SabianModalMessage 0x0
 int id sct_SabianModalTitle 0x0
 int id sct_SabianRibbonText 0x0
+int id sct_StickyViewMessageText 0x0
 int id sct_ToastText 0x0
 int id sct_ViewHoldermodalSubTitle 0x0
 int id sct_ViewHoldermodalTitle 0x0
@@ -1367,6 +1381,7 @@ int layout sabian_modal_list_smooth 0x0
 int layout sabian_modal_smooth 0x0
 int layout sabian_modal_smooth_fixed_bottom 0x0
 int layout sabian_number_selector 0x0
+int layout sabian_sticky_view_layout 0x0
 int layout sabian_toast_layout 0x0
 int layout sabian_transparent_button_text 0x0
 int layout select_dialog_item_material 0x0
@@ -1414,7 +1429,6 @@ int string abc_searchview_description_voice 0x0
 int string abc_shareactionprovider_share_with 0x0
 int string abc_shareactionprovider_share_with_application 0x0
 int string abc_toolbar_collapse_description 0x0
-int string action_settings 0x0
 int string app_name 0x0
 int string error_view_oops 0x0
 int string error_view_retry 0x0

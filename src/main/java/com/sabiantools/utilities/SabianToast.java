@@ -12,6 +12,7 @@ import com.beardedhen.androidbootstrap.FontAwesomeText;
 import com.sabiantools.R;
 import com.sabiantools.controls.texts.SabianCondensedText;
 
+import androidx.annotation.ColorRes;
 import androidx.annotation.DrawableRes;
 
 /**
@@ -109,26 +110,51 @@ public class SabianToast {
     }
 
     public enum MessageType {
-        ERROR("fa-exclamation-circle", R.drawable.sabian_toast_layout_danger),
-        SUCCESS("fa-check-circle", R.drawable.sabian_toast_layout_success),
-        INFORMATION("fa-info-circle", R.drawable.sabian_toast_layout_primary);
+        ERROR("fa-exclamation-circle", R.drawable.sabian_toast_layout_danger, R.color.sabian_toast_danger, R.color.sabian_white, R.drawable.vc_sabian_warning_24),
+        SUCCESS("fa-check-circle", R.drawable.sabian_toast_layout_success, R.color.sabian_toast_success, R.color.sabian_white, R.drawable.vc_sabian_check_circle_24),
+        INFORMATION("fa-info-circle", R.drawable.sabian_toast_layout_primary, R.color.sabian_toast_primary, R.color.sabian_white, R.drawable.vc_sabian_info_24);
 
-        private String icon;
+        private final String icon;
 
-        private @DrawableRes
+        private final @DrawableRes
         int drawableResource;
 
-        MessageType(String icon, @DrawableRes int drawableResource) {
+        private final @ColorRes int color;
+
+        private final @ColorRes int textColor;
+
+        private final @DrawableRes int vectorIcon;
+
+        MessageType(String icon, @DrawableRes int drawableResource, int color, int textColor, int vectorIcon) {
             this.icon = icon;
             this.drawableResource = drawableResource;
+            this.color = color;
+            this.textColor = textColor;
+            this.vectorIcon = vectorIcon;
         }
 
         public String getIcon() {
             return icon;
         }
 
+        @DrawableRes
         public int getDrawableResource() {
             return drawableResource;
+        }
+
+        @ColorRes
+        public int getColor() {
+            return color;
+        }
+
+        @ColorRes
+        public int getTextColor() {
+            return textColor;
+        }
+
+        @DrawableRes
+        public int getVectorIcon() {
+            return vectorIcon;
         }
     }
 }

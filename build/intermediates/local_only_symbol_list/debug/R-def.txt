@@ -205,6 +205,10 @@ drawable sabian_transparent_button_text
 drawable sabian_transparent_text_container
 drawable top_border_bg
 drawable vc_cloud_off_black_24dp
+drawable vc_sabian_check_circle_24
+drawable vc_sabian_error
+drawable vc_sabian_info_24
+drawable vc_sabian_warning_24
 drawable vc_sort_white_24dp
 id btn_ModalEditTextCancel
 id btn_ModalEditTextOk
@@ -217,6 +221,7 @@ id btn_SabianModalOk
 id btn_SabianNotificationButton
 id btn_SabianNumberSelectorMinus
 id btn_SabianNumberSelectorPlus
+id btn_StickyViewMessageAction
 id cdv_SabianNotificationContainer
 id cdv_SabianStatsContainer
 id danger
@@ -231,6 +236,7 @@ id img_ControlButtonText
 id img_ControlButtonTextRight
 id img_ModalFailed
 id img_SabianEditIcon
+id img_StickyViewMessageIcon
 id img_ViewHoldermodalImage
 id left
 id ll_ControlButtonTextContainer
@@ -244,6 +250,10 @@ id ll_SabianModalActionsContainer
 id ll_SabianModalBody
 id ll_SabianModalBodyContainer
 id ll_SabianNotificationContainer
+id ll_StickyViewBody
+id ll_StickyViewContainer
+id ll_StickyViewMessageActionContainer
+id ll_StickyViewMessageContainer
 id ll_ToastContainer
 id ll_ViewHoldermodalContainer
 id lst_GridModalList
@@ -273,6 +283,7 @@ id sct_SabianMaterialModalTitle
 id sct_SabianModalMessage
 id sct_SabianModalTitle
 id sct_SabianRibbonText
+id sct_StickyViewMessageText
 id sct_ToastText
 id sct_ViewHoldermodalSubTitle
 id sct_ViewHoldermodalTitle
@@ -314,6 +325,7 @@ layout sabian_modal_list_smooth
 layout sabian_modal_smooth
 layout sabian_modal_smooth_fixed_bottom
 layout sabian_number_selector
+layout sabian_sticky_view_layout
 layout sabian_toast_layout
 layout sabian_transparent_button_text
 string app_name

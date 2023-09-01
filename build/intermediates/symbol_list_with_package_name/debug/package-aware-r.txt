@@ -589,6 +589,8 @@ color colorPrimary
 color control_sabian_round_button
 color control_sabian_round_button_disabled
 color control_sabian_round_button_pressed
+color custom_camera_dark
+color custom_camera_light
 color dim_foreground_disabled_material_dark
 color dim_foreground_disabled_material_light
 color dim_foreground_material_dark
@@ -951,8 +953,10 @@ drawable edittext_background_danger
 drawable edittext_background_rounded
 drawable edittext_background_rounded_danger
 drawable edittext_background_rounded_success
+drawable edittext_background_rounded_themed
 drawable edittext_background_rounded_warning
 drawable edittext_background_success
+drawable edittext_background_themed
 drawable edittext_background_warning
 drawable error_view_cloud
 drawable error_view_retry_button_background
@@ -982,7 +986,7 @@ drawable sabian_actionbar
 drawable sabian_button_theme
 drawable sabian_button_theme_alt
 drawable sabian_button_theme_danger
-drawable sabian_button_theme_success
+drawable sabian_button_theme_rounded
 drawable sabian_button_transparent
 drawable sabian_button_transparent_rounded
 drawable sabian_error_view
@@ -1011,6 +1015,10 @@ drawable tooltip_frame_dark
 drawable tooltip_frame_light
 drawable top_border_bg
 drawable vc_cloud_off_black_24dp
+drawable vc_sabian_check_circle_24
+drawable vc_sabian_error
+drawable vc_sabian_info_24
+drawable vc_sabian_warning_24
 drawable vc_sort_white_24dp
 id Accordion
 id Background2Foreground
@@ -1080,6 +1088,7 @@ id btn_SabianModalOk
 id btn_SabianNotificationButton
 id btn_SabianNumberSelectorMinus
 id btn_SabianNumberSelectorPlus
+id btn_StickyViewMessageAction
 id buttonPanel
 id button_accept
 id button_cancel
@@ -1139,11 +1148,11 @@ id home
 id icon
 id icon_group
 id image
-id imageRes
 id img_ControlButtonText
 id img_ControlButtonTextRight
 id img_ModalFailed
 id img_SabianEditIcon
+id img_StickyViewMessageIcon
 id img_ViewHoldermodalImage
 id info
 id invisible
@@ -1169,6 +1178,10 @@ id ll_SabianModalActionsContainer
 id ll_SabianModalBody
 id ll_SabianModalBodyContainer
 id ll_SabianNotificationContainer
+id ll_StickyViewBody
+id ll_StickyViewContainer
+id ll_StickyViewMessageActionContainer
+id ll_StickyViewMessageContainer
 id ll_ToastContainer
 id ll_ViewHoldermodalContainer
 id loading_bar
@@ -1225,6 +1238,7 @@ id sct_SabianMaterialModalTitle
 id sct_SabianModalMessage
 id sct_SabianModalTitle
 id sct_SabianRibbonText
+id sct_StickyViewMessageText
 id sct_ToastText
 id sct_ViewHoldermodalSubTitle
 id sct_ViewHoldermodalTitle
@@ -1368,6 +1382,7 @@ layout sabian_modal_list_smooth
 layout sabian_modal_smooth
 layout sabian_modal_smooth_fixed_bottom
 layout sabian_number_selector
+layout sabian_sticky_view_layout
 layout sabian_toast_layout
 layout sabian_transparent_button_text
 layout select_dialog_item_material
@@ -1415,7 +1430,6 @@ string abc_searchview_description_voice
 string abc_shareactionprovider_share_with
 string abc_shareactionprovider_share_with_application
 string abc_toolbar_collapse_description
-string action_settings
 string app_name
 string error_view_oops
 string error_view_retry
