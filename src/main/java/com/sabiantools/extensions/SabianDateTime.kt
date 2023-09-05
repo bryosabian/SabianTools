@@ -113,3 +113,11 @@ fun LocalDateTime.isSameDate(with: LocalDateTime): Boolean {
 fun DateTime.isSameDate(with: DateTime): Boolean {
     return this.toLocalDate().equals(with.toLocalDate());
 }
+
+fun Int.toHoursMinutesSeconds(): String {
+    val totalSeconds = this
+    val hours = totalSeconds / 3600
+    val minutes = (totalSeconds % 3600) / 60
+    val seconds = totalSeconds % 60
+    return "%02d:%02d:%02d".format(hours, minutes, seconds)
+}
