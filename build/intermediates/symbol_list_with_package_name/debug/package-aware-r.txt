@@ -589,6 +589,8 @@ color colorPrimary
 color control_sabian_round_button
 color control_sabian_round_button_disabled
 color control_sabian_round_button_pressed
+color custom_camera_dark
+color custom_camera_light
 color dim_foreground_disabled_material_dark
 color dim_foreground_disabled_material_light
 color dim_foreground_material_dark
@@ -953,8 +955,10 @@ drawable edittext_background_danger
 drawable edittext_background_rounded
 drawable edittext_background_rounded_danger
 drawable edittext_background_rounded_success
+drawable edittext_background_rounded_themed
 drawable edittext_background_rounded_warning
 drawable edittext_background_success
+drawable edittext_background_themed
 drawable edittext_background_warning
 drawable error_view_cloud
 drawable error_view_retry_button_background
@@ -984,7 +988,7 @@ drawable sabian_actionbar
 drawable sabian_button_theme
 drawable sabian_button_theme_alt
 drawable sabian_button_theme_danger
-drawable sabian_button_theme_success
+drawable sabian_button_theme_rounded
 drawable sabian_button_transparent
 drawable sabian_button_transparent_rounded
 drawable sabian_error_view
@@ -1146,7 +1150,6 @@ id home
 id icon
 id icon_group
 id image
-id imageRes
 id img_ControlButtonText
 id img_ControlButtonTextRight
 id img_ModalFailed
@@ -1429,7 +1432,6 @@ string abc_searchview_description_voice
 string abc_shareactionprovider_share_with
 string abc_shareactionprovider_share_with_application
 string abc_toolbar_collapse_description
-string action_settings
 string app_name
 string error_view_oops
 string error_view_retry
