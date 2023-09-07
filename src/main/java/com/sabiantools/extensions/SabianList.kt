@@ -70,3 +70,9 @@ fun <T> Collection<T>.toIndexes(): List<Int> {
         index
     }
 }
+
+fun <T, K> Collection<T>.filterNotNull(producer: ((T) -> K?)): List<T> {
+    return this.filter {
+        producer(it) != null
+    }
+}
