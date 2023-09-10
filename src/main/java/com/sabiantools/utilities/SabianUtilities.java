@@ -188,13 +188,10 @@ public class SabianUtilities {
             modal.setCancelButtonText(cancelText);
         }
         if (onCancelClick != null)
-            modal.setOnCancelClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    if (dismissOnCancel)
-                        modal.dismiss();
-                    onCancelClick.onClick(view);
-                }
+            modal.setOnCancelClickListener(view -> {
+                if (dismissOnCancel)
+                    modal.dismiss();
+                onCancelClick.onClick(view);
             });
         modal.show();
         return modal;
