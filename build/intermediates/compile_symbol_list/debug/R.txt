@@ -268,6 +268,9 @@ int attr listPreferredItemPaddingLeft 0x0
 int attr listPreferredItemPaddingRight 0x0
 int attr logo 0x0
 int attr logoDescription 0x0
+int attr materialDialogColor 0x0
+int attr materialDialogProgressColor 0x0
+int attr materialDialogTextColor 0x0
 int attr max 0x0
 int attr maxButtonHeight 0x0
 int attr measureWithLargestChild 0x0
@@ -588,8 +591,6 @@ int color colorPrimary 0x0
 int color control_sabian_round_button 0x0
 int color control_sabian_round_button_disabled 0x0
 int color control_sabian_round_button_pressed 0x0
-int color custom_camera_dark 0x0
-int color custom_camera_light 0x0
 int color dim_foreground_disabled_material_dark 0x0
 int color dim_foreground_disabled_material_light 0x0
 int color dim_foreground_material_dark 0x0
@@ -607,6 +608,9 @@ int color google_white 0x0
 int color highlighted_text_material_dark 0x0
 int color highlighted_text_material_light 0x0
 int color light 0x0
+int color materialDialogColor 0x0
+int color materialProgressColor 0x0
+int color materialTextColor 0x0
 int color material_blue_grey_800 0x0
 int color material_blue_grey_900 0x0
 int color material_blue_grey_950 0x0
@@ -634,6 +638,7 @@ int color primary_text_disabled_material_dark 0x0
 int color primary_text_disabled_material_light 0x0
 int color ripple_material_dark 0x0
 int color ripple_material_light 0x0
+int color sabianTransparent 0x0
 int color sabian_actionbar_text_color 0x0
 int color sabian_btn_theme_background 0x0
 int color sabian_danger_color 0x0
@@ -784,6 +789,8 @@ int dimen hint_pressed_alpha_material_light 0x0
 int dimen item_touch_helper_max_drag_scroll_per_frame 0x0
 int dimen item_touch_helper_swipe_escape_max_velocity 0x0
 int dimen item_touch_helper_swipe_escape_velocity 0x0
+int dimen materialDialogDashGap 0x0
+int dimen materialDialogRadius 0x0
 int dimen notification_action_icon_size 0x0
 int dimen notification_action_text_size 0x0
 int dimen notification_big_circle_margin 0x0
@@ -912,6 +919,7 @@ int drawable background_button_rectangle 0x0
 int drawable background_checkbox 0x0
 int drawable background_checkbox_check 0x0
 int drawable background_checkbox_uncheck 0x0
+int drawable background_dialog 0x0
 int drawable background_progress 0x0
 int drawable background_switch_ball_uncheck 0x0
 int drawable background_transparent 0x0
@@ -954,10 +962,8 @@ int drawable edittext_background_danger 0x0
 int drawable edittext_background_rounded 0x0
 int drawable edittext_background_rounded_danger 0x0
 int drawable edittext_background_rounded_success 0x0
-int drawable edittext_background_rounded_themed 0x0
 int drawable edittext_background_rounded_warning 0x0
 int drawable edittext_background_success 0x0
-int drawable edittext_background_themed 0x0
 int drawable edittext_background_warning 0x0
 int drawable error_view_cloud 0x0
 int drawable error_view_retry_button_background 0x0
@@ -987,7 +993,7 @@ int drawable sabian_actionbar 0x0
 int drawable sabian_button_theme 0x0
 int drawable sabian_button_theme_alt 0x0
 int drawable sabian_button_theme_danger 0x0
-int drawable sabian_button_theme_rounded 0x0
+int drawable sabian_button_theme_success 0x0
 int drawable sabian_button_transparent 0x0
 int drawable sabian_button_transparent_rounded 0x0
 int drawable sabian_error_view 0x0
@@ -1149,6 +1155,7 @@ int id home 0x0
 int id icon 0x0
 int id icon_group 0x0
 int id image 0x0
+int id imageRes 0x0
 int id img_ControlButtonText 0x0
 int id img_ControlButtonTextRight 0x0
 int id img_ModalFailed 0x0
@@ -1268,6 +1275,8 @@ int id src_in 0x0
 int id src_over 0x0
 int id start 0x0
 int id status_bar_latest_event_content 0x0
+int id statusbarutil_fake_status_bar_view 0x0
+int id statusbarutil_translucent_view 0x0
 int id submenuarrow 0x0
 int id submit_area 0x0
 int id success 0x0
@@ -1431,6 +1440,7 @@ int string abc_searchview_description_voice 0x0
 int string abc_shareactionprovider_share_with 0x0
 int string abc_shareactionprovider_share_with_application 0x0
 int string abc_toolbar_collapse_description 0x0
+int string action_settings 0x0
 int string app_name 0x0
 int string error_view_oops 0x0
 int string error_view_retry 0x0

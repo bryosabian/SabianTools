@@ -9,6 +9,7 @@
     <color name="light">#8e8e8e</color>
     <color name="modal_list_sub_title_color">#808182</color>
     <color name="modal_list_title_color">#5a5a5a</color>
+    <color name="sabianTransparent">#00ffffff</color>
     <color name="sabian_actionbar_text_color">#ffffff</color>
     <color name="sabian_danger_color">#DC143C</color>
     <color name="sabian_divider_color_light">#E0EDED</color>
@@ -54,6 +55,8 @@
     <dimen name="sabian_modal_space">20dp</dimen>
     <dimen name="sabian_modal_vertical_space">20dp</dimen>
     <dimen name="sabian_toast_padding">20dp</dimen>
+    <item name="statusbarutil_fake_status_bar_view" type="id"/>
+    <item name="statusbarutil_translucent_view" type="id"/>
     <string name="app_name">Sabian Tools</string>
     <style name="SabianMaterialDialog" parent="@android:style/Theme.Translucent">
         <item name="android:windowIsFloating">true</item>
