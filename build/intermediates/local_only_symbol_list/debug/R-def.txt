@@ -118,6 +118,7 @@ color google_white
 color light
 color modal_list_sub_title_color
 color modal_list_title_color
+color sabianTransparent
 color sabian_actionbar_text_color
 color sabian_danger_color
 color sabian_divider_color_light
@@ -293,6 +294,8 @@ id sfi_SabianMaterialModalIcon
 id sfi_SabianMaterialModalIconBack
 id sfi_SabianMaterialModalIconClose
 id sfi_SabianModalImage
+id statusbarutil_fake_status_bar_view
+id statusbarutil_translucent_view
 id success
 id txt_ControlButtonText
 id txt_ControlSabianRoundButtonText

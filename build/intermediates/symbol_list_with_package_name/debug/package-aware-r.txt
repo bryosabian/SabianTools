@@ -269,6 +269,9 @@ attr listPreferredItemPaddingLeft
 attr listPreferredItemPaddingRight
 attr logo
 attr logoDescription
+attr materialDialogColor
+attr materialDialogProgressColor
+attr materialDialogTextColor
 attr max
 attr maxButtonHeight
 attr measureWithLargestChild
@@ -589,8 +592,6 @@ color colorPrimary
 color control_sabian_round_button
 color control_sabian_round_button_disabled
 color control_sabian_round_button_pressed
-color custom_camera_dark
-color custom_camera_light
 color dim_foreground_disabled_material_dark
 color dim_foreground_disabled_material_light
 color dim_foreground_material_dark
@@ -608,6 +609,9 @@ color google_white
 color highlighted_text_material_dark
 color highlighted_text_material_light
 color light
+color materialDialogColor
+color materialProgressColor
+color materialTextColor
 color material_blue_grey_800
 color material_blue_grey_900
 color material_blue_grey_950
@@ -635,6 +639,7 @@ color primary_text_disabled_material_dark
 color primary_text_disabled_material_light
 color ripple_material_dark
 color ripple_material_light
+color sabianTransparent
 color sabian_actionbar_text_color
 color sabian_btn_theme_background
 color sabian_danger_color
@@ -785,6 +790,8 @@ dimen hint_pressed_alpha_material_light
 dimen item_touch_helper_max_drag_scroll_per_frame
 dimen item_touch_helper_swipe_escape_max_velocity
 dimen item_touch_helper_swipe_escape_velocity
+dimen materialDialogDashGap
+dimen materialDialogRadius
 dimen notification_action_icon_size
 dimen notification_action_text_size
 dimen notification_big_circle_margin
@@ -913,6 +920,7 @@ drawable background_button_rectangle
 drawable background_checkbox
 drawable background_checkbox_check
 drawable background_checkbox_uncheck
+drawable background_dialog
 drawable background_progress
 drawable background_switch_ball_uncheck
 drawable background_transparent
@@ -955,10 +963,8 @@ drawable edittext_background_danger
 drawable edittext_background_rounded
 drawable edittext_background_rounded_danger
 drawable edittext_background_rounded_success
-drawable edittext_background_rounded_themed
 drawable edittext_background_rounded_warning
 drawable edittext_background_success
-drawable edittext_background_themed
 drawable edittext_background_warning
 drawable error_view_cloud
 drawable error_view_retry_button_background
@@ -988,7 +994,7 @@ drawable sabian_actionbar
 drawable sabian_button_theme
 drawable sabian_button_theme_alt
 drawable sabian_button_theme_danger
-drawable sabian_button_theme_rounded
+drawable sabian_button_theme_success
 drawable sabian_button_transparent
 drawable sabian_button_transparent_rounded
 drawable sabian_error_view
@@ -1150,6 +1156,7 @@ id home
 id icon
 id icon_group
 id image
+id imageRes
 id img_ControlButtonText
 id img_ControlButtonTextRight
 id img_ModalFailed
@@ -1269,6 +1276,8 @@ id src_in
 id src_over
 id start
 id status_bar_latest_event_content
+id statusbarutil_fake_status_bar_view
+id statusbarutil_translucent_view
 id submenuarrow
 id submit_area
 id success
@@ -1432,6 +1441,7 @@ string abc_searchview_description_voice
 string abc_shareactionprovider_share_with
 string abc_shareactionprovider_share_with_application
 string abc_toolbar_collapse_description
+string action_settings
 string app_name
 string error_view_oops
 string error_view_retry
