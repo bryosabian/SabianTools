@@ -25,11 +25,11 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
             android:background="@drawable/bottom_border_bg"
-            android:paddingLeft="20dp"
-            android:paddingRight="10dp"
-            android:paddingBottom="10dp"
             android:paddingStart="20dp"
-            android:paddingEnd="10dp">
+            android:paddingLeft="20dp"
+            android:paddingEnd="10dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="10dp">
 
             <com.sabiantools.controls.texts.SabianCondensedText
                 android:id="@+id/sct_SabianModalTitle"
@@ -37,7 +37,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:text=""
-                android:textColor="@color/sabian_modal_title_color"
+                android:textColor="?attr/sabianModalTitleColor"
                 android:textSize="16sp"
                 sabian:SabianRobotoType="Bold" />
         </LinearLayout>
@@ -66,7 +66,7 @@
                         android:id="@+id/sct_SabianModalMessage"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textColor="@color/sabian_modal_text_color"
+                        android:textColor="?attr/sabianModalTextColor"
                         android:textSize="15sp"
                         android:visibility="gone"
                         sabian:SabianRobotoType="Regular" />
@@ -94,7 +94,7 @@
                         android:layout_gravity="end"
                         android:layout_marginEnd="5dp"
                         android:layout_marginRight="5dp"
-                        android:background="@color/sabian_btn_theme_background"
+                        android:background="?attr/sabianModalButtonColor"
                         android:text="Submit" />
 
                     <com.gc.materialdesign.views.ButtonFlat
@@ -102,7 +102,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="end"
-                        android:background="@color/sabian_btn_theme_background"
+                        android:background="?attr/sabianModalButtonColor"
                         android:text="Cancel" />
 
                 </LinearLayout>

@@ -45,7 +45,7 @@
                         android:layout_centerInParent="true"
                         android:layout_gravity="center_vertical"
                         android:text="Progress"
-                        android:textColor="#4a4a4a"
+                        android:textColor="?attr/sabianModalTitleColor"
                         android:textSize="16sp"
                         sabian:SabianRobotoType="Bold" />
 
@@ -72,7 +72,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="4dp"
                             android:text="Downloading"
-                            android:textColor="@color/sabian_text_black_light"
+                            android:textColor="?attr/sabianModalTextColor"
                             android:textSize="14sp"
                             sabian:SabianRobotoType="Regular" />
 

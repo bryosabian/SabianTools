@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <attr format="color" name="sabianDividerColor"/>
+    <attr format="color" name="sabianModalButtonColor"/>
+    <attr format="color" name="sabianModalColor"/>
+    <attr format="color" name="sabianModalEditTextColor"/>
+    <attr format="color" name="sabianModalEditTextHintColor"/>
+    <attr format="color" name="sabianModalTextColor"/>
+    <attr format="color" name="sabianModalTitleColor"/>
+    <attr format="color" name="sabianOnPrimaryColor"/>
+    <attr format="color" name="sabianOverlayColor"/>
+    <attr format="color" name="sabianPrimaryColor"/>
     <color name="colorAccent">#FF4081</color>
     <color name="colorPrimary">#3F51B5</color>
     <color name="control_sabian_round_button">#4F9C1F</color>

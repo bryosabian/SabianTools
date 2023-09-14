@@ -170,4 +170,14 @@
     </declare-styleable>
 
 
+    <attr name="sabianDividerColor" format="color" />
+    <attr name="sabianModalColor" format="color" />
+    <attr name="sabianModalTitleColor" format="color" />
+    <attr name="sabianModalTextColor" format="color" />
+    <attr name="sabianModalEditTextColor" format="color" />
+    <attr name="sabianModalEditTextHintColor" format="color" />
+    <attr name="sabianModalButtonColor" format="color" />
+    <attr name="sabianPrimaryColor" format="color" />
+    <attr name="sabianOnPrimaryColor" format="color" />
+    <attr name="sabianOverlayColor" format="color" />
 </resources>

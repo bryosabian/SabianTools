@@ -37,7 +37,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
                 android:text=""
-                android:textColor="#4a4a4a"
+                android:textColor="?attr/sabianModalTitleColor"
                 android:textSize="16sp"
                 sabian:SabianRobotoType="Bold" />
 
@@ -50,7 +50,7 @@
                     android:id="@+id/sct_SabianModalMessage"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="#999999"
+                    android:textColor="?attr/sabianModalTextColor"
                     android:textSize="15sp"
                     android:visibility="gone"
                     sabian:SabianRobotoType="Regular" />
@@ -88,7 +88,7 @@
                     android:layout_gravity="center_vertical"
                     android:layout_marginEnd="5dp"
                     android:layout_marginRight="5dp"
-                    android:background="@color/sabian_btn_theme_background"
+                    android:background="?attr/sabianModalButtonColor"
                     android:text="Submit" />
 
                 <com.gc.materialdesign.views.ButtonFlat
@@ -96,7 +96,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:background="@color/sabian_btn_theme_background"
+                    android:background="?attr/sabianModalButtonColor"
                     android:text="Cancel" />
 
             </LinearLayout>

@@ -4,9 +4,10 @@
         <shape android:shape="rectangle">
             <stroke
                 android:width="1dp"
-                android:color="#e2e2e2"
-                />
-            <corners android:bottomLeftRadius="5dp" android:bottomRightRadius="5dp" />
+                android:color="?attr/sabianDividerColor" />
+            <corners
+                android:bottomLeftRadius="5dp"
+                android:bottomRightRadius="5dp" />
         </shape>
     </item>
 
@@ -14,8 +15,10 @@
     Remove top right and left-->
     <item android:top="1dp">
         <shape android:shape="rectangle">
-            <solid android:color="#FFFFFF" />
-            <corners android:bottomLeftRadius="5dp" android:bottomRightRadius="5dp" />
+            <solid android:color="?attr/sabianModalColor" />
+            <corners
+                android:bottomLeftRadius="5dp"
+                android:bottomRightRadius="5dp" />
         </shape>
     </item>
 </layer-list>

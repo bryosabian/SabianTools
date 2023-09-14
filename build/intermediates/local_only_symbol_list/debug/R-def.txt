@@ -37,6 +37,7 @@ attr? numColumns
 attr? sabianBold
 attr? sabianColumnWidth
 attr? sabianDisplayDividers
+attr sabianDividerColor
 attr? sabianFirstItemMargin
 attr? sabianHeaderIcon
 attr? sabianHideIcons
@@ -44,8 +45,17 @@ attr? sabianHorizontalColumnWidth
 attr? sabianIcon
 attr? sabianLastItemMargin
 attr? sabianLeftMarginOffset
+attr sabianModalButtonColor
+attr sabianModalColor
+attr sabianModalEditTextColor
+attr sabianModalEditTextHintColor
+attr sabianModalTextColor
+attr sabianModalTitleColor
 attr? sabianNumIcons
+attr sabianOnPrimaryColor
 attr? sabianOrientation
+attr sabianOverlayColor
+attr sabianPrimaryColor
 attr? sabianRighMarginOffset
 attr? sabianStatColor
 attr? sabianStatIcon

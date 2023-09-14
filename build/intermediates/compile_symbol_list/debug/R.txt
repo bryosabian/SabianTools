@@ -316,6 +316,7 @@ int attr rippleSpeed 0x0
 int attr sabianBold 0x0
 int attr sabianColumnWidth 0x0
 int attr sabianDisplayDividers 0x0
+int attr sabianDividerColor 0x0
 int attr sabianFirstItemMargin 0x0
 int attr sabianHeaderIcon 0x0
 int attr sabianHideIcons 0x0
@@ -323,8 +324,17 @@ int attr sabianHorizontalColumnWidth 0x0
 int attr sabianIcon 0x0
 int attr sabianLastItemMargin 0x0
 int attr sabianLeftMarginOffset 0x0
+int attr sabianModalButtonColor 0x0
+int attr sabianModalColor 0x0
+int attr sabianModalEditTextColor 0x0
+int attr sabianModalEditTextHintColor 0x0
+int attr sabianModalTextColor 0x0
+int attr sabianModalTitleColor 0x0
 int attr sabianNumIcons 0x0
+int attr sabianOnPrimaryColor 0x0
 int attr sabianOrientation 0x0
+int attr sabianOverlayColor 0x0
+int attr sabianPrimaryColor 0x0
 int attr sabianRighMarginOffset 0x0
 int attr sabianStatColor 0x0
 int attr sabianStatIcon 0x0

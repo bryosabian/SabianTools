@@ -46,8 +46,8 @@
                 android:layout_height="wrap_content"
                 android:ellipsize="end"
                 android:singleLine="true"
-                android:text="modal 1"
-                android:textColor="@color/modal_list_title_color"
+                android:text=""
+                android:textColor="?attr/sabianModalTextColor"
                 android:textSize="15sp"
                 sabian:SabianRobotoType="Regular" />
 
@@ -59,8 +59,7 @@
                 android:layout_marginTop="3dp"
                 android:ellipsize="end"
                 android:singleLine="true"
-                android:text="modal 2"
-                android:textColor="@color/modal_list_sub_title_color"
+                android:textColor="?attr/sabianModalTextColor"
                 android:textSize="12sp"
                 android:visibility="gone"
                 sabian:SabianRobotoType="Bold" />
@@ -74,7 +73,7 @@
             android:layout_centerVertical="true"
             android:layout_marginEnd="5dp"
             android:layout_marginRight="5dp"
-            android:textColor="@color/light"
+            android:textColor="?attr/sabianModalTextColor"
             android:textSize="16sp"
             android:visibility="gone"
             sabian:fa_icon="fa-chevron-right" />
