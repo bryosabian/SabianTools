@@ -1,13 +1,15 @@
 # Sabian Tools
+
 Sabian Tools for all android projects.
 
 ## Set Up
 
-Override the following default attributes in your theme. 
+Override the following default attributes in your theme.
 
 Please note the following can be customized programmatically for the respective widgets:
 
-### Colors : 
+### Colors :
+
 + sabianDividerColor
 + sabianModalColor
 + sabianModalTitleColor
@@ -17,4 +19,7 @@ Please note the following can be customized programmatically for the respective 
 + sabianPrimaryColor
 + sabianOverlayColor
 + sabianOnPrimaryColor
++ sabianNormalTextColor
++ sabianNormalTextColorLight
++ sabianNormalTextColorDark
  

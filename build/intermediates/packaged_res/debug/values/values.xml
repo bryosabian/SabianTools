@@ -7,6 +7,9 @@
     <attr format="color" name="sabianModalEditTextHintColor"/>
     <attr format="color" name="sabianModalTextColor"/>
     <attr format="color" name="sabianModalTitleColor"/>
+    <attr format="color" name="sabianNormalTextColor"/>
+    <attr format="color" name="sabianNormalTextColorDark"/>
+    <attr format="color" name="sabianNormalTextColorLight"/>
     <attr format="color" name="sabianOnPrimaryColor"/>
     <attr format="color" name="sabianOverlayColor"/>
     <attr format="color" name="sabianPrimaryColor"/>

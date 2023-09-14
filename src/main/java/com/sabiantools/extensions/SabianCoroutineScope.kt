@@ -131,3 +131,33 @@ fun <T> CoroutineScope.runAsync(
         onFinally?.invoke()
     }
 }
+
+
+fun <T> CoroutineScope.runAsyncAsSuspend(
+        block: suspend () -> T?,
+        onComplete: (T?) -> Unit,
+        onError: ((Throwable) -> Unit)? = null,
+        backgroundContext: CoroutineContext = Dispatchers.IO,
+        mainContext: CoroutineContext = Dispatchers.Default,
+        delayTime: Long? = null,
+        onFinally: (() -> Unit)? = null
+) {
+    var error: Throwable? = null
+    val promise = async(backgroundContext) {
+        try {
+            if (delayTime != null && delayTime > 0)
+                delay(delayTime)
+            block()
+        } catch (e: Throwable) {
+            error = e
+            null
+        }
+    }
+    launch(mainContext) {
+        val value = promise.await()
+        error?.let { onError?.invoke(it) } ?: run {
+            onComplete(value)
+        }
+        onFinally?.invoke()
+    }
+}

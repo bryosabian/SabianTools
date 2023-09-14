@@ -141,6 +141,13 @@ attr buttonStyle
 attr buttonStyleSmall
 attr buttonTint
 attr buttonTintMode
+attr cardBackgroundColor
+attr cardCornerRadius
+attr cardElevation
+attr cardMaxElevation
+attr cardPreventCornerOverlap
+attr cardUseCompatPadding
+attr cardViewStyle
 attr check
 attr checkBoxSize
 attr checkboxStyle
@@ -169,6 +176,11 @@ attr contentInsetLeft
 attr contentInsetRight
 attr contentInsetStart
 attr contentInsetStartWithNavigation
+attr contentPadding
+attr contentPaddingBottom
+attr contentPaddingLeft
+attr contentPaddingRight
+attr contentPaddingTop
 attr controlBackground
 attr coordinatorLayoutStyle
 attr cornerRadius
@@ -272,6 +284,7 @@ attr logoDescription
 attr materialDialogColor
 attr materialDialogProgressColor
 attr materialDialogTextColor
+attr materialDialogTitleColor
 attr max
 attr maxButtonHeight
 attr measureWithLargestChild
@@ -331,6 +344,9 @@ attr sabianModalEditTextColor
 attr sabianModalEditTextHintColor
 attr sabianModalTextColor
 attr sabianModalTitleColor
+attr sabianNormalTextColor
+attr sabianNormalTextColorDark
+attr sabianNormalTextColorLight
 attr sabianNumIcons
 attr sabianOnPrimaryColor
 attr sabianOrientation
@@ -597,6 +613,10 @@ color bthumbnail_font
 color bthumbnail_placeholder
 color button_material_dark
 color button_material_light
+color cardview_dark_background
+color cardview_light_background
+color cardview_shadow_end_color
+color cardview_shadow_start_color
 color colorAccent
 color colorPrimary
 color control_sabian_round_button
@@ -774,7 +794,9 @@ dimen abc_text_size_title_material_toolbar
 dimen automatic_list_offset
 dimen bbuton_rounded_corner_radius
 dimen bthumbnail_rounded_corner_radius
+dimen cardview_compat_inset_shadow
 dimen cardview_default_elevation
+dimen cardview_default_radius
 dimen compat_button_inset_horizontal_material
 dimen compat_button_inset_vertical_material
 dimen compat_button_padding_horizontal_material
@@ -1470,6 +1492,7 @@ style Base_AlertDialog_AppCompat_Light
 style Base_Animation_AppCompat_Dialog
 style Base_Animation_AppCompat_DropDownUp
 style Base_Animation_AppCompat_Tooltip
+style Base_CardView
 style Base_DialogWindowTitleBackground_AppCompat
 style Base_DialogWindowTitle_AppCompat
 style Base_TextAppearance_AppCompat
@@ -1620,6 +1643,9 @@ style Base_Widget_AppCompat_Spinner_Underlined
 style Base_Widget_AppCompat_TextView_SpinnerItem
 style Base_Widget_AppCompat_Toolbar
 style Base_Widget_AppCompat_Toolbar_Button_Navigation
+style CardView
+style CardView_Dark
+style CardView_Light
 style Platform_AppCompat
 style Platform_AppCompat_Light
 style Platform_ThemeOverlay_AppCompat
@@ -1881,6 +1907,7 @@ styleable BootstrapEditText android_enabled android_gravity android_hint android
 styleable BootstrapThumbnail android_text bt_height bt_image bt_inside_padding bt_roundedCorners bt_width
 styleable ButtonBarLayout allowStacking
 styleable Card cornerRadius
+styleable CardView android_minHeight android_minWidth cardBackgroundColor cardCornerRadius cardElevation cardMaxElevation cardPreventCornerOverlap cardUseCompatPadding contentPadding contentPaddingBottom contentPaddingLeft contentPaddingRight contentPaddingTop
 styleable ColorStateListItem alpha android_alpha android_color
 styleable CompoundButton android_button buttonTint buttonTintMode
 styleable CoordinatorLayout keylines statusBarBackground

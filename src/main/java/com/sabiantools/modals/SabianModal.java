@@ -19,12 +19,10 @@ import com.gc.materialdesign.views.ButtonFlat;
 import com.sabiantools.R;
 import com.sabiantools.utilities.SabianUtilities;
 
+import androidx.annotation.ColorInt;
 import androidx.annotation.ColorRes;
 import androidx.annotation.LayoutRes;
 import androidx.annotation.NonNull;
-import androidx.lifecycle.Lifecycle;
-import androidx.lifecycle.LifecycleOwner;
-import androidx.lifecycle.LifecycleRegistry;
 
 public class SabianModal extends Dialog {
 
@@ -34,9 +32,16 @@ public class SabianModal extends Dialog {
     private View.OnClickListener onOkayClickListener, onCancelClickListener;
     private String okayButtonText, cancelButtonText;
     private @ColorRes
-    int okayButtonColor = NO_RES_ID;
+    int okayButtonColorRes = NO_RES_ID;
     private @ColorRes
+    int cancelButtonColorRes = NO_RES_ID;
+
+
+    private @ColorInt
+    int okayButtonColor = NO_RES_ID;
+    private @ColorInt
     int cancelButtonColor = NO_RES_ID;
+
     public static final int NO_RES_ID = -1;
     private TextView txtTitle, txtMessage;
     private String title, message;
@@ -114,11 +119,17 @@ public class SabianModal extends Dialog {
             dismiss();
         });
 
+        if (okayButtonColorRes != NO_RES_ID)
+            btnOk.setBackgroundColor(getContext().getResources().getColor(okayButtonColorRes));
+
+        if (cancelButtonColorRes != NO_RES_ID)
+            btnCancel.setBackgroundColor(getContext().getResources().getColor(cancelButtonColorRes));
+
         if (okayButtonColor != NO_RES_ID)
-            btnOk.setBackgroundColor(getContext().getResources().getColor(okayButtonColor));
+            btnOk.setBackgroundColor(okayButtonColor);
 
         if (cancelButtonColor != NO_RES_ID)
-            btnCancel.setBackgroundColor(getContext().getResources().getColor(cancelButtonColor));
+            btnCancel.setBackgroundColor(cancelButtonColor);
 
         if (!SabianUtilities.IsStringEmpty(title))
             txtTitle.setText(title);
@@ -187,13 +198,13 @@ public class SabianModal extends Dialog {
         return this;
     }
 
-    public SabianModal setOkayButtonColor(@ColorRes int okayButtonColor) {
-        this.okayButtonColor = okayButtonColor;
+    public SabianModal setOkayButtonColorRes(@ColorRes int okayButtonColorRes) {
+        this.okayButtonColorRes = okayButtonColorRes;
         return this;
     }
 
-    public SabianModal setCancelButtonColor(@ColorRes int cancelButtonColor) {
-        this.cancelButtonColor = cancelButtonColor;
+    public SabianModal setCancelButtonColorRes(@ColorRes int cancelButtonColorRes) {
+        this.cancelButtonColorRes = cancelButtonColorRes;
         return this;
     }
 
@@ -233,5 +244,15 @@ public class SabianModal extends Dialog {
 
     public ScrollView getScrollView() {
         return scrollView;
+    }
+
+    public SabianModal setOkayButtonColor(@ColorInt int okayButtonColor) {
+        this.okayButtonColor = okayButtonColor;
+        return this;
+    }
+
+    public SabianModal setCancelButtonColor(@ColorInt int cancelButtonColor) {
+        this.cancelButtonColor = cancelButtonColor;
+        return this;
     }
 }

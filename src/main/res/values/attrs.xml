@@ -180,4 +180,7 @@
     <attr name="sabianPrimaryColor" format="color" />
     <attr name="sabianOnPrimaryColor" format="color" />
     <attr name="sabianOverlayColor" format="color" />
+    <attr name="sabianNormalTextColor" format="color" />
+    <attr name="sabianNormalTextColorLight" format="color"/>
+    <attr name="sabianNormalTextColorDark" format="color" />
 </resources>

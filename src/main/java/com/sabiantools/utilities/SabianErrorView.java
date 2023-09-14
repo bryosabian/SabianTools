@@ -7,11 +7,13 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.sabiantools.R;
+import com.sabiantools.extensions.SabianThemeKt;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+
 import tr.xip.errorview.ErrorView;
 
 /**
@@ -120,11 +122,11 @@ public class SabianErrorView {
 
     }
 
-    public String getErroButtonText() {
+    public String getErrorButtonText() {
         return this.error.getErrorButtonText();
     }
 
-    public void setErroButtonText(String erroButtonText) {
+    public void setErrorButtonText(String erroButtonText) {
         this.error.setErrorButtonText(erroButtonText);
     }
 
@@ -228,18 +230,17 @@ public class SabianErrorView {
 
         private void init_elements() {
 
+            Context context = requireContext();
+
             errorView = (ErrorView) root.findViewById(R.id.err_SabianErrorView);
 
             ErrorView.Config.Builder config = ErrorView.Config.create();
 
             config.title(getErrorTitle()).subtitle(getErrorSubTitle()).retryText(getErrorButtonText());
 
-            errorView.setOnRetryListener(new ErrorView.RetryListener() {
-                @Override
-                public void onRetry() {
-                    if (onErrorButtonListener != null)
-                        onErrorButtonListener.OnClick(getErrorParent());
-                }
+            errorView.setOnRetryListener(() -> {
+                if (onErrorButtonListener != null)
+                    onErrorButtonListener.OnClick(getErrorParent());
             });
 
             config.retryVisible(isShowRetryButton());
@@ -249,19 +250,25 @@ public class SabianErrorView {
 
             if (getTitleColor() != -1)
                 config.titleColor(getTitleColor());
+            else {
+                config.titleColor(SabianThemeKt.getColorFromAttr(context, R.attr.sabianNormalTextColor, R.color.sabian_normal_text_color));
+            }
 
             if (getRetryButtonColor() != -1)
                 config.retryTextColor(getRetryButtonColor());
+            else {
+                config.retryTextColor(SabianThemeKt.getColorFromAttr(context, R.attr.sabianNormalTextColorDark, R.color.sabian_normal_text_color));
+            }
 
             if (getSubTitleColor() != -1)
                 config.subtitleColor(getSubTitleColor());
+            else {
+                config.subtitleColor(SabianThemeKt.getColorFromAttr(context, R.attr.sabianNormalTextColorLight, R.color.sabian_text_black_light));
+            }
 
-            errorView.setOnRetryListener(new ErrorView.RetryListener() {
-                @Override
-                public void onRetry() {
-                    if (onErrorButtonListener != null)
-                        onErrorButtonListener.OnClick(getErrorParent());
-                }
+            errorView.setOnRetryListener(() -> {
+                if (onErrorButtonListener != null)
+                    onErrorButtonListener.OnClick(getErrorParent());
             });
 
             errorView.setConfig(config.build());

@@ -292,14 +292,11 @@ public class SabianListModal extends Dialog {
             adapter = new ListItemAdapter(getContext(), -1, listItems);
             lstModalList.setAdapter(adapter);
 
-            lstModalList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                @Override
-                public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                    selectedItem = listItems.get(i);
-                    if (onListItemSelectedListener != null)
-                        onListItemSelectedListener.onSelect(selectedItem, SabianListModal.this);
-                    dismiss();
-                }
+            lstModalList.setOnItemClickListener((adapterView, view, i, l) -> {
+                selectedItem = listItems.get(i);
+                if (onListItemSelectedListener != null)
+                    onListItemSelectedListener.onSelect(selectedItem, SabianListModal.this);
+                dismiss();
             });
         }
         return this;

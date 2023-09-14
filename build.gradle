@@ -30,6 +30,7 @@ dependencies {
 
     testImplementation 'junit:junit:4.12'
 
+    implementation 'androidx.cardview:cardview:1.0.0'
     implementation supportDependencies.appCompat
     implementation supportDependencies.recyclerView
     implementation SabianDependancies.Bootstrap

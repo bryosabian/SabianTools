@@ -51,6 +51,9 @@ attr sabianModalEditTextColor
 attr sabianModalEditTextHintColor
 attr sabianModalTextColor
 attr sabianModalTitleColor
+attr sabianNormalTextColor
+attr sabianNormalTextColorDark
+attr sabianNormalTextColorLight
 attr? sabianNumIcons
 attr sabianOnPrimaryColor
 attr? sabianOrientation
