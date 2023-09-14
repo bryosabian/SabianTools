@@ -4,70 +4,9 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5ca21dab-7311-4fff-ac80-1ec2a7d4cdce" name="Changes" comment="Bug/design Fixes for SabianModal">
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/.transforms/effef4dce2319d53bb59ecc6354efc3b/results.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/.transforms/effef4dce2319d53bb59ecc6354efc3b/transformed/classes/classes.dex" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/intermediates/aar_main_jar/debug/classes.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/aar_main_jar/debug/classes.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/intermediates/compile_library_classes_jar/debug/classes.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/compile_library_classes_jar/debug/classes.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/intermediates/compile_r_class_jar/debug/R.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/compile_r_class_jar/debug/R.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/intermediates/compile_symbol_list/debug/R.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/compile_symbol_list/debug/R.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/intermediates/compiled_local_resources/debug/out/drawable_bottom_border_bg.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/compiled_local_resources/debug/out/drawable_bottom_border_bg.xml.flat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/intermediates/compiled_local_resources/debug/out/drawable_drawable_modal_full_white_gradient.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/compiled_local_resources/debug/out/drawable_drawable_modal_full_white_gradient.xml.flat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/intermediates/compiled_local_resources/debug/out/drawable_sabian_material_modal_bg.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/compiled_local_resources/debug/out/drawable_sabian_material_modal_bg.xml.flat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/intermediates/compiled_local_resources/debug/out/drawable_sabian_modal_footer_bg.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/compiled_local_resources/debug/out/drawable_sabian_modal_footer_bg.xml.flat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/intermediates/compiled_local_resources/debug/out/drawable_sabian_modal_header_bg.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/compiled_local_resources/debug/out/drawable_sabian_modal_header_bg.xml.flat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/intermediates/compiled_local_resources/debug/out/layout_layout_modal_edit_text.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/compiled_local_resources/debug/out/layout_layout_modal_edit_text.xml.flat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/intermediates/compiled_local_resources/debug/out/layout_layout_modal_progress.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/compiled_local_resources/debug/out/layout_layout_modal_progress.xml.flat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/intermediates/compiled_local_resources/debug/out/layout_sabian_grid_modal_item_layout.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/compiled_local_resources/debug/out/layout_sabian_grid_modal_item_layout.xml.flat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/intermediates/compiled_local_resources/debug/out/layout_sabian_grid_modal_layout.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/compiled_local_resources/debug/out/layout_sabian_grid_modal_layout.xml.flat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/intermediates/compiled_local_resources/debug/out/layout_sabian_material_modal_layout.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/compiled_local_resources/debug/out/layout_sabian_material_modal_layout.xml.flat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/intermediates/compiled_local_resources/debug/out/layout_sabian_modal_image.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/compiled_local_resources/debug/out/layout_sabian_modal_image.xml.flat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/intermediates/compiled_local_resources/debug/out/layout_sabian_modal_list_item.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/compiled_local_resources/debug/out/layout_sabian_modal_list_item.xml.flat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/intermediates/compiled_local_resources/debug/out/layout_sabian_modal_list_smooth.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/compiled_local_resources/debug/out/layout_sabian_modal_list_smooth.xml.flat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/intermediates/compiled_local_resources/debug/out/layout_sabian_modal_smooth.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/compiled_local_resources/debug/out/layout_sabian_modal_smooth.xml.flat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/intermediates/compiled_local_resources/debug/out/layout_sabian_modal_smooth_fixed_bottom.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/compiled_local_resources/debug/out/layout_sabian_modal_smooth_fixed_bottom.xml.flat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/intermediates/incremental/debug/packageDebugResources/compile-file-map.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/incremental/debug/packageDebugResources/compile-file-map.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/intermediates/incremental/debug/packageDebugResources/merger.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/incremental/debug/packageDebugResources/merger.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/intermediates/local_only_symbol_list/debug/R-def.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/local_only_symbol_list/debug/R-def.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/intermediates/merged_java_res/debug/feature-sabiantools.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/merged_java_res/debug/feature-sabiantools.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/intermediates/packaged_res/debug/drawable/bottom_border_bg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/packaged_res/debug/drawable/bottom_border_bg.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/intermediates/packaged_res/debug/drawable/drawable_modal_full_white_gradient.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/packaged_res/debug/drawable/drawable_modal_full_white_gradient.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/intermediates/packaged_res/debug/drawable/sabian_material_modal_bg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/packaged_res/debug/drawable/sabian_material_modal_bg.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/intermediates/packaged_res/debug/drawable/sabian_modal_footer_bg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/packaged_res/debug/drawable/sabian_modal_footer_bg.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/intermediates/packaged_res/debug/drawable/sabian_modal_header_bg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/packaged_res/debug/drawable/sabian_modal_header_bg.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/intermediates/packaged_res/debug/layout/layout_modal_edit_text.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/packaged_res/debug/layout/layout_modal_edit_text.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/intermediates/packaged_res/debug/layout/layout_modal_progress.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/packaged_res/debug/layout/layout_modal_progress.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/intermediates/packaged_res/debug/layout/sabian_grid_modal_item_layout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/packaged_res/debug/layout/sabian_grid_modal_item_layout.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/intermediates/packaged_res/debug/layout/sabian_grid_modal_layout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/packaged_res/debug/layout/sabian_grid_modal_layout.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/intermediates/packaged_res/debug/layout/sabian_material_modal_layout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/packaged_res/debug/layout/sabian_material_modal_layout.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/intermediates/packaged_res/debug/layout/sabian_modal_image.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/packaged_res/debug/layout/sabian_modal_image.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/intermediates/packaged_res/debug/layout/sabian_modal_list_item.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/packaged_res/debug/layout/sabian_modal_list_item.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/intermediates/packaged_res/debug/layout/sabian_modal_list_smooth.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/packaged_res/debug/layout/sabian_modal_list_smooth.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/intermediates/packaged_res/debug/layout/sabian_modal_smooth.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/packaged_res/debug/layout/sabian_modal_smooth.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/intermediates/packaged_res/debug/layout/sabian_modal_smooth_fixed_bottom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/packaged_res/debug/layout/sabian_modal_smooth_fixed_bottom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/intermediates/packaged_res/debug/values/values.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/packaged_res/debug/values/values.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/intermediates/runtime_library_classes_jar/debug/classes.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/runtime_library_classes_jar/debug/classes.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/intermediates/symbol_list_with_package_name/debug/package-aware-r.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/symbol_list_with_package_name/debug/package-aware-r.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/kotlin/compileDebugKotlin/cacheable/last-build.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileDebugKotlin/cacheable/last-build.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/outputs/aar/sabiantools-debug.aar" beforeDir="false" afterPath="$PROJECT_DIR$/build/outputs/aar/sabiantools-debug.aar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileDebugJavaWithJavac/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileDebugJavaWithJavac/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/drawable/bottom_border_bg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/drawable/bottom_border_bg.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/drawable/drawable_modal_full_white_gradient.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/drawable/drawable_modal_full_white_gradient.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/drawable/sabian_material_modal_bg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/drawable/sabian_material_modal_bg.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/drawable/sabian_modal_footer_bg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/drawable/sabian_modal_footer_bg.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/drawable/sabian_modal_header_bg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/drawable/sabian_modal_header_bg.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/layout/layout_modal_edit_text.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/layout_modal_edit_text.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/layout/layout_modal_progress.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/layout_modal_progress.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/layout/sabian_grid_modal_item_layout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/sabian_grid_modal_item_layout.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/layout/sabian_grid_modal_layout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/sabian_grid_modal_layout.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/layout/sabian_material_modal_layout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/sabian_material_modal_layout.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/layout/sabian_modal_image.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/sabian_modal_image.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/layout/sabian_modal_list_item.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/sabian_modal_list_item.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/layout/sabian_modal_list_smooth.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/sabian_modal_list_smooth.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/layout/sabian_modal_smooth.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/sabian_modal_smooth.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/layout/sabian_modal_smooth_fixed_bottom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/sabian_modal_smooth_fixed_bottom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/values/attrs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/values/attrs.xml" afterDir="false" />
+    <list default="true" id="5ca21dab-7311-4fff-ac80-1ec2a7d4cdce" name="Changes" comment="Modified modals and other general widgets to be customizable from themes as well">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +16,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="SabianTools" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -146,7 +85,14 @@
       <option name="project" value="LOCAL" />
       <updated>1693598255361</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Modified modals and other general widgets to be customizable from themes as well">
+      <created>1694694745229</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1694694745229</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -165,6 +111,7 @@
     <MESSAGE value="SabianButtonText : Design fixes" />
     <MESSAGE value="Added new SabianStickyNotificationView for in view notifications" />
     <MESSAGE value="Bug/design Fixes for SabianModal" />
-    <option name="LAST_COMMIT_MESSAGE" value="Bug/design Fixes for SabianModal" />
+    <MESSAGE value="Modified modals and other general widgets to be customizable from themes as well" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modified modals and other general widgets to be customizable from themes as well" />
   </component>
 </project>
