@@ -1672,6 +1672,7 @@ int style RtlOverlay_Widget_AppCompat_Search_DropDown_Query 0x0
 int style RtlOverlay_Widget_AppCompat_Search_DropDown_Text 0x0
 int style RtlUnderlay_Widget_AppCompat_ActionButton 0x0
 int style RtlUnderlay_Widget_AppCompat_ActionButton_Overflow 0x0
+int style SabianActionBarTitle 0x0
 int style SabianMaterialDialog 0x0
 int style SpinKitView 0x0
 int style SpinKitView_ChasingDots 0x0
@@ -2106,19 +2107,20 @@ int styleable AppCompatTheme_windowFixedWidthMinor 117
 int styleable AppCompatTheme_windowMinWidthMajor 118
 int styleable AppCompatTheme_windowMinWidthMinor 119
 int styleable AppCompatTheme_windowNoTitle 120
-int[] styleable BootstrapButton { 0x101000e, 0x1010181, 0x10100f4, 0x101014f, 0x1010095, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0 }
+int[] styleable BootstrapButton { 0x101000e, 0x1010181, 0x10100f4, 0x101014f, 0x1010098, 0x1010095, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0 }
 int styleable BootstrapButton_android_enabled 0
 int styleable BootstrapButton_android_layout_weight 1
 int styleable BootstrapButton_android_layout_width 2
 int styleable BootstrapButton_android_text 3
-int styleable BootstrapButton_android_textSize 4
-int styleable BootstrapButton_bb_icon_left 5
-int styleable BootstrapButton_bb_icon_right 6
-int styleable BootstrapButton_bb_roundedCorners 7
-int styleable BootstrapButton_bb_size 8
-int styleable BootstrapButton_bb_text_alignment 9
-int styleable BootstrapButton_bb_text_gravity 10
-int styleable BootstrapButton_bb_type 11
+int styleable BootstrapButton_android_textColor 4
+int styleable BootstrapButton_android_textSize 5
+int styleable BootstrapButton_bb_icon_left 6
+int styleable BootstrapButton_bb_icon_right 7
+int styleable BootstrapButton_bb_roundedCorners 8
+int styleable BootstrapButton_bb_size 9
+int styleable BootstrapButton_bb_text_alignment 10
+int styleable BootstrapButton_bb_text_gravity 11
+int styleable BootstrapButton_bb_type 12
 int[] styleable BootstrapCircleThumbnail { 0x101014f, 0x0, 0x0, 0x0 }
 int styleable BootstrapCircleThumbnail_android_text 0
 int styleable BootstrapCircleThumbnail_bct_image 1
@@ -2448,6 +2450,9 @@ int styleable SabianHeaderBanner_sabianNumIcons 3
 int styleable SabianHeaderBanner_sabianTitle 4
 int[] styleable SabianHorizontalList { 0x0 }
 int styleable SabianHorizontalList_sabianColumnWidth 0
+int[] styleable SabianMenuBar { 0x101014f, 0x1010098 }
+int styleable SabianMenuBar_android_text 0
+int styleable SabianMenuBar_android_textColor 1
 int[] styleable SabianNumberSelector { 0x0, 0x0, 0x0 }
 int styleable SabianNumberSelector_sabian_max_value 0
 int styleable SabianNumberSelector_sabian_min_value 1

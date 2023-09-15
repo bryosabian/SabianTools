@@ -5,4 +5,7 @@
         <item name="android:windowSoftInputMode">adjustPan</item>
     </style>
 
+    <style name="SabianActionBarTitle" parent="@android:style/TextAppearance.DeviceDefault.Widget.ActionBar.Title">
+        <item name="android:textColor">@color/sabian_actionbar_text_color</item>
+    </style>
 </resources>

@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <declare-styleable name="SabianMenuBar">
+        <attr name="android:textColor" />
+        <attr name="android:text" />
+    </declare-styleable>
+
+
     <declare-styleable name="SabianButtonText">
-        <attr name="sbt_text" format="string"></attr>
-        <attr name="sbt_hint" format="string"></attr>
+        <attr name="sbt_text" format="string" />
+        <attr name="sbt_hint" format="string" />
         <attr name="sbt_icon" format="string"></attr>
         <attr name="sbt_textColor" format="color"></attr>
         <attr name="sbt_hintColor" format="color"></attr>
@@ -181,6 +188,6 @@
     <attr name="sabianOnPrimaryColor" format="color" />
     <attr name="sabianOverlayColor" format="color" />
     <attr name="sabianNormalTextColor" format="color" />
-    <attr name="sabianNormalTextColorLight" format="color"/>
+    <attr name="sabianNormalTextColorLight" format="color" />
     <attr name="sabianNormalTextColorDark" format="color" />
 </resources>
