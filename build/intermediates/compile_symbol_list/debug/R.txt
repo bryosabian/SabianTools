@@ -1115,6 +1115,7 @@ int id alertTitle 0x0
 int id async 0x0
 int id blocking 0x0
 int id blue 0x0
+int id bootstrap_button_drawable_container 0x0
 int id bottom 0x0
 int id btn_ModalEditTextCancel 0x0
 int id btn_ModalEditTextOk 0x0
