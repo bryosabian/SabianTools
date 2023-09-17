@@ -20,6 +20,8 @@ public class SabianRecyclerMarginTopDecorator extends RecyclerView.ItemDecoratio
 
     private boolean onlyApplyToFirstElement = false;
 
+    private boolean ignoreFirstElement = true;
+
     public SabianRecyclerMarginTopDecorator(int marginTopSize) {
         this.marginTopSize = marginTopSize;
     }
@@ -36,20 +38,20 @@ public class SabianRecyclerMarginTopDecorator extends RecyclerView.ItemDecoratio
         int pos = parent.getChildLayoutPosition(view);
 
         // Add top margin only for all items (Except the first)
-        if (pos == 0) {
-            if (!onlyApplyToFirstElement) {
-                super.getItemOffsets(outRect, view, parent, state);
-                return;
-            }
-        }
-
-        if (onlyApplyToFirstElement && pos != 0) {
+        if (pos == 0 && ignoreFirstElement) {
             super.getItemOffsets(outRect, view, parent, state);
             return;
         }
 
-        if (excludePositions.contains(pos))
+        if (pos != 0 && onlyApplyToFirstElement) {
+            super.getItemOffsets(outRect, view, parent, state);
             return;
+        }
+
+        if (excludePositions.contains(pos)) {
+            super.getItemOffsets(outRect, view, parent, state);
+            return;
+        }
 
         outRect.top = marginTopSize;
     }
@@ -78,6 +80,11 @@ public class SabianRecyclerMarginTopDecorator extends RecyclerView.ItemDecoratio
 
     public SabianRecyclerMarginTopDecorator setOnlyApplyToFirstElement(boolean onlyApplyToFirstElement) {
         this.onlyApplyToFirstElement = onlyApplyToFirstElement;
+        return this;
+    }
+
+    public SabianRecyclerMarginTopDecorator setIgnoreFirstElement(boolean ignoreFirstElement) {
+        this.ignoreFirstElement = ignoreFirstElement;
         return this;
     }
 }

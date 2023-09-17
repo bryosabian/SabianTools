@@ -24,10 +24,9 @@ import androidx.annotation.ColorRes;
 import androidx.annotation.LayoutRes;
 import androidx.annotation.NonNull;
 
-public class SabianModal extends Dialog {
+public class SabianModal extends SabianCustomModal {
 
     private View view;
-    private ViewGroup vgBody;
     private ButtonFlat btnOk, btnCancel;
     private View.OnClickListener onOkayClickListener, onCancelClickListener;
     private String okayButtonText, cancelButtonText;
@@ -49,8 +48,7 @@ public class SabianModal extends Dialog {
     int titleColor = NO_RES_ID;
     private @ColorRes
     int messageColor = NO_RES_ID;
-    private boolean animate = true;
-    private ViewGroup vgBodyContainer;
+
     private boolean isFooterFixed = false;
 
     private ViewGroup actionsContainer;
@@ -71,7 +69,7 @@ public class SabianModal extends Dialog {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         super.onCreate(savedInstanceState);
         setContentView(getLayout());
-        init_elements();
+        initModalElements();
     }
 
     @LayoutRes
@@ -82,13 +80,24 @@ public class SabianModal extends Dialog {
         return R.layout.sabian_modal_smooth;
     }
 
-    protected void init_elements() {
-        vgBody = (ViewGroup) findViewById(R.id.ll_SabianModalBody);
+    protected void initModalElements() {
+        initElements();
+        super.initModalElements();
+    }
+
+    protected void initElements() {
+        ViewGroup vgBodyContainer = (ViewGroup) findViewById(R.id.rll_SabianModalContainer);
+        setBodyContainer(vgBodyContainer);
+
+        ViewGroup vgBody = (ViewGroup) findViewById(R.id.ll_SabianModalBody);
+
+
         btnOk = (ButtonFlat) findViewById(R.id.btn_SabianModalOk);
         btnCancel = (ButtonFlat) findViewById(R.id.btn_SabianModalCancel);
         txtTitle = (TextView) findViewById(R.id.sct_SabianModalTitle);
         txtMessage = (TextView) findViewById(R.id.sct_SabianModalMessage);
-        vgBodyContainer = (ViewGroup) findViewById(R.id.rll_SabianModalContainer);
+
+
         scrollView = (ScrollView) findViewById(R.id.scrl_SabianModalScroller);
         actionsContainer = (ViewGroup) findViewById(R.id.ll_SabianModalActionsContainer);
 
@@ -162,20 +171,7 @@ public class SabianModal extends Dialog {
     public void show() {
         setCancelable(false);
         setCanceledOnTouchOutside(false);
-        WindowManager.LayoutParams lp = new WindowManager.LayoutParams();
-        lp.copyFrom(getWindow().getAttributes());
-        lp.width = WindowManager.LayoutParams.MATCH_PARENT;
-        lp.height = WindowManager.LayoutParams.MATCH_PARENT;
         super.show();
-        getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE | WindowManager.LayoutParams.FLAG_ALT_FOCUSABLE_IM);
-        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE);
-        getWindow().setAttributes(lp);
-        getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-
-        if (animate) {
-            Animation anim = AnimationUtils.loadAnimation(getContext(), R.anim.modal_popup_show);
-            vgBodyContainer.startAnimation(anim);
-        }
     }
 
     public SabianModal setOnOkayClickListener(View.OnClickListener onOkayClickListener) {
@@ -232,10 +228,6 @@ public class SabianModal extends Dialog {
         return this;
     }
 
-    public SabianModal setAnimate(boolean animate) {
-        this.animate = animate;
-        return this;
-    }
 
     public SabianModal setFooterFixed(boolean footerFixed) {
         isFooterFixed = footerFixed;
