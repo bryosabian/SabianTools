@@ -6,6 +6,7 @@ import android.util.AttributeSet;
 import com.gc.materialdesign.views.ButtonFloat;
 import com.sabiantools.R;
 
+import androidx.annotation.ColorInt;
 import androidx.annotation.ColorRes;
 import androidx.annotation.DrawableRes;
 import androidx.core.content.ContextCompat;
@@ -25,8 +26,16 @@ public class SabianButtonFloat extends ButtonFloat {
     }
 
     public void setImageVector(@DrawableRes int vector, @ColorRes int color) {
+        setImageVectorWithColor(vector, ContextCompat.getColor(context, color));
+    }
+
+    public void setImageVectorWithColor(@DrawableRes int vector, @ColorInt int color) {
         VectorDrawableCompat vc = VectorDrawableCompat.create(context.getResources(), vector, null);
         icon.setImageDrawable(vc);
-        icon.setColorFilter(ContextCompat.getColor(context, color));
+        setIconColor(color);
+    }
+
+    public void setIconColor(@ColorInt int color) {
+        icon.setColorFilter(color);
     }
 }

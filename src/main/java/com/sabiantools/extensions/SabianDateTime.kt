@@ -106,6 +106,15 @@ fun String.toLocalDate(): LocalDate {
     return LocalDate.parse(formatted)
 }
 
+fun String.toLocalDateOrNull(): LocalDate? {
+    return try {
+        toLocalDate()
+    } catch (e: Throwable) {
+        e.printStackTrace()
+        null
+    }
+}
+
 fun LocalDateTime.isSameDate(with: LocalDateTime): Boolean {
     return this.toLocalDate().equals(with.toLocalDate());
 }
