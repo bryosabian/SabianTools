@@ -90,3 +90,20 @@ fun String?.ifNullOrBlank(defaultValue: () -> String?): String? {
         return defaultValue()
     return this.ifBlank(defaultValue)
 }
+
+
+fun Collection<String>.containsKeyWord(keyWord: String, reverseLook: Boolean = false): Boolean {
+    return this.any { it.isAMatchByKeyWord(keyWord) || (reverseLook && keyWord.isAMatchByKeyWord(it)) }
+}
+
+fun Array<String>.containsKeyWord(keyWord: String, reverseLook: Boolean = false): Boolean {
+    return this.any { it.isAMatchByKeyWord(keyWord) || (reverseLook && keyWord.isAMatchByKeyWord(it)) }
+}
+
+fun String.matchesWithAnyKeyWord(keyWords: List<String>, reverseLook: Boolean = false): Boolean {
+    return keyWords.any { this.isAMatchByKeyWord(it) || (reverseLook && it.isAMatchByKeyWord(this)) }
+}
+
+fun String.matchesWithAnyKeyWord(keyWords: Array<String>, reverseLook: Boolean = false): Boolean {
+    return keyWords.any { this.isAMatchByKeyWord(it) || (reverseLook && it.isAMatchByKeyWord(this)) }
+}

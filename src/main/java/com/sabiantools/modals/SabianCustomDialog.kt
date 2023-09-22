@@ -9,7 +9,9 @@ import android.view.WindowManager
 import android.view.animation.AnimationUtils
 import androidx.annotation.CallSuper
 import androidx.fragment.app.DialogFragment
+import androidx.fragment.app.FragmentManager
 import com.sabiantools.R
+import org.joda.time.DateTime
 
 abstract class SabianCustomDialog : DialogFragment() {
 
@@ -54,5 +56,9 @@ abstract class SabianCustomDialog : DialogFragment() {
         window.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
         val anim = AnimationUtils.loadAnimation(context, R.anim.modal_popup_show)
         bodyContainer?.startAnimation(anim)
+    }
+
+    fun show(manager: FragmentManager?) {
+        super.show(manager, DateTime.now().toString())
     }
 }
