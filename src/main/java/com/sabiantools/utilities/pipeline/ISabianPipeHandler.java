@@ -1,5 +1,8 @@
 package com.sabiantools.utilities.pipeline;
 
-interface ISabianPipeHandler<I, O> {
-    O process(I input);
+import androidx.annotation.NonNull;
+
+public interface ISabianPipeHandler<I, O> {
+    @NonNull
+    O process(@NonNull I input);
 }
