@@ -45,7 +45,8 @@ open class SabianDebounceTask<T>(
         taskJob?.cancel()
 
         taskJob = launch(defaultDispatcher) {
-            delay(debounceRate)
+            if (debounceRate > 0)
+                delay(debounceRate)
             try {
                 result = task.invoke()
             } catch (e: Exception) {

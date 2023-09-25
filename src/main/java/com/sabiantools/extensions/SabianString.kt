@@ -70,8 +70,8 @@ fun String.isAMatchByKeyWord(keyWord: String, escapeSpecialCharacters: Boolean =
  *
  * Must be joined by dot operator (.)
  */
-fun String.getValueFromDotKey(prepend: String = "key"): String? {
-    val regex = "(${prepend}\\.)(.*)"
+fun String.getValueFromDotKey(prepend: String = "key", dot: String = "."): String? {
+    val regex = "(${prepend}\\$dot)(.*)"
     val pattern = Pattern.compile(regex, Pattern.CASE_INSENSITIVE)
     val matcher = pattern.matcher(this)
     if (matcher.matches()) {
@@ -101,9 +101,18 @@ fun Array<String>.containsKeyWord(keyWord: String, reverseLook: Boolean = false)
 }
 
 fun String.matchesWithAnyKeyWord(keyWords: List<String>, reverseLook: Boolean = false): Boolean {
-    return keyWords.any { this.isAMatchByKeyWord(it) || (reverseLook && it.isAMatchByKeyWord(this)) }
+    return matchesWithAnyKeyWord(keyWords.toTypedArray())
 }
 
 fun String.matchesWithAnyKeyWord(keyWords: Array<String>, reverseLook: Boolean = false): Boolean {
+    if (keyWords.isEmpty())
+        return false
     return keyWords.any { this.isAMatchByKeyWord(it) || (reverseLook && it.isAMatchByKeyWord(this)) }
 }
+
+fun String.matchesWithAnyKeyWord(p: List<Pattern>): Boolean {
+    if (p.isEmpty())
+        return false
+    return p.any { it.matcher(this).find() }
+}
+

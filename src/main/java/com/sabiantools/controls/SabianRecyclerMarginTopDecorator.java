@@ -29,12 +29,6 @@ public class SabianRecyclerMarginTopDecorator extends RecyclerView.ItemDecoratio
     @Override
     public void getItemOffsets(Rect outRect, View view, RecyclerView parent, RecyclerView.State state) {
 
-        if (applyTopAndBottom) {
-            outRect.top = marginTopSize;
-            outRect.bottom = marginTopSize;
-            return;
-        }
-
         int pos = parent.getChildLayoutPosition(view);
 
         // Add top margin only for all items (Except the first)
@@ -54,6 +48,10 @@ public class SabianRecyclerMarginTopDecorator extends RecyclerView.ItemDecoratio
         }
 
         outRect.top = marginTopSize;
+
+        if (applyTopAndBottom) {
+            outRect.bottom = marginTopSize;
+        }
     }
 
     public SabianRecyclerMarginTopDecorator setApplyTopAndBottom(boolean applyTopAndBottom) {
