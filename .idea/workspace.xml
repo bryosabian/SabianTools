@@ -5,8 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5ca21dab-7311-4fff-ac80-1ec2a7d4cdce" name="Changes" comment="Modified README.md">
-      <change beforePath="$PROJECT_DIR$/build/tmp/kotlin-classes/debug/com/sabiantools/extensions/SabianCoroutineScopeKt$runAsync$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/kotlin-classes/debug/com/sabiantools/extensions/SabianCoroutineScopeKt$runAsync$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/kotlin-classes/debug/com/sabiantools/extensions/SabianCoroutineScopeKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/kotlin-classes/debug/com/sabiantools/extensions/SabianCoroutineScopeKt.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

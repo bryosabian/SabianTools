@@ -1,5 +1,6 @@
 package com.sabiantools.extensions
 
+
 fun <T> ArrayList<T>.removeAllBy(predicate: (T) -> Boolean) {
     val newList: ArrayList<T> = ArrayList()
     this.filter(predicate).forEach { newList.add(it) }
@@ -75,4 +76,11 @@ fun <T, K> Collection<T>.filterNotNull(producer: ((T) -> K?)): List<T> {
     return this.filter {
         producer(it) != null
     }
+}
+
+fun <T> Collection<T>.limit(limit: Int): List<T> {
+    val mList = if (this is List<T>) this else this.toList()
+    if (this.size <= limit)
+        return mList
+    return mList.subList(0, limit)
 }
