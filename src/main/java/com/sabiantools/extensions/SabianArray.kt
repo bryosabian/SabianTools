@@ -9,7 +9,10 @@ inline fun <reified T> T.collect(): Array<T> {
     return arrayOf(this)
 }
 
-inline fun <reified T> T.collectAsList(): ArrayList<T> {
-    return arrayListOf(this)
+inline fun <reified T> T.collectAsList(): List<T> {
+    return listOf(this)
 }
 
+inline fun <reified T> T.collectAsMutableList(): MutableList<T> {
+    return arrayListOf(this)
+}
