@@ -20,8 +20,7 @@ import org.jetbrains.annotations.NotNull;
  * Created By Brian Sabana on 7/6/2016.
  */
 public class SabianFloatLabel extends FloatLabel {
-
-    private Context _context;
+    
     private Typeface typeface;
 
 
@@ -30,36 +29,33 @@ public class SabianFloatLabel extends FloatLabel {
 
     public SabianFloatLabel(Context context) {
         super(context);
-        this._context = context;
     }
 
     public SabianFloatLabel(Context context, AttributeSet set) {
         super(context, set);
-        this._context = context;
         this.init_type_face();
         init_attributes(set);
     }
 
     public SabianFloatLabel(Context context, AttributeSet set, int defStyle) {
         super(context, set, defStyle);
-        this._context = context;
         this.init_type_face();
         init_attributes(set);
     }
 
     private void init_type_face() {
-        typeface = TypeFaceFactory.getTypeFace(_context, "fonts/RobotoCondensed-Regular.ttf");
+        typeface = TypeFaceFactory.getTypeFace(getContext(), "fonts/RobotoCondensed-Regular.ttf");
         this.getEditText().setTypeface(typeface);
 
     }
 
     public void setCondensed(String type) {
-        typeface = TypeFaceFactory.getTypeFace(_context, "fonts/RobotoCondensed-" + type + ".ttf");
+        typeface = TypeFaceFactory.getTypeFace(getContext(), "fonts/RobotoCondensed-" + type + ".ttf");
         this.getEditText().setTypeface(typeface);
     }
 
     public void setRoboto(String type) {
-        typeface = TypeFaceFactory.getTypeFace(_context, "fonts/Roboto-" + type + ".ttf");
+        typeface = TypeFaceFactory.getTypeFace(getContext(), "fonts/Roboto-" + type + ".ttf");
         this.getEditText().setTypeface(typeface);
     }
 
@@ -133,7 +129,7 @@ public class SabianFloatLabel extends FloatLabel {
     }
 
     private void init_attributes(AttributeSet attrs) {
-        TypedArray a = _context.obtainStyledAttributes(attrs, R.styleable.SabianFloatLabel);
+        TypedArray a = getContext().obtainStyledAttributes(attrs, R.styleable.SabianFloatLabel);
         int aCount = a.getIndexCount();
         for (int i = 0; i < aCount; ++i) {
             int attr = a.getIndex(i);
@@ -149,5 +145,6 @@ public class SabianFloatLabel extends FloatLabel {
                 this.setTextHintColor(a.getColor(attr, -1));
             }
         }
+        a.recycle();
     }
 }

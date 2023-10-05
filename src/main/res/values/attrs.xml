@@ -10,24 +10,24 @@
     <declare-styleable name="SabianButtonText">
         <attr name="sbt_text" format="string" />
         <attr name="sbt_hint" format="string" />
-        <attr name="sbt_icon" format="string"></attr>
-        <attr name="sbt_textColor" format="color"></attr>
-        <attr name="sbt_hintColor" format="color"></attr>
-        <attr name="sbt_password" format="boolean"></attr>
-        <attr name="sbt_vector_icon" format="integer"></attr>
-        <attr name="sbt_vector_icon_color" format="color"></attr>
-        <attr name="sbt_textsize" format="dimension"></attr>
-        <attr name="sbt_background_drawable" format="reference"></attr>
-        <attr name="sbt_roboto_type" format="string"></attr>
+        <attr name="sbt_icon" format="string" />
+        <attr name="sbt_textColor" format="color" />
+        <attr name="sbt_hintColor" format="color" />
+        <attr name="sbt_password" format="boolean" />
+        <attr name="sbt_vector_icon" format="integer" />
+        <attr name="sbt_vector_icon_color" format="color" />
+        <attr name="sbt_textsize" format="dimension" />
+        <attr name="sbt_background_drawable" format="reference" />
+        <attr name="sbt_roboto_type" format="string" />
         <attr name="sbt_icon_alignment" format="enum">
-            <enum name="right" value="0"></enum>
-            <enum name="left" value="1"></enum>
+            <enum name="right" value="0" />
+            <enum name="left" value="1" />
         </attr>
-        <attr name="sbt_style" format="string"></attr>
-        <attr name="sbt_padding" format="dimension"></attr>
-        <attr name="sbt_icon_size" format="dimension"></attr>
-        <attr name="sbt_display_icon" format="boolean"></attr>
-        <attr name="sbt_enabled" format="boolean"></attr>
+        <attr name="sbt_style" format="string" />
+        <attr name="sbt_padding" format="dimension" />
+        <attr name="sbt_icon_size" format="dimension" />
+        <attr name="sbt_display_icon" format="boolean" />
+        <attr name="sbt_enabled" format="boolean" />
 
         <attr name="android:inputType" />
         <attr name="android:gravity">
@@ -49,52 +49,52 @@
     </declare-styleable>
 
     <declare-styleable name="SabianTransparentButtonText">
-        <attr name="sabian_edit_text" format="string"></attr>
-        <attr name="sabian_edit_hint" format="string"></attr>
-        <attr name="sabian_edit_icon" format="string"></attr>
-        <attr name="sabian_edit_textColor" format="color"></attr>
-        <attr name="sabian_edit_password" format="boolean"></attr>
+        <attr name="sabian_edit_text" format="string" />
+        <attr name="sabian_edit_hint" format="string" />
+        <attr name="sabian_edit_icon" format="string" />
+        <attr name="sabian_edit_textColor" format="color" />
+        <attr name="sabian_edit_password" format="boolean" />
         <attr name="android:inputType" />
     </declare-styleable>
 
     <declare-styleable name="SabianHeaderBanner">
-        <attr name="sabianTitle" format="string"></attr>
-        <attr name="sabianHeaderIcon" format="string"></attr>
-        <attr name="sabianNumIcons" format="integer"></attr>
-        <attr name="sabianHideIcons" format="boolean"></attr>
-        <attr name="sabianDisplayDividers" format="boolean"></attr>
+        <attr name="sabianTitle" format="string" />
+        <attr name="sabianHeaderIcon" format="string" />
+        <attr name="sabianNumIcons" format="integer" />
+        <attr name="sabianHideIcons" format="boolean" />
+        <attr name="sabianDisplayDividers" format="boolean" />
     </declare-styleable>
 
     <declare-styleable name="SabianCondensedText">
-        <attr name="SabianCondensedType" format="string"></attr>
-        <attr name="SabianRobotoType" format="string"></attr>
+        <attr name="SabianCondensedType" format="string" />
+        <attr name="SabianRobotoType" format="string" />
     </declare-styleable>
 
     <declare-styleable name="SabianCondensedEditText">
-        <attr name="SabianEditCondensedType" format="string"></attr>
-        <attr name="SabianEditRobotoType" format="string"></attr>
+        <attr name="SabianEditCondensedType" format="string" />
+        <attr name="SabianEditRobotoType" format="string" />
     </declare-styleable>
 
     <declare-styleable name="SabianSelector">
-        <attr name="SabianSelectorText" format="string"></attr>
-        <attr name="SabianSelectorTitle" format="string"></attr>
-        <attr name="SabianSelectorTextColor" format="color"></attr>
+        <attr name="SabianSelectorText" format="string" />
+        <attr name="SabianSelectorTitle" format="string" />
+        <attr name="SabianSelectorTextColor" format="color" />
     </declare-styleable>
 
     <declare-styleable name="SabianSeminarBox">
-        <attr name="SabianTitle" format="string"></attr>
-        <attr name="SabianSubTitle" format="string"></attr>
-        <attr name="SabianImage" format="reference"></attr>
+        <attr name="SabianTitle" format="string" />
+        <attr name="SabianSubTitle" format="string" />
+        <attr name="SabianImage" format="reference" />
     </declare-styleable>
     <declare-styleable name="SabianHorizontalList">
-        <attr name="sabianColumnWidth" format="dimension"></attr>
+        <attr name="sabianColumnWidth" format="dimension" />
     </declare-styleable>
     <declare-styleable name="SabianCategoryBoxSlider">
-        <attr name="sabianHorizontalColumnWidth" format="dimension"></attr>
-        <attr name="sabianLeftMarginOffset" format="dimension"></attr>
-        <attr name="sabianRighMarginOffset" format="dimension"></attr>
-        <attr name="sabianFirstItemMargin" format="dimension"></attr>
-        <attr name="sabianLastItemMargin" format="dimension"></attr>
+        <attr name="sabianHorizontalColumnWidth" format="dimension" />
+        <attr name="sabianLeftMarginOffset" format="dimension" />
+        <attr name="sabianRighMarginOffset" format="dimension" />
+        <attr name="sabianFirstItemMargin" format="dimension" />
+        <attr name="sabianLastItemMargin" format="dimension" />
     </declare-styleable>
     <declare-styleable name="StaggeredGridView">
         <attr name="drawSelectorOnTop" format="boolean" />
@@ -102,23 +102,16 @@
         <attr name="itemMargin" format="dimension" />
     </declare-styleable>
     <declare-styleable name="SabianStatsBox">
-        <attr name="sabianStatIcon" format="string"></attr>
-        <attr name="sabianStatText" format="string"></attr>
-        <attr name="sabianStatColor" format="color"></attr>
-    </declare-styleable>
-    <declare-styleable name="SabianFontAwesomeLabel">
-        <attr name="sabianIcon" format="string"></attr>
-        <attr name="sabianText" format="string"></attr>
-        <attr name="sabianTextColor" format="color"></attr>
-        <attr name="sabianTextSize" format="dimension"></attr>
-        <attr name="sabianOrientation" format="string"></attr>
-        <attr name="sabianBold" format="boolean"></attr>
+        <attr name="sabianStatIcon" format="string" />
+        <attr name="sabianStatText" format="string" />
+        <attr name="sabianStatColor" format="color" />
     </declare-styleable>
 
+
     <declare-styleable name="SabianNumberSelector">
-        <attr name="sabian_value" format="integer"></attr>
-        <attr name="sabian_max_value" format="integer"></attr>
-        <attr name="sabian_min_value" format="integer"></attr>
+        <attr name="sabian_value" format="integer" />
+        <attr name="sabian_max_value" format="integer" />
+        <attr name="sabian_min_value" format="integer" />
 
     </declare-styleable>
 
@@ -160,20 +153,44 @@
     </declare-styleable>
 
     <declare-styleable name="SabianFloatLabel">
-        <attr name="Sfl_CondensedType" format="string"></attr>
-        <attr name="sfl_RobotoType" format="string"></attr>
+        <attr name="Sfl_CondensedType" format="string" />
+        <attr name="sfl_RobotoType" format="string" />
         <attr name="android:gravity" />
-        <attr name="android:textColorHint" format="color"></attr>
-        <attr name="android:textColor" format="color"></attr>
+        <attr name="android:textColorHint" format="color" />
+        <attr name="android:textColor" format="color" />
     </declare-styleable>
 
     <declare-styleable name="SabianRibbon">
         <attr name="srb_type" format="enum">
-            <enum name="danger" value="0"></enum>
-            <enum name="success" value="1"></enum>
-            <enum name="warning" value="2"></enum>
+            <enum name="danger" value="0" />
+            <enum name="success" value="1" />
+            <enum name="warning" value="2" />
         </attr>
-        <attr name="srb_title" format="string"></attr>
+        <attr name="srb_title" format="string" />
+    </declare-styleable>
+
+
+    <declare-styleable name="SabianFontAwesomeLabel">
+        <attr name="sfat_condensedType" format="string" />
+        <attr name="sfat_robotoType" format="string" />
+        <attr name="sfat_fontIcon" format="string" />
+        <attr name="android:textColor" format="color" />
+        <attr name="android:text" format="string" />
+        <attr name="android:textSize" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="SabianNotificationBox">
+        <attr name="snb_DisplayButton" format="boolean" />
+        <attr name="snb_Title" format="string" />
+        <attr name="snb_Text" format="string" />
+        <attr name="snb_ButtonText" format="string" />
+        <attr name="snb_DividerColor" format="string" />
+        <attr name="snb_TextColor" format="color" />
+        <attr name="snb_TitleColor" format="color" />
+        <attr name="snb_NotificationColor" format="color" />
+        <attr name="snb_ButtonColor" format="color" />
+        <attr name="snb_elevation" format="dimension" />
+        <attr name="snb_cornerRadius" format="dimension" />
     </declare-styleable>
 
 

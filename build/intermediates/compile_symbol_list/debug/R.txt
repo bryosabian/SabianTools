@@ -326,7 +326,6 @@ int attr ringWidth 0x0
 int attr rippleBorderRadius 0x0
 int attr rippleColor_2 0x0
 int attr rippleSpeed 0x0
-int attr sabianBold 0x0
 int attr sabianColumnWidth 0x0
 int attr sabianDisplayDividers 0x0
 int attr sabianDividerColor 0x0
@@ -334,7 +333,6 @@ int attr sabianFirstItemMargin 0x0
 int attr sabianHeaderIcon 0x0
 int attr sabianHideIcons 0x0
 int attr sabianHorizontalColumnWidth 0x0
-int attr sabianIcon 0x0
 int attr sabianLastItemMargin 0x0
 int attr sabianLeftMarginOffset 0x0
 int attr sabianModalButtonColor 0x0
@@ -348,16 +346,12 @@ int attr sabianNormalTextColorDark 0x0
 int attr sabianNormalTextColorLight 0x0
 int attr sabianNumIcons 0x0
 int attr sabianOnPrimaryColor 0x0
-int attr sabianOrientation 0x0
 int attr sabianOverlayColor 0x0
 int attr sabianPrimaryColor 0x0
 int attr sabianRighMarginOffset 0x0
 int attr sabianStatColor 0x0
 int attr sabianStatIcon 0x0
 int attr sabianStatText 0x0
-int attr sabianText 0x0
-int attr sabianTextColor 0x0
-int attr sabianTextSize 0x0
 int attr sabianTitle 0x0
 int attr sabian_edit_hint 0x0
 int attr sabian_edit_icon 0x0
@@ -420,6 +414,9 @@ int attr selected_padding_left 0x0
 int attr selected_padding_right 0x0
 int attr selected_padding_top 0x0
 int attr selected_width 0x0
+int attr sfat_condensedType 0x0
+int attr sfat_fontIcon 0x0
+int attr sfat_robotoType 0x0
 int attr sfl_RobotoType 0x0
 int attr shape 0x0
 int attr showAsAction 0x0
@@ -428,6 +425,17 @@ int attr showNumberIndicator 0x0
 int attr showText 0x0
 int attr showTitle 0x0
 int attr singleChoiceItemLayout 0x0
+int attr snb_ButtonColor 0x0
+int attr snb_ButtonText 0x0
+int attr snb_DisplayButton 0x0
+int attr snb_DividerColor 0x0
+int attr snb_NotificationColor 0x0
+int attr snb_Text 0x0
+int attr snb_TextColor 0x0
+int attr snb_Title 0x0
+int attr snb_TitleColor 0x0
+int attr snb_cornerRadius 0x0
+int attr snb_elevation 0x0
 int attr spanCount 0x0
 int attr spinBars 0x0
 int attr spinnerDropDownItemStyle 0x0
@@ -1177,6 +1185,7 @@ int id expanded_menu 0x0
 int id fat_ControlButtonText 0x0
 int id fat_ControlButtonTextRight 0x0
 int id fat_ControlSabianRoundButtonIcon 0x0
+int id fat_SabianFontAwesomeText 0x0
 int id float_label 0x0
 int id forever 0x0
 int id ft_SabianStatsIcon 0x0
@@ -1260,6 +1269,7 @@ int id rll_SabianActionBarContainer 0x0
 int id rll_SabianMaterialModalHeader 0x0
 int id rll_SabianModalContainer 0x0
 int id rll_SabianModalSearchContainer 0x0
+int id rll_SabianNotificationButton 0x0
 int id rll_SabianRibbonContainer 0x0
 int id rootSelector 0x0
 int id screen 0x0
@@ -1274,6 +1284,7 @@ int id sct_ModalFailedText 0x0
 int id sct_ModalLoaderText 0x0
 int id sct_ModalProgressBarTitle 0x0
 int id sct_ModalProgressTitle 0x0
+int id sct_SabianFontAwesomeText 0x0
 int id sct_SabianGridModalItemText 0x0
 int id sct_SabianMaterialModalTitle 0x0
 int id sct_SabianModalMessage 0x0
@@ -1384,6 +1395,7 @@ int layout bootstrap_thumbnail 0x0
 int layout bootstrap_thumbnail_circle 0x0
 int layout color_selector 0x0
 int layout control_button_text 0x0
+int layout control_sabian_font_awesome_label 0x0
 int layout control_sabian_notification_box 0x0
 int layout control_sabian_ribbon 0x0
 int layout control_sabian_round_button 0x0
@@ -2436,13 +2448,13 @@ int styleable SabianFloatLabel_android_gravity 1
 int styleable SabianFloatLabel_android_textColor 2
 int styleable SabianFloatLabel_android_textColorHint 3
 int styleable SabianFloatLabel_sfl_RobotoType 4
-int[] styleable SabianFontAwesomeLabel { 0x0, 0x0, 0x0, 0x0, 0x0, 0x0 }
-int styleable SabianFontAwesomeLabel_sabianBold 0
-int styleable SabianFontAwesomeLabel_sabianIcon 1
-int styleable SabianFontAwesomeLabel_sabianOrientation 2
-int styleable SabianFontAwesomeLabel_sabianText 3
-int styleable SabianFontAwesomeLabel_sabianTextColor 4
-int styleable SabianFontAwesomeLabel_sabianTextSize 5
+int[] styleable SabianFontAwesomeLabel { 0x101014f, 0x1010098, 0x1010095, 0x0, 0x0, 0x0 }
+int styleable SabianFontAwesomeLabel_android_text 0
+int styleable SabianFontAwesomeLabel_android_textColor 1
+int styleable SabianFontAwesomeLabel_android_textSize 2
+int styleable SabianFontAwesomeLabel_sfat_condensedType 3
+int styleable SabianFontAwesomeLabel_sfat_fontIcon 4
+int styleable SabianFontAwesomeLabel_sfat_robotoType 5
 int[] styleable SabianHeaderBanner { 0x0, 0x0, 0x0, 0x0, 0x0 }
 int styleable SabianHeaderBanner_sabianDisplayDividers 0
 int styleable SabianHeaderBanner_sabianHeaderIcon 1
@@ -2454,6 +2466,18 @@ int styleable SabianHorizontalList_sabianColumnWidth 0
 int[] styleable SabianMenuBar { 0x101014f, 0x1010098 }
 int styleable SabianMenuBar_android_text 0
 int styleable SabianMenuBar_android_textColor 1
+int[] styleable SabianNotificationBox { 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0 }
+int styleable SabianNotificationBox_snb_ButtonColor 0
+int styleable SabianNotificationBox_snb_ButtonText 1
+int styleable SabianNotificationBox_snb_DisplayButton 2
+int styleable SabianNotificationBox_snb_DividerColor 3
+int styleable SabianNotificationBox_snb_NotificationColor 4
+int styleable SabianNotificationBox_snb_Text 5
+int styleable SabianNotificationBox_snb_TextColor 6
+int styleable SabianNotificationBox_snb_Title 7
+int styleable SabianNotificationBox_snb_TitleColor 8
+int styleable SabianNotificationBox_snb_cornerRadius 9
+int styleable SabianNotificationBox_snb_elevation 10
 int[] styleable SabianNumberSelector { 0x0, 0x0, 0x0 }
 int styleable SabianNumberSelector_sabian_max_value 0
 int styleable SabianNumberSelector_sabian_min_value 1

@@ -167,12 +167,12 @@
         <attr format="color" name="android:textColor"/>
     </declare-styleable>
     <declare-styleable name="SabianFontAwesomeLabel">
-        <attr format="string" name="sabianIcon"/>
-        <attr format="string" name="sabianText"/>
-        <attr format="color" name="sabianTextColor"/>
-        <attr format="dimension" name="sabianTextSize"/>
-        <attr format="string" name="sabianOrientation"/>
-        <attr format="boolean" name="sabianBold"/>
+        <attr format="string" name="sfat_condensedType"/>
+        <attr format="string" name="sfat_robotoType"/>
+        <attr format="string" name="sfat_fontIcon"/>
+        <attr format="color" name="android:textColor"/>
+        <attr format="string" name="android:text"/>
+        <attr format="dimension" name="android:textSize"/>
     </declare-styleable>
     <declare-styleable name="SabianHeaderBanner">
         <attr format="string" name="sabianTitle"/>
@@ -187,6 +187,19 @@
     <declare-styleable name="SabianMenuBar">
         <attr name="android:textColor"/>
         <attr name="android:text"/>
+    </declare-styleable>
+    <declare-styleable name="SabianNotificationBox">
+        <attr format="boolean" name="snb_DisplayButton"/>
+        <attr format="string" name="snb_Title"/>
+        <attr format="string" name="snb_Text"/>
+        <attr format="string" name="snb_ButtonText"/>
+        <attr format="string" name="snb_DividerColor"/>
+        <attr format="color" name="snb_TextColor"/>
+        <attr format="color" name="snb_TitleColor"/>
+        <attr format="color" name="snb_NotificationColor"/>
+        <attr format="color" name="snb_ButtonColor"/>
+        <attr format="dimension" name="snb_elevation"/>
+        <attr format="dimension" name="snb_cornerRadius"/>
     </declare-styleable>
     <declare-styleable name="SabianNumberSelector">
         <attr format="integer" name="sabian_value"/>

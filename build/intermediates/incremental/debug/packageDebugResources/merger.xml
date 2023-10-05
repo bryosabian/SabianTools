@@ -90,12 +90,12 @@
         <attr format="string" name="sabianStatText"/>
         <attr format="color" name="sabianStatColor"/>
     </declare-styleable><declare-styleable name="SabianFontAwesomeLabel">
-        <attr format="string" name="sabianIcon"/>
-        <attr format="string" name="sabianText"/>
-        <attr format="color" name="sabianTextColor"/>
-        <attr format="dimension" name="sabianTextSize"/>
-        <attr format="string" name="sabianOrientation"/>
-        <attr format="boolean" name="sabianBold"/>
+        <attr format="string" name="sfat_condensedType"/>
+        <attr format="string" name="sfat_robotoType"/>
+        <attr format="string" name="sfat_fontIcon"/>
+        <attr format="color" name="android:textColor"/>
+        <attr format="string" name="android:text"/>
+        <attr format="dimension" name="android:textSize"/>
     </declare-styleable><declare-styleable name="SabianNumberSelector">
         <attr format="integer" name="sabian_value"/>
         <attr format="integer" name="sabian_max_value"/>
@@ -144,7 +144,19 @@
             <enum name="warning" value="2"/>
         </attr>
         <attr format="string" name="srb_title"/>
-    </declare-styleable><attr format="color" name="sabianDividerColor"/><attr format="color" name="sabianModalColor"/><attr format="color" name="sabianModalTitleColor"/><attr format="color" name="sabianModalTextColor"/><attr format="color" name="sabianModalEditTextColor"/><attr format="color" name="sabianModalEditTextHintColor"/><attr format="color" name="sabianModalButtonColor"/><attr format="color" name="sabianPrimaryColor"/><attr format="color" name="sabianOnPrimaryColor"/><attr format="color" name="sabianOverlayColor"/><attr format="color" name="sabianNormalTextColor"/><attr format="color" name="sabianNormalTextColorLight"/><attr format="color" name="sabianNormalTextColorDark"/></file><file path="/Users/sweetpea/Desktop/Sabian/Projects/Android/Libs/SabianTools/src/main/res/values/ids.xml" qualifiers=""><item name="statusbarutil_fake_status_bar_view" type="id"/><item name="statusbarutil_translucent_view" type="id"/></file></source><source path="/Users/sweetpea/Desktop/Sabian/Projects/Android/Libs/SabianTools/build/generated/res/rs/debug"/><source path="/Users/sweetpea/Desktop/Sabian/Projects/Android/Libs/SabianTools/build/generated/res/resValues/debug"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="debug$Generated" generated="true" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="/Users/sweetpea/Desktop/Sabian/Projects/Android/Libs/SabianTools/src/debug/res"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="debug" generated-set="debug$Generated" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="/Users/sweetpea/Desktop/Sabian/Projects/Android/Libs/SabianTools/src/debug/res"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="generated$Generated" generated="true" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"/><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="generated" generated-set="generated$Generated" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"/><mergedItems><configuration qualifiers=""><declare-styleable name="StaggeredGridView">
+    </declare-styleable><attr format="color" name="sabianDividerColor"/><attr format="color" name="sabianModalColor"/><attr format="color" name="sabianModalTitleColor"/><attr format="color" name="sabianModalTextColor"/><attr format="color" name="sabianModalEditTextColor"/><attr format="color" name="sabianModalEditTextHintColor"/><attr format="color" name="sabianModalButtonColor"/><attr format="color" name="sabianPrimaryColor"/><attr format="color" name="sabianOnPrimaryColor"/><attr format="color" name="sabianOverlayColor"/><attr format="color" name="sabianNormalTextColor"/><attr format="color" name="sabianNormalTextColorLight"/><attr format="color" name="sabianNormalTextColorDark"/><declare-styleable name="SabianNotificationBox">
+        <attr format="boolean" name="snb_DisplayButton"/>
+        <attr format="string" name="snb_Title"/>
+        <attr format="string" name="snb_Text"/>
+        <attr format="string" name="snb_ButtonText"/>
+        <attr format="string" name="snb_DividerColor"/>
+        <attr format="color" name="snb_TextColor"/>
+        <attr format="color" name="snb_TitleColor"/>
+        <attr format="color" name="snb_NotificationColor"/>
+        <attr format="color" name="snb_ButtonColor"/>
+        <attr format="dimension" name="snb_elevation"/>
+        <attr format="dimension" name="snb_cornerRadius"/>
+    </declare-styleable></file><file path="/Users/sweetpea/Desktop/Sabian/Projects/Android/Libs/SabianTools/src/main/res/values/ids.xml" qualifiers=""><item name="statusbarutil_fake_status_bar_view" type="id"/><item name="statusbarutil_translucent_view" type="id"/></file><file name="control_sabian_font_awesome_label" path="/Users/sweetpea/Desktop/Sabian/Projects/Android/Libs/SabianTools/src/main/res/layout/control_sabian_font_awesome_label.xml" qualifiers="" type="layout"/></source><source path="/Users/sweetpea/Desktop/Sabian/Projects/Android/Libs/SabianTools/build/generated/res/rs/debug"/><source path="/Users/sweetpea/Desktop/Sabian/Projects/Android/Libs/SabianTools/build/generated/res/resValues/debug"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="debug$Generated" generated="true" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="/Users/sweetpea/Desktop/Sabian/Projects/Android/Libs/SabianTools/src/debug/res"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="debug" generated-set="debug$Generated" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="/Users/sweetpea/Desktop/Sabian/Projects/Android/Libs/SabianTools/src/debug/res"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="generated$Generated" generated="true" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"/><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="generated" generated-set="generated$Generated" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"/><mergedItems><configuration qualifiers=""><declare-styleable name="StaggeredGridView">
         <attr format="boolean" name="drawSelectorOnTop"/>
         <attr format="integer" name="numColumns"/>
         <attr format="dimension" name="itemMargin"/>
@@ -152,6 +164,18 @@
         <attr format="string" name="sabianStatIcon"/>
         <attr format="string" name="sabianStatText"/>
         <attr format="color" name="sabianStatColor"/>
+    </declare-styleable><declare-styleable name="SabianNotificationBox">
+        <attr format="boolean" name="snb_DisplayButton"/>
+        <attr format="string" name="snb_Title"/>
+        <attr format="string" name="snb_Text"/>
+        <attr format="string" name="snb_ButtonText"/>
+        <attr format="string" name="snb_DividerColor"/>
+        <attr format="color" name="snb_TextColor"/>
+        <attr format="color" name="snb_TitleColor"/>
+        <attr format="color" name="snb_NotificationColor"/>
+        <attr format="color" name="snb_ButtonColor"/>
+        <attr format="dimension" name="snb_elevation"/>
+        <attr format="dimension" name="snb_cornerRadius"/>
     </declare-styleable><declare-styleable name="SabianHeaderBanner">
         <attr format="string" name="sabianTitle"/>
         <attr format="string" name="sabianHeaderIcon"/>
@@ -278,10 +302,10 @@
         <attr format="string" name="srb_Type"/>
         <attr format="reference" name="srb_TypeDrawable"/>
     </declare-styleable><declare-styleable name="SabianFontAwesomeLabel">
-        <attr format="string" name="sabianIcon"/>
-        <attr format="string" name="sabianText"/>
-        <attr format="color" name="sabianTextColor"/>
-        <attr format="dimension" name="sabianTextSize"/>
-        <attr format="string" name="sabianOrientation"/>
-        <attr format="boolean" name="sabianBold"/>
+        <attr format="string" name="sfat_condensedType"/>
+        <attr format="string" name="sfat_robotoType"/>
+        <attr format="string" name="sfat_fontIcon"/>
+        <attr format="color" name="android:textColor"/>
+        <attr format="string" name="android:text"/>
+        <attr format="dimension" name="android:textSize"/>
     </declare-styleable></configuration></mergedItems></merger>

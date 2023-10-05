@@ -327,7 +327,6 @@ attr ringWidth
 attr rippleBorderRadius
 attr rippleColor_2
 attr rippleSpeed
-attr sabianBold
 attr sabianColumnWidth
 attr sabianDisplayDividers
 attr sabianDividerColor
@@ -335,7 +334,6 @@ attr sabianFirstItemMargin
 attr sabianHeaderIcon
 attr sabianHideIcons
 attr sabianHorizontalColumnWidth
-attr sabianIcon
 attr sabianLastItemMargin
 attr sabianLeftMarginOffset
 attr sabianModalButtonColor
@@ -349,16 +347,12 @@ attr sabianNormalTextColorDark
 attr sabianNormalTextColorLight
 attr sabianNumIcons
 attr sabianOnPrimaryColor
-attr sabianOrientation
 attr sabianOverlayColor
 attr sabianPrimaryColor
 attr sabianRighMarginOffset
 attr sabianStatColor
 attr sabianStatIcon
 attr sabianStatText
-attr sabianText
-attr sabianTextColor
-attr sabianTextSize
 attr sabianTitle
 attr sabian_edit_hint
 attr sabian_edit_icon
@@ -421,6 +415,9 @@ attr selected_padding_left
 attr selected_padding_right
 attr selected_padding_top
 attr selected_width
+attr sfat_condensedType
+attr sfat_fontIcon
+attr sfat_robotoType
 attr sfl_RobotoType
 attr shape
 attr showAsAction
@@ -429,6 +426,17 @@ attr showNumberIndicator
 attr showText
 attr showTitle
 attr singleChoiceItemLayout
+attr snb_ButtonColor
+attr snb_ButtonText
+attr snb_DisplayButton
+attr snb_DividerColor
+attr snb_NotificationColor
+attr snb_Text
+attr snb_TextColor
+attr snb_Title
+attr snb_TitleColor
+attr snb_cornerRadius
+attr snb_elevation
 attr spanCount
 attr spinBars
 attr spinnerDropDownItemStyle
@@ -1178,6 +1186,7 @@ id expanded_menu
 id fat_ControlButtonText
 id fat_ControlButtonTextRight
 id fat_ControlSabianRoundButtonIcon
+id fat_SabianFontAwesomeText
 id float_label
 id forever
 id ft_SabianStatsIcon
@@ -1261,6 +1270,7 @@ id rll_SabianActionBarContainer
 id rll_SabianMaterialModalHeader
 id rll_SabianModalContainer
 id rll_SabianModalSearchContainer
+id rll_SabianNotificationButton
 id rll_SabianRibbonContainer
 id rootSelector
 id screen
@@ -1275,6 +1285,7 @@ id sct_ModalFailedText
 id sct_ModalLoaderText
 id sct_ModalProgressBarTitle
 id sct_ModalProgressTitle
+id sct_SabianFontAwesomeText
 id sct_SabianGridModalItemText
 id sct_SabianMaterialModalTitle
 id sct_SabianModalMessage
@@ -1385,6 +1396,7 @@ layout bootstrap_thumbnail
 layout bootstrap_thumbnail_circle
 layout color_selector
 layout control_button_text
+layout control_sabian_font_awesome_label
 layout control_sabian_notification_box
 layout control_sabian_ribbon
 layout control_sabian_round_button
@@ -1942,10 +1954,11 @@ styleable SabianCircleView sc_backgroundColorValue sc_fillColor sc_fillRadius sc
 styleable SabianCondensedEditText SabianEditCondensedType SabianEditRobotoType
 styleable SabianCondensedText SabianCondensedType SabianRobotoType
 styleable SabianFloatLabel Sfl_CondensedType android_gravity android_textColor android_textColorHint sfl_RobotoType
-styleable SabianFontAwesomeLabel sabianBold sabianIcon sabianOrientation sabianText sabianTextColor sabianTextSize
+styleable SabianFontAwesomeLabel android_text android_textColor android_textSize sfat_condensedType sfat_fontIcon sfat_robotoType
 styleable SabianHeaderBanner sabianDisplayDividers sabianHeaderIcon sabianHideIcons sabianNumIcons sabianTitle
 styleable SabianHorizontalList sabianColumnWidth
 styleable SabianMenuBar android_text android_textColor
+styleable SabianNotificationBox snb_ButtonColor snb_ButtonText snb_DisplayButton snb_DividerColor snb_NotificationColor snb_Text snb_TextColor snb_Title snb_TitleColor snb_cornerRadius snb_elevation
 styleable SabianNumberSelector sabian_max_value sabian_min_value sabian_value
 styleable SabianRibbon srb_title srb_type
 styleable SabianRoundButton srb_Icon srb_Text srb_TextColor srb_Type srb_TypeDrawable
