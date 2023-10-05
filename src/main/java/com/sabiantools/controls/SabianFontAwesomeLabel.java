@@ -38,12 +38,20 @@ public class SabianFontAwesomeLabel extends FrameLayout {
         initAttributes(attrs);
     }
 
-    public void setTextColor(@ColorInt int color) {
-        if (color == -1)
-            return;
-        ftText.setTextColor(color);
+    public void setTextColor(@ColorInt int color, boolean includeFontIcon) {
+        if (includeFontIcon)
+            setFontColor(color);
         sctText.setTextColor(color);
     }
+
+    public void setTextColor(@ColorInt int color) {
+        setTextColor(color, true);
+    }
+
+    public void setFontColor(@ColorInt int color) {
+        ftText.setTextColor(color);
+    }
+
 
     public void setRoboto(String type) {
         sctText.setRoboto(type);
@@ -68,6 +76,14 @@ public class SabianFontAwesomeLabel extends FrameLayout {
         sctText.setText(text);
     }
 
+    public String getText() {
+        return sctText.getText().toString();
+    }
+
+    public void setTextAllCaps(boolean yes) {
+        sctText.setAllCaps(yes);
+    }
+
     private void initElements() {
         View root = LayoutInflater.from(getContext()).inflate(R.layout.control_sabian_font_awesome_label, this, true);
         ftText = root.findViewById(R.id.fat_SabianFontAwesomeText);
@@ -81,6 +97,10 @@ public class SabianFontAwesomeLabel extends FrameLayout {
             int attr = a.getIndex(i);
             if (attr == R.styleable.SabianFontAwesomeLabel_android_textColor) {
                 this.setTextColor(a.getColor(attr, -1));
+            } else if (attr == R.styleable.SabianFontAwesomeLabel_sfat_fontColor) {
+                this.setFontColor(a.getColor(attr, -1));
+            } else if (attr == R.styleable.SabianFontAwesomeLabel_sfat_textColor) {
+                this.setTextColor(a.getColor(attr, -1), false);
             } else if (attr == R.styleable.SabianFontAwesomeLabel_sfat_robotoType) {
                 this.setRoboto(a.getString(attr));
             } else if (attr == R.styleable.SabianFontAwesomeLabel_sfat_condensedType) {
@@ -91,6 +111,8 @@ public class SabianFontAwesomeLabel extends FrameLayout {
                 this.setTextSize(a.getDimension(attr, -1));
             } else if (attr == R.styleable.SabianFontAwesomeLabel_android_text) {
                 this.setText(a.getString(attr));
+            } else if (attr == R.styleable.SabianFontAwesomeLabel_sfat_textAllCaps) {
+                this.setTextAllCaps(a.getBoolean(attr, false));
             }
         }
         a.recycle();
