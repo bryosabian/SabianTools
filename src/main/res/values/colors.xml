@@ -14,7 +14,6 @@
     <color name="sabian_light_divider">#E0EDED</color>
     <color name="sabian_transparent_white">#66ffffff</color>
     <color name="sabian_hint_color">#a0a0a0</color>
-
     <color name="sabian_divider_color_light">#E0EDED</color>
 
     <!--TabColors-->
@@ -41,7 +40,10 @@
 
     <color name="sabian_modal_header_color">#CFF1EE</color>
 
+
     <color name="sabian_list_divider">#15000000</color>
+    <color name="sabian_modal_color">#ffffff</color>
+    <color name="sabian_overlay_color">#eeffffff</color>
 
 
     <!--singlefooditem-->

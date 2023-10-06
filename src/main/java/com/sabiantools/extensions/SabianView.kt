@@ -1,5 +1,6 @@
 package com.sabiantools.extensions
 
+import android.graphics.drawable.Drawable
 import android.graphics.drawable.GradientDrawable
 import android.graphics.drawable.LayerDrawable
 import android.os.Build
@@ -27,8 +28,43 @@ fun View.setLayerBackgroundColor(@IdRes layerItemID: Int, @ColorInt color: Int) 
         val bgDrawableItem = layerDrawable.findDrawableByLayerId(layerItemID) as? GradientDrawable
                 ?: return
         bgDrawableItem.setColor(color)
-        background = layerDrawable
+        setSupportDrawable(layerDrawable)
     } catch (e: Throwable) {
         e.printStackTrace()
+    }
+}
+
+fun View.setLayerStrokeColor(@IdRes layerItemID: Int, @ColorInt color: Int, width: Int) {
+    try {
+
+        val layerDrawable = background.mutate() as? LayerDrawable ?: return
+        val bgDrawableItem = layerDrawable.findDrawableByLayerId(layerItemID) as? GradientDrawable
+                ?: return
+        bgDrawableItem.setStroke(width, color)
+        setSupportDrawable(layerDrawable)
+    } catch (e: Throwable) {
+        e.printStackTrace()
+    }
+}
+
+
+fun View.setLayerBackgroundAndStrokeColor(@IdRes layerItemID: Int, @ColorInt bgColor: Int, @ColorInt strokeColor: Int, width: Int) {
+    try {
+        val layerDrawable = background.mutate() as? LayerDrawable ?: return
+        val bgDrawableItem = layerDrawable.findDrawableByLayerId(layerItemID) as? GradientDrawable
+                ?: return
+        bgDrawableItem.setStroke(width, strokeColor)
+        bgDrawableItem.setColor(bgColor)
+        setSupportDrawable(layerDrawable)
+    } catch (e: Throwable) {
+        e.printStackTrace()
+    }
+}
+
+fun View.setSupportDrawable(drawable: Drawable) {
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+        background = drawable
+    } else {
+        setBackgroundDrawable(drawable)
     }
 }

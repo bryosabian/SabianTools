@@ -109,8 +109,11 @@ attr? scc_titleColor
 attr? scc_titleSize
 attr? scc_titleText
 attr? sfat_condensedType
+attr? sfat_fontColor
 attr? sfat_fontIcon
 attr? sfat_robotoType
+attr? sfat_textAllCaps
+attr? sfat_textColor
 attr? sfl_RobotoType
 attr? snb_ButtonColor
 attr? snb_ButtonText
@@ -151,6 +154,7 @@ color sabian_light_divider
 color sabian_list_divider
 color sabian_list_sub_title_color
 color sabian_list_title_color
+color sabian_modal_color
 color sabian_modal_header_color
 color sabian_modal_text_color
 color sabian_modal_title_color
@@ -159,6 +163,7 @@ color sabian_notification_danger
 color sabian_notification_inverse
 color sabian_notification_primary
 color sabian_notification_success
+color sabian_overlay_color
 color sabian_standard_background
 color sabian_success_color
 color sabian_text_black_light
@@ -368,7 +373,7 @@ styleable SabianCircleView sc_titleText sc_subtitleText sc_titleSize sc_subtitle
 styleable SabianCondensedEditText SabianEditCondensedType SabianEditRobotoType
 styleable SabianCondensedText SabianCondensedType SabianRobotoType
 styleable SabianFloatLabel Sfl_CondensedType sfl_RobotoType android:gravity android:textColorHint android:textColor
-styleable SabianFontAwesomeLabel sfat_condensedType sfat_robotoType sfat_fontIcon android:textColor android:text android:textSize
+styleable SabianFontAwesomeLabel sfat_condensedType sfat_robotoType sfat_fontIcon sfat_fontColor sfat_textColor sfat_textAllCaps android:textColor android:text android:textSize
 styleable SabianHeaderBanner sabianTitle sabianHeaderIcon sabianNumIcons sabianHideIcons sabianDisplayDividers
 styleable SabianHorizontalList sabianColumnWidth
 styleable SabianMenuBar android:textColor android:text

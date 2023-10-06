@@ -34,6 +34,7 @@
     <color name="sabian_list_divider">#15000000</color>
     <color name="sabian_list_sub_title_color">#808182</color>
     <color name="sabian_list_title_color">#5a5a5a</color>
+    <color name="sabian_modal_color">#ffffff</color>
     <color name="sabian_modal_header_color">#CFF1EE</color>
     <color name="sabian_modal_text_color">#999999</color>
     <color name="sabian_modal_title_color">#4a4a4a</color>
@@ -42,6 +43,7 @@
     <color name="sabian_notification_inverse">#435A62</color>
     <color name="sabian_notification_primary">#3F51B5</color>
     <color name="sabian_notification_success">#669F36</color>
+    <color name="sabian_overlay_color">#eeffffff</color>
     <color name="sabian_standard_background">#5BACCD</color>
     <color name="sabian_success_color">@color/sabian_notification_success</color>
     <color name="sabian_text_black_light">#5a5a5a</color>
@@ -170,6 +172,9 @@
         <attr format="string" name="sfat_condensedType"/>
         <attr format="string" name="sfat_robotoType"/>
         <attr format="string" name="sfat_fontIcon"/>
+        <attr format="color" name="sfat_fontColor"/>
+        <attr format="color" name="sfat_textColor"/>
+        <attr format="boolean" name="sfat_textAllCaps"/>
         <attr format="color" name="android:textColor"/>
         <attr format="string" name="android:text"/>
         <attr format="dimension" name="android:textSize"/>

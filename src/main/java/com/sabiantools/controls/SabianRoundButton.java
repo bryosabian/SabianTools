@@ -2,6 +2,8 @@ package com.sabiantools.controls;
 
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +12,7 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 
 import com.beardedhen.androidbootstrap.FontAwesomeText;
 import com.sabiantools.R;
@@ -101,6 +104,19 @@ public class SabianRoundButton extends FrameLayout {
         if (resourceID == NO_DRAWABLE)
             return;
         ll_Container.setBackgroundResource(resourceID);
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
+    public void setBackground(Drawable drawable) {
+        ll_Container.setBackground(drawable);
+    }
+
+    public void setBackgroundDrawable(Drawable drawable) {
+        ll_Container.setBackgroundDrawable(drawable);
+    }
+
+    public Drawable getBackground() {
+        return ll_Container.getBackground();
     }
 
     public void setOnClickListener(OnClickListener onClickListener) {
