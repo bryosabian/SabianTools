@@ -2,7 +2,7 @@
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
     <gradient
         android:angle="90"
-        android:endColor="?attr/sabianOverlayColor"
-        android:startColor="?attr/sabianOverlayColor"
+        android:endColor="@color/sabian_overlay_color"
+        android:startColor="@color/sabian_overlay_color"
         android:type="linear" />
 </shape>
