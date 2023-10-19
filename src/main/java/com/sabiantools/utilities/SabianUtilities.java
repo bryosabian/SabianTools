@@ -545,6 +545,26 @@ public class SabianUtilities {
         final Bitmap bm = BitmapFactory.decodeStream(instream);
         bm.compress(Bitmap.CompressFormat.JPEG, compressQuality, ostream);
         byte[] b = ostream.toByteArray();
+        try {
+            bm.recycle();
+        } catch (Throwable e) {
+            e.printStackTrace();
+        }
+        try {
+            instream.close();
+        } catch (Throwable e) {
+            e.printStackTrace();
+        } finally {
+            instream = null;
+        }
+        try {
+            ostream.flush();
+            ostream.close();
+        } catch (Throwable e) {
+            e.printStackTrace();
+        } finally {
+            ostream = null;
+        }
         return b;
     }
 
