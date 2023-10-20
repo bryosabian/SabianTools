@@ -33,6 +33,7 @@ dependencies {
     implementation 'androidx.cardview:cardview:1.0.0'
     implementation supportDependencies.appCompat
     implementation supportDependencies.recyclerView
+    implementation supportDependencies.fragments
     implementation SabianDependancies.Bootstrap
     implementation SabianDependancies.Gson
     implementation SabianDependancies.Guava
