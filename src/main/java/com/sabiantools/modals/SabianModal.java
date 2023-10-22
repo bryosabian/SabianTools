@@ -1,16 +1,10 @@
 package com.sabiantools.modals;
 
-import android.app.Dialog;
 import android.content.Context;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
-import android.view.WindowManager;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
@@ -45,8 +39,13 @@ public class SabianModal extends SabianCustomModal {
     private TextView txtTitle, txtMessage;
     private String title, message;
     private @ColorRes
-    int titleColor = NO_RES_ID;
+    int titleColorRes = NO_RES_ID;
+
+    private @ColorInt int titleColor = NO_RES_ID;
     private @ColorRes
+    int messageColorRes = NO_RES_ID;
+
+    private @ColorInt
     int messageColor = NO_RES_ID;
 
     private boolean isFooterFixed = false;
@@ -143,11 +142,17 @@ public class SabianModal extends SabianCustomModal {
         if (!SabianUtilities.IsStringEmpty(title))
             txtTitle.setText(title);
 
+        if (titleColorRes != NO_RES_ID)
+            txtTitle.setTextColor(getContext().getResources().getColor(titleColorRes));
+
         if (titleColor != NO_RES_ID)
-            txtTitle.setTextColor(getContext().getResources().getColor(titleColor));
+            txtTitle.setTextColor(titleColor);
+
+        if (messageColorRes != NO_RES_ID)
+            txtMessage.setTextColor(getContext().getResources().getColor(messageColorRes));
 
         if (messageColor != NO_RES_ID)
-            txtMessage.setTextColor(getContext().getResources().getColor(messageColor));
+            txtMessage.setTextColor(messageColor);
 
         if (view != null) {
             vgBody.setVisibility(View.VISIBLE);
@@ -213,7 +218,12 @@ public class SabianModal extends SabianCustomModal {
         return this;
     }
 
-    public SabianModal setTitleColor(@ColorRes int titleColor) {
+    public SabianModal setTitleColorRes(@ColorRes int titleColor) {
+        this.titleColorRes = titleColor;
+        return this;
+    }
+
+    public SabianModal setTitleColor(@ColorInt int titleColor) {
         this.titleColor = titleColor;
         return this;
     }
@@ -223,11 +233,15 @@ public class SabianModal extends SabianCustomModal {
         return this;
     }
 
-    public SabianModal setMessageColor(@ColorRes int messageColor) {
-        this.messageColor = messageColor;
+    public SabianModal setMessageColorRes(@ColorRes int messageColor) {
+        this.messageColorRes = messageColor;
         return this;
     }
 
+    public SabianModal setMessageColor(@ColorInt int messageColor) {
+        this.messageColor = messageColor;
+        return this;
+    }
 
     public SabianModal setFooterFixed(boolean footerFixed) {
         isFooterFixed = footerFixed;
