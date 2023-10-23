@@ -65,12 +65,25 @@ public class SabianFontAwesomeLabel extends FrameLayout {
         ftText.setIcon(icon);
     }
 
+    public void setTextAndFontSize(float size) {
+        if (size <= -1)
+            return;
+        setFontSize(size);
+        setTextSize(size);
+    }
+
     public void setTextSize(float size) {
         if (size <= -1)
             return;
-        ftText.setTextSize(TypedValue.COMPLEX_UNIT_PX, size);
         sctText.setTextSize(TypedValue.COMPLEX_UNIT_PX, size);
     }
+
+    public void setFontSize(float size) {
+        if (size <= -1)
+            return;
+        ftText.setTextSize(TypedValue.COMPLEX_UNIT_PX, size);
+    }
+
 
     public void setText(String text) {
         sctText.setText(text);
@@ -108,7 +121,11 @@ public class SabianFontAwesomeLabel extends FrameLayout {
             } else if (attr == R.styleable.SabianFontAwesomeLabel_sfat_fontIcon) {
                 this.setFontIcon(a.getString(attr));
             } else if (attr == R.styleable.SabianFontAwesomeLabel_android_textSize) {
+                this.setTextAndFontSize(a.getDimension(attr, -1));
+            } else if (attr == R.styleable.SabianFontAwesomeLabel_sfat_textSize) {
                 this.setTextSize(a.getDimension(attr, -1));
+            } else if (attr == R.styleable.SabianFontAwesomeLabel_sfat_fontSize) {
+                this.setFontSize(a.getDimension(attr, -1));
             } else if (attr == R.styleable.SabianFontAwesomeLabel_android_text) {
                 this.setText(a.getString(attr));
             } else if (attr == R.styleable.SabianFontAwesomeLabel_sfat_textAllCaps) {
