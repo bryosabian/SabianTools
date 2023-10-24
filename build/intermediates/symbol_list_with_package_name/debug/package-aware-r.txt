@@ -418,9 +418,11 @@ attr selected_width
 attr sfat_condensedType
 attr sfat_fontColor
 attr sfat_fontIcon
+attr sfat_fontSize
 attr sfat_robotoType
 attr sfat_textAllCaps
 attr sfat_textColor
+attr sfat_textSize
 attr sfl_RobotoType
 attr shape
 attr showAsAction
@@ -1959,7 +1961,7 @@ styleable SabianCircleView sc_backgroundColorValue sc_fillColor sc_fillRadius sc
 styleable SabianCondensedEditText SabianEditCondensedType SabianEditRobotoType
 styleable SabianCondensedText SabianCondensedType SabianRobotoType
 styleable SabianFloatLabel Sfl_CondensedType android_gravity android_textColor android_textColorHint sfl_RobotoType
-styleable SabianFontAwesomeLabel android_text android_textColor android_textSize sfat_condensedType sfat_fontColor sfat_fontIcon sfat_robotoType sfat_textAllCaps sfat_textColor
+styleable SabianFontAwesomeLabel android_text android_textColor android_textSize sfat_condensedType sfat_fontColor sfat_fontIcon sfat_fontSize sfat_robotoType sfat_textAllCaps sfat_textColor sfat_textSize
 styleable SabianHeaderBanner sabianDisplayDividers sabianHeaderIcon sabianHideIcons sabianNumIcons sabianTitle
 styleable SabianHorizontalList sabianColumnWidth
 styleable SabianMenuBar android_text android_textColor

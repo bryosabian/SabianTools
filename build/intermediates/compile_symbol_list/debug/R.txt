@@ -417,9 +417,11 @@ int attr selected_width 0x0
 int attr sfat_condensedType 0x0
 int attr sfat_fontColor 0x0
 int attr sfat_fontIcon 0x0
+int attr sfat_fontSize 0x0
 int attr sfat_robotoType 0x0
 int attr sfat_textAllCaps 0x0
 int attr sfat_textColor 0x0
+int attr sfat_textSize 0x0
 int attr sfl_RobotoType 0x0
 int attr shape 0x0
 int attr showAsAction 0x0
@@ -2453,16 +2455,18 @@ int styleable SabianFloatLabel_android_gravity 1
 int styleable SabianFloatLabel_android_textColor 2
 int styleable SabianFloatLabel_android_textColorHint 3
 int styleable SabianFloatLabel_sfl_RobotoType 4
-int[] styleable SabianFontAwesomeLabel { 0x101014f, 0x1010098, 0x1010095, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0 }
+int[] styleable SabianFontAwesomeLabel { 0x101014f, 0x1010098, 0x1010095, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0 }
 int styleable SabianFontAwesomeLabel_android_text 0
 int styleable SabianFontAwesomeLabel_android_textColor 1
 int styleable SabianFontAwesomeLabel_android_textSize 2
 int styleable SabianFontAwesomeLabel_sfat_condensedType 3
 int styleable SabianFontAwesomeLabel_sfat_fontColor 4
 int styleable SabianFontAwesomeLabel_sfat_fontIcon 5
-int styleable SabianFontAwesomeLabel_sfat_robotoType 6
-int styleable SabianFontAwesomeLabel_sfat_textAllCaps 7
-int styleable SabianFontAwesomeLabel_sfat_textColor 8
+int styleable SabianFontAwesomeLabel_sfat_fontSize 6
+int styleable SabianFontAwesomeLabel_sfat_robotoType 7
+int styleable SabianFontAwesomeLabel_sfat_textAllCaps 8
+int styleable SabianFontAwesomeLabel_sfat_textColor 9
+int styleable SabianFontAwesomeLabel_sfat_textSize 10
 int[] styleable SabianHeaderBanner { 0x0, 0x0, 0x0, 0x0, 0x0 }
 int styleable SabianHeaderBanner_sabianDisplayDividers 0
 int styleable SabianHeaderBanner_sabianHeaderIcon 1
