@@ -61,6 +61,7 @@
     <dimen name="control_button_search_no_margin">5dp</dimen>
     <dimen name="control_sabian_round_button_radius_bottom">31dp</dimen>
     <dimen name="control_sabian_round_button_radius_top">31dp</dimen>
+    <dimen name="sabian_layer_item_no_stroke">-2dp</dimen>
     <dimen name="sabian_material_modal_header_height">80dp</dimen>
     <dimen name="sabian_modal_fixed_footer_height">40dp</dimen>
     <dimen name="sabian_modal_fixed_footer_height_off">40dp</dimen>
@@ -73,6 +74,8 @@
     <item name="statusbarutil_fake_status_bar_view" type="id"/>
     <item name="statusbarutil_translucent_view" type="id"/>
     <string name="app_name">Sabian Tools</string>
+    <string name="cancel">Cancel</string>
+    <string name="submit">Submit</string>
     <style name="SabianActionBarTitle" parent="@android:style/TextAppearance.DeviceDefault.Widget.ActionBar.Title">
         <item name="android:textColor">@color/sabian_actionbar_text_color</item>
     </style>

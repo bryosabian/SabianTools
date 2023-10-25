@@ -854,6 +854,7 @@ int dimen notification_subtext_size 0x0
 int dimen notification_top_pad 0x0
 int dimen notification_top_pad_large_text 0x0
 int dimen padding_small 0x0
+int dimen sabian_layer_item_no_stroke 0x0
 int dimen sabian_material_modal_header_height 0x0
 int dimen sabian_modal_fixed_footer_height 0x0
 int dimen sabian_modal_fixed_footer_height_off 0x0
@@ -1494,10 +1495,12 @@ int string abc_shareactionprovider_share_with_application 0x0
 int string abc_toolbar_collapse_description 0x0
 int string action_settings 0x0
 int string app_name 0x0
+int string cancel 0x0
 int string error_view_oops 0x0
 int string error_view_retry 0x0
 int string search_menu_title 0x0
 int string status_bar_notification_info_overflow 0x0
+int string submit 0x0
 int style AlertDialog_AppCompat 0x0
 int style AlertDialog_AppCompat_Light 0x0
 int style AndroidImageSlider_Attractive_Rect_Blue 0x0

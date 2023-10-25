@@ -855,6 +855,7 @@ dimen notification_subtext_size
 dimen notification_top_pad
 dimen notification_top_pad_large_text
 dimen padding_small
+dimen sabian_layer_item_no_stroke
 dimen sabian_material_modal_header_height
 dimen sabian_modal_fixed_footer_height
 dimen sabian_modal_fixed_footer_height_off
@@ -1495,10 +1496,12 @@ string abc_shareactionprovider_share_with_application
 string abc_toolbar_collapse_description
 string action_settings
 string app_name
+string cancel
 string error_view_oops
 string error_view_retry
 string search_menu_title
 string status_bar_notification_info_overflow
+string submit
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
 style AndroidImageSlider_Attractive_Rect_Blue

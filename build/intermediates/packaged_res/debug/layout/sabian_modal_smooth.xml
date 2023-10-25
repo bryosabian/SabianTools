@@ -83,7 +83,6 @@
                     android:id="@+id/ll_SabianModalActionsContainer"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
                     android:layout_gravity="end"
                     android:orientation="horizontal">
 
@@ -95,7 +94,7 @@
                         android:layout_marginEnd="5dp"
                         android:layout_marginRight="5dp"
                         android:background="?attr/sabianModalButtonColor"
-                        android:text="Submit" />
+                        android:text="@string/submit" />
 
                     <com.gc.materialdesign.views.ButtonFlat
                         android:id="@+id/btn_SabianModalCancel"
@@ -103,7 +102,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="end"
                         android:background="?attr/sabianModalButtonColor"
-                        android:text="Cancel" />
+                        android:text="@string/cancel" />
 
                 </LinearLayout>
             </LinearLayout>

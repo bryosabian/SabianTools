@@ -183,6 +183,7 @@ dimen cardview_default_elevation
 dimen control_button_search_no_margin
 dimen control_sabian_round_button_radius_bottom
 dimen control_sabian_round_button_radius_top
+dimen sabian_layer_item_no_stroke
 dimen sabian_material_modal_header_height
 dimen sabian_modal_fixed_footer_height
 dimen sabian_modal_fixed_footer_height_off
@@ -366,6 +367,8 @@ layout sabian_sticky_view_layout
 layout sabian_toast_layout
 layout sabian_transparent_button_text
 string app_name
+string cancel
+string submit
 style SabianActionBarTitle
 style SabianMaterialDialog
 styleable SabianButtonText sbt_text sbt_hint sbt_icon sbt_textColor sbt_hintColor sbt_password sbt_vector_icon sbt_vector_icon_color sbt_textsize sbt_background_drawable sbt_roboto_type sbt_icon_alignment sbt_style sbt_padding sbt_icon_size sbt_display_icon sbt_enabled android:inputType android:gravity
