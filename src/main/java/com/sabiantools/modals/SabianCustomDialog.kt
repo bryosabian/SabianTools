@@ -43,7 +43,7 @@ abstract class SabianCustomDialog : DialogFragment() {
         configureWindow()
     }
 
-    open fun configureWindow() {
+    private fun configureWindow() {
         if (!isFull)
             return
         val window = dialog!!.window!!
@@ -58,7 +58,7 @@ abstract class SabianCustomDialog : DialogFragment() {
         bodyContainer?.startAnimation(anim)
     }
 
-    fun show(manager: FragmentManager?) {
+    fun show(manager: FragmentManager) {
         super.show(manager, DateTime.now().toString())
     }
 }
