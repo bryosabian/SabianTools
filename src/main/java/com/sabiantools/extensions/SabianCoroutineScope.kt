@@ -125,9 +125,10 @@ fun <T> CoroutineScope.runAsync(
     }
     launch(mainContext) {
         val value = promise.await()
-        error?.let { onError?.invoke(it) } ?: run {
-            onComplete(value)
-        }
+        error?.let { onError?.invoke(it) }
+                ?: run {
+                    onComplete(value)
+                }
         onFinally?.invoke()
     }
 }

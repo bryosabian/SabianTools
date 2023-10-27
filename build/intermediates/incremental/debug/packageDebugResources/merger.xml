@@ -4,7 +4,7 @@
         <item name="android:windowSoftInputMode">adjustPan</item>
     </style><style name="SabianActionBarTitle" parent="@android:style/TextAppearance.DeviceDefault.Widget.ActionBar.Title">
         <item name="android:textColor">@color/sabian_actionbar_text_color</item>
-    </style></file><file path="/Users/sweetpea/Desktop/Sabian/Projects/Android/Libs/SabianTools/src/main/res/values/strings.xml" qualifiers=""><string name="app_name">Sabian Tools</string><string name="submit">Submit</string><string name="cancel">Cancel</string></file><file path="/Users/sweetpea/Desktop/Sabian/Projects/Android/Libs/SabianTools/src/main/res/values/attrs.xml" qualifiers=""><declare-styleable name="SabianMenuBar">
+    </style></file><file path="/Users/sweetpea/Desktop/Sabian/Projects/Android/Libs/SabianTools/src/main/res/values/strings.xml" qualifiers=""><string name="app_name">Sabian Tools</string><string name="cancel">Cancel</string><string name="submit">Submit</string></file><file path="/Users/sweetpea/Desktop/Sabian/Projects/Android/Libs/SabianTools/src/main/res/values/attrs.xml" qualifiers=""><declare-styleable name="SabianMenuBar">
         <attr name="android:textColor"/>
         <attr name="android:text"/>
     </declare-styleable><declare-styleable name="SabianButtonText">
