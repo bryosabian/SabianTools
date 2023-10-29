@@ -2,7 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.sabiantools" >
 
-    <uses-sdk android:minSdkVersion="15" />
+    <uses-sdk
+        android:minSdkVersion="15"
+        android:targetSdkVersion="29" />
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
