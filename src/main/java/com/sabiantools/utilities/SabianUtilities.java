@@ -294,10 +294,14 @@ public class SabianUtilities {
     }
 
     public static String GetEllipsis(String text, int length) {
+        return GetEllipsis(text, length, "...");
+    }
+
+    public static String GetEllipsis(String text, int length, String trailing) {
         if (text.length() <= length)
             return text;
 
-        return text.substring(0, length) + "...";
+        return text.substring(0, length) + trailing;
     }
 
     public static String RemoveExtraSpaces(String text) {

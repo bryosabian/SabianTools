@@ -116,3 +116,7 @@ fun String.matchesWithAnyKeyWord(p: List<Pattern>): Boolean {
     return p.any { it.matcher(this).find() }
 }
 
+
+fun String.ellipsis(length: Int, trailing: String = "..."): String {
+    return SabianUtilities.GetEllipsis(this, length, trailing)
+}
