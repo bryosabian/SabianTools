@@ -23,13 +23,22 @@
             <enum name="right" value="0" />
             <enum name="left" value="1" />
         </attr>
+        <attr name="sbt_text_alignment" format="enum">
+            <enum name="center" value="2" />
+            <enum name="justify" value="3" />
+        </attr>
         <attr name="sbt_style" format="string" />
         <attr name="sbt_padding" format="dimension" />
         <attr name="sbt_icon_size" format="dimension" />
         <attr name="sbt_display_icon" format="boolean" />
         <attr name="sbt_enabled" format="boolean" />
+        <attr name="android:maxLines" format="integer" />
+        <attr name="android:singleLine" format="boolean" />
 
         <attr name="android:inputType" />
+
+
+
         <attr name="android:gravity">
             <flag name="bottom" value="80" />
             <flag name="center" value="17" />

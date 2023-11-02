@@ -5,6 +5,7 @@ import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.text.Editable;
 import android.text.InputFilter;
 import android.text.InputType;
@@ -19,6 +20,7 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 
 import com.beardedhen.androidbootstrap.FontAwesomeText;
 import com.sabiantools.R;
@@ -61,10 +63,10 @@ public class SabianButtonText extends FrameLayout {
 
 
     public enum Alignment {
-        RIGHT(0, "right"), LEFT(1, "left");
+        RIGHT(0, "right"), LEFT(1, "left"), CENTER(2, "center"), JUSTIFY(3, "justify");
 
-        private int align;
-        private String value;
+        private final int align;
+        private final String value;
 
         Alignment(int align, String value) {
             this.align = align;
@@ -232,7 +234,6 @@ public class SabianButtonText extends FrameLayout {
     public void setPassword(boolean yes) {
         if (yes) {
             this.editText.setTransformationMethod(PasswordTransformationMethod.getInstance());
-            return;
         }
     }
 
@@ -288,24 +289,65 @@ public class SabianButtonText extends FrameLayout {
     }
 
     private void setIconAlignment(int value) {
-        Alignment[] alignments = Alignment.values();
-        for (Alignment align : alignments) {
-            if (align.getAlign() == value) {
-                setIconAlignment(align);
-                return;
-            }
+        Alignment align = getAlignment(value);
+        if (align != null) {
+            setIconAlignment(align);
         }
         SabianUtilities.WriteLog("No icon alignment found for " + value);
     }
 
-    public SabianButtonText setBackgroundType(String style) {
+    /**
+     * Either ${@link Alignment#CENTER} and {@link Alignment#JUSTIFY}
+     *
+     * @param value
+     */
+    public void setTextAlignment(int value) {
+        if (value == -1)
+            return;
+        Alignment alignment = getAlignment(value);
+        if (alignment != null)
+            setTextAlignment(alignment);
+    }
+
+    /**
+     * Either ${@link Alignment#CENTER} and {@link Alignment#JUSTIFY}
+     *
+     * @param alignment
+     */
+    public void setTextAlignment(Alignment alignment) {
+        try {
+            if (editText == null)
+                return;
+            RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams) editText.getLayoutParams();
+            if (alignment == Alignment.JUSTIFY) {
+                params.addRule(RelativeLayout.CENTER_VERTICAL, 0);
+            } else if (alignment == Alignment.CENTER) {
+                params.addRule(RelativeLayout.CENTER_VERTICAL, RelativeLayout.TRUE);
+            }
+            editText.setLayoutParams(params);
+        } catch (Throwable e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Nullable
+    private Alignment getAlignment(int value) {
+        Alignment[] alignments = Alignment.values();
+        for (Alignment align : alignments) {
+            if (align.getAlign() == value) {
+                return align;
+            }
+        }
+        return null;
+    }
+
+    public void setBackgroundType(String style) {
         this.backgroundType = style;
         if (style.equals(BACKGROUND_STYLE_ALT)) {
             setCustomBackgroundDrawable(_context.getResources().getDrawable(R.drawable.control_button_text_alt));
         } else {
             setCustomBackgroundDrawable(_context.getResources().getDrawable(R.drawable.control_button_text_bg));
         }
-        return this;
     }
 
     public SabianButtonText setPadding(int padding) {
@@ -326,9 +368,9 @@ public class SabianButtonText extends FrameLayout {
         return setPadding(padd);
     }
 
-    public SabianButtonText setIconSize(int size) {
+    public void setIconSize(int size) {
         if (size == -1) {
-            return this;
+            return;
         }
         ViewGroup.LayoutParams imgRightParams = imgRightIcon.getLayoutParams();
         imgRightParams.width = size;
@@ -346,7 +388,6 @@ public class SabianButtonText extends FrameLayout {
         ftLeftParams.width = size;
         ftLeftParams.height = size;
 
-        return this;
     }
 
 
@@ -360,6 +401,18 @@ public class SabianButtonText extends FrameLayout {
         editText.setEnabled(is);
         vgLeftContainer.setEnabled(is);
         vgRightContainer.setEnabled(is);
+    }
+
+    public void setSingleLine(boolean yes) {
+        if (editText == null)
+            return;
+        editText.setSingleLine(yes);
+    }
+
+    public void setMaxLines(int maxLines) {
+        if (editText == null)
+            return;
+        editText.setMaxLines(maxLines);
     }
 
     public void setDisplayIcon(boolean display) {
@@ -414,13 +467,15 @@ public class SabianButtonText extends FrameLayout {
             } else if (attr == R.styleable.SabianButtonText_sbt_hintColor) {
                 setHintColor(a.getColor(attr, NO_RES));
             } else if (attr == R.styleable.SabianButtonText_android_inputType) {
-                setInputType(a.getInt(attr, InputType.TYPE_CLASS_TEXT));
+                setInputType(a.getInt(attr, InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_NORMAL));
             } else if (attr == R.styleable.SabianButtonText_sbt_background_drawable) {
                 setCustomBackgroundDrawable(a.getDrawable(attr));
             } else if (attr == R.styleable.SabianButtonText_sbt_roboto_type) {
                 setRobotoType(a.getString(attr));
             } else if (attr == R.styleable.SabianButtonText_sbt_icon_alignment) {
                 setIconAlignment(a.getInt(attr, Alignment.LEFT.getAlign()));
+            } else if (attr == R.styleable.SabianButtonText_sbt_text_alignment) {
+                setTextAlignment(a.getInt(attr, -1));
             } else if (attr == R.styleable.SabianButtonText_sbt_style) {
                 setBackgroundType(a.getString(attr));
             } else if (attr == R.styleable.SabianButtonText_sbt_padding) {
@@ -433,7 +488,12 @@ public class SabianButtonText extends FrameLayout {
                 setEnabled(a.getBoolean(attr, true));
             } else if (attr == R.styleable.SabianButtonText_android_gravity) {
                 setGravity(a.getInt(attr, Gravity.CENTER));
+            } else if (attr == R.styleable.SabianButtonText_android_maxLines) {
+                setMaxLines(a.getInt(attr, 10));
+            } else if (attr == R.styleable.SabianButtonText_android_singleLine) {
+                setSingleLine(a.getBoolean(attr, true));
             }
         }
+        a.recycle();
     }
 }
