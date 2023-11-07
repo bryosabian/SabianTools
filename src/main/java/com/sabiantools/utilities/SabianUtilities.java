@@ -27,6 +27,7 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.JsonParser;
 import com.google.gson.JsonSyntaxException;
 import com.sabiantools.R;
+import com.sabiantools.extensions.SabianThemeKt;
 import com.sabiantools.modals.SabianModal;
 
 import org.joda.time.DateTime;
@@ -714,7 +715,7 @@ public class SabianUtilities {
     public static void showLoadingDialog(Context context, String title) {
         try {
             hideLoadingDialog(false);
-            pd = new ProgressDialog(context, title);
+            pd = new ProgressDialog(context, title, SabianThemeKt.getColorFromAttr(context, R.attr.sabianPrimaryColor, R.color.colorPrimary));
             pd.setCanceledOnTouchOutside(false);
             pd.setCancelable(false);
             pd.show();

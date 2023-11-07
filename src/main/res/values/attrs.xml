@@ -6,7 +6,6 @@
         <attr name="android:text" />
     </declare-styleable>
 
-
     <declare-styleable name="SabianButtonText">
         <attr name="sbt_text" format="string" />
         <attr name="sbt_hint" format="string" />
@@ -36,7 +35,6 @@
         <attr name="android:singleLine" format="boolean" />
 
         <attr name="android:inputType" />
-
 
 
         <attr name="android:gravity">
