@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:sabian="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#99000000"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp">
+
+
+    <RelativeLayout
+        android:id="@+id/rll_SabianModalContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@drawable/sabian_material_modal_bg"
+        android:orientation="vertical"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp">
+
+        <!--Body-->
+        <LinearLayout
+            android:id="@+id/ll_SabianModalBodyContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!--Header-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bottom_border_bg">
+
+                    <com.sabiantools.controls.texts.SabianCondensedText
+                        android:id="@+id/sct_SabianModalTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:paddingStart="20dp"
+                        android:paddingLeft="20dp"
+                        android:paddingEnd="10dp"
+                        android:paddingRight="10dp"
+                        android:text=""
+                        android:textColor="?attr/sabianModalTitleColor"
+                        android:textSize="16sp"
+                        sabian:SabianRobotoType="Bold" />
+                </LinearLayout>
+
+                <!--Search-->
+                <RelativeLayout
+                    android:id="@+id/rll_SabianModalSearchContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:background="@drawable/bottom_border_bg"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp">
+
+                    <EditText
+                        android:id="@+id/edt_SabianModalSearch"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginBottom="5dp"
+                        android:background="@null"
+                        android:focusable="true"
+                        android:focusableInTouchMode="true"
+                        android:gravity="start"
+                        android:hint="Search"
+                        android:isScrollContainer="false"
+                        android:singleLine="true"
+                        android:textColor="?attr/sabianModalEditTextColor"
+                        android:textColorHint="?attr/sabianModalEditTextHintColor"
+                        android:textSize="15sp" />
+                </RelativeLayout>
+
+                <!--List-->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="20dp">
+
+                    <ListView
+                        android:id="@+id/lst_SabianModalList"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:divider="?attr/sabianDividerColor"
+                        android:dividerHeight="0.3dp" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_gravity="end"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <com.gc.materialdesign.views.ButtonFlat
+                    android:id="@+id/btn_SabianModalOk"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginRight="5dp"
+                    android:background="?attr/sabianPrimaryColor"
+                    android:text="Submit"
+
+                    />
+
+                <com.gc.materialdesign.views.ButtonFlat
+                    android:id="@+id/btn_SabianModalCancel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="?attr/sabianPrimaryColor"
+                    android:text="Cancel" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <!--Containers-->
+
+        <!--Loader-->
+        <RelativeLayout
+            android:id="@+id/vg_ModalLoader"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/drawable_modal_full_white_gradient"
+            android:clickable="true"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:orientation="horizontal">
+
+                <com.github.ybq.android.spinkit.SpinKitView
+                    style="@style/SpinKitView.Small.FadingCircle"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="4dp"
+                    android:indeterminate="true"
+                    sabian:SpinKit_Color="?attr/sabianPrimaryColor" />
+
+                <com.sabiantools.controls.texts.SabianCondensedText
+                    android:id="@+id/sct_ModalLoaderText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text=""
+                    android:textColor="?attr/sabianModalTextColor"
+                    android:textSize="15sp"
+                    sabian:SabianRobotoType="Bold" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <!--Failed-->
+        <LinearLayout
+            android:id="@+id/ll_ModalFailedContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:orientation="vertical"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/img_ModalFailed"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center" />
+
+            <com.sabiantools.controls.texts.SabianCondensedText
+                android:id="@+id/sct_ModalFailedText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="5dp"
+                android:gravity="center"
+                android:text="Failed to load. Tap to retry"
+                android:textColor="?attr/sabianModalTextColor"
+                android:textSize="14sp"
+                sabian:SabianRobotoType="Bold" />
+
+            <com.gc.materialdesign.views.ButtonFlat
+                android:id="@+id/btn_ModalErrorButtonRetry"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="?attr/sabianModalButtonColor"
+                android:text="Retry"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+    </RelativeLayout>
+
+</RelativeLayout>
+

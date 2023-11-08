@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:sabian="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#99000000"
+    android:paddingLeft="10dp"
+    android:paddingTop="20dp"
+    android:paddingRight="10dp"
+    android:paddingBottom="20dp">
+
+    <RelativeLayout
+        android:id="@+id/rll_ModalEditTextContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@drawable/sabian_material_modal_bg"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!--Header-->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/sabian_modal_header_bg"
+                android:orientation="horizontal"
+                android:paddingLeft="10dp"
+                android:paddingTop="10dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="10dp">
+
+                <com.sabiantools.controls.texts.SabianCondensedText
+                    android:id="@+id/sct_ModalEditTextTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerInParent="true"
+                    android:layout_gravity="center_vertical"
+                    android:text=""
+                    android:textColor="?attr/sabianModalTitleColor"
+                    android:textSize="16sp"
+                    sabian:SabianRobotoType="Bold" />
+            </RelativeLayout>
+
+            <!--Body-->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:orientation="vertical"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp">
+
+                <com.sabiantools.controls.texts.SabianCondensedEditText
+                    android:id="@+id/sct_ModalEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:background="@null"
+                    android:textColor="?attr/sabianModalEditTextColor"
+                    android:textColorHint="?attr/sabianModalEditTextHintColor"
+                    android:textSize="14sp"
+                    sabian:SabianEditRobotoType="Regular" />
+            </RelativeLayout>
+
+            <!--Footer-->
+            <RelativeLayout
+                android:id="@+id/ll_ModalEditTextActionsContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/sabian_modal_footer_bg"
+                android:padding="10dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="end"
+                    android:orientation="horizontal">
+
+                    <com.gc.materialdesign.views.ButtonFlat
+                        android:id="@+id/btn_ModalEditTextOk"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginRight="5dp"
+                        android:background="?attr/sabianModalButtonColor"
+                        android:text="Submit" />
+
+                    <com.gc.materialdesign.views.ButtonFlat
+                        android:id="@+id/btn_ModalEditTextCancel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:background="?attr/sabianModalButtonColor"
+                        android:text="Cancel" />
+
+                </LinearLayout>
+            </RelativeLayout>
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+</RelativeLayout>
+
