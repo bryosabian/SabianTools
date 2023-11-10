@@ -4,13 +4,13 @@ import android.content.Context
 import android.net.Uri
 import java.io.*
 
-class FileManager(private val context: Context) {
+open class FileManager(private val context: Context) {
 
     @Throws
     fun writeToFile(fileName: String, data: String): File {
         val fos = context.openFileOutput(
-            fileName,
-            Context.MODE_PRIVATE
+                fileName,
+                Context.MODE_PRIVATE
         )
         var error: Throwable? = null
         var os: OutputStreamWriter? = null
@@ -67,5 +67,18 @@ class FileManager(private val context: Context) {
     @Throws(Exception::class)
     fun getFileFromUri(uri: Uri): File? {
         return uri.path?.let { File(it) }
+    }
+
+    fun getFileFromPath(filePath: String, checkExists: Boolean = true): File? {
+        try {
+            val file = File(filePath)
+            if (checkExists && !file.exists()) {
+                return null
+            }
+            return file
+        } catch (e: Throwable) {
+            e.printStackTrace()
+            return null
+        }
     }
 }
