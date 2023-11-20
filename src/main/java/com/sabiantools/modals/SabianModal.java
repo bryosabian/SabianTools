@@ -215,6 +215,9 @@ public class SabianModal extends SabianCustomModal {
 
     public SabianModal setTitle(String title) {
         this.title = title;
+        if (txtTitle != null) {
+            txtTitle.setText(title);
+        }
         return this;
     }
 
@@ -230,6 +233,9 @@ public class SabianModal extends SabianCustomModal {
 
     public SabianModal setMessage(String message) {
         this.message = message;
+        if (txtMessage != null) {
+            txtMessage.setText(message);
+        }
         return this;
     }
 
