@@ -16,3 +16,4 @@ inline fun <reified T> T.collectAsList(): List<T> {
 inline fun <reified T> T.collectAsMutableList(): MutableList<T> {
     return arrayListOf(this)
 }
+

@@ -106,6 +106,10 @@ fun String.toLocalDate(): LocalDate {
     return LocalDate.parse(formatted)
 }
 
+fun LocalDate.isSameDateAs(date: LocalDate): Boolean {
+    return this == date
+}
+
 fun String.toLocalDateOrNull(): LocalDate? {
     return try {
         toLocalDate()
@@ -116,11 +120,11 @@ fun String.toLocalDateOrNull(): LocalDate? {
 }
 
 fun LocalDateTime.isSameDate(with: LocalDateTime): Boolean {
-    return this.toLocalDate().equals(with.toLocalDate());
+    return this.toLocalDate().isSameDateAs(with.toLocalDate())
 }
 
 fun DateTime.isSameDate(with: DateTime): Boolean {
-    return this.toLocalDate().equals(with.toLocalDate());
+    return this.toLocalDate().isSameDateAs(with.toLocalDate())
 }
 
 fun Int.toHoursMinutesSeconds(): String {
@@ -129,4 +133,16 @@ fun Int.toHoursMinutesSeconds(): String {
     val minutes = (totalSeconds % 3600) / 60
     val seconds = totalSeconds % 60
     return "%02d:%02d:%02d".format(hours, minutes, seconds)
+}
+
+fun LocalDate.isToday(): Boolean {
+    return this.isSameDateAs(LocalDate.now())
+}
+
+fun DateTime.isToday(): Boolean {
+    return this.toLocalDate().isToday()
+}
+
+fun LocalDateTime.isToday(): Boolean {
+    return this.toLocalDate().isToday()
 }

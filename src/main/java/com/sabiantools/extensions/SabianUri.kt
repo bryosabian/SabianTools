@@ -3,6 +3,7 @@ package com.sabiantools.extensions
 import android.content.Context
 import android.graphics.Bitmap
 import android.graphics.ImageDecoder
+import android.graphics.ImageDecoder.OnHeaderDecodedListener
 import android.net.Uri
 import android.os.Build
 import android.provider.MediaStore
@@ -14,7 +15,9 @@ fun Uri.toBitmap(context: Context): Bitmap {
         MediaStore.Images.Media.getBitmap(contentResolver, this)
     } else {
         val source = ImageDecoder.createSource(contentResolver, this)
-        ImageDecoder.decodeBitmap(source);
+        ImageDecoder.decodeBitmap(source) { decoder, _, _ ->
+            decoder.isMutableRequired = true
+        }
     }
     return bitmap
 }

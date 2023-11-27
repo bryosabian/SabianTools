@@ -84,3 +84,17 @@ fun <T> Collection<T>.limit(limit: Int): List<T> {
         return mList
     return mList.subList(0, limit)
 }
+
+
+fun <T> Collection<T>?.isNotNullOrEmpty(): Boolean {
+    return !this.isNullOrEmpty()
+}
+
+
+inline fun <reified T> T.existsIn(list: List<T>): Boolean {
+    return list.contains(this)
+}
+
+inline fun <reified T> T.existsIn(arr: Array<T>): Boolean {
+    return arr.contains(this)
+}

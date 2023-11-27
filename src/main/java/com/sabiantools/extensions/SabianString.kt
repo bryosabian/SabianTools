@@ -120,3 +120,16 @@ fun String.matchesWithAnyKeyWord(p: List<Pattern>): Boolean {
 fun String.ellipsis(length: Int, trailing: String = "..."): String {
     return SabianUtilities.GetEllipsis(this, length, trailing)
 }
+
+
+fun String?.ifBlankOrEqualTo(equals: String, action: () -> String): String {
+    if (isNullOrBlank())
+        return action()
+    return ifEqualTo(equals, action)
+}
+
+fun String.ifEqualTo(equals: String, action: () -> String): String {
+    if (this == equals)
+        return action()
+    return this
+}
