@@ -43,7 +43,7 @@ class QueueTaskManager<Q>(listener: OnQueueTaskListener<Q>) {
         if (isProcessing)
             listener?.onQueued(item)
 
-        if (startImmediate)
+        if (startImmediate && !isProcessing)
             this.runNext()
     }
 
