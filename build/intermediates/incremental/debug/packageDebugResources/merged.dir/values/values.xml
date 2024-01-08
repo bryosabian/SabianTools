@@ -83,6 +83,10 @@
         <item name="android:windowIsFloating">true</item>
         <item name="android:windowSoftInputMode">adjustPan</item>
     </style>
+    <style name="SabianMaterialProgressDialog" parent="@android:style/Theme.Translucent">
+        <item name="materialDialogTitleColor">@color/sabian_modal_title_color</item>
+        <item name="materialDialogProgressColor">@color/colorPrimary</item>
+    </style>
     <declare-styleable name="SabianButtonText">
         <attr format="string" name="sbt_text"/>
         <attr format="string" name="sbt_hint"/>

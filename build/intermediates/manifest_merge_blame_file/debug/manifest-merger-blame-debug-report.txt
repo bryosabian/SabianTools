@@ -2,21 +2,24 @@
 2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
 3    package="com.sabiantools" >
 4
-5    <uses-sdk android:minSdkVersion="15" />
-5-->/Users/sweetpea/Desktop/Sabian/Projects/Android/Libs/SabianTools/src/main/AndroidManifest.xml
-6
-7    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-7-->/Users/sweetpea/Desktop/Sabian/Projects/Android/Libs/SabianTools/src/main/AndroidManifest.xml:5:5-79
-7-->/Users/sweetpea/Desktop/Sabian/Projects/Android/Libs/SabianTools/src/main/AndroidManifest.xml:5:22-76
+5    <uses-sdk
+6        android:minSdkVersion="15"
+6-->/Users/sweetpea/Desktop/Sabian/Projects/Android/Libs/SabianTools/src/main/AndroidManifest.xml
+7        android:targetSdkVersion="29" />
+7-->/Users/sweetpea/Desktop/Sabian/Projects/Android/Libs/SabianTools/src/main/AndroidManifest.xml
 8
-9    <application
-9-->/Users/sweetpea/Desktop/Sabian/Projects/Android/Libs/SabianTools/src/main/AndroidManifest.xml:6:5-11:19
-10        android:allowBackup="true"
-10-->/Users/sweetpea/Desktop/Sabian/Projects/Android/Libs/SabianTools/src/main/AndroidManifest.xml:7:9-35
-11        android:label="@string/app_name"
-11-->/Users/sweetpea/Desktop/Sabian/Projects/Android/Libs/SabianTools/src/main/AndroidManifest.xml:8:9-41
-12        android:supportsRtl="true" >
-12-->/Users/sweetpea/Desktop/Sabian/Projects/Android/Libs/SabianTools/src/main/AndroidManifest.xml:9:9-35
-13    </application>
-14
-15</manifest>
+9    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+9-->/Users/sweetpea/Desktop/Sabian/Projects/Android/Libs/SabianTools/src/main/AndroidManifest.xml:5:5-79
+9-->/Users/sweetpea/Desktop/Sabian/Projects/Android/Libs/SabianTools/src/main/AndroidManifest.xml:5:22-76
+10
+11    <application
+11-->/Users/sweetpea/Desktop/Sabian/Projects/Android/Libs/SabianTools/src/main/AndroidManifest.xml:6:5-11:19
+12        android:allowBackup="true"
+12-->/Users/sweetpea/Desktop/Sabian/Projects/Android/Libs/SabianTools/src/main/AndroidManifest.xml:7:9-35
+13        android:label="@string/app_name"
+13-->/Users/sweetpea/Desktop/Sabian/Projects/Android/Libs/SabianTools/src/main/AndroidManifest.xml:8:9-41
+14        android:supportsRtl="true" >
+14-->/Users/sweetpea/Desktop/Sabian/Projects/Android/Libs/SabianTools/src/main/AndroidManifest.xml:9:9-35
+15    </application>
+16
+17</manifest>

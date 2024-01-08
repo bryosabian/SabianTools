@@ -581,7 +581,6 @@ int color bbutton_default_disabled 0x0
 int color bbutton_default_disabled_edge 0x0
 int color bbutton_default_edge 0x0
 int color bbutton_default_pressed 0x0
-int color bbutton_edittext_background 0x0
 int color bbutton_edittext_border 0x0
 int color bbutton_edittext_disabled 0x0
 int color bbutton_info 0x0
@@ -637,6 +636,8 @@ int color colorPrimary 0x0
 int color control_sabian_round_button 0x0
 int color control_sabian_round_button_disabled 0x0
 int color control_sabian_round_button_pressed 0x0
+int color custom_camera_dark 0x0
+int color custom_camera_light 0x0
 int color dim_foreground_disabled_material_dark 0x0
 int color dim_foreground_disabled_material_light 0x0
 int color dim_foreground_material_dark 0x0
@@ -1013,8 +1014,10 @@ int drawable edittext_background_danger 0x0
 int drawable edittext_background_rounded 0x0
 int drawable edittext_background_rounded_danger 0x0
 int drawable edittext_background_rounded_success 0x0
+int drawable edittext_background_rounded_themed 0x0
 int drawable edittext_background_rounded_warning 0x0
 int drawable edittext_background_success 0x0
+int drawable edittext_background_themed 0x0
 int drawable edittext_background_warning 0x0
 int drawable error_view_cloud 0x0
 int drawable error_view_retry_button_background 0x0
@@ -1044,7 +1047,7 @@ int drawable sabian_actionbar 0x0
 int drawable sabian_button_theme 0x0
 int drawable sabian_button_theme_alt 0x0
 int drawable sabian_button_theme_danger 0x0
-int drawable sabian_button_theme_success 0x0
+int drawable sabian_button_theme_rounded 0x0
 int drawable sabian_button_transparent 0x0
 int drawable sabian_button_transparent_rounded 0x0
 int drawable sabian_error_view 0x0
@@ -1134,7 +1137,6 @@ int id alertTitle 0x0
 int id async 0x0
 int id blocking 0x0
 int id blue 0x0
-int id bootstrap_button_drawable_container 0x0
 int id bottom 0x0
 int id btn_ModalEditTextCancel 0x0
 int id btn_ModalEditTextOk 0x0
@@ -1208,7 +1210,6 @@ int id home 0x0
 int id icon 0x0
 int id icon_group 0x0
 int id image 0x0
-int id imageRes 0x0
 int id img_ControlButtonText 0x0
 int id img_ControlButtonTextRight 0x0
 int id img_ModalFailed 0x0
@@ -1497,7 +1498,6 @@ int string abc_searchview_description_voice 0x0
 int string abc_shareactionprovider_share_with 0x0
 int string abc_shareactionprovider_share_with_application 0x0
 int string abc_toolbar_collapse_description 0x0
-int string action_settings 0x0
 int string app_name 0x0
 int string cancel 0x0
 int string error_view_oops 0x0
@@ -1701,6 +1701,7 @@ int style RtlUnderlay_Widget_AppCompat_ActionButton 0x0
 int style RtlUnderlay_Widget_AppCompat_ActionButton_Overflow 0x0
 int style SabianActionBarTitle 0x0
 int style SabianMaterialDialog 0x0
+int style SabianMaterialProgressDialog 0x0
 int style SpinKitView 0x0
 int style SpinKitView_ChasingDots 0x0
 int style SpinKitView_Circle 0x0
@@ -2134,20 +2135,19 @@ int styleable AppCompatTheme_windowFixedWidthMinor 117
 int styleable AppCompatTheme_windowMinWidthMajor 118
 int styleable AppCompatTheme_windowMinWidthMinor 119
 int styleable AppCompatTheme_windowNoTitle 120
-int[] styleable BootstrapButton { 0x101000e, 0x1010181, 0x10100f4, 0x101014f, 0x1010098, 0x1010095, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0 }
+int[] styleable BootstrapButton { 0x101000e, 0x1010181, 0x10100f4, 0x101014f, 0x1010095, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0 }
 int styleable BootstrapButton_android_enabled 0
 int styleable BootstrapButton_android_layout_weight 1
 int styleable BootstrapButton_android_layout_width 2
 int styleable BootstrapButton_android_text 3
-int styleable BootstrapButton_android_textColor 4
-int styleable BootstrapButton_android_textSize 5
-int styleable BootstrapButton_bb_icon_left 6
-int styleable BootstrapButton_bb_icon_right 7
-int styleable BootstrapButton_bb_roundedCorners 8
-int styleable BootstrapButton_bb_size 9
-int styleable BootstrapButton_bb_text_alignment 10
-int styleable BootstrapButton_bb_text_gravity 11
-int styleable BootstrapButton_bb_type 12
+int styleable BootstrapButton_android_textSize 4
+int styleable BootstrapButton_bb_icon_left 5
+int styleable BootstrapButton_bb_icon_right 6
+int styleable BootstrapButton_bb_roundedCorners 7
+int styleable BootstrapButton_bb_size 8
+int styleable BootstrapButton_bb_text_alignment 9
+int styleable BootstrapButton_bb_text_gravity 10
+int styleable BootstrapButton_bb_type 11
 int[] styleable BootstrapCircleThumbnail { 0x101014f, 0x0, 0x0, 0x0 }
 int styleable BootstrapCircleThumbnail_android_text 0
 int styleable BootstrapCircleThumbnail_bct_image 1
