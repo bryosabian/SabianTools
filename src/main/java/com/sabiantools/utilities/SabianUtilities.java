@@ -715,7 +715,7 @@ public class SabianUtilities {
     public static void showLoadingDialog(Context context, String title) {
         try {
             hideLoadingDialog(false);
-            pd = new ProgressDialog(context, title, SabianThemeKt.getColorFromAttr(context, R.attr.sabianPrimaryColor, R.color.colorPrimary));
+            pd = new ProgressDialog(context, title, SabianThemeKt.getColorFromAttr(context, R.attr.sabianPrimaryColor, R.color.colorPrimary),R.style.SabianMaterialProgressDialog);
             pd.setCanceledOnTouchOutside(false);
             pd.setCancelable(false);
             pd.show();

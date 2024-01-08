@@ -8,4 +8,10 @@
     <style name="SabianActionBarTitle" parent="@android:style/TextAppearance.DeviceDefault.Widget.ActionBar.Title">
         <item name="android:textColor">@color/sabian_actionbar_text_color</item>
     </style>
+
+
+    <style name="SabianMaterialProgressDialog" parent="@android:style/Theme.Translucent">
+        <item name="materialDialogTitleColor">@color/sabian_modal_title_color</item>
+        <item name="materialDialogProgressColor">@color/colorPrimary</item>
+    </style>
 </resources>
