@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5ca21dab-7311-4fff-ac80-1ec2a7d4cdce" name="Changes" comment="Added ViewGroup extension" />
+    <list default="true" id="5ca21dab-7311-4fff-ac80-1ec2a7d4cdce" name="Changes" comment="Added ViewGroup extension">
+      <change beforePath="$PROJECT_DIR$/build/intermediates/compile_library_classes_jar/debug/classes.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/compile_library_classes_jar/debug/classes.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/compile_r_class_jar/debug/R.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/compile_r_class_jar/debug/R.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/compile_symbol_list/debug/R.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/compile_symbol_list/debug/R.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/symbol_list_with_package_name/debug/package-aware-r.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/symbol_list_with_package_name/debug/package-aware-r.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileDebugKotlin/cacheable/last-build.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileDebugKotlin/cacheable/last-build.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileDebugJavaWithJavac/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileDebugJavaWithJavac/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sabiantools/modals/SabianModal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sabiantools/modals/SabianModal.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

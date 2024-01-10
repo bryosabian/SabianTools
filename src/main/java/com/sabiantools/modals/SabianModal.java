@@ -17,6 +17,7 @@ import androidx.annotation.ColorInt;
 import androidx.annotation.ColorRes;
 import androidx.annotation.LayoutRes;
 import androidx.annotation.NonNull;
+import androidx.annotation.StyleRes;
 
 public class SabianModal extends SabianCustomModal {
 
@@ -60,7 +61,11 @@ public class SabianModal extends SabianCustomModal {
 
 
     public SabianModal(@NonNull Context context) {
-        super(context, R.style.SabianMaterialDialog);
+        this(context, R.style.SabianMaterialDialog);
+    }
+
+    public SabianModal(@NonNull Context context, @StyleRes int themeID) {
+        super(context, themeID);
     }
 
     @Override
