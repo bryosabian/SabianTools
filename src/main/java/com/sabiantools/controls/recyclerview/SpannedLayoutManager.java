@@ -33,9 +33,9 @@ public class SpannedLayoutManager extends LinearLayoutManager {
     @Override
     public RecyclerView.LayoutParams generateDefaultLayoutParams() {
 
-        RecyclerView.LayoutParams params=spanLayoutSize(super.generateDefaultLayoutParams());
+        RecyclerView.LayoutParams params = spanLayoutSize(super.generateDefaultLayoutParams());
 
-        if(params!=null)
+        if (params != null)
             return params;
 
         return super.generateDefaultLayoutParams();
@@ -44,9 +44,9 @@ public class SpannedLayoutManager extends LinearLayoutManager {
     @Override
     public RecyclerView.LayoutParams generateLayoutParams(Context c, AttributeSet attrs) {
 
-        RecyclerView.LayoutParams params=spanLayoutSize(super.generateLayoutParams(c, attrs));
+        RecyclerView.LayoutParams params = spanLayoutSize(super.generateLayoutParams(c, attrs));
 
-        if(params!=null)
+        if (params != null)
             return params;
 
         return super.generateLayoutParams(c, attrs);
@@ -55,41 +55,41 @@ public class SpannedLayoutManager extends LinearLayoutManager {
     @Override
     public RecyclerView.LayoutParams generateLayoutParams(ViewGroup.LayoutParams lp) {
 
-        RecyclerView.LayoutParams params=spanLayoutSize(super.generateLayoutParams(lp));
+        RecyclerView.LayoutParams params = spanLayoutSize(super.generateLayoutParams(lp));
 
-        if(params!=null)
+        if (params != null)
             return params;
 
         return super.generateLayoutParams(lp);
     }
 
-    private RecyclerView.LayoutParams spanLayoutSize(RecyclerView.LayoutParams params){
-        int average = (maximumItemSize>NO_MAXIMUM_SIZE)? Math.min(maximumItemSize,getItemCount()) : getItemCount();
-        if(getOrientation()==RecyclerView.HORIZONTAL){
+    private RecyclerView.LayoutParams spanLayoutSize(RecyclerView.LayoutParams params) {
+        int average = (maximumItemSize > NO_MAXIMUM_SIZE) ? Math.min(maximumItemSize, getItemCount()) : getItemCount();
+        if (getOrientation() == RecyclerView.HORIZONTAL) {
             params.width = (int) Math.round(getHorizontalSpace() / (double) average);
-        }else if(getOrientation()== RecyclerView.VERTICAL){
-            params.height=(int)Math.round(getVerticalSpace()/(double)average);
+        } else if (getOrientation() == RecyclerView.VERTICAL) {
+            params.height = (int) Math.round(getVerticalSpace() / (double) average);
         }
         return params;
     }
 
 
-
     @Override
     public boolean canScrollHorizontally() {
-        return maximumItemSize>NO_MAXIMUM_SIZE;
+        return maximumItemSize > NO_MAXIMUM_SIZE;
     }
 
     @Override
     public boolean canScrollVertically() {
-        return maximumItemSize>NO_MAXIMUM_SIZE;
+        return maximumItemSize > NO_MAXIMUM_SIZE;
     }
 
-    private int getHorizontalSpace(){
-        return getWidth()-getPaddingLeft()-getPaddingRight();
+    private int getHorizontalSpace() {
+        return getWidth() - getPaddingLeft() - getPaddingRight();
     }
-    private int getVerticalSpace(){
-        return getHeight()-getPaddingBottom()-getPaddingTop();
+
+    private int getVerticalSpace() {
+        return getHeight() - getPaddingBottom() - getPaddingTop();
     }
 
     public SpannedLayoutManager setMaximumItemSize(int maximumItemSize) {

@@ -9,7 +9,7 @@
         android:layout_height="match_parent"
         sabian:ev_retryButtonText="Retry"
         sabian:ev_title="Error"
-        sabian:ev_subtitle="Error has occured"
+        sabian:ev_subtitle="Error has occurred"
         sabian:ev_showSubtitle="true"
         sabian:ev_showTitle="true"
         sabian:ev_showRetryButton="true"

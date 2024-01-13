@@ -75,4 +75,8 @@
     <color name="light">#8e8e8e</color>
     <color name="sabian_modal_title_color">#4a4a4a</color>
     <color name="sabian_modal_text_color">#999999</color>
+
+    <color name="sabian_shadow_color">#CABBBBBB</color>
+    <color name="sabian_shadow_border">@color/sabian_list_divider</color>
+    <color name="sabian_card_color">@android:color/transparent</color>
 </resources>

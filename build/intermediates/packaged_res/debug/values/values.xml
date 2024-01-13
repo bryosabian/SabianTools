@@ -24,6 +24,7 @@
     <color name="modal_list_title_color">#5a5a5a</color>
     <color name="sabianTransparent">#00ffffff</color>
     <color name="sabian_actionbar_text_color">#ffffff</color>
+    <color name="sabian_card_color">@android:color/transparent</color>
     <color name="sabian_danger_color">#DC143C</color>
     <color name="sabian_divider_color_light">#E0EDED</color>
     <color name="sabian_font_color_black">#000000</color>
@@ -44,6 +45,8 @@
     <color name="sabian_notification_primary">#3F51B5</color>
     <color name="sabian_notification_success">#669F36</color>
     <color name="sabian_overlay_color">#eeffffff</color>
+    <color name="sabian_shadow_border">@color/sabian_list_divider</color>
+    <color name="sabian_shadow_color">#CABBBBBB</color>
     <color name="sabian_standard_background">#5BACCD</color>
     <color name="sabian_success_color">@color/sabian_notification_success</color>
     <color name="sabian_text_black_light">#5a5a5a</color>
@@ -70,6 +73,7 @@
     <dimen name="sabian_modal_list_padding">15dp</dimen>
     <dimen name="sabian_modal_space">20dp</dimen>
     <dimen name="sabian_modal_vertical_space">20dp</dimen>
+    <dimen name="sabian_shadow_radius">2dp</dimen>
     <dimen name="sabian_toast_padding">20dp</dimen>
     <item name="statusbarutil_fake_status_bar_view" type="id"/>
     <item name="statusbarutil_translucent_view" type="id"/>
@@ -209,6 +213,11 @@
     <declare-styleable name="SabianMenuBar">
         <attr name="android:textColor"/>
         <attr name="android:text"/>
+    </declare-styleable>
+    <declare-styleable name="SabianNormalCardView">
+        <attr format="color" name="sncv_backgroundColor"/>
+        <attr format="color" name="sncv_shadowColor"/>
+        <attr format="dimension" name="sncv_borderRadius"/>
     </declare-styleable>
     <declare-styleable name="SabianNotificationBox">
         <attr format="boolean" name="snb_DisplayButton"/>

@@ -2,28 +2,22 @@ package com.sabiantools.controls;
 
 import android.content.Context;
 import android.content.ContextWrapper;
-import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import androidx.annotation.ColorInt;
 import androidx.annotation.ColorRes;
 import androidx.annotation.DrawableRes;
 import androidx.core.content.ContextCompat;
 import androidx.vectordrawable.graphics.drawable.VectorDrawableCompat;
 
-import com.gc.materialdesign.views.ButtonFlat;
 import com.sabiantools.R;
 import com.sabiantools.extensions.SabianViewKt;
 import com.sabiantools.utilities.SabianToast;
-
-import kotlin.Function;
-import kotlin.jvm.functions.Function0;
 
 public class SabianStickyNotificationView {
 
@@ -38,9 +32,15 @@ public class SabianStickyNotificationView {
     private Integer vectorIconColor = null;
 
     @ColorRes
-    private Integer textColor = null;
+    private Integer textColorRes = null;
 
     @ColorRes
+    private Integer backgroundColorRes = null;
+
+    @ColorInt
+    private Integer textColor = null;
+
+    @ColorInt
     private Integer backgroundColor = null;
 
 
@@ -116,8 +116,14 @@ public class SabianStickyNotificationView {
                 .setMessageType(messageType)
                 .setBodyView(bodyView)
                 .setAction(actionText, onActionClickContainer)
-                .setListener(listener)
-        ;
+                .setListener(listener);
+
+        if (backgroundColor == null) {
+            setBackgroundColorRes(backgroundColorRes);
+        }
+        if (textColor == null) {
+            setTextColorRes(textColorRes);
+        }
     }
 
 
@@ -197,27 +203,43 @@ public class SabianStickyNotificationView {
     public SabianStickyNotificationView setMessageType(SabianToast.MessageType messageType) {
         this.messageType = messageType;
         if (mView != null && messageType != null) {
-            setBackgroundColor(messageType.getColor());
-            setTextColor(messageType.getTextColor());
+            setBackgroundColorRes(messageType.getColor());
+            setTextColorRes(messageType.getTextColor());
             setVectorIcon(messageType.getVectorIcon(), messageType.getTextColor());
         }
         return this;
     }
 
-    public SabianStickyNotificationView setBackgroundColor(@ColorRes Integer color) {
-        this.backgroundColor = color;
+    public SabianStickyNotificationView setBackgroundColorRes(@ColorRes Integer color) {
+        this.backgroundColorRes = color;
         if (mView != null && color != null) {
-            mView.mContainerView.setBackgroundColor(ContextCompat.getColor(getContext(), color));
+            setBackgroundColor(ContextCompat.getColor(getContext(), color));
         }
         return this;
     }
 
-    public SabianStickyNotificationView setTextColor(@ColorRes Integer textColor) {
+    public SabianStickyNotificationView setBackgroundColor(@ColorInt Integer color) {
+        this.backgroundColor = color;
+        if (mView != null && color != null) {
+            mView.mContainerView.setBackgroundColor(color);
+        }
+        return this;
+    }
+
+    public SabianStickyNotificationView setTextColorRes(@ColorRes Integer textColor) {
+        this.textColorRes = textColor;
+        if (mView != null && textColor != null) {
+            setTextColor(ContextCompat.getColor(getContext(), textColor));
+        }
+        return this;
+    }
+
+    public SabianStickyNotificationView setTextColor(@ColorInt Integer textColor) {
         this.textColor = textColor;
         if (mView != null && textColor != null) {
-            mView.mTxtMessage.setTextColor(ContextCompat.getColor(getContext(), textColor));
-            mView.mIconView.setColorFilter(ContextCompat.getColor(getContext(), textColor));
-            mView.mActionButtonView.setTextColor(ContextCompat.getColor(getContext(), textColor));
+            mView.mTxtMessage.setTextColor(textColor);
+            mView.mIconView.setColorFilter(textColor);
+            mView.mActionButtonView.setTextColor(textColor);
         }
         return this;
     }
@@ -229,8 +251,16 @@ public class SabianStickyNotificationView {
         return this;
     }
 
-    private Context getContext() {
+    public Context getContext() {
         return wrapper.getBaseContext();
+    }
+
+    public SabianToast.MessageType getMessageType() {
+        return messageType;
+    }
+
+    public Integer getBackgroundColor() {
+        return backgroundColor;
     }
 
     private static class NotView {

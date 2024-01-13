@@ -28,5 +28,6 @@
     <dimen name="sabian_modal_fixed_footer_height_off">40dp</dimen>
     <dimen name="sabian_layer_item_no_stroke">-2dp</dimen>
 
+    <dimen name="sabian_shadow_radius">2dp</dimen>
 
 </resources>

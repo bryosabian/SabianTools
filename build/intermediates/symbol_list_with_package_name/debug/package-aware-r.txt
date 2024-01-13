@@ -444,6 +444,9 @@ attr snb_Title
 attr snb_TitleColor
 attr snb_cornerRadius
 attr snb_elevation
+attr sncv_backgroundColor
+attr sncv_borderRadius
+attr sncv_shadowColor
 attr spanCount
 attr spinBars
 attr spinnerDropDownItemStyle
@@ -688,6 +691,7 @@ color ripple_material_light
 color sabianTransparent
 color sabian_actionbar_text_color
 color sabian_btn_theme_background
+color sabian_card_color
 color sabian_danger_color
 color sabian_divider_color_light
 color sabian_font_color_black
@@ -708,6 +712,8 @@ color sabian_notification_inverse
 color sabian_notification_primary
 color sabian_notification_success
 color sabian_overlay_color
+color sabian_shadow_border
+color sabian_shadow_color
 color sabian_standard_background
 color sabian_success_color
 color sabian_text_black_light
@@ -867,6 +873,7 @@ dimen sabian_modal_list_image_padding
 dimen sabian_modal_list_padding
 dimen sabian_modal_space
 dimen sabian_modal_vertical_space
+dimen sabian_shadow_radius
 dimen sabian_toast_padding
 dimen subtitle_corner_radius
 dimen subtitle_outline_width
@@ -994,6 +1001,7 @@ drawable bbutton_inverse_transparent_rounded
 drawable bg_ribbon_danger
 drawable bg_ribbon_success
 drawable bg_ribbon_warning
+drawable bg_sabian_card
 drawable bottom_border_bg
 drawable bthumbnail_container_rounded
 drawable bthumbnail_container_square
@@ -1219,6 +1227,8 @@ id img_ViewHoldermodalImage
 id info
 id invisible
 id italic
+id item_SabianCardLayer
+id item_SabianCardShadowLayer
 id item_touch_helper_previous_elevation
 id justify
 id layout
@@ -1973,6 +1983,7 @@ styleable SabianFontAwesomeLabel android_text android_textColor android_textSize
 styleable SabianHeaderBanner sabianDisplayDividers sabianHeaderIcon sabianHideIcons sabianNumIcons sabianTitle
 styleable SabianHorizontalList sabianColumnWidth
 styleable SabianMenuBar android_text android_textColor
+styleable SabianNormalCardView sncv_backgroundColor sncv_borderRadius sncv_shadowColor
 styleable SabianNotificationBox snb_ButtonColor snb_ButtonText snb_DisplayButton snb_DividerColor snb_NotificationColor snb_Text snb_TextColor snb_Title snb_TitleColor snb_cornerRadius snb_elevation
 styleable SabianNumberSelector sabian_max_value sabian_min_value sabian_value
 styleable SabianRibbon srb_title srb_type

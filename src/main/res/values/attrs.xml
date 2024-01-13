@@ -6,6 +6,12 @@
         <attr name="android:text" />
     </declare-styleable>
 
+    <declare-styleable name="SabianNormalCardView">
+        <attr name="sncv_backgroundColor" format="color" />
+        <attr name="sncv_shadowColor" format="color" />
+        <attr name="sncv_borderRadius" format="dimension" />
+    </declare-styleable>
+
     <declare-styleable name="SabianButtonText">
         <attr name="sbt_text" format="string" />
         <attr name="sbt_hint" format="string" />

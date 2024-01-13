@@ -24,9 +24,9 @@ fun View.fadeVisibility(visibility: Int, duration: Long = 300) {
 
 fun View.setLayerBackgroundColor(@IdRes layerItemID: Int, @ColorInt color: Int) {
     try {
-        val layerDrawable = background.mutate() as? LayerDrawable ?: return
-        val bgDrawableItem = layerDrawable.findDrawableByLayerId(layerItemID) as? GradientDrawable
-                ?: return
+        val (layerDrawable, bgDrawableItem) = getGradientDrawable(layerItemID) ?: return
+        if (bgDrawableItem == null)
+            return
         bgDrawableItem.setColor(color)
         setSupportDrawable(layerDrawable)
     } catch (e: Throwable) {
@@ -36,10 +36,9 @@ fun View.setLayerBackgroundColor(@IdRes layerItemID: Int, @ColorInt color: Int) 
 
 fun View.setLayerStrokeColor(@IdRes layerItemID: Int, @ColorInt color: Int, width: Int) {
     try {
-
-        val layerDrawable = background.mutate() as? LayerDrawable ?: return
-        val bgDrawableItem = layerDrawable.findDrawableByLayerId(layerItemID) as? GradientDrawable
-                ?: return
+        val (layerDrawable, bgDrawableItem) = getGradientDrawable(layerItemID) ?: return
+        if (bgDrawableItem == null)
+            return
         bgDrawableItem.setStroke(width, color)
         setSupportDrawable(layerDrawable)
     } catch (e: Throwable) {
@@ -50,15 +49,53 @@ fun View.setLayerStrokeColor(@IdRes layerItemID: Int, @ColorInt color: Int, widt
 
 fun View.setLayerBackgroundAndStrokeColor(@IdRes layerItemID: Int, @ColorInt bgColor: Int, @ColorInt strokeColor: Int, width: Int) {
     try {
-        val layerDrawable = background.mutate() as? LayerDrawable ?: return
-        val bgDrawableItem = layerDrawable.findDrawableByLayerId(layerItemID) as? GradientDrawable
-                ?: return
+        val (layerDrawable, bgDrawableItem) = getGradientDrawable(layerItemID) ?: return
+        if (bgDrawableItem == null)
+            return
         bgDrawableItem.setStroke(width, strokeColor)
         bgDrawableItem.setColor(bgColor)
         setSupportDrawable(layerDrawable)
     } catch (e: Throwable) {
         e.printStackTrace()
     }
+}
+
+
+fun View.setLayerGradientColor(@IdRes layerItemID: Int, @ColorInt color: IntArray) {
+    try {
+        val (layerDrawable, bgDrawableItem) = getGradientDrawable(layerItemID) ?: return
+        if (bgDrawableItem == null)
+            return
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+            bgDrawableItem.colors = color
+        } else {
+            bgDrawableItem.setColor(color.first())
+        }
+        setSupportDrawable(layerDrawable)
+    } catch (e: Throwable) {
+        e.printStackTrace()
+    }
+}
+
+
+fun View.setLayerBorderRadius(@IdRes layerItemID: Int, radius: Float) {
+    try {
+        val (layerDrawable, bgDrawableItem) = getGradientDrawable(layerItemID) ?: return
+        if (bgDrawableItem == null)
+            return
+        bgDrawableItem.cornerRadius = radius
+        setSupportDrawable(layerDrawable)
+    } catch (e: Throwable) {
+        e.printStackTrace()
+    }
+}
+
+
+fun View.getGradientDrawable(@IdRes layerItemID: Int): LayerData? {
+    val layerDrawable = background.mutate() as? LayerDrawable ?: return null
+    val data = LayerData(layerDrawable, null)
+    data.gradientDrawable = layerDrawable.findDrawableByLayerId(layerItemID) as? GradientDrawable
+    return data
 }
 
 fun View.setSupportDrawable(drawable: Drawable) {
@@ -68,3 +105,5 @@ fun View.setSupportDrawable(drawable: Drawable) {
         setBackgroundDrawable(drawable)
     }
 }
+
+data class LayerData(var layerDrawable: LayerDrawable, var gradientDrawable: GradientDrawable?)
