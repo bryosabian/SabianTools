@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/item_SabianCardShadowLayer">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/sabian_shadow_color" />
+            <corners android:radius="@dimen/sabian_shadow_radius" />
+        </shape>
+    </item>
+
+    <item
+        android:id="@+id/item_SabianCardLayer"
+        android:bottom="2dp"
+        android:left="1dp"
+        android:right="1dp"
+        android:top="1dp">
+        <shape android:shape="rectangle">
+            <solid android:color="@android:color/transparent" />
+            <corners android:radius="@dimen/sabian_shadow_radius" />
+        </shape>
+    </item>
+</layer-list>
