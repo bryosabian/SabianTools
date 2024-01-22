@@ -1,19 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
-    <item>
+    <item
+        android:bottom="-2dp"
+        android:left="@dimen/sabian_layer_item_no_stroke"
+        android:right="@dimen/sabian_layer_item_no_stroke"
+        android:top="1dp">
+
         <shape android:shape="rectangle">
             <stroke
                 android:width="1dp"
-                android:color="#e2e2e2"
-                />
+                android:color="@color/sabian_list_divider" />
+            <solid android:color="@null" />
         </shape>
     </item>
 
-    <!--
-    Remove top right and left-->
-    <item android:top="1dp">
-        <shape android:shape="rectangle">
-            <solid android:color="#FFFFFF" />
-        </shape>
-    </item>
+
 </layer-list>
