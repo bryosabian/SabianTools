@@ -870,6 +870,10 @@ int dimen sabian_modal_fixed_footer_height_off 0x0
 int dimen sabian_modal_image_size 0x0
 int dimen sabian_modal_list_image_padding 0x0
 int dimen sabian_modal_list_padding 0x0
+int dimen sabian_modal_padding_bottom 0x0
+int dimen sabian_modal_padding_end 0x0
+int dimen sabian_modal_padding_start 0x0
+int dimen sabian_modal_padding_top 0x0
 int dimen sabian_modal_space 0x0
 int dimen sabian_modal_vertical_space 0x0
 int dimen sabian_shadow_radius 0x0

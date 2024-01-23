@@ -17,11 +17,11 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:background="@drawable/sabian_material_modal_bg"
-        android:paddingStart="20dp"
-        android:paddingLeft="20dp"
-        android:paddingTop="20dp"
-        android:paddingEnd="10dp"
-        android:paddingRight="10dp">
+        android:paddingStart="@dimen/sabian_modal_padding_start"
+        android:paddingLeft="@dimen/sabian_modal_padding_start"
+        android:paddingTop="@dimen/sabian_modal_padding_top"
+        android:paddingEnd="@dimen/sabian_modal_padding_end"
+        android:paddingRight="@dimen/sabian_modal_padding_end">
 
         <!--Header and Body-->
         <LinearLayout

@@ -197,6 +197,10 @@ dimen sabian_modal_fixed_footer_height_off
 dimen sabian_modal_image_size
 dimen sabian_modal_list_image_padding
 dimen sabian_modal_list_padding
+dimen sabian_modal_padding_bottom
+dimen sabian_modal_padding_end
+dimen sabian_modal_padding_start
+dimen sabian_modal_padding_top
 dimen sabian_modal_space
 dimen sabian_modal_vertical_space
 dimen sabian_shadow_radius

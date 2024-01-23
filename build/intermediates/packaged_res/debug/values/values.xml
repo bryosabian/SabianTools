@@ -71,6 +71,10 @@
     <dimen name="sabian_modal_image_size">300dp</dimen>
     <dimen name="sabian_modal_list_image_padding">10dp</dimen>
     <dimen name="sabian_modal_list_padding">15dp</dimen>
+    <dimen name="sabian_modal_padding_bottom">20dp</dimen>
+    <dimen name="sabian_modal_padding_end">20dp</dimen>
+    <dimen name="sabian_modal_padding_start">20dp</dimen>
+    <dimen name="sabian_modal_padding_top">20dp</dimen>
     <dimen name="sabian_modal_space">20dp</dimen>
     <dimen name="sabian_modal_vertical_space">20dp</dimen>
     <dimen name="sabian_shadow_radius">2dp</dimen>
