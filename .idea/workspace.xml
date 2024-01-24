@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5ca21dab-7311-4fff-ac80-1ec2a7d4cdce" name="Changes" comment="Merged with SabianTools-Themed branch" />
+    <list default="true" id="5ca21dab-7311-4fff-ac80-1ec2a7d4cdce" name="Changes" comment="Modified modal UI by removing redundant drawable elements and unifying padding for a more consistent look and feel" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -110,7 +110,14 @@
       <option name="project" value="LOCAL" />
       <updated>1705610985019</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Modified modal UI by removing redundant drawable elements and unifying padding for a more consistent look and feel">
+      <created>1706020153663</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1706020153663</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -133,6 +140,7 @@
     <MESSAGE value="Modified README.md" />
     <MESSAGE value="Added ViewGroup extension" />
     <MESSAGE value="Merged with SabianTools-Themed branch" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merged with SabianTools-Themed branch" />
+    <MESSAGE value="Modified modal UI by removing redundant drawable elements and unifying padding for a more consistent look and feel" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modified modal UI by removing redundant drawable elements and unifying padding for a more consistent look and feel" />
   </component>
 </project>
