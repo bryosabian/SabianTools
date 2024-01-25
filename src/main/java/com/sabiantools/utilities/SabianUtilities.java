@@ -536,8 +536,7 @@ public class SabianUtilities {
         ByteArrayOutputStream byteBuffer = new ByteArrayOutputStream();
         int bufferSize = 1024;
         byte[] buffer = new byte[bufferSize];
-
-        int len = 0;
+        int len;
         while ((len = inputStream.read(buffer)) != -1) {
             byteBuffer.write(buffer, 0, len);
         }
@@ -715,7 +714,7 @@ public class SabianUtilities {
     public static void showLoadingDialog(Context context, String title) {
         try {
             hideLoadingDialog(false);
-            pd = new ProgressDialog(context, title, SabianThemeKt.getColorFromAttr(context, R.attr.sabianPrimaryColor, R.color.colorPrimary),R.style.SabianMaterialProgressDialog);
+            pd = new ProgressDialog(context, title, SabianThemeKt.getColorFromAttr(context, R.attr.sabianPrimaryColor, R.color.colorPrimary), R.style.SabianMaterialProgressDialog);
             pd.setCanceledOnTouchOutside(false);
             pd.setCancelable(false);
             pd.show();
