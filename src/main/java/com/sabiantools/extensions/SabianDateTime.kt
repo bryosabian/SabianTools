@@ -146,3 +146,20 @@ fun DateTime.isToday(): Boolean {
 fun LocalDateTime.isToday(): Boolean {
     return this.toLocalDate().isToday()
 }
+
+
+val Date.lastDateOfMonth: Date
+    get() {
+        val calendar = Calendar.getInstance()
+        calendar.time = this
+        calendar.set(Calendar.DAY_OF_MONTH, calendar.getActualMaximum(Calendar.DAY_OF_MONTH))
+        return calendar.time
+    }
+
+val Date.firstDateOfMonth: Date
+    get() {
+        val calendar = Calendar.getInstance()
+        calendar.time = this
+        calendar.set(Calendar.DAY_OF_MONTH, calendar.getActualMinimum(Calendar.DAY_OF_MONTH))
+        return calendar.time
+    }

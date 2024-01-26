@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5ca21dab-7311-4fff-ac80-1ec2a7d4cdce" name="Changes" comment="Modified modal UI by removing redundant drawable elements and unifying padding for a more consistent look and feel" />
+    <list default="true" id="5ca21dab-7311-4fff-ac80-1ec2a7d4cdce" name="Changes" comment="Lab Phase : Theme : Survey : Fixed and enhanced dark and custom theme support" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -117,7 +117,14 @@
       <option name="project" value="LOCAL" />
       <updated>1706020153663</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Lab Phase : Theme : Survey : Fixed and enhanced dark and custom theme support">
+      <created>1706212072682</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1706212072682</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -141,6 +148,7 @@
     <MESSAGE value="Added ViewGroup extension" />
     <MESSAGE value="Merged with SabianTools-Themed branch" />
     <MESSAGE value="Modified modal UI by removing redundant drawable elements and unifying padding for a more consistent look and feel" />
-    <option name="LAST_COMMIT_MESSAGE" value="Modified modal UI by removing redundant drawable elements and unifying padding for a more consistent look and feel" />
+    <MESSAGE value="Lab Phase : Theme : Survey : Fixed and enhanced dark and custom theme support" />
+    <option name="LAST_COMMIT_MESSAGE" value="Lab Phase : Theme : Survey : Fixed and enhanced dark and custom theme support" />
   </component>
 </project>

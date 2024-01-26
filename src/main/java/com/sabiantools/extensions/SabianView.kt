@@ -34,6 +34,9 @@ fun View.setLayerBackgroundColor(@IdRes layerItemID: Int, @ColorInt color: Int) 
     }
 }
 
+
+
+
 fun View.setLayerStrokeColor(@IdRes layerItemID: Int, @ColorInt color: Int, width: Int) {
     try {
         val (layerDrawable, bgDrawableItem) = getGradientDrawable(layerItemID) ?: return
@@ -97,6 +100,8 @@ fun View.getGradientDrawable(@IdRes layerItemID: Int): LayerData? {
     data.gradientDrawable = layerDrawable.findDrawableByLayerId(layerItemID) as? GradientDrawable
     return data
 }
+
+
 
 fun View.setSupportDrawable(drawable: Drawable) {
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
