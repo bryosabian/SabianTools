@@ -200,6 +200,7 @@
         <attr format="boolean" name="sfat_textAllCaps"/>
         <attr format="dimension" name="sfat_fontSize"/>
         <attr format="dimension" name="sfat_textSize"/>
+        <attr format="dimension" name="sfat_horizontalMargin"/>
         <attr format="color" name="android:textColor"/>
         <attr format="string" name="android:text"/>
         <attr format="dimension" name="android:textSize"/>

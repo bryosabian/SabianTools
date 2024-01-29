@@ -113,6 +113,7 @@ attr? sfat_condensedType
 attr? sfat_fontColor
 attr? sfat_fontIcon
 attr? sfat_fontSize
+attr? sfat_horizontalMargin
 attr? sfat_robotoType
 attr? sfat_textAllCaps
 attr? sfat_textColor
@@ -293,6 +294,7 @@ id ll_ControlButtonTextContainer
 id ll_ControlSabianRoundButtonContainer
 id ll_ModalEditTextActionsContainer
 id ll_ModalFailedContainer
+id ll_SabianFontAwesomeLabelContainer
 id ll_SabianHeaderBannerIconsLeft
 id ll_SabianHeaderBannerIconsRight
 id ll_SabianMaterialModalContent
@@ -396,7 +398,7 @@ styleable SabianCircleView sc_titleText sc_subtitleText sc_titleSize sc_subtitle
 styleable SabianCondensedEditText SabianEditCondensedType SabianEditRobotoType
 styleable SabianCondensedText SabianCondensedType SabianRobotoType
 styleable SabianFloatLabel Sfl_CondensedType sfl_RobotoType android:gravity android:textColorHint android:textColor
-styleable SabianFontAwesomeLabel sfat_condensedType sfat_robotoType sfat_fontIcon sfat_fontColor sfat_textColor sfat_textAllCaps sfat_fontSize sfat_textSize android:textColor android:text android:textSize
+styleable SabianFontAwesomeLabel sfat_condensedType sfat_robotoType sfat_fontIcon sfat_fontColor sfat_textColor sfat_textAllCaps sfat_fontSize sfat_textSize sfat_horizontalMargin android:textColor android:text android:textSize
 styleable SabianHeaderBanner sabianTitle sabianHeaderIcon sabianNumIcons sabianHideIcons sabianDisplayDividers
 styleable SabianHorizontalList sabianColumnWidth
 styleable SabianMenuBar android:textColor android:text

@@ -2,11 +2,13 @@ package com.sabiantools.controls;
 
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.os.Build;
 import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.LinearLayout;
 
 import androidx.annotation.ColorInt;
 import androidx.annotation.NonNull;
@@ -78,6 +80,19 @@ public class SabianFontAwesomeLabel extends FrameLayout {
         sctText.setTextSize(TypedValue.COMPLEX_UNIT_PX, size);
     }
 
+    public void setHorizontalMargin(float margin) {
+        if (margin <= -1)
+            return;
+        int pixelMargin = (int) margin;
+        LinearLayout.LayoutParams params = (LinearLayout.LayoutParams) ftText.getLayoutParams();
+        params.setMargins(params.leftMargin, params.topMargin, pixelMargin, params.bottomMargin);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
+            params.setMarginEnd(pixelMargin);
+        }
+        ftText.setLayoutParams(params);
+        //ftText.requestLayout();
+    }
+
     public void setFontSize(float size) {
         if (size <= -1)
             return;
@@ -130,6 +145,8 @@ public class SabianFontAwesomeLabel extends FrameLayout {
                 this.setText(a.getString(attr));
             } else if (attr == R.styleable.SabianFontAwesomeLabel_sfat_textAllCaps) {
                 this.setTextAllCaps(a.getBoolean(attr, false));
+            } else if (attr == R.styleable.SabianFontAwesomeLabel_sfat_horizontalMargin) {
+                this.setHorizontalMargin(a.getDimension(attr, -1));
             }
         }
         a.recycle();
