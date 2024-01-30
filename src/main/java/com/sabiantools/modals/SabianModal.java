@@ -265,11 +265,15 @@ public class SabianModal extends SabianCustomModal {
 
     public SabianModal setOkayButtonColor(@ColorInt int okayButtonColor) {
         this.okayButtonColor = okayButtonColor;
+        if (okayButtonColor != NO_RES_ID && btnOk != null)
+            btnOk.setBackgroundColor(okayButtonColor);
         return this;
     }
 
     public SabianModal setCancelButtonColor(@ColorInt int cancelButtonColor) {
         this.cancelButtonColor = cancelButtonColor;
+        if (cancelButtonColor != NO_RES_ID && btnCancel != null)
+            btnCancel.setBackgroundColor(cancelButtonColor);
         return this;
     }
 }
