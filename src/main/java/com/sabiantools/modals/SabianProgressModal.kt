@@ -1,6 +1,5 @@
 package com.sabiantools.modals
 
-import android.app.Dialog
 import android.content.Context
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
@@ -10,15 +9,19 @@ import android.view.Window
 import android.view.WindowManager
 import android.view.animation.AnimationUtils
 import android.widget.TextView
+import androidx.annotation.ColorInt
 import com.gc.materialdesign.views.ProgressBarDeterminate
 import com.sabiantools.R
-import kotlinx.android.synthetic.main.layout_modal_progress.*
+import kotlinx.android.synthetic.main.layout_modal_progress.pb_ModalProgressBar
+import kotlinx.android.synthetic.main.layout_modal_progress.rll_ModalProgressContainer
+import kotlinx.android.synthetic.main.layout_modal_progress.sct_ModalProgressBarTitle
+import kotlinx.android.synthetic.main.layout_modal_progress.sct_ModalProgressTitle
 
-class SabianProgressModal(context: Context) : Dialog(context, R.style.SabianMaterialDialog) {
+class SabianProgressModal(context: Context) : SabianCustomModal(context, R.style.SabianMaterialDialog) {
     private var pbProgress: ProgressBarDeterminate? = null
     private var txtTitle: TextView? = null
     private var txtProgressTitle: TextView? = null
-    private var vgBodyContainer : ViewGroup? = null
+
     private var animate = true
 
     private var title: String = ""
@@ -27,15 +30,23 @@ class SabianProgressModal(context: Context) : Dialog(context, R.style.SabianMate
     private var min: Int = 0
     private var max: Int = 100
 
+    @ColorInt
+    private var progressColor: Int? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         requestWindowFeature(Window.FEATURE_NO_TITLE)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.layout_modal_progress)
+        initModalElements()
+    }
+
+    override fun initModalElements() {
+        bodyContainer = rll_ModalProgressContainer
+        super.initModalElements()
         initElements()
     }
 
     private fun initElements() {
-        vgBodyContainer = rll_ModalProgressContainer
         pbProgress = pb_ModalProgressBar
         txtTitle = sct_ModalProgressTitle
         txtProgressTitle = sct_ModalProgressBarTitle
@@ -43,6 +54,9 @@ class SabianProgressModal(context: Context) : Dialog(context, R.style.SabianMate
         pbProgress?.setMin(min)
         pbProgress?.setMax(max)
         pbProgress?.progress = progress
+        progressColor?.let {
+            pbProgress?.setBackgroundColor(it)
+        }
         txtTitle?.text = title
         txtProgressTitle?.text = progressTitle
     }
@@ -50,6 +64,12 @@ class SabianProgressModal(context: Context) : Dialog(context, R.style.SabianMate
     fun setTitle(title: String): SabianProgressModal {
         txtTitle?.text = title
         this.title = title
+        return this
+    }
+
+    fun setProgressColor(@ColorInt color: Int): SabianProgressModal {
+        pbProgress?.progress = color
+        progressColor = color
         return this
     }
 
@@ -76,22 +96,4 @@ class SabianProgressModal(context: Context) : Dialog(context, R.style.SabianMate
         this.max = max
         return this
     }
-
-    override fun show() {
-        val lp = WindowManager.LayoutParams()
-        lp.copyFrom(window?.attributes)
-        lp.width = WindowManager.LayoutParams.MATCH_PARENT
-        lp.height = WindowManager.LayoutParams.MATCH_PARENT
-        super.show()
-        window?.clearFlags(WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE or WindowManager.LayoutParams.FLAG_ALT_FOCUSABLE_IM)
-        window?.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE)
-        window?.attributes = lp
-        window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
-        if (animate) {
-            val anim = AnimationUtils.loadAnimation(context, R.anim.modal_popup_show)
-            vgBodyContainer?.startAnimation(anim)
-        }
-    }
-
-
 }
