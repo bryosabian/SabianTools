@@ -11,9 +11,8 @@ import androidx.lifecycle.ViewModelStore;
 import androidx.lifecycle.ViewModelStoreOwner;
 
 /**
- * @deprecated Use a dialog fragment instead
+ * Use a dialog fragment instead when possible
  */
-@Deprecated
 public class SabianLifecycleModal extends SabianCustomModal implements LifecycleOwner, ViewModelStoreOwner {
 
     private LifecycleRegistry mLifecycleRegistry;
