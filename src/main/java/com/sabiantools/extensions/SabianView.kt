@@ -3,6 +3,8 @@ package com.sabiantools.extensions
 import android.graphics.drawable.Drawable
 import android.graphics.drawable.GradientDrawable
 import android.graphics.drawable.LayerDrawable
+import android.graphics.drawable.RotateDrawable
+import android.graphics.drawable.ShapeDrawable
 import android.os.Build
 import android.transition.Fade
 import android.transition.Transition
@@ -33,8 +35,6 @@ fun View.setLayerBackgroundColor(@IdRes layerItemID: Int, @ColorInt color: Int) 
         e.printStackTrace()
     }
 }
-
-
 
 
 fun View.setLayerStrokeColor(@IdRes layerItemID: Int, @ColorInt color: Int, width: Int) {
@@ -81,6 +81,9 @@ fun View.setLayerGradientColor(@IdRes layerItemID: Int, @ColorInt color: IntArra
 }
 
 
+
+
+
 fun View.setLayerBorderRadius(@IdRes layerItemID: Int, radius: Float) {
     try {
         val (layerDrawable, bgDrawableItem) = getGradientDrawable(layerItemID) ?: return
@@ -102,7 +105,6 @@ fun View.getGradientDrawable(@IdRes layerItemID: Int): LayerData? {
 }
 
 
-
 fun View.setSupportDrawable(drawable: Drawable) {
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
         background = drawable
@@ -111,4 +113,4 @@ fun View.setSupportDrawable(drawable: Drawable) {
     }
 }
 
-data class LayerData(var layerDrawable: LayerDrawable, var gradientDrawable: GradientDrawable?)
+data class LayerData(var layerDrawable: LayerDrawable, var gradientDrawable: GradientDrawable? = null, var rotateDrawable: RotateDrawable? = null)
