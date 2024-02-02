@@ -7,10 +7,12 @@ import androidx.recyclerview.widget.RecyclerView;
 
 /**
  * Created by Brian Sabana on 11/03/2018.
+ *
+ * @deprecated Use {@link HorizontalPaddingDecoration}
  */
 public class HorizontalMarginDecoration extends RecyclerView.ItemDecoration {
 
-    public static final int NO_MARGIN=-1;
+    public static final int NO_MARGIN = -1;
 
     private int rightMargin = NO_MARGIN;
 
@@ -26,20 +28,20 @@ public class HorizontalMarginDecoration extends RecyclerView.ItemDecoration {
 
         int itemPosition = parent.getChildAdapterPosition(view);
 
-        if(itemPosition==RecyclerView.NO_POSITION){
+        if (itemPosition == RecyclerView.NO_POSITION) {
             return;
         }
 
         int totalItems = state.getItemCount();
 
-            /*Apply left margin to all items apart from the first*/
-        if(itemPosition>0 && leftMargin !=NO_MARGIN){
-            outRect.left= leftMargin;
+        /*Apply left margin to all items apart from the first*/
+        if (itemPosition > 0 && leftMargin != NO_MARGIN) {
+            outRect.left = leftMargin;
         }
 
-            /*Apply right margin to all items apart from the last*/
-        if(totalItems>0 && itemPosition!=(totalItems-1) && rightMargin !=NO_MARGIN){
-            outRect.right= rightMargin;
+        /*Apply right margin to all items apart from the last*/
+        if (totalItems > 0 && itemPosition != (totalItems - 1) && rightMargin != NO_MARGIN) {
+            outRect.right = rightMargin;
         }
     }
 }

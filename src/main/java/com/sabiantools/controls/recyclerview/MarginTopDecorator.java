@@ -1,69 +1,48 @@
 package com.sabiantools.controls.recyclerview;
 
 import android.graphics.Rect;
-
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.view.View;
 
-import java.util.ArrayList;
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
 
 /**
  * Created by bryosabian on 9/20/2016.
  */
-public class MarginTopDecorator extends RecyclerView.ItemDecoration {
+public class MarginTopDecorator extends SabianAbstractDecoration {
 
-    private int marginTopSize;
 
-    private boolean applyTopAndBottom = false;
+    protected final int margin;
 
-    private ArrayList<Integer> excludePositions = new ArrayList<>();
 
-    public MarginTopDecorator(int marginTopSize) {
-        this.marginTopSize = marginTopSize;
+    protected boolean applyTopAndBottom = false;
+
+    public MarginTopDecorator(int margin) {
+        this.margin = margin;
     }
 
     @Override
-    public void getItemOffsets(Rect outRect, View view, RecyclerView parent, RecyclerView.State state) {
+    public void getItemOffsets(@NonNull Rect outRect, @NonNull View view, @NonNull RecyclerView parent, @NonNull RecyclerView.State state) {
 
-        if (applyTopAndBottom) {
-            outRect.top = marginTopSize;
-            outRect.bottom = marginTopSize;
-            return;
-        }
-
-        int pos = parent.getChildLayoutPosition(view);
-
-        // Add top margin only for all items (Except the first)
-        if (pos == 0) {
+        if (!canBeApplied(view, parent, state)) {
             super.getItemOffsets(outRect, view, parent, state);
             return;
         }
 
-        if (excludePositions.contains(pos))
+        if (applyTopAndBottom) {
+            outRect.top = margin;
+            outRect.bottom = margin;
             return;
+        }
 
-        outRect.top = marginTopSize;
+        outRect.top = margin;
     }
+
 
     public MarginTopDecorator setApplyTopAndBottom(boolean applyTopAndBottom) {
         this.applyTopAndBottom = applyTopAndBottom;
         return this;
     }
 
-    public MarginTopDecorator setExcludePositionsFromMargin(ArrayList<Integer> excludePositions) {
-        this.excludePositions = excludePositions;
-        return this;
-    }
 
-    public MarginTopDecorator addExcludedPositionFromMargin(int pos) {
-        excludePositions.add(pos);
-        return this;
-    }
-
-    public MarginTopDecorator addExcludedPositionsFromMargin(int[] pos) {
-        for (int i = 0; i < pos.length; i++)
-            addExcludedPositionFromMargin(pos[i]);
-        return this;
-    }
 }

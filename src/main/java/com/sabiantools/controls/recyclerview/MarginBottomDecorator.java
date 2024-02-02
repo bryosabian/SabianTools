@@ -1,31 +1,32 @@
 package com.sabiantools.controls.recyclerview;
 
 import android.graphics.Rect;
+
+import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
 import android.view.View;
 
 /**
  * Created by edith on 08/05/2018.
  */
-public class MarginBottomDecorator extends RecyclerView.ItemDecoration {
-
-    private int margin;
+public class MarginBottomDecorator extends MarginTopDecorator {
 
     public MarginBottomDecorator(int margin) {
-        this.margin = margin;
+        super(margin);
     }
 
     @Override
-    public void getItemOffsets(Rect outRect, View view, RecyclerView parent, RecyclerView.State state) {
-        int itemPosition = parent.getChildAdapterPosition(view);
-        if (itemPosition == RecyclerView.NO_POSITION) {
+    public void getItemOffsets(@NonNull Rect outRect, @NonNull View view, @NonNull RecyclerView parent, @NonNull RecyclerView.State state) {
+        if (!canBeApplied(view, parent, state)) {
+            super.getItemOffsets(outRect, view, parent, state);
             return;
         }
-        int totalItems = state.getItemCount();
-        int lastItemPos = totalItems - 1;
-
-        if (totalItems > 0 && itemPosition == lastItemPos) {
+        if (applyTopAndBottom) {
+            outRect.top = margin;
             outRect.bottom = margin;
+            return;
         }
+        outRect.bottom = margin;
     }
 }
